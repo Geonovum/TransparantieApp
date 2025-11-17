@@ -5,8 +5,4 @@ De overheid verwerkt enorme hoeveelheden burgerdata, bijvoorbeeld bij het nemen 
 Om dit doel te bereiken willen we een standaard voor het lezen van logging voor transparantie besluitvorming definieren en een App bouwen, de TransparantieApp die van deze standaard gebruik maakt. In een simulatieomgeving die automatisch informatie ophaalt en inzichtelijk maakt uit een al bestaand logbestand zoals bijvoorbeeld een logbestand gemaakt met Logboek Dataverwerkingen. Logboek Dataverwerkingen is een standaard voor overheden waarmee zij vastleggen hoe zij gegevens verwerken (ook wel 'loggen'). Hierdoor kunnen overheden transparant maken wat er met gegevens gebeurt, zowel binnen hun eigen organisatie als in samenwerking met andere instanties. De App is vergelijkbaar met de Vorderingenoverzicht Rijk-app (vorijk.nl) en sluit aan bij het overheidsbeleid rondom data-uitwisseling, zoals vastgelegd in de Nederlandse Digitaliseringsstrategie. De App haalt zijn data direct bij de bron via API's, werkt volledig op basis van open standaarden en legt nadruk op privacy van de burger door de data alleen bij de burger samen te brengen.
 
 
-<p class="note" title="index">
-Dit hoofdstuk is toegevoegd met `class="informative"` in `config.js`.
-</p>
-
 ## Leeswijzer

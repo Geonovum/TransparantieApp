@@ -18,5 +18,5 @@
 
 ### Aanpassingen aan software
 
-## concluise praktijkbeproeving
+## conclusie praktijkbeproeving
 
