@@ -10,7 +10,7 @@ Deze repository bevat de werkversie van ons eindrapport.
 Het wordt bijgewerkt tot het einde van het project op 31-8-2026. Daarna wordt een definitieve versie gepubliceerd op docs.geostandaarden.nl 
 
 ## Code transparantieApp
-Deze ropsitory zal ook de code van de transparantieApp zoals deze in ons project ontwikkeld wordt gaan bevatten.
+Deze repository zal ook de code van de transparantieApp zoals deze in ons project ontwikkeld wordt gaan bevatten.
 
 ## Logboek Dataverwerkingen
 De transparantieApp maakt gebruik van en ontwikkeld door aan de standaard logboek data verwerkingen. We dragen bij aan de standaard door het ontwikkelen van extensie voor het lezen, als ook het bijwerken van de referentie implementatie van de standaard.
