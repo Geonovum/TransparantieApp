@@ -93,13 +93,29 @@ let respecConfig = {
   // - Voeg dan pas hieronder toe.
   localBiblio: 
   {
-    MIM12: {
-      id: "MIM12",
-      title: "MIM - Metamodel Informatie Modellering (Versie 1.2)",
-      href: "https://docs.geostandaarden.nl/mim/def-st-mim-20240613/",
+    FSAUTH: {
+      id: "FSAUTH",
+      title: "Forum Standaardisatie Authenticatie Standaarden",
+      href: "https://www.forumstandaardisatie.nl/open-standaarden/authenticatie-standaarden",
       status: "Definitief",
       publisher: "Geonovum",
-      date: "2024-06-13"
+      date: "2020-03-23"
+    },
+    LDV: {
+      id: "LDV",
+      title: "Standaard Logboek dataverwerkingen",
+      href: "https://logius-standaarden.github.io/logboek-dataverwerkingen/#detailniveaus",
+      status: "Werkversie",
+      publisher: "Logius",
+      date: "2026-01-06"
+    },
+    DIGIDAPP2APP: {
+      id: "DIGIDAPP2APP",
+      title: "Functionele beschrijving DigiD app",
+      href: "https://www.logius.nl/onze-dienstverlening/toegang/digid/documentatie/functionele-beschrijving-digid-app",
+      status: "Definitief",
+      publisher: "Logius",
+      date: "2023-11-18"
     }
   }
 };
