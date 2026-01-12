@@ -7,22 +7,20 @@ Dit hoofdstuk beschrijft de gebruikerswensen die relevant zijn voor de Transpara
 
 In gesprekken met softwareontwikkelaars en het projectteam is verkend welke data momenteel beschikbaar is en welke ambities de TransparantieApp moet ondersteunen. Uit bestaande simulaties binnen Digilab blijkt dat reeds relevante informatie wordt vastgelegd over gegevensuitwisseling en besluitvorming, zoals momenten waarop gegevens worden geraadpleegd of gedeeld. Het hergebruik van deze bestaande data en simulaties wordt gezien als een kansrijke basis voor verdere ontwikkeling, zie afbeelding 1.
 
-Afbeelding 1:
-![Schermweergave van een webportaal met de pagina “Dataverwerkingen”. Links staat een navigatiemenu met onderdelen zoals Home, Berichtenbox, Identiteit en Dataverwerkingen (geselecteerd). In het hoofdgedeelte staat een overzicht van dataverwerkingen van de laatste 7 dagen, gefilterd op alle organisaties en activiteiten. Per organisatie (A en B) worden verwerkingsactiviteiten getoond, zoals Kinderopvangtoeslag registreren, Verifieer toeslag, Bereken toeslag en Inzage persoonsgegevens. Rechts van elke activiteit staat een tijdstip (12-12-2025, 09:39:45) en de verwerkingsduur in milliseconden, weergegeven als groene en blauwe balken. Bovenaan is een tijdlijn met datums zichtbaar.](Simulatie van de transparantieapp.png)
-
-
 <figure>
-  <a href="media/Simulatie van de transparantieapp.png)">
+  <a href="media/Simulatie van de transparantieapp.png">
     <img
-      src="media/Simulatie van de transparantieapp.png)"
+      src="media/Simulatie van de transparantieapp.png"
       alt="Schermweergave van een webportaal met de pagina “Dataverwerkingen”. Links staat een navigatiemenu met onderdelen zoals Home, Berichtenbox, Identiteit en Dataverwerkingen (geselecteerd). In het hoofdgedeelte staat een overzicht van dataverwerkingen van de laatste 7 dagen, gefilterd op alle organisaties en activiteiten. Per organisatie (A en B) worden verwerkingsactiviteiten getoond, zoals Kinderopvangtoeslag registreren, Verifieer toeslag, Bereken toeslag en Inzage persoonsgegevens. Rechts van elke activiteit staat een tijdstip (12-12-2025, 09:39:45) en de verwerkingsduur in milliseconden, weergegeven als groene en blauwe balken. Bovenaan is een tijdlijn met datums zichtbaar."
       style="max-width: 100%; height: auto;"
     />
   </a>
   <figcaption>
-   Afbeelding: Eerste versie van simulatie van de transparantie app
+   Afbeelding 1: Eerste versie van simulatie van TransparantieApp
+  
   </figcaption>
 </figure>
+
 
 
 
