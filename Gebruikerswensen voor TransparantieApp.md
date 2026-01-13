@@ -1,5 +1,4 @@
 # Gebruikerswensen voor TransparantieApp
-TODO: wat voor relevante onderzoeken zijn er al gedaan naar gebruikswensen bij transparantie in besluitvorming? Wat kunnen we daaruit leren voor de TransparantieApp en lezen logging standaard?
 
 Dit hoofdstuk beschrijft de gebruikerswensen die relevant zijn voor de TransparantieApp. De inzichten zijn gebaseerd op gesprekken met betrokkenen binnen het project, interviews met inhoudelijke experts en literatuuronderzoek naar transparantie, datagebruik en digitale dienstverlening door de overheid. Het doel van dit hoofdstuk is niet om een uitputtende set eisen te formuleren, maar om de belangrijkste gebruikersperspectieven en spanningsvelden te schetsen die richting geven aan het ontwerp van de TransparantieApp en de standaard voor het lezen van logging. 
 
