@@ -126,6 +126,27 @@ let respecConfig = {
       status: "Definitief",
       publisher: "Logius",
       date: "2023-11-18"
-    }
+    },
+	  GRIP : {
+      id: "GRIP",
+      title: "Grip op eigen gegevens ",
+      status: "Definitief",
+      publisher: "Danny Lämmerhirt & Julia Jansen (Waag)",
+      date: "2024-01-05"
+    },
+	KWALITATIEF: {
+      id: "KWALITATIEF",
+      title: "Kwalitatief burgeronderzoek: gegevens bij besluiten ",
+      status: "Definitief",
+      publisher: "Bureau Mare",
+      date: "2025-25-07"
+    },
+	 DIGNITY: {
+      id: "DIGNITY",
+      title: "D1.2 Benchmark of factors affecting use of digital products and services across Europe",
+      status: "Definitief",
+      publisher: "DIGNITY",
+      date: "2022-27-06"
+    },
   }
 };
