@@ -201,7 +201,6 @@ Iedere organisatie levert alleen zijn eigen logs terug. De frontend roept meerde
 - Complexiteit bij frontend:
     - Meerdere calls
     - Foutafhandeling
-    - Extra stappen om 
 - Certificaat wordt éénmalig aangemaakt in activatie stap en dient daarna opgeslagen te worden op de client t.b.v. vervolg sessies
 - Public private key pairs gegeneerd op de client. Alle communicatie tussen bron organisatie en app gebruikt dezelfde key pair. Geen forward secrecy zoals bij een standaard HTTPS verbinding met DHE.
 - Enkel te gebruiken voor een native-app
@@ -211,26 +210,77 @@ Iedere organisatie levert alleen zijn eigen logs terug. De frontend roept meerde
 - Onduidelijk hoe een uitgegeven certificaat ge-revoked kan worden. 
 - Authorisatie mogelijkheden beperkt: het certificaat bevat een BSN nummer en enkel data betreffende deze BSN is toegankelijk. Ook een ambtenaar kan geen toegang krijgen tot data, behalve de data gekoppeld aan zijn eigen BSN.
 
+
+### Architectuur oplossing 4: pseudoniemen 
+
+#### Kernidee
+
+Beperk verspeiding van het primair identificeerde kenmerken (BSN, RSIN, etc). 
+
+- Laat de gebruiken kiezen waarmee hij of zij zich wil identificeren, b.v. via Digi-D of via e-Herkenning. 
+- Communiceer geen gevoelige gegevens zoals een BSN aan de frontend maar een session ID. 
+- Gebruik van BSN nummer blijft beperkt tot identify provider, DigiD en pseudo exchange service. De frontend (browser of native app) en de bronorganisaties werken niet met het BSN.
+
+#### Sequence diagram
+
+<figure>
+  <a href="media/psuedo.png">
+    <img
+      src="media/pseudo.png"
+      alt="Sequence diagram van de pseudoniemen architectuur"
+      style="max-width: 100%; height: auto;"
+    />
+  </a>
+  <figcaption>
+    Sequence diagram van de pseudoniemen architectuur
+  </figcaption>
+</figure>
+
+Bron organisatie staan vrij om zelf een identifier te kiezen. Dit is het `data subject id`. Dit mag het BSN zijn indien de bron organisatie hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. 
+
+Voor een correcte werking van de applicatie is het wel van belang dat een bron organisatie in staat is om een session ID (welke zich bevind in het JWT token) om te zetten in zijn eigen gekozen identifier. 
+
+De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (`data subject id`) van de bron organisatie. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. 
+
+Bron organisaties welke wettelijke de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en rechtstreeks het BSN nummer gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de bron organisatie. De tweede stap is nodig wanneer bron organisaties niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de bron organisatie een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de bron organisatie en gebruikt als `data subject id` waarmee de log gegevens zijn opgeslagen.
+
+Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenmerk te versleutelen met een steutel welke alleen bekend is bij de pseudo exchange service, maar niet bij de bron organisatie. De vertaling van een primair identificeerde kenmerk levert dus altijd hetzelfde pseudo-kenmerk op, maar vanuit het pseudo kenmerk kan niet het primair identificeerde kenmerk herleid worden. 
+
+#### Voor- en nadelen
+
+**Voordelen**
+
+- Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de bron organisaties verwerken deze niet. 
+
+
+**Nadelen**
+
+- Iedere API call naar de bron organisatie, resulteert in een extra server-to-server API call, richting de identify provider.  
+
+
+Zie daarnaast de [voor- en nadelen](#voor-en-nadelen-0) van architectuur oplossing 2. 
+
+
 ## Vergelijking
 
 
-| Aspect                         | Backend aggregatie | JWT          | VO-RIJK     | 
-| ------------------------------ | ------------------ | ------------ | ----------- |
-| BSN in frontend                | Ja                 | Ja           | Ja          |
-| Log gegevens centraal verwerkt | Ja                 | Nee          | Nee         |
-| Aggregatie                     | Backend            | Frontend     | Frontend    | 
-| Complexiteit frontend          | Laag               | Gemiddeld    | Hoog        |
-| Compatibel met type clients    | Web & Native       | Web & Native | Native      |
+| Aspect                         | Backend aggregatie | JWT          | VO-RIJK     | Pseudoniemen  | 
+| ------------------------------ | ------------------ | ------------ | ----------- | ------------- | 
+| BSN in frontend                | Ja                 | Ja           | Ja          | Nee           |
+| Log gegevens centraal verwerkt | Ja                 | Nee          | Nee         | Nee           |
+| Aggregatie                     | Backend            | Frontend     | Frontend    | Frontend      |
+| Complexiteit frontend          | Laag               | Gemiddeld    | Hoog        | Gemiddeld     |
+| Compatibel met type clients    | Web & Native       | Web & Native | Native      | Web & Native  |
 
 ### Nog niet bekeken alternatieven
-
-#### JWT token zonder BSN
-
-In de variant “backend aggregatie architectuur” kan het BSN nummer in het JWT token vervangen worden door een pseudo-anonieme identifier. Het BSN nummer hoeft dat niet gecommuniceerd te worden met de frontend. 
 
 #### DigiD App in plaats van Browser
 
 Inloggen met DigiD kan via app2app [[?DIGIDAPP2APP]]. De gebruiker maakt dan geen uitstapje naar de webbrowser maar een uitstapje naar de DigiD app. Er zijn twee varianten beschreven via SAML en via OIDC. Echter de OIDC variant is nog niet algemeen beschikbaar:
 > Noot: Deze aansluitvorm is nog niet algemeen beschikbaar voor dienstaanbieders.  
+
+#### Alternatief vergelijkbaar met Medmij 
+
+Als alternatief kan gekeken worden naar Medmij. Het Medmij stelsel is een set van afspraken om gegevens uit te wisselen tussen PGO's (Persoonlijke Gezondheidsomgevingen) en zorgdienstverleners welke gegevens beschikbaar stellen (Ziekenhuis, huisarts, lab). In het Medmij stelsel wordt expliciet toestemming gevraagd om gegevens te delen. De gebruiker dient per zorgdienstverlener expliciet toestemming te geven voor het delen van informatie met de PGO. Zonder deze toestemming is er dus geen data te zien in het PGO. Qua UX heeft dit overduidelijk nadelen, maar de gegevens uitwisseling is heel helder en er wordt alleen data uitgewisseld indien de gebruiker hiervoor akkoord heeft gegeven. 
 
 
