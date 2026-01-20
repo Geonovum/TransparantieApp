@@ -221,6 +221,8 @@ Beperk verspeiding van het primair identificeerde kenmerken (BSN, RSIN, etc).
 - Communiceer geen gevoelige gegevens zoals een BSN aan de frontend maar een session ID. 
 - Gebruik van BSN nummer blijft beperkt tot identify provider, DigiD en pseudo exchange service. De frontend (browser of native app) en de bronorganisaties werken niet met het BSN.
 
+In de kern is deze architetuuroplossing een uitbreiding op oplossing 2 (JWT) waarbij de verspreiding van primair identificeren kenmerken zoveel mogelijk beperkt wordt.
+
 #### Sequence diagram
 
 <figure>
@@ -236,13 +238,13 @@ Beperk verspeiding van het primair identificeerde kenmerken (BSN, RSIN, etc).
   </figcaption>
 </figure>
 
-Bron organisatie staan vrij om zelf een identifier te kiezen. Dit is het `data subject id`. Dit mag het BSN zijn indien de bron organisatie hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. 
+[Verwerkingsverantwoordelijken](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-verantwoordelijke) staan vrij om zelf een identifier te kiezen. Dit is het `data subject id`. Dit mag het BSN zijn indien de verwerkingsverantwoordelijke hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. 
 
-Voor een correcte werking van de applicatie is het wel van belang dat een bron organisatie in staat is om een session ID (welke zich bevind in het JWT token) om te zetten in zijn eigen gekozen identifier. 
+Voor een correcte werking van de applicatie is het wel van belang dat een verwerkingsverantwoordelijke in staat is om een session ID (welke zich bevindt in het JWT token) om te zetten in zijn eigen gekozen identifier (`data subject id`). 
 
-De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (`data subject id`) van de bron organisatie. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. 
+De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (`data subject id`) van de verwerkingsverantwoordelijke. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk, b.v. een BSN voor een burger of een RSIN voor een bedrijf. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. 
 
-Bron organisaties welke wettelijke de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en rechtstreeks het BSN nummer gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de bron organisatie. De tweede stap is nodig wanneer bron organisaties niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de bron organisatie een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de bron organisatie en gebruikt als `data subject id` waarmee de log gegevens zijn opgeslagen.
+Verwerkingsverantwoordelijken welke wettelijk de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en b.v. rechtstreeks het BSN gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de verwerkingsverantwoordelijke. De tweede stap is nodig wanneer de verwerkingsverantwoordelijken niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de verwerkingsverantwoordelijke een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de verwerkingsverantwoordelijke en gebruikt als `data subject id` waarmee de log gegevens zijn opgeslagen.
 
 Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenmerk te versleutelen met een steutel welke alleen bekend is bij de pseudo exchange service, maar niet bij de bron organisatie. De vertaling van een primair identificeerde kenmerk levert dus altijd hetzelfde pseudo-kenmerk op, maar vanuit het pseudo kenmerk kan niet het primair identificeerde kenmerk herleid worden. 
 
@@ -250,12 +252,12 @@ Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenm
 
 **Voordelen**
 
-- Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de bron organisaties verwerken deze niet. 
+- Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de verwerkingsverantwoordelijke verwerken deze niet. 
 
 
 **Nadelen**
 
-- Iedere API call naar de bron organisatie, resulteert in een extra server-to-server API call, richting de identify provider.  
+- Iedere API call naar een verwerkingsverantwoordelijke, resulteert in een extra server-to-server API call, richting de identify provider.  
 
 
 Zie daarnaast de [voor- en nadelen](#voor-en-nadelen-0) van architectuur oplossing 2. 
@@ -264,13 +266,17 @@ Zie daarnaast de [voor- en nadelen](#voor-en-nadelen-0) van architectuur oplossi
 ## Vergelijking
 
 
-| Aspect                         | Backend aggregatie | JWT          | VO-RIJK     | Pseudoniemen  | 
-| ------------------------------ | ------------------ | ------------ | ----------- | ------------- | 
-| BSN in frontend                | Ja                 | Ja           | Ja          | Nee           |
-| Log gegevens centraal verwerkt | Ja                 | Nee          | Nee         | Nee           |
-| Aggregatie                     | Backend            | Frontend     | Frontend    | Frontend      |
-| Complexiteit frontend          | Laag               | Gemiddeld    | Hoog        | Gemiddeld     |
-| Compatibel met type clients    | Web & Native       | Web & Native | Native      | Web & Native  |
+| Aspect                                               | Backend aggregatie | JWT          | VO-RIJK     | Pseudoniemen            | 
+| ---------------------------------------------------- | ------------------ | ------------ | ----------- | ----------------------- | 
+| BSN in frontend                                      | Ja                 | Ja           | Ja          | Nee                     |
+| Log gegevens centraal verwerkt                       | Ja                 | Nee          | Nee         | Nee                     |
+| Aggregatie                                           | Backend            | Frontend     | Frontend    | Frontend                |
+| Complexiteit frontend                                | Laag               | Gemiddeld    | Hoog        | Gemiddeld               |
+| Compatibel met type clients                          | Web & Native       | Web & Native | Native      | Web & Native            |
+| Identificeerde kenmerken                             | BSN [1]            | BSN          | Enkel BSN   | Keuze verantwoordelijke |
+| Logregels lezen over meerdere subject ID's mogelijk  | Ja                 | Ja           | Nee         | Ja                      |
+
+[1] Variant waarbij de keuze aan de verwerkingsverantwoordelijke overgelaten wordt mogelijk. 
 
 ### Nog niet bekeken alternatieven
 
