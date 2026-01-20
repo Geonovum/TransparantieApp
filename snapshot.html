@@ -1408,7 +1408,7 @@ ul.index code{color:inherit}
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">19 januari 2026</time>
+      <time class="dt-published" datetime="2025-11-17">20 januari 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1746,6 +1746,7 @@ maatwerkoplossingen.</li>
 <li>Communiceer geen gevoelige gegevens zoals een BSN aan de frontend maar een session ID. </li>
 <li>Gebruik van BSN nummer blijft beperkt tot identify provider, DigiD en pseudo exchange service. De frontend (browser of native app) en de bronorganisaties werken niet met het BSN.</li>
 </ul>
+<p>In de kern is deze architetuuroplossing een uitbreiding op oplossing 2 (JWT) waarbij de verspreiding van primair identificeren kenmerken zoveel mogelijk beperkt wordt.</p>
 </section><section id="sequence-diagram-2"><div class="header-wrapper"><h5 id="x6-2-4-2-sequence-diagram"><bdi class="secno">6.2.4.2 </bdi>Sequence diagram</h5><a class="self-link" href="#sequence-diagram-2" aria-label="Permalink for Section 6.2.4.2"></a></div>
 <figure id="fig-sequence-diagram-van-de-pseudoniemen-architectuur">
   <a href="media/psuedo.png">
@@ -1756,19 +1757,19 @@ maatwerkoplossingen.</li>
   </span></figcaption>
 </figure>
 
-<p>Bron organisatie staan vrij om zelf een identifier te kiezen. Dit is het <code>data subject id</code>. Dit mag het BSN zijn indien de bron organisatie hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. </p>
-<p>Voor een correcte werking van de applicatie is het wel van belang dat een bron organisatie in staat is om een session ID (welke zich bevind in het JWT token) om te zetten in zijn eigen gekozen identifier. </p>
-<p>De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (<code>data subject id</code>) van de bron organisatie. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. </p>
-<p>Bron organisaties welke wettelijke de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en rechtstreeks het BSN nummer gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de bron organisatie. De tweede stap is nodig wanneer bron organisaties niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de bron organisatie een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de bron organisatie en gebruikt als <code>data subject id</code> waarmee de log gegevens zijn opgeslagen.</p>
+<p><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-verantwoordelijke">Verwerkingsverantwoordelijken</a> staan vrij om zelf een identifier te kiezen. Dit is het <code>data subject id</code>. Dit mag het BSN zijn indien de verwerkingsverantwoordelijke hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. </p>
+<p>Voor een correcte werking van de applicatie is het wel van belang dat een verwerkingsverantwoordelijke in staat is om een session ID (welke zich bevindt in het JWT token) om te zetten in zijn eigen gekozen identifier (<code>data subject id</code>). </p>
+<p>De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (<code>data subject id</code>) van de verwerkingsverantwoordelijke. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk, b.v. een BSN voor een burger of een RSIN voor een bedrijf. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. </p>
+<p>Verwerkingsverantwoordelijken welke wettelijk de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en b.v. rechtstreeks het BSN gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de verwerkingsverantwoordelijke. De tweede stap is nodig wanneer de verwerkingsverantwoordelijken niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de verwerkingsverantwoordelijke een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de verwerkingsverantwoordelijke en gebruikt als <code>data subject id</code> waarmee de log gegevens zijn opgeslagen.</p>
 <p>Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenmerk te versleutelen met een steutel welke alleen bekend is bij de pseudo exchange service, maar niet bij de bron organisatie. De vertaling van een primair identificeerde kenmerk levert dus altijd hetzelfde pseudo-kenmerk op, maar vanuit het pseudo kenmerk kan niet het primair identificeerde kenmerk herleid worden. </p>
 </section><section id="voor-en-nadelen-2"><div class="header-wrapper"><h5 id="x6-2-4-3-voor-en-nadelen"><bdi class="secno">6.2.4.3 </bdi>Voor- en nadelen</h5><a class="self-link" href="#voor-en-nadelen-2" aria-label="Permalink for Section 6.2.4.3"></a></div>
 <p><strong>Voordelen</strong></p>
 <ul>
-<li>Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de bron organisaties verwerken deze niet.</li>
+<li>Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de verwerkingsverantwoordelijke verwerken deze niet.</li>
 </ul>
 <p><strong>Nadelen</strong></p>
 <ul>
-<li>Iedere API call naar de bron organisatie, resulteert in een extra server-to-server API call, richting de identify provider.</li>
+<li>Iedere API call naar een verwerkingsverantwoordelijke, resulteert in een extra server-to-server API call, richting de identify provider.</li>
 </ul>
 <p>Zie daarnaast de <a href="#voor-en-nadelen-0">voor- en nadelen</a> van architectuur oplossing 2. </p>
 </section></section></section><section id="vergelijking"><div class="header-wrapper"><h3 id="x6-3-vergelijking"><bdi class="secno">6.3 </bdi>Vergelijking</h3><a class="self-link" href="#vergelijking" aria-label="Permalink for Section 6.3"></a></div>
@@ -1817,7 +1818,22 @@ maatwerkoplossingen.</li>
 <td>Native</td>
 <td>Web &amp; Native</td>
 </tr>
+<tr>
+<td>Identificeerde kenmerken</td>
+<td>BSN [1]</td>
+<td>BSN</td>
+<td>Enkel BSN</td>
+<td>Keuze verantwoordelijke</td>
+</tr>
+<tr>
+<td>Logregels lezen over meerdere subject ID's mogelijk</td>
+<td>Ja</td>
+<td>Ja</td>
+<td>Nee</td>
+<td>Ja</td>
+</tr>
 </tbody></table>
+<p>[1] Variant waarbij de keuze aan de verwerkingsverantwoordelijke overgelaten wordt mogelijk. </p>
 <section id="nog-niet-bekeken-alternatieven"><div class="header-wrapper"><h4 id="x6-3-1-nog-niet-bekeken-alternatieven"><bdi class="secno">6.3.1 </bdi>Nog niet bekeken alternatieven</h4><a class="self-link" href="#nog-niet-bekeken-alternatieven" aria-label="Permalink for Section 6.3.1"></a></div>
 <section id="digid-app-in-plaats-van-browser"><div class="header-wrapper"><h5 id="x6-3-1-1-digid-app-in-plaats-van-browser"><bdi class="secno">6.3.1.1 </bdi>DigiD App in plaats van Browser</h5><a class="self-link" href="#digid-app-in-plaats-van-browser" aria-label="Permalink for Section 6.3.1.1"></a></div>
 <p>Inloggen met DigiD kan via app2app [<cite><a class="bibref" data-link-type="biblio" href="#bib-digidapp2app" title="Functionele beschrijving DigiD app">DIGIDAPP2APP</a></cite>]. De gebruiker maakt dan geen uitstapje naar de webbrowser maar een uitstapje naar de DigiD app. Er zijn twee varianten beschreven via SAML en via OIDC. Echter de OIDC variant is nog niet algemeen beschikbaar:</p>
