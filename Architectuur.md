@@ -21,7 +21,7 @@ deze organisaties hun data of verantwoordelijkheid uit handen geven.
 - Elke organisatie biedt een **API** waarmee logs kunnen worden opgevraagd op basis van **BSN/RSIN**.
 - Gebruik bijvoorkeur OIDC. OIDC staat op de "Pas toe of leg uit" lijst van standaarden [[?FSAUTH]]. Ook SAML staat op deze lijst, maar het idee is om naar OIDC toe te migreren. 
 
-## Architectuuroplossingen
+## Authenticatie/autorisatie gebruiker TransparantieApp
 In dit hoofdstuk worden meerdere architectuuroplossingen beschreven die het mogelijk maken om
 dataverwerkingen uit verschillende bronorganisaties te ontsluiten en te presenteren in één
 geconsolideerd overzicht.
@@ -263,7 +263,7 @@ Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenm
 Zie daarnaast de [voor- en nadelen](#voor-en-nadelen-0) van architectuur oplossing 2. 
 
 
-## Vergelijking
+### Vergelijking
 
 
 | Aspect                                               | Backend aggregatie | JWT          | VO-RIJK     | Pseudoniemen            | 
@@ -289,4 +289,22 @@ Inloggen met DigiD kan via app2app [[?DIGIDAPP2APP]]. De gebruiker maakt dan gee
 
 Als alternatief kan gekeken worden naar Medmij. Het Medmij stelsel is een set van afspraken om gegevens uit te wisselen tussen PGO's (Persoonlijke Gezondheidsomgevingen) en zorgdienstverleners welke gegevens beschikbaar stellen (Ziekenhuis, huisarts, lab). In het Medmij stelsel wordt expliciet toestemming gevraagd om gegevens te delen. De gebruiker dient per zorgdienstverlener expliciet toestemming te geven voor het delen van informatie met de PGO. Zonder deze toestemming is er dus geen data te zien in het PGO. Qua UX heeft dit overduidelijk nadelen, maar de gegevens uitwisseling is heel helder en er wordt alleen data uitgewisseld indien de gebruiker hiervoor akkoord heeft gegeven. 
 
+### Conclusie Authenticatie/Autorisatie
 
+We kiezen voor de eerste imlementatie voor de JWT oplossing. Deze is op korte termijn implementeerbaar en laat de meeste ruimte voor usecases waarbij andere gebruikers dan burger/bedrijf via de transparatntieApp ook de lezen API willen benaderen. Denk bijvoorbeeld aan ambtenaren die vanuit hun functie willen herleiden wat er gebeurd is. We verkennen de optie VO-Rijk wel verder, waarbij we eerst nader kijken of de JWT die in VO-rijk wordt toegepast compatible is met het NLGov profiel op OAuth 2.0[[OAuth]].
+
+## Keuze web-app vs native-app
+
+Er zijn groweg twee manieren om een app voor een telefoon (of tablet) te maken. Een is een native app voor het besturingssysteem van je device, in de praktijk android of IOS/IpadOS. De andere is een app die feitelijk een webpagina is die (ook) geoptimaliseerd is voor gebruik op telefoon/tablet. Deze laatste heet een web-app.
+
+### Native-app
+
+We zijn er bij de oorspronkelijke aanvraag van dit project vanuit gegaan dat we de aanpak van VO-Rijk zoveel mogelijk volgen. Dat zou voor deze keuze betekenen dat we een native app bouwen. Voordeel is dat we hergebruik kunnen maken van VO-rijk componenten en dat je gebruikt kan maken van device native voorzieningen zoals een "secure enclave" voor het bewaren van private keys voor beveiliging.
+
+### Web-app
+
+We weten echter ook dat het eindresultaat geen productiewaardige app gaat zijn en we willen wel dat het resultaat zoveel als mogelijk herbruikbaar is. Met name voor herbruikbaarheid biedt de webapp voordelen. Het maakt onze resultaten (UX design, design system, gebruikersonderzoek) beter herbruikbaar omdat het ook direct toepasbaar is in browsers op desktops. Wanneer we voor een webapp (en HTML) kiezen kunnen we hergebruik maken van het NL-designsystem[[NL-Design]]. Dit design system bestaat al en is al ontwikkeld op voor ons belangrijke requirements als WCAG compliance[[WCAG]] en voldoet aan de rijkshuisstijl.  
+
+### Conclusie
+
+We laten de herbruikbaarheid zwaarder wegen en kiezen voor een web-app.
