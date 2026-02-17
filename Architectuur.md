@@ -303,7 +303,7 @@ We zijn er bij de oorspronkelijke aanvraag van dit project vanuit gegaan dat we 
 
 ### Web-app
 
-We weten echter ook dat het eindresultaat geen productiewaardige app gaat zijn en we willen wel dat het resultaat zoveel als mogelijk herbruikbaar is. Met name voor herbruikbaarheid biedt de webapp voordelen. Het maakt onze resultaten (UX design, design system, gebruikersonderzoek) beter herbruikbaar omdat het ook direct toepasbaar is in browsers op desktops. Wanneer we voor een webapp (en HTML) kiezen kunnen we hergebruik maken van het NL-designsystem[[NL-Design]]. Dit design system bestaat al en is al ontwikkeld op voor ons belangrijke requirements als WCAG compliance[[WCAG]] en voldoet aan de rijkshuisstijl.  
+We weten echter ook dat het eindresultaat geen productiewaardige app gaat zijn en we willen wel dat het resultaat zoveel als mogelijk herbruikbaar is. Met name voor herbruikbaarheid biedt de webapp voordelen. Het maakt onze resultaten (UX design, design system, gebruikersonderzoek) beter herbruikbaar omdat het ook direct toepasbaar is in browsers op desktops. Wanneer we voor een webapp (en HTML) kiezen kunnen we hergebruik maken van het NL-designsystem[[NLDesign]]. Dit design system bestaat al en is al ontwikkeld op voor ons belangrijke requirements als WCAG compliance[[WCAG]] en voldoet aan de rijkshuisstijl.  
 
 ### Conclusie
 
