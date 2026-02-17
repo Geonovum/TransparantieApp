@@ -134,19 +134,40 @@ let respecConfig = {
       publisher: "Danny Lämmerhirt & Julia Jansen (Waag)",
       date: "2024-01-05"
     },
-	KWALITATIEF: {
+	  KWALITATIEF: {
       id: "KWALITATIEF",
       title: "Kwalitatief burgeronderzoek: gegevens bij besluiten ",
       status: "Definitief",
       publisher: "Bureau Mare",
       date: "2025-25-07"
     },
-	 DIGNITY: {
+	  DIGNITY: {
       id: "DIGNITY",
       title: "D1.2 Benchmark of factors affecting use of digital products and services across Europe",
       status: "Definitief",
       publisher: "DIGNITY",
       date: "2022-27-06"
     },
+    BIBLIOTHEEKNETWERK: {
+      id: "bibliotheeknetwerk",
+      title: "Digitale vaardigheden en digitaal burgerschap in de bibliotheek",
+      href: "https://www.bibliotheeknetwerk.nl/artikel/digitale-vaardigheden-en-digitaal-burgerschap-in-de-bibliotheek",
+      status: "Definitief",
+      publisher: "Bibliotheeknetwerk",
+      date: "2025-10-30"
+    },
+    OAuth: {
+      id: "OAuth",
+      title: "NL GOV Assurance profile for OAuth 2.0",
+      href: 'https://gitdocumentatie.logius.nl/publicatie/api/oauth/',
+      status: "Definitief",
+      publisher: "Logius",
+      date: "2024-12-03"
+    },
+    NLDesign: {
+      id: "NLDesign",
+      title: "NL Design System",
+      href: "https://nldesignsystem.nl/",
+    }
   }
 };
