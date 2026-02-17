@@ -1422,7 +1422,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry informative"><div class="head">
+<body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">TransparantieApp rapport</h1>
     
@@ -1877,10 +1877,10 @@ maatwerkoplossingen.</li>
 <section id="reflectie"><div class="header-wrapper"><h2 id="x7-reflectie"><bdi class="secno">7. </bdi>Reflectie</h2><a class="self-link" href="#reflectie" aria-label="Permalink for Section 7."></a></div>
 <p>Mijn zorg is dat een gedistribueerde opslag met frontend-samenvoeging:</p>
 <ul>
-<li>verantwoordelijkheden rondom verborgen verwerkingen bij de verkeerde partij kan leggen (zie bedenking 1).</li>
-<li>spanning oplevert met dataminimalisatie (zie bedenking 1).</li>
-<li>security-risico’s introduceert in de vorm van traceId-endpoints (zie bedenking 2).</li>
-<li>inconsistent wordt zodra niet-digitale inzage nodig is (zie bedenking 3).</li>
+<li>verantwoordelijkheden rondom verborgen verwerkingen bij de verkeerde partij kan leggen (<a href="#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid">zie bedenking 1</a>).</li>
+<li>spanning oplevert met dataminimalisatie (<a href="#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid">zie bedenking 1</a>).</li>
+<li>security-risico’s introduceert in de vorm van traceId-endpoints (<a href="#bedenking-2-data_subject_id-en-toegangscontrole">zie bedenking 2</a>).</li>
+<li>inconsistent wordt zodra niet-digitale inzage nodig is (<a href="#bedenking-3-niet-digitale-inzage">zie bedenking 3</a>).</li>
 <li>en wordt gelegitimeerd met een vergelijking (VO-rijk) die inhoudelijk niet opgaat.</li>
 </ul>
 <section id="bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid"><div class="header-wrapper"><h3 id="x7-1-bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid"><bdi class="secno">7.1 </bdi>Bedenking 1 – Verborgen verwerkingen en verantwoordelijkheid</h3><a class="self-link" href="#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid" aria-label="Permalink for Section 7.1"></a></div>
@@ -1953,13 +1953,16 @@ Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als <code>d
 <ul>
 <li>De zichtbaarheid van logregels kan afhankelijk zijn van contextinformatie welke niet binnen de bevraagde organisatie aanwezig is (bijvoorbeeld lopend onderzoek).</li>
 <li>Tijdelijkheid (wel/niet vrijgeven) kan per trace verschillen.</li>
-<li>Er kunnen onderlinge afhankelijkheden zijn tussen verwerkingen die niet te leggen zijn zonder gebruik te maken van het traceId.</li>
+<li>Er kunnen onderlinge afhankelijkheden zijn tussen verwerkingen die niet te leggen zijn zonder gebruik te maken van het traceId. </li>
+<li>De VO-Rijk applicatie kent geen niet-digitale variant.</li>
 </ul>
 <p>Het probleem is dus niet alleen technisch complexer, maar ook wezenlijk anders. Het samenvoegen is geen eenvoudige aggregatie, maar het reconstrueren van een keten van verwerkingen met onderlinge relaties. Daarom is het de vraag of het verstandig is om dezelfde architectuurprincipes toe te passen als bij het Vorderingenoverzicht. Het onderliggende probleem is simpelweg niet hetzelfde.</p>
 </section><section id="conclusie-0"><div class="header-wrapper"><h3 id="x7-5-conclusie"><bdi class="secno">7.5 </bdi>Conclusie</h3><a class="self-link" href="#conclusie-0" aria-label="Permalink for Section 7.5"></a></div>
-<p>Waar ligt de verantwoordelijkheid voor zichtbaarheid (vragende of bevraagde organisatie)?
-Waar kan toegangscontrole het veiligst worden ingericht?
-Is een gecontroleerde vorm van centrale aggregatie – al dan niet via een aggregatie backend – uiteindelijk eenvoudiger en veiliger?</p>
+<ol>
+<li>Waar ligt de verantwoordelijkheid voor zichtbaarheid (vragende of bevraagde organisatie)?</li>
+<li>Waar kan toegangscontrole het veiligst worden ingericht?</li>
+<li>Is een gecontroleerde vorm van centrale aggregatie – al dan niet via een aggregatie backend – uiteindelijk eenvoudiger en veiliger?</li>
+</ol>
 </section></section>
 <section id="praktijkbeproeving"><div class="header-wrapper"><h2 id="x8-praktijkbeproeving"><bdi class="secno">8. </bdi>Praktijkbeproeving</h2><a class="self-link" href="#praktijkbeproeving" aria-label="Permalink for Section 8."></a></div>
 <section id="opzet-praktijkbeproeving"><div class="header-wrapper"><h3 id="x8-1-opzet-praktijkbeproeving"><bdi class="secno">8.1 </bdi>Opzet praktijkbeproeving</h3><a class="self-link" href="#opzet-praktijkbeproeving" aria-label="Permalink for Section 8.1"></a></div>
