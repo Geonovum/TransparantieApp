@@ -62,7 +62,7 @@ Er zijn dus geen bevragingen meer op basis van traceID zonder enige vorm van acc
 
 __Probleem__:
 
-Bedenking 1 stelt dat sommige verwerkingen niet zichtbaar mogen worden via frontend-samenvoeging. Een voorbeeld in het project besluit Vertrouwelijkheid wordt vastgelegd per Verwerkingsactiviteit illustreert het probleem:
+Bedenking 1 stelt dat sommige verwerkingen niet zichtbaar mogen worden via frontend-samenvoeging. Een voorbeeld in het project besluit [Vertrouwelijkheid wordt vastgelegd per Verwerkingsactiviteit](https://developer.overheid.nl/kennisbank/data/standaarden/logboek-dataverwerkingen/project-besluiten#vertrouwelijkheid-wordt-vastgelegd-per-verwerkingsactiviteit) illustreert het probleem:
 
 > Opsporingsinstantie A bevraagt bij Overheidsorgaan B data over Betrokkene X in het kader van een lopend onderzoek naar een misdrijf. Betrokkene mag geen inzage krijgen in de verwerking door Opsporingsinstantie A, omdat dit het onderzoek zou kunnen hinderen. Als Betrokkene wel inzage krijgt in de verwerking van Overheidsorgaan B, kan hij alsnog afleiden dat Opsporingsinstantie A deze data heeft opgevraagd, met hetzelfde ongewenste effect.
 
