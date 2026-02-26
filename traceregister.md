@@ -23,8 +23,6 @@ Hiervoor registereerd het Trace register uitsluitend, de volgende drie gegevens:
 
 Er worden in het trace register dus geen log gegevens of inhoudelijke trace-informatie opgeslagen. Het register weet alleen welke trace ID's horen bij welke betrokkenne. 
 
-Het trace register kan een pasje opstellen en ondertekenen voor een inlogde gebruiker. Met dit pasje kan de gebruiker vervolgens zijn eigen logboek data ophalen bij de deelnemende organisaties. 
-
 TODO: Toevoegen, vergelijking/relatie met gemeente dossiers in Mijn Overheid zakelijk
 
 ##  Oplossing in meer detail
