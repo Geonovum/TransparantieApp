@@ -8,18 +8,22 @@ In aanloop naar de demodag van 12 februari is er een eerste versie van de transp
 - Security-risico’s in de vorm van traceId-endpoints ([zie bedenking 2](#bedenking-2-data_subject_id-en-toegangscontrole)).
 
 ## Kernprincipe van de oplossing
-Er wordt een trace register geïntroduceerd. Het trace register registreert uitsluitend:
+Er wordt een Trace Register geïntroduceerd. Het Trace Register geeft een veilig digitaal pasje (het JWT token) aan een burger of bedrijf. Dit pasje laat zien welke gegevens zij mogen bekijken, maar bevat geen gevoelige persoonlijke informatie zoals BSN.
 
-| (ID betrokkene,| traceId, | organisatie ID)|
-|----|-----|---|
+- Het pasje werkt tijdelijk: na korte tijd verloopt het automatisch.
+- Als iemand het pasje laat zien aan een organisatie, controleert die organisatie eerst of het pasje geldig is. Pas daarna mogen ze de gegevens laten zien die bij dat pasje horen.
 
+Zo zorgt het Trace Register ervoor dat iedereen alleen toegang krijgt tot de gegevens die voor hen bedoeld zijn, zonder dat iemand per ongeluk te veel kan zien.
 
-Het trace register:
-- Slaat geen loggegevens of inhoudelijke trace-informatie op.
-- Weet alleen welke traceId’s bij welke betrokkene horen.
-- Genereert op verzoek een ondertekend token waarin traceId’s als claim zijn opgenomen.
+Hiervoor registereerd het Trace register uitsluitend, de volgende drie gegevens:
 
-De inhoudelijke logboek data blijft volledig bij de bronorganisatie. 
+- Betrokkenne ID
+- Trace ID
+- Organisatie ID
+
+Er worden in het trace register dus geen log gegevens of inhoudelijke trace-informatie opgeslagen. Het register weet alleen welke trace ID's horen bij welke betrokkenne. 
+
+Het trace register kan een pasje opstellen en ondertekenen voor een inlogde gebruiker. Met dit pasje kan de gebruiker vervolgens zijn eigen logboek data ophalen bij de deelnemende organisaties. 
 
 TODO: Toevoegen, vergelijking/relatie met gemeente dossiers in Mijn Overheid zakelijk
 
