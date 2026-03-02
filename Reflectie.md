@@ -4,7 +4,8 @@ Mijn zorg is dat een gedistribueerde opslag met frontend-samenvoeging:
 - verantwoordelijkheden rondom verborgen verwerkingen bij de verkeerde partij kan leggen ([zie bedenking 1](#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid)).
 - spanning oplevert met dataminimalisatie ([zie bedenking 1](#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid)).
 - security-risico’s introduceert in de vorm van traceId-endpoints ([zie bedenking 2](#bedenking-2-data_subject_id-en-toegangscontrole)).
-- inconsistent wordt zodra niet-digitale inzage nodig is ([zie bedenking 3](#bedenking-3-niet-digitale-inzage)).
+- niet overheidsbreed op schaalt ([zie bedenking 3](#bedenking-3-schaalbaarheid)).
+- inconsistent wordt zodra niet-digitale inzage nodig is ([zie bedenking 4](#bedenking-4-niet-digitale-inzage)).
 - en wordt gelegitimeerd met een vergelijking (VO-rijk) die inhoudelijk niet opgaat.
 
 ## Bedenking 1 – Verborgen verwerkingen en verantwoordelijkheid
@@ -50,7 +51,13 @@ Wanneer we in plaats daarvan de backend van de WOZ-applicatie verantwoordelijk m
 - blijft toegangscontrole geborgd
 - hoeft b.v. de BAG geen publiek endpoint op basis van enkel een traceId aan te bieden;
 
-## Bedenking 3 – Niet-digitale inzage
+## Bedenking 3 - Schaalbaarheid 
+
+Nederland kent circa 1600 overheidsorganisaties (rijk, uitvoeringsorganisaties, provincies, gemeenten, waterschappen en zbo’s). In de demo worden drie organisaties bevraagd; dat is overzichtelijk en technisch goed beheersbaar, maar dit schaalt niet op wanneer dit wordt uitgerold naar het volledige overheidslandschap. 
+
+De frontend zal de logboeken van alle overheidsorganisaties moeten raadplegen terwijl de verwachting is dat een burger of bedrijf in een gegeven tijdsperiode (b.v. `de afgelopen 6 maanden`) slechts in de logboeken van een beperkt aantal overheidsorganisaties terug te vinden zal zijn.
+
+## Bedenking 4 – Niet-digitale inzage
 
 Naast een digitale applicatie moet er ook een papieren inzage-mogelijkheid zijn voor digitaal minder vaardige burgers. Ongeveer één op de vijf Nederlands is niet voldoende digitaal vaardig [[?BIBLIOTHEEKNETWERK]]. Dan zijn er in feite twee opties:
 
