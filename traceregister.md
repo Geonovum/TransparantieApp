@@ -1,11 +1,12 @@
 # Voorstel: Trace Register
 
 ## Doelstelling
-In aanloop naar de demodag van 12 februari is er een eerste versie van de transparantie app gerealiseerd. Enkele bedenkingen zijn achteraf beschreven in het hoofdstuk reflectie. Dit document beschrijft een voorstel welke twee van deze bedenkingen adresseert. Het doel is een oplossing te realiseren voor de volgende twee bedenkingen:
+In aanloop naar de demodag van 12 februari is er een eerste versie van de transparantie app gerealiseerd. Enkele bedenkingen zijn achteraf beschreven in het hoofdstuk reflectie. Dit document beschrijft een voorstel welke drie van deze bedenkingen adresseert. Het doel is een oplossing te realiseren voor de volgende drie bedenkingen:
 
 - Verantwoordelijkheid voor vertrouwelijke verwerkingen 
 ([zie bedenking 1](#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid))
 - Security-risico’s in de vorm van traceId-endpoints ([zie bedenking 2](#bedenking-2-data_subject_id-en-toegangscontrole)).
+- Schaalbaarheidsuitdagingen bij overheidsbrede uitrol ([zie bedenking 3](#bedenking-3-schaalbaarheid))
 
 ## Kernprincipe van de oplossing
 Er wordt een Trace Register geïntroduceerd. Het Trace Register geeft een veilig digitaal pasje (het JWT token) aan een burger of bedrijf. Dit pasje laat zien welke gegevens zij mogen bekijken, maar bevat geen gevoelige persoonlijke informatie zoals BSN.
@@ -30,7 +31,7 @@ TODO: Toevoegen, vergelijking/relatie met gemeente dossiers in Mijn Overheid zak
 ### Registratie van traceId’s
 De organisatie __welke de trace start__ bepaalt zelf of deze trace direct zichtbaar is, tijdelijk verborgen moet blijven of zelfs permanent uitgesloten is van inzage.
 
-Een niet vertrouwelijke trace wordt direct aangemeld bij het trace register. Een vertrouwelijke trace wordt niet aangemeld bij het trace register. Wanneer vertrouwelijkheid vervalt (bijvoorbeeld na afronding van een onderzoek), kan de betreffende organisatie alsnog de betreffende traceId’s aanmelden.
+Een niet vertrouwelijke trace wordt direct aangemeld bij het trace register. Een vertrouwelijke trace wordt niet aangemeld bij het trace register. Wanneer vertrouwelijkheid vervalt (bijvoorbeeld na afronding van een opsporingsonderzoek), kan de betreffende organisatie alsnog de betreffende traceId’s aanmelden.
 
 
 ### Opvragen door burger of bedrijf
@@ -89,3 +90,11 @@ __Oplossing binnen dit model__:
 Het introduceren van een trace register welke tokens uitgeeft met het traceId in de claims lost dit op: iedere bevraging is ondertekend met een JWT en elke organisatie valideert zelf het token. Trace data wordt enkel verstrekt indien de gevraagde trace informatie is gekoppeld aan één van de trace ID's in het JWT token. 
 
 Bijkomend, er is geen noodzaak voor `data_subject_id` bij elke organisatie. Dit lost een probleem op bij b.v. de BAG waarbij er geen `data_subject_id` in de logregels staan, en hieraan ook moeilijk een zinvolle invulling te geven is.
+
+### Bedenking 3 - Schaalbaarheidsuitdagingen bij overheidsbrede uitrol
+
+Het Trace Register weet per betrokkene welke traceId’s bestaan én bij welke organisatie-ID deze horen. Daardoor hoeft de frontend niet alle organisaties te bevragen, maar uitsluitend organisaties welke daadwerkelijk traces van de betrokkene hebben vastgelegd. 
+
+Het patroon _"Vraag alle 1600 overheidsorganisaties of zij trace informatie hebben over betrokkene"_ veranderd in _"Vraag alleen de organisaties die volgens het Trace Register daadwerkelijk betrokken zijn"_.
+
+Hierdoor ontstaat een oplossing welke overheidsbreed uitgerold kan worden. 
