@@ -33,7 +33,6 @@ De organisatie __welke de trace start__ bepaalt zelf of deze trace direct zichtb
 
 Een niet vertrouwelijke trace wordt direct aangemeld bij het trace register. Een vertrouwelijke trace wordt niet aangemeld bij het trace register. Wanneer vertrouwelijkheid vervalt (bijvoorbeeld na afronding van een opsporingsonderzoek), kan de betreffende organisatie alsnog de betreffende traceId’s aanmelden.
 
-
 ### Opvragen door burger of bedrijf
 Een burger of bedrijf logt in, bijv. via DigiD of eHerkenning bij het trace register. Vervolgens wordt het trace register gevraagd om een JWT te genereren met als claim een lijst van gekoppelde traceId’s. Het JWT token heeft een beperkte geldigheid (korte time-to-live, TTL) 
 
