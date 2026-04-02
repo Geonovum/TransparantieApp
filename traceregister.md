@@ -97,3 +97,100 @@ Het Trace Register weet per betrokkene welke traceId’s bestaan én bij welke o
 Het patroon _"Vraag alle 1600 overheidsorganisaties of zij trace informatie hebben over betrokkene"_ veranderd in _"Vraag alleen de organisaties die volgens het Trace Register daadwerkelijk betrokken zijn"_.
 
 Hierdoor ontstaat een oplossing welke overheidsbreed uitgerold kan worden. 
+
+## Privacy concerns
+
+De introductie van het trace register geeft enkele privacy overwegingen. In het trace register wordt enkel één tabel bijgehouden met de volgende drie kolommen: `traceId`, `persoonsId` en `organisatie`. De trace data zelf blijft decentraal opgeslagen.
+
+Bij een naïve implementatie, waarbij als `persoonsId` het BSN wordt gebruikt kan er desondanks het nodige afgeleid worden. B.v. per persoon kan er een lijst opgesteld worden met welke organisaties een persoon contact heeft gehad. Bij sommige overheidsorganisaties kan enkel het wel of niet hebben van contact een privacy gevoeligaspect zijn. Het loggen van een BSN als `persoonsId` is dus geen optie. 
+
+
+Daarom stellen we voor om pseudoniemen op te slaan als `persoonId`. Qua werking en terminologie sluiten we aan bij het PRS van VWS. 
+
+Het PRS maakt per organisatie en domein een andere pseudoniem. Vanuit één BSN worden er dus voor de Belastingdienst een ander pseudoniem aangemaakt dan voor het Kadaster. Daardoor zijn datasets van het kadaster en van de belastingdienst dus niet te koppelen, _zonder hulp van de pseudoniemendienst_. 
+
+Daarnaast wordt er onderscheidt aangebracht tussen:
+
+- Herleidbare pseudoniemen 
+- Niet herleidbare pseudoniemen
+
+Herleidbare pseudoniemen kunnen door een Pseudoniemendienst terug vertaald worden naar een BSN. Enkel de Pseudoniemendienst is hiertoe in staat en bepaald dus of een partij welke deze vertaling aanvraagd hiertoe gerechtigd is. Een niet herleidbaar pseudoniem kan door niemand terug vertaald worden naar een BSN, ook niet door de pseudoniemendienst. 
+
+Aangezien niet herleidbare pseudoniemen een sterkere vorm van privacy met zich mee brengen stellen we voor om enkel niet herleidbare pseudoniemen op te slaan in het Trace Register. 
+
+### Aanmelden van een `traceId`
+
+<figure id="Sequence diagram voor het aanmelden van een trace">
+<pre class="diagram mermaid">
+sequenceDiagram;
+
+participant A as Organisatie;
+participant B as Pseudoniemendienst;
+participant C as Trace Register;
+
+A->>B: 1. BSN of herleidbaar pseudoniem;
+B->>A: 2. Referentie Code;
+
+A->>C: 3. Register [TraceId, ReferentieCode, Organisatie];
+C->>B: 4. Referentie Code, Domein = Organisatie;
+B->>C: 5. Niet herleidbaar pseudoniem;
+</pre>
+<figcaption>Sequence diagram: Aanmelden van een trace</figcaption>
+</figure>
+
+Bij stap 4 wordt de referentie code ingewisseld voor een pseudoniem. In het request wordt naast de referentie code de organisatie als domein meegestuurd. Hierdoor worden er verschillende pseudoniemen aangemaakt voor verschillende organisaties, zelfs als deze pseudoniemen dezelfde persoon beschrijven.
+
+### Opvragen van `traceId`'s
+
+<figure id="Sequence diagram voor het opvragen van traceId's">
+<pre class="diagram mermaid">
+sequenceDiagram
+
+Participant X as Client applicatie
+participant D as Transparantie-App
+participant B as Pseudoniemendienst
+participant C as Trace Register
+
+X->>D: 1. HTTP GET https://transparantie-app.nl/get-trace-ids
+D->>B: 2. BSN
+D->>X: 3. HTTP Redirect https://trace-register.nl?referentie-code=...
+
+X->>C: 4. HTTP GET https://trace-register.nl?referentie-code=...
+C->>B: 5. Referentie Code, Domein = Batch
+B->>C: 6. Pseudoniem per domein
+C->>X: 7. Response
+</pre>
+<figcaption>Sequence diagram: Opvragen van TraceId's</figcaption>
+</figure>
+
+_Note: In het bovenstaande sequence diagram gaan we er vanuit dat het BSN van de ingelogde gebruiker bekend is bij de transparantie-app, bijvoorbeeld door dat deze is geauthentiseerd via Digi-D of zijn BSN heeft overlegd via b.v. OpenID Connect verifiable credentials._
+
+Stap 5-6 is een batch request waarbij één referentie code en een lijst aan domeinen wordt opgestuurd en er een lijst aan pseudoniemen terug komt. Het trace register vult de lijst met domeinen met alle deelnemende organisaties. Als de gehele overheid mee doet met het logboek, dan is dit dus een lijst van zo'n 1600 domeinen.
+
+Deze batch operatie is niet beschreven in de documentatie van VWS. Zolang het aantal deelnemende organisaties te overzien is kan er ook een request per deelmende organisatie verstuurd worden. Later optimaliseren is dan triviaal door een batch operatie te introduceren.
+
+Het Trace Register retourneerd een JSON response met de volgende structuur:
+
+```json
+{
+  "traces": [{
+    "traceId": "dfac4819-6ced-4f2e-8801-7bcd3970eea8",
+    "organization": "DUO",
+    "accessToken": "... short lived JWT .."
+  }, {
+    ...
+  }]
+}
+```
+
+Met behulp van het `traceId` en het `accessToken` kan de browser applicatie vervolgens rechtstreeks de logboek API van een deelnemende organisatie bevragen. Met behulp van de public key van het Trace Register kan iedere deelnemende organisatie vervolgens verifieren dat het access token authentiek is. 
+
+De extra HTTP redirect (stap 3 en 4) is geïntroduceerd om een duidelijke spliting in beschikbare informatie af te dwingen tussen de transparantie-app backend en het trace register. De transparantie-app weet wie er ingelogd is, maar beschikt niet over bijbehoorde `traceId`'s. Het trace register daarintegen weet niet wie er ingelogd is, maar beschikt wel over de `traceId`'s. Pas in de client applicatie (browser of native) komt deze informatie samen.
+
+In tabel vorm: 
+
+| Applicatie onderdeel | Kennis van identiteit ingelogde gebruiker | Kennis van `traceId`'s van gebruiker |
+|---|---|---|
+| Transparantie App | Ja | Nee | 
+| Trace Register | Nee | Ja | 
+| Client applicatie | Ja | Ja |
