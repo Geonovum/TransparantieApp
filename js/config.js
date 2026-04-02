@@ -44,6 +44,8 @@ let respecConfig = {
   
   //-- publishVersion is verplicht. Hij mag wel leeg zijn [], maar niet de lege string zijn "".
   publishVersion: [],
+
+  preProcess: [window.respecMermaid.createFigures],
  
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beide aan/uit! 
   //previousPublishDate: "2014-05-01",
