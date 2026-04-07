@@ -1,4 +1,4 @@
-# Voorstel: Trace Register
+# Voorstel 1: Trace Register
 
 ## Doelstelling
 In aanloop naar de demodag van 12 februari is er een eerste versie van de transparantie app gerealiseerd. Enkele bedenkingen zijn achteraf beschreven in het hoofdstuk reflectie. Dit document beschrijft een voorstel welke drie van deze bedenkingen adresseert. Het doel is een oplossing te realiseren voor de volgende drie bedenkingen:
@@ -102,7 +102,7 @@ Hierdoor ontstaat een oplossing welke overheidsbreed uitgerold kan worden.
 
 De introductie van het trace register geeft enkele privacy overwegingen. In het trace register wordt enkel één tabel bijgehouden met de volgende drie kolommen: `traceId`, `persoonsId` en `organisatie`. De trace data zelf blijft decentraal opgeslagen.
 
-Bij een naïve implementatie, waarbij als `persoonsId` het BSN wordt gebruikt kan er desondanks het nodige afgeleid worden. B.v. per persoon kan er een lijst opgesteld worden met welke organisaties een persoon contact heeft gehad. Bij sommige overheidsorganisaties kan enkel het wel of niet hebben van contact een privacy gevoeligaspect zijn. Het loggen van een BSN als `persoonsId` is dus geen optie. 
+Bij een naïve implementatie, waarbij als `persoonsId` het BSN wordt gebruikt kan er desondanks het nodige afgeleid worden. B.v. per persoon kan er een lijst opgesteld worden met welke organisaties een persoon contact heeft gehad. Bij sommige overheidsorganisaties kan enkel het wel of niet hebben van contact een privacy gevoelig aspect zijn. Het loggen van een BSN als `persoonsId` is dus geen optie. 
 
 
 Daarom stellen we voor om pseudoniemen op te slaan als `persoonId`. Qua werking en terminologie sluiten we aan bij het PRS van VWS. 
@@ -169,6 +169,10 @@ Stap 5-6 is een batch request waarbij één referentie code en een lijst aan do
 
 Deze batch operatie is niet beschreven in de documentatie van VWS. Zolang het aantal deelnemende organisaties te overzien is kan er ook een request per deelmende organisatie verstuurd worden. Later optimaliseren is dan triviaal door een batch operatie te introduceren.
 
+_Vraag_: Kan één referentie code één of meerdere keren ingewisseld worden voor een pseudoniemen. Zo, nee dan dient de transparantie-app backend meerdere referentie codes aan te vragen zolang er geen batch operatie is. 
+
+_Note:_ Alternatief is om geen pseudoniemdomeinen te gebruiken. Hiermee vervalt de behoefte voor een batch endpoint. De implicatie hiervan is echter dat voor iedere organisatie voor één persoon altijd hetzelfde pseudoniem gebruikt. Pseudoniemen zijn niet herleidbaar, echter de combinatie van organisaties waarmee één persoon contact heeft, kan fugeren als fingerprint.
+
 Het Trace Register retourneerd een JSON response met de volgende structuur:
 
 ```json
@@ -185,7 +189,7 @@ Het Trace Register retourneerd een JSON response met de volgende structuur:
 
 Met behulp van het `traceId` en het `accessToken` kan de browser applicatie vervolgens rechtstreeks de logboek API van een deelnemende organisatie bevragen. Met behulp van de public key van het Trace Register kan iedere deelnemende organisatie vervolgens verifieren dat het access token authentiek is. 
 
-De extra HTTP redirect (stap 3 en 4) is geïntroduceerd om een duidelijke spliting in beschikbare informatie af te dwingen tussen de transparantie-app backend en het trace register. De transparantie-app weet wie er ingelogd is, maar beschikt niet over bijbehoorde `traceId`'s. Het trace register daarintegen weet niet wie er ingelogd is, maar beschikt wel over de `traceId`'s. Pas in de client applicatie (browser of native) komt deze informatie samen.
+De extra HTTP redirect (stap 3 en 4) is geïntroduceerd om een duidelijke spliting in beschikbare informatie af te dwingen tussen de transparantie-app backend en het trace register. De transparantie-app backend weet wie er ingelogd is, maar beschikt niet over bijbehoorde `traceId`'s. Het trace register daarintegen weet niet wie er ingelogd is, maar beschikt wel over de `traceId`'s. Pas in de client applicatie (browser of native) komt deze informatie samen.
 
 In tabel vorm: 
 
@@ -194,3 +198,4 @@ In tabel vorm:
 | Transparantie App | Ja | Nee | 
 | Trace Register | Nee | Ja | 
 | Client applicatie | Ja | Ja |
+
