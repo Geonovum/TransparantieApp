@@ -154,7 +154,6 @@ ul.index code{color:inherit}
   /* Any custom mermaid.js scripts will go here. */
   }
 </style>
-<script charset="utf-8" data-webpack="respec-mermaid:chunk-831" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.2.0/dist/831.js"></script>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Geonovum",
   "nl_organisationStylesURL": "https://tools.geostandaarden.nl/respec/style/",
@@ -1460,14 +1459,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry informative"><div class="head">
+<body class="h-entry informative toc-inline"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">TransparantieApp rapport</h1>
     
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">02 april 2026</time>
+      <time class="dt-published" datetime="2025-11-17">07 april 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1736,7 +1735,7 @@ maatwerkoplossingen.</li>
 <p><strong>Nadelen</strong></p>
 <ul>
 <li>Complexiteit bij frontend:<ul>
-<li>Meerdere HTTP verzoeken. Het aantal te bevragen bronorganisaties bepaald het aantal te versturen HTTP verzoeken.</li>
+<li>Meerdere HTTP verzoeken. Het aantal te bevragen bronorganisaties bepaalt het aantal te versturen HTTP verzoeken.</li>
 <li>Foutafhandeling en retries van mislukte HTTP calls. Eventueel data partieel tonen indien een deel van de verzoeken is geslaagd en een deel is mislukt.</li>
 </ul>
 </li>
@@ -1801,11 +1800,11 @@ maatwerkoplossingen.</li>
 <section id="kernidee-2"><div class="header-wrapper"><h5 id="x6-2-4-1-kernidee"><bdi class="secno">6.2.4.1 </bdi>Kernidee</h5><a class="self-link" href="#kernidee-2" aria-label="Permalink for Section 6.2.4.1"></a></div>
 <p>Beperk verspeiding van het primair identificeerde kenmerken (BSN, RSIN, etc). </p>
 <ul>
-<li>Laat de gebruiken kiezen waarmee hij of zij zich wil identificeren, b.v. via Digi-D of via e-Herkenning. </li>
+<li>Laat de gebruiker kiezen waarmee hij of zij zich wil identificeren, b.v. via Digi-D of via e-Herkenning. </li>
 <li>Communiceer geen gevoelige gegevens zoals een BSN aan de frontend maar een session ID. </li>
 <li>Gebruik van BSN nummer blijft beperkt tot identify provider, DigiD en pseudo exchange service. De frontend (browser of native app) en de bronorganisaties werken niet met het BSN.</li>
 </ul>
-<p>In de kern is deze architetuuroplossing een uitbreiding op oplossing 2 (JWT) waarbij de verspreiding van primair identificeren kenmerken zoveel mogelijk beperkt wordt.</p>
+<p>In de kern is deze architetuuroplossing een uitbreiding op oplossing 2 (JWT) waarbij de verspreiding van primair identificerende kenmerken zoveel mogelijk beperkt wordt.</p>
 </section><section id="sequence-diagram-2"><div class="header-wrapper"><h5 id="x6-2-4-2-sequence-diagram"><bdi class="secno">6.2.4.2 </bdi>Sequence diagram</h5><a class="self-link" href="#sequence-diagram-2" aria-label="Permalink for Section 6.2.4.2"></a></div>
 <figure id="fig-sequence-diagram-van-de-pseudoniemen-architectuur">
   <a href="media/psuedo.png">
@@ -1816,15 +1815,15 @@ maatwerkoplossingen.</li>
   </span></figcaption>
 </figure>
 
-<p><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-verantwoordelijke">Verwerkingsverantwoordelijken</a> staan vrij om zelf een identifier te kiezen. Dit is het <code>data subject id</code>. Dit mag het BSN zijn indien de verwerkingsverantwoordelijke hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. </p>
+<p><a href="https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-verantwoordelijke">Verwerkingsverantwoordelijken</a> staat het vrij om zelf een identifier te kiezen. Dit is het <code>data subject id</code>. Dit mag het BSN zijn indien de verwerkingsverantwoordelijke hiervoor een wettelijke grondslag heeft, maar dat hoeft niet. </p>
 <p>Voor een correcte werking van de applicatie is het wel van belang dat een verwerkingsverantwoordelijke in staat is om een session ID (welke zich bevindt in het JWT token) om te zetten in zijn eigen gekozen identifier (<code>data subject id</code>). </p>
-<p>De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (<code>data subject id</code>) van de verwerkingsverantwoordelijke. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primaire identificeerd kenmerk, b.v. een BSN voor een burger of een RSIN voor een bedrijf. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. </p>
-<p>Verwerkingsverantwoordelijken welke wettelijk de primair identificeerde kenmerken mogen gebruiken, kunnen de tweede stap overslaan en b.v. rechtstreeks het BSN gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, worden hiermee ook bekend bij de verwerkingsverantwoordelijke. De tweede stap is nodig wanneer de verwerkingsverantwoordelijken niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de verwerkingsverantwoordelijke een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de verwerkingsverantwoordelijke en gebruikt als <code>data subject id</code> waarmee de log gegevens zijn opgeslagen.</p>
-<p>Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenmerk te versleutelen met een steutel welke alleen bekend is bij de pseudo exchange service, maar niet bij de bron organisatie. De vertaling van een primair identificeerde kenmerk levert dus altijd hetzelfde pseudo-kenmerk op, maar vanuit het pseudo kenmerk kan niet het primair identificeerde kenmerk herleid worden. </p>
+<p>De identity provider biedt hiervoor een voorziening. Door middel van een server-to-server API call kan het session ID uit het JWT omgezet worden in de identifier (<code>data subject id</code>) van de verwerkingsverantwoordelijke. Dit process verloopt in twee stappen. In de eerste stap wordt het session ID omgezet naar een primair identificerend kenmerk, b.v. een BSN voor een burger of een RSIN voor een bedrijf. In de tweede stap, welke optioneel is, wordt dit kenmerk omgezet in een pseudo kenmerk. </p>
+<p>Verwerkingsverantwoordelijken welke wettelijk de primair identificerende kenmerken mogen gebruiken, kunnen de tweede stap overslaan en b.v. rechtstreeks het BSN gebruiken. Gevolg hiervan is dat primair identificerende kenmerken, zoals het BSN, hiermee ook bekend worden bij de verwerkingsverantwoordelijke. De tweede stap is nodig wanneer de verwerkingsverantwoordelijken niet met de primair identifierende kenmerken kunnen of willen werken. In dat geval kan de verwerkingsverantwoordelijke een pseudo-exchange service aanwijzen. De identify provider laat dan eerst het primair identificeerde kenmerk door de pseudo-exchange vertalen naar een pseudo kenmerk. Het pseudo kenmerk wordt vervolgens weer terug gegeven aan de verwerkingsverantwoordelijke en gebruikt als <code>data subject id</code> waarmee de log gegevens zijn opgeslagen.</p>
+<p>Een pseudo kenmerk kan b.v. tot stand komen door het primair identificeerde kenmerk te versleutelen met een steutel welke alleen bekend is bij de pseudo exchange service, maar niet bij de bron organisatie. De vertaling van een primair identificerend kenmerk levert dus altijd hetzelfde pseudo-kenmerk op, maar vanuit het pseudo kenmerk kan niet het primair identificeerde kenmerk herleid worden. </p>
 </section><section id="voor-en-nadelen-2"><div class="header-wrapper"><h5 id="x6-2-4-3-voor-en-nadelen"><bdi class="secno">6.2.4.3 </bdi>Voor- en nadelen</h5><a class="self-link" href="#voor-en-nadelen-2" aria-label="Permalink for Section 6.2.4.3"></a></div>
 <p><strong>Voordelen</strong></p>
 <ul>
-<li>Verwerking van primair identificeerde kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de verwerkingsverantwoordelijke verwerken deze niet.</li>
+<li>Verwerking van primair identificerende kenmerken zoals BSN blijft beperkt. De client (browser of native-app) en de verwerkingsverantwoordelijke verwerken deze niet.</li>
 </ul>
 <p><strong>Nadelen</strong></p>
 <ul>
@@ -1918,7 +1917,7 @@ maatwerkoplossingen.</li>
 <li>verantwoordelijkheden rondom verborgen verwerkingen bij de verkeerde partij kan leggen (<a href="#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid">zie bedenking 1</a>).</li>
 <li>spanning oplevert met dataminimalisatie (<a href="#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid">zie bedenking 1</a>).</li>
 <li>security-risico’s introduceert in de vorm van traceId-endpoints (<a href="#bedenking-2-data_subject_id-en-toegangscontrole">zie bedenking 2</a>).</li>
-<li>niet overheidsbreed op schaalt (<a href="#bedenking-3-schaalbaarheid">zie bedenking 3</a>).</li>
+<li>niet overheidsbreed opschaalt (<a href="#bedenking-3-schaalbaarheid">zie bedenking 3</a>).</li>
 <li>inconsistent wordt zodra niet-digitale inzage nodig is (<a href="#bedenking-4-niet-digitale-inzage">zie bedenking 4</a>).</li>
 <li>en wordt gelegitimeerd met een vergelijking (VO-rijk) die inhoudelijk niet opgaat.</li>
 </ul>
@@ -1941,7 +1940,7 @@ maatwerkoplossingen.</li>
 <p>Dit wringt met een model waarin alle partijen hun tracing data "blind" beschikbaar stellen voor frontend-samenvoeging.</p>
 </section><section id="bedenking-2-data_subject_id-en-toegangscontrole"><div class="header-wrapper"><h3 id="x7-2-bedenking-2-data_subject_id-en-toegangscontrole"><bdi class="secno">7.2 </bdi>Bedenking 2 – <code>data_subject_id</code> en toegangscontrole</h3><a class="self-link" href="#bedenking-2-data_subject_id-en-toegangscontrole" aria-label="Permalink for Section 7.2"></a></div>
 <p>Volgens de standaard moet iedere logregel een <code>data_subject_id</code> bevatten. In de referentie-implementatie van de WOZ-casus werd dit echter niet toegepast.
-Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als <code>data_subject_id</code>. Dat werkt voor WOZ-service, maar roept vragen op bij registraties zoals de Basisregistratie Adressen en Gebouwen (BAG). Hierin worden enkel adressen en gebouwen beheert, geen persoonsinformatie. </p>
+Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als <code>data_subject_id</code>. Dat werkt voor WOZ-service, maar roept vragen op bij registraties zoals de Basisregistratie Adressen en Gebouwen (BAG). Hierin worden enkel adressen en gebouwen beheerd, geen persoonsinformatie. </p>
 <p>Dan rijst de vraag:</p>
 <ul>
 <li>Moeten we daar alsnog een data_subject_id introduceren? <em>Antwoord Tim: Ja, maar nog geen beslissing welke waarde te gebruiken als data_subject_id.</em></li>
