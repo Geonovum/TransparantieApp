@@ -4,7 +4,7 @@ Mijn zorg is dat een gedistribueerde opslag met frontend-samenvoeging:
 - verantwoordelijkheden rondom verborgen verwerkingen bij de verkeerde partij kan leggen ([zie bedenking 1](#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid)).
 - spanning oplevert met dataminimalisatie ([zie bedenking 1](#bedenking-1-verborgen-verwerkingen-en-verantwoordelijkheid)).
 - security-risico’s introduceert in de vorm van traceId-endpoints ([zie bedenking 2](#bedenking-2-data_subject_id-en-toegangscontrole)).
-- niet overheidsbreed op schaalt ([zie bedenking 3](#bedenking-3-schaalbaarheid)).
+- niet overheidsbreed opschaalt ([zie bedenking 3](#bedenking-3-schaalbaarheid)).
 - inconsistent wordt zodra niet-digitale inzage nodig is ([zie bedenking 4](#bedenking-4-niet-digitale-inzage)).
 - en wordt gelegitimeerd met een vergelijking (VO-rijk) die inhoudelijk niet opgaat.
 
@@ -32,7 +32,7 @@ Dit wringt met een model waarin alle partijen hun tracing data "blind" beschikba
 ## Bedenking 2 – `data_subject_id` en toegangscontrole
 
 Volgens de standaard moet iedere logregel een `data_subject_id` bevatten. In de referentie-implementatie van de WOZ-casus werd dit echter niet toegepast.
-Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als `data_subject_id`. Dat werkt voor WOZ-service, maar roept vragen op bij registraties zoals de Basisregistratie Adressen en Gebouwen (BAG). Hierin worden enkel adressen en gebouwen beheert, geen persoonsinformatie. 
+Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als `data_subject_id`. Dat werkt voor WOZ-service, maar roept vragen op bij registraties zoals de Basisregistratie Adressen en Gebouwen (BAG). Hierin worden enkel adressen en gebouwen beheerd, geen persoonsinformatie. 
 
 Dan rijst de vraag:
 - Moeten we daar alsnog een data_subject_id introduceren? _Antwoord Tim: Ja, maar nog geen beslissing welke waarde te gebruiken als data_subject_id._
