@@ -71,17 +71,15 @@ We geven een voorbeeld. Opsporingsinstantie FIOD bevraagt het RDW in het kader v
 
 ### Logboek van FIOD
 
-| Verwerking                       | TraceId | SpanId | ParentSpanId | Root Organization | DataSubjectId |
-|                                  |         |        |              |      (Logboek)    |               |
-|---                               |---      | ---    | ---          | ---               | ---           |
-| Kenteken uitvragen               | T1      | S1     | NULL         | FIOD              | NULL          |
+| Verwerking                       | TraceId | SpanId | ParentSpanId | Root Organization (Logboek) | DataSubjectId |
+|---                               |---      | ---    | ---          | ---                         | ---           |
+| Kenteken uitvragen               | T1      | S1     | NULL         | FIOD                        | NULL          |
 
 ### Logboek van RDW
 
-| Verwerking                       | TraceId | SpanId | ParentSpanId | Root Organization | DataSubjectId |
-|                                  |         |        |              |      (Logboek)    |               |
-|---                               |---      | ---    | ---          | ---               | ---           |
-| Kenteken informatie verstrekken  | T1      | S2     | S1           | FIOD              | BSN1          |
+| Verwerking                       | TraceId | SpanId | ParentSpanId | Root Organization (Logboek) | DataSubjectId |
+|---                               |---      | ---    | ---          | ---                         | ---           |
+| Kenteken informatie verstrekken  | T1      | S2     | S1           | FIOD                        | BSN1          |
 
 
 <figure id="Sequence diagram voor federated aggregator">
