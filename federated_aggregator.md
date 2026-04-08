@@ -1,5 +1,8 @@
 # Voorstel 2: Federated Aggregator 
 
+## Kernidee
+Dit voorstel is in essentie een variant op Architectuuroplossing 1: server-side aggregatie. Echter, om het nadeel van een backend component dat tot een single point of failure leidt te voorkomen, wordt de backend component bij alle deelnemende organisaties gedraaid. De client verbindt met een willekeurige instance, of altijd met de instance van bijvoorbeeld de gemeente waar iemand is ingeschreven/gevestigd (nader uit te werken).
+
 ## Fase 1: TraceId's verzamelen
 
 In de eerste fase wordt een set van traceId's opgebouwd per root-organisatie. Een root organisatie is de organisatie waar een trace gestart is. De process verloopt als volgt: 
@@ -117,3 +120,19 @@ end
 </pre>
 <figcaption>Sequence diagram: voorbeeld</figcaption>
 </figure>
+
+## Voor- en nadelen
+
+**Voordelen**
+
+- Geschikt voor zowel web- als native applicaties
+- Geen CORS headers nodig bij webapplicatie.
+- Eenvoudige frontend implementatie. 
+- Functionaliteit eenvoudig aan te bieden vanuit meerdere clients (web, native app, etc). 
+- Open standaarden, tried-and-tested security model
+
+**Nadelen**
+
+~~- Aggregation backend is single point of failure.~~
+- Aggregation backend heeft toegang tot het totaal overzicht alle log gegevens.
+- Partieel resultaat tonen tijdens inladen lastiger te realiseren. Eventueel mogelijk door het streamen van newline delimited JSON via chucked HTTP maar dat maakt zowel de frontend als backend complexer.
