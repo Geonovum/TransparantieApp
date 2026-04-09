@@ -8,7 +8,7 @@ In aanloop naar de demodag van 12 februari is er een eerste versie van de transp
 - Security-risico’s in de vorm van traceId-endpoints ([zie bedenking 2](#bedenking-2-data_subject_id-en-toegangscontrole)).
 - Schaalbaarheidsuitdagingen bij overheidsbrede uitrol ([zie bedenking 3](#bedenking-3-schaalbaarheid))
 
-## Kernprincipe van de oplossing
+## Kernidee
 Er wordt een Trace Register geïntroduceerd. Het Trace Register geeft een veilig digitaal pasje (het JWT token) aan een burger of bedrijf. Dit pasje laat zien welke gegevens zij mogen bekijken, maar bevat geen gevoelige persoonlijke informatie zoals BSN.
 
 - Het pasje werkt tijdelijk: na korte tijd verloopt het automatisch.
@@ -22,9 +22,7 @@ Hiervoor registereert het Trace register uitsluitend de volgende drie gegevens:
 - Trace ID
 - Logboek ID
 
-Er worden in het trace register dus geen log gegevens of inhoudelijke trace-informatie opgeslagen. Het register weet alleen welke trace ID's horen bij welke betrokkenne. 
-
-TODO: Toevoegen, vergelijking/relatie met gemeente dossiers in Mijn Overheid zakelijk
+Er worden in het trace register dus geen log gegevens of inhoudelijke trace-informatie opgeslagen. Het register weet alleen welke trace ID's horen bij welke betrokkenne.
 
 ##  Oplossing in meer detail
 
@@ -98,7 +96,7 @@ Het patroon _"Vraag alle 1600 overheidsorganisaties of zij trace informatie hebb
 
 Hierdoor ontstaat een oplossing welke overheidsbreed uitgerold kan worden. 
 
-## Privacy concerns
+## Pseudonimiseren
 
 De introductie van het trace register geeft enkele privacy overwegingen. In het trace register wordt enkel één tabel bijgehouden met de volgende drie kolommen: `Betrokkene ID`, `Trace ID` en `Logboek ID`. De trace data zelf blijft decentraal opgeslagen.
 
@@ -124,16 +122,18 @@ Aangezien niet herleidbare pseudoniemen een sterkere vorm van privacy met zich m
 <pre class="diagram mermaid">
 sequenceDiagram;
 
-participant A as Organisatie;
-participant B as Pseudoniemendienst;
-participant C as Trace Register;
+participant A as Organisatie
+participant B as Pseudoniemendienst
+participant C as Trace Register
 
-A->>B: 1. BSN of herleidbaar pseudoniem;
-B->>A: 2. Referentie Code;
+autonumber
 
-A->>C: 3. Register [TraceId, ReferentieCode, Logboek ID];
-C->>B: 4. Referentie Code, Domein = Logboek ID;
-B->>C: 5. Niet herleidbaar pseudoniem;
+A->>B: BSN of herleidbaar pseudoniem
+B-->>A: Referentie Code
+
+A->>C: Register [TraceId, ReferentieCode, Logboek ID]
+C->>B: Referentie Code, Domein = Logboek ID
+B-->>C: Niet herleidbaar pseudoniem
 </pre>
 <figcaption>Sequence diagram: Aanmelden van een trace</figcaption>
 </figure>
@@ -146,19 +146,22 @@ Bij stap 4 wordt de referentie code ingewisseld voor een pseudoniem. In het requ
 <pre class="diagram mermaid">
 sequenceDiagram
 
-Participant X as Client applicatie
+participant X as Client applicatie
 participant D as Transparantie-App
 participant B as Pseudoniemendienst
 participant C as Trace Register
 
+autonumber
+
 X->>D: 1. HTTP GET https://transparantie-app.nl/get-trace-ids
 D->>B: 2. BSN
-D->>X: 3. HTTP Redirect https://trace-register.nl?referentie-code=...
+B-->>D: 3. Referentie Code
+D-->>X: 3. HTTP Redirect https://trace-register.nl?referentie-code=...
 
 X->>C: 4. HTTP GET https://trace-register.nl?referentie-code=...
 C->>B: 5. Referentie Code, Domein = Batch
-B->>C: 6. Pseudoniem per domein
-C->>X: 7. Response
+B-->>C: 6. Pseudoniem per domein
+C-->>X: 7. Response
 </pre>
 <figcaption>Sequence diagram: Opvragen van TraceId's</figcaption>
 </figure>
