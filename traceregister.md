@@ -18,9 +18,9 @@ Zo zorgt het Trace Register ervoor dat iedereen alleen toegang krijgt tot de geg
 
 Hiervoor registereert het Trace register uitsluitend de volgende drie gegevens:
 
-- Betrokkenne ID
+- Betrokkene ID
 - Trace ID
-- Logboek id
+- Logboek ID
 
 Er worden in het trace register dus geen log gegevens of inhoudelijke trace-informatie opgeslagen. Het register weet alleen welke trace ID's horen bij welke betrokkenne. 
 
@@ -100,14 +100,14 @@ Hierdoor ontstaat een oplossing welke overheidsbreed uitgerold kan worden.
 
 ## Privacy concerns
 
-De introductie van het trace register geeft enkele privacy overwegingen. In het trace register wordt enkel één tabel bijgehouden met de volgende drie kolommen: `traceId`, `persoonsId` en `logboek`. De trace data zelf blijft decentraal opgeslagen.
+De introductie van het trace register geeft enkele privacy overwegingen. In het trace register wordt enkel één tabel bijgehouden met de volgende drie kolommen: `Betrokkene ID`, `Trace ID` en `Logboek ID`. De trace data zelf blijft decentraal opgeslagen.
 
-Bij een naïve implementatie, waarbij als `persoonsId` het BSN wordt gebruikt kan er desondanks het nodige afgeleid worden. B.v. per persoon kan er een lijst opgesteld worden met welke organisaties een persoon contact heeft gehad. Bij sommige overheidsorganisaties kan enkel het wel of niet hebben van contact een privacy gevoelig aspect zijn. Het loggen van een BSN als `persoonsId` is dus geen optie. 
+Bij een naïve implementatie, waarbij als `Betrokkene ID` het BSN wordt gebruikt kan er desondanks het nodige afgeleid worden. B.v. per persoon kan er een lijst opgesteld worden met welke organisaties een persoon contact heeft gehad. Bij sommige overheidsorganisaties kan enkel het wel of niet hebben van contact een privacy gevoelig aspect zijn. Het loggen van een BSN als `Betrokkene ID` is dus geen optie. 
 
 
-Daarom stellen we voor om pseudoniemen op te slaan als `persoonId`. Qua werking en terminologie sluiten we aan bij het PRS van VWS. 
+Daarom stellen we voor om pseudoniemen op te slaan als `Betrokkene ID`. Qua werking en terminologie sluiten we aan bij het PRS van VWS. 
 
-Het PRS maakt per organisatie en domein een andere pseudoniem. Vanuit één BSN worden er dus voor de Belastingdienst een ander pseudoniem aangemaakt dan voor het Kadaster. Daardoor zijn datasets van het kadaster en van de belastingdienst dus niet te koppelen, _zonder hulp van de pseudoniemendienst_. 
+Het PRS maakt per organisatie en domein een ander pseudoniem. Vanuit één BSN wordt er dus voor de Belastingdienst een ander pseudoniem aangemaakt dan voor het Kadaster. Daardoor zijn datasets van het Kadaster en van de Belastingdienst dus niet te koppelen, _zonder hulp van de pseudoniemendienst_. 
 
 Daarnaast wordt er onderscheid aangebracht tussen:
 
@@ -131,14 +131,14 @@ participant C as Trace Register;
 A->>B: 1. BSN of herleidbaar pseudoniem;
 B->>A: 2. Referentie Code;
 
-A->>C: 3. Register [TraceId, ReferentieCode, Logboek];
-C->>B: 4. Referentie Code, Domein = Logboek;
+A->>C: 3. Register [TraceId, ReferentieCode, Logboek ID];
+C->>B: 4. Referentie Code, Domein = Logboek ID;
 B->>C: 5. Niet herleidbaar pseudoniem;
 </pre>
 <figcaption>Sequence diagram: Aanmelden van een trace</figcaption>
 </figure>
 
-Bij stap 4 wordt de referentie code ingewisseld voor een pseudoniem. In het request wordt naast de referentie code het logboek als domein meegestuurd. Hierdoor worden er verschillende pseudoniemen aangemaakt voor verschillende organisaties (en zelfs per logboek van die organisatie), zelfs als deze pseudoniemen dezelfde persoon beschrijven.
+Bij stap 4 wordt de referentie code ingewisseld voor een pseudoniem. In het request wordt naast de referentie code het Logboek ID als domein meegestuurd. Hierdoor worden er verschillende pseudoniemen aangemaakt voor verschillende organisaties (en zelfs per logboek van die organisatie), zelfs als deze pseudoniemen dezelfde persoon beschrijven.
 
 ### Opvragen van `traceId`'s
 
