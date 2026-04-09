@@ -168,13 +168,11 @@ C-->>X: 7. Response
 
 _Note: In het bovenstaande sequence diagram gaan we er vanuit dat het BSN van de ingelogde gebruiker bekend is bij de transparantie-app, bijvoorbeeld doordat deze is geauthentiseerd via Digi-D of zijn BSN heeft overlegd via b.v. OpenID Connect verifiable credentials._
 
-Stap 5-6 is een batch request waarbij één referentie code en een lijst aan domeinen wordt opgestuurd en er een lijst aan pseudoniemen terug komt. Het trace register vult de lijst met domeinen met alle deelnemende organisaties (of eigenlijk: logboeken). Als de gehele overheid meedoet met 1 logboek, dan is dit dus een lijst van zo'n 1600 domeinen. Potentieel doen organisaties mee met meerdere logboken omdat ze wellicht diverse applicaties/processen elk hun eigen logboek geven.
+Stap 6-7 is een batch request waarbij één referentie code en een lijst aan domeinen wordt opgestuurd en er een lijst aan pseudoniemen terug komt. Het trace register vult de lijst met domeinen met alle logboek ID's van alle deelnemende organisaties. Als alle overheidsorganisaties deelnemen en alle organisaties één logboek hebben, dan is dit dus een lijst van zo'n 1600 domeinen. Potentieel doen organisaties echter mee met meerdere logboeken omdat diverse applicaties elk hun eigen logboek geven.
 
 Deze batch operatie is niet beschreven in de documentatie van VWS. Zolang het aantal deelnemende organisaties te overzien is kan er ook een request per deelmende organisatie verstuurd worden. Later optimaliseren is dan triviaal door een batch operatie te introduceren.
 
-_Vraag_: Kan één referentie code één of meerdere keren ingewisseld worden voor een pseudoniem. Zo, nee dan dient de transparantie-app backend meerdere referentie codes aan te vragen zolang er geen batch operatie is. 
-
-_Note:_ Alternatief is om geen pseudoniemdomeinen te gebruiken. Hiermee vervalt de behoefte voor een batch endpoint. De implicatie hiervan is echter dat voor iedere organisatie voor één persoon altijd hetzelfde pseudoniem gebruikt. Pseudoniemen zijn niet herleidbaar, echter de combinatie van organisaties waarmee één persoon contact heeft, kan fungeren als fingerprint.
+_Vraag_: kan één referentie code één of meerdere keren ingewisseld worden voor een pseudoniem. Zo, nee dan dient de transparantie-app backend meerdere referentie codes aan te vragen zolang er geen batch operatie is. 
 
 Het Trace Register retourneert een JSON response met de volgende structuur:
 
@@ -202,3 +200,6 @@ In tabel vorm:
 | Trace Register | Nee | Ja | 
 | Client applicatie | Ja | Ja |
 
+**Alternatief**
+
+Een alternatief is om geen pseudoniemdomeinen te gebruiken. Hiermee vervalt de behoefte om een batch endpoint te implementeren. De implicatie hiervan is echter dat voor iedere organisatie voor één persoon altijd hetzelfde pseudoniem gebruikt. Pseudoniemen zijn niet herleidbaar, echter de combinatie van organisaties waarmee één persoon contact heeft, kan fungeren als fingerprint.
