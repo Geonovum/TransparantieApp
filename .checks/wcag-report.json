@@ -1,6 +1,583 @@
 [
   {
     "url": "http://localhost:8080/snapshot.html",
+    "id": "aria-allowed-attr",
+    "impact": "critical",
+    "description": "Ensure an element's role supports its ARIA attributes",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          ".\\33 D\\\"native-edit-context\\\""
+        ],
+        "html": "<div class=\"3D\"native-edit-conte...\" autocorrect=\"3D\"of=\" f\"=\"\" autocapitalize=\"3D\"off\"\" autocomplete=\"3D\"off\"\" spellcheck=\"3D\"false\"\" tabinde=\"x=3D\"0\"\" role=\"3D\"textbox\"\" aria-required=\"3D\"false\"\" aria-multiline=\"3D\"true\"\" ar=\"ia-autocomplete=3D\"b...\" aria-roledescription=\"3D\"editor\"\" or=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  ARIA attributes are not allowed: aria-required=\"3D\"false\"\", aria-multiline=\"3D\"true\"\""
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "aria-prohibited-attr",
+    "impact": "serious",
+    "description": "Ensure ARIA attributes are not prohibited for an element's role",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-prohibited-attr?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          ".\\33 D\\\"native-edit-context\\\""
+        ],
+        "html": "<div class=\"3D\"native-edit-conte...\" autocorrect=\"3D\"of=\" f\"=\"\" autocapitalize=\"3D\"off\"\" autocomplete=\"3D\"off\"\" spellcheck=\"3D\"false\"\" tabinde=\"x=3D\"0\"\" role=\"3D\"textbox\"\" aria-required=\"3D\"false\"\" aria-multiline=\"3D\"true\"\" ar=\"ia-autocomplete=3D\"b...\" aria-roledescription=\"3D\"editor\"\" or=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+      },
+      {
+        "target": [
+          ".\\33 D\\\"button"
+        ],
+        "html": "<div tabindex=\"3D&quot;0&quot;\" class=\"3D&quot;button\" hover-copy-button=\"codicon\" codicon-copy\"=\"\" role=\"3D&quot;button&quot;\" aria-label=\"3D&quot;Copy&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+      },
+      {
+        "target": [
+          ".\\33 D\\\"monaco-list"
+        ],
+        "html": "<div class=\"3D\"monaco-list\" ==\"\" list_id_1=\"\" selection-none\"=\"\" tabindex=\"3D\"0\"\" role=\"3D\"listbox\"\" aria-label=\"3D\"Sug=\" gest\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "aria-roles",
+    "impact": "critical",
+    "description": "Ensure all elements with a role attribute use a valid value",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-roles?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "div[clas=\"s=3D\\\"monaco-editor\"]"
+        ],
+        "html": "<div clas=\"s=3D\"monaco-editor\" no-user-select=\"\" showunused=\"\" showdeprecated=\"\" vs-dark=\"\" focuse=\"d\"\" role=\"3D\"code\"\" data-uri=\"3D\"inmemory://model/2\"\" style=\"3D\"width:\" 757px;=\"\" hei=\"ght:\" 728px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"code\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"native-edit-context\\\""
+        ],
+        "html": "<div class=\"3D\"native-edit-conte...\" autocorrect=\"3D\"of=\" f\"=\"\" autocapitalize=\"3D\"off\"\" autocomplete=\"3D\"off\"\" spellcheck=\"3D\"false\"\" tabinde=\"x=3D\"0\"\" role=\"3D\"textbox\"\" aria-required=\"3D\"false\"\" aria-multiline=\"3D\"true\"\" ar=\"ia-autocomplete=3D\"b...\" aria-roledescription=\"3D\"editor\"\" or=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"textbox\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin\\\""
+        ],
+        "html": "<div class=\"3D\"margin\"\" role=\"3D\"presentation\"\" aria-h=\"idden=3D\"true\"\" style=\"3D\"position:\" absolute;=\"\" transform:=\"\" translate3d(0px,=\"\" 0px=\",\" 0px);=\"\" contain:=\"\" strict;=\"\" top:=\"\" -3749px;=\"\" height:=\"\" 5592px;=\"\" width:=\"\" 64px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin-view-zones\\\""
+        ],
+        "html": "<div class=\"3D&quot;margin-view-zones&quot;\" role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;tru=\" e\"=\"\" style=\"3D&quot;position:\" absolute;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin-view-overlays"
+        ],
+        "html": "<div class=\"3D\"margin-view-overl...\" f=\"ocused\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absol=\"ute;\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"\" font-weight=\":\" normal;=\"\" font-size:=\"\" 14px;=\"\" font-feature-setting...=\"\" 0,=\"\" 0;=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          "d\\=[editor-scrollable=\"\"]"
+        ],
+        "html": "<d= iv=\"\" class=\"3D\"monaco-scrollable-element\" editor-scrollable=\"\" vs-dark\"=\"\" role=\"3D\"pr=\" esentation\"=\"\" data-mprt=\"3D\"6\"\" style=\"3D\"position:\" absolute;=\"\" overflow:=\"\" hidden;=\"left:\" 64px;=\"\" width:=\"\" 693px;=\"\" height:=\"\" 728px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"pr="
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-overlays"
+        ],
+        "html": "<div class=\"3D\"view-overlays\" fo=\"cused\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absolu=\"te;\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"\" font-weight:=\"normal;\" font-size:=\"\" 14px;=\"\" font-feature-setting...=\"\" &quot;liga&quot;=\"\" 0,=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-rulers\\\""
+        ],
+        "html": "<div= role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" class=\"3D&quot;view-rulers&quot;\"></div=>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-zones\\\""
+        ],
+        "html": "<di= v=\"\" class=\"3D&quot;view-zones&quot;\" role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" style=\"3D&quot;=\" position:=\"\" absolute;\"=\"\"></di=>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-lines"
+        ],
+        "html": "<div class=\"3D\"view-lines\" monaco-mouse-cursor-...=\"t\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" data-mprt=\"3D\"8\"\" style=\"3D\"posi=\" tion:=\"\" absolute;=\"\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"font-weight:\" normal;=\"\" font-size:=\"\" 14px;=\"\" 0,=\"\" 0;=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"lightBulbWidge\\="
+        ],
+        "html": "<div class=\"3D&quot;lightBulbWidge=\" t\"=\"\" role=\"3D&quot;listbox&quot;\" widgetid=\"3D&quot;LightBulbWidget&quot;\" style=\"3D&quot;position:\" absolut=\"e;\" display:=\"\" none;=\"\" visibility:=\"\" hidden;=\"\" max-width:=\"\" 693px;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"listbox\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"visible"
+        ],
+        "html": "<div role=\"3D\"pr=\" esentation\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"visible\" scrollbar=\"\" vertical\"=\"\" style=\"=3D\"position:\" absolute;=\"\" width:=\"\" 14px;=\"\" height:=\"\" 728px;=\"\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"pr="
+      },
+      {
+        "target": [
+          ".\\33 D\\\"scroll-decoration\\\""
+        ],
+        "html": "<div role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" s=\"tyle=3D&quot;width:\" 757px;\"=\"\" class=\"3D&quot;scroll-decoration&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"sticky-widget-line-numbers\\\""
+        ],
+        "html": "<d= iv=\"\" class=\"3D&quot;sticky-widget-line-numbers&quot;\" role=\"3D&quot;none&quot;\" style=\"3D&quot;width:\" 64px;=\"--vscode-editorStickyScroll-foldingOpacityTransition:\" opacity=\"\" 0.5s;=\"\" height=\":\" 19px;\"=\"\"></d=>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"none\""
+      },
+      {
+        "target": [
+          "div[\\\"sticky-widget-lines\\\"=\"\"]"
+        ],
+        "html": "<div class=\"3D=\" \"sticky-widget-lines\"=\"\" role=\"3D&quot;list&quot;\" style=\"3D&quot;left:\" 0px;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"list\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"minimap"
+        ],
+        "html": "<div data-mprt=\"3D\"9\"\" class=\"3D\"minimap\" slider-mouseover\"=\"\" role=\"3D\"prese=\" ntation\"=\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absolute;=\"\" left:=\"\" 0px;=\"\" width=\":\" height:=\"\" 728px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"prese="
+      },
+      {
+        "target": [
+          "div[naco-hover=\"\"]"
+        ],
+        "html": "<div class=\"3D\"mo=\" naco-hover=\"\" fade-in=\"\" hidden\"=\"\" tabindex=\"3D\"0\"\" role=\"3D\"tooltip\"\" style=\"3D\"width:\" ==\"\" 329px;=\"\" height:=\"\" 50px;=\"\" max-width:=\"\" 750px;=\"\" max-height:=\"\" 250px;=\"\" --vscode-hover-ma=\"xWidth:\" 750px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"tooltip\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"presentat=\"]"
+        ],
+        "html": "<div class=\"3D\"monaco-scrollable-element\" \"=\"\" role=\"3D\"presentat=\" ion\"=\"\" style=\"3D\"position:\" relative;=\"\" overflow:=\"\" hidden;=\"\" width:=\"\" 329px;=\"\" height:=\"\" 5=\"0px;\" max-width:=\"\" 750px;=\"\" max-height:=\"\" 250px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentat="
+      },
+      {
+        "target": [
+          ".\\33 D\\\"button"
+        ],
+        "html": "<div tabindex=\"3D&quot;0&quot;\" class=\"3D&quot;button\" hover-copy-button=\"codicon\" codicon-copy\"=\"\" role=\"3D&quot;button&quot;\" aria-label=\"3D&quot;Copy&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\""
+      },
+      {
+        "target": [
+          "#respec-offender-linking-error-not-matching-dfn"
+        ],
+        "html": "<a class=\"3D&quot;= respec-offending-element\" action\"=\"\" role=\"3D&quot;button&quot;\" title=\"Linking error: not matching `&lt;dfn&gt;`\" id=\"respec-offender-linking-error-not-matching-dfn\"><span>View Problem (Alt+F8)</span></a>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\""
+      },
+      {
+        "target": [
+          "#respec-offender-linking-error-not-matching-dfn-0"
+        ],
+        "html": "<a class=\"3D&quot;action&quot; respec-offending-element\" role=\"3D&quot;button&quot;\" title=\"Linking error: not matching `&lt;dfn&gt;`\" id=\"respec-offender-linking-error-not-matching-dfn-0\"><span>Quic=\nk Fix... (Ctrl+.)</span></a>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"presentati=\"]"
+        ],
+        "html": "<div role=\"3D\"presentati=\" on\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" style=\"3D\"=\" position:=\"\" absolute;=\"\" width:=\"\" 319px;=\"\" height:=\"\" 10px;=\"\" left:=\"\" 0px;=\"\" bottom:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentati="
+      },
+      {
+        "target": [
+          ".\\33 D\\\"i\\="
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"i=\" nvisible=\"\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;=\"\" width:=\"\" 10px;=\"\" heig=\"ht:\" 50px;=\"\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"monaco-list"
+        ],
+        "html": "<div class=\"3D\"monaco-list\" ==\"\" list_id_1=\"\" selection-none\"=\"\" tabindex=\"3D\"0\"\" role=\"3D\"listbox\"\" aria-label=\"3D\"Sug=\" gest\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"listbox\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"monaco-list > .\\33 D\\\"monaco-scrollable-element[hidden\\;\\\"=\"\"][relative\\;=\"\"]"
+        ],
+        "html": "<div class=\"3D\"monaco-scrollable-element\" \"=\"\" role=\"3D\"presentation\"\" style=\"=3D\"position:\" relative;=\"\" overflow:=\"\" hidden;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"presentation\\\"=\"]"
+        ],
+        "html": "<div role=\"3D\"presentation\"=\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" style=\"3D\"pos=\" ition:=\"\" absolute;=\"\" width:=\"\" 0px;=\"\" height:=\"\" 10px;=\"\" left:=\"\" bottom:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\"="
+      },
+      {
+        "target": [
+          ".\\33 D\\\"invisibl\\="
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisibl=\" e=\"\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;=\"\" width:=\"\" 10px;=\"\" height:=\"\" 21p=\"x;\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"actions-container\\\"\\="
+        ],
+        "html": "<ul class=\"3D\"actions-container\"=\" role=\"3D\"toolbar\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"toolbar\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"actions-container\\\"\\= > .\\33 D\\\"action-item[menu-entry=\"\"][text-only\\\"=\"\"]:nth-child(1)"
+        ],
+        "html": "<li class=\"3D\"action-item\" menu-entry=\"\" text-only\"=\"\" role=\"3D\"pr=\" esentation\"=\"\" custom-hover=\"3D\"true\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"pr="
+      },
+      {
+        "target": [
+          "#respec-offender-linking-error-not-matching-dfn-1"
+        ],
+        "html": "<a class=\"3D&quot;action-label&quot; respec-offending-element\" role=\"3D&quot;button&quot;=\" aria-label=\"3D&quot;Insert\" (enter)\"=\"\" tabindex=\"3D&quot;0&quot;\" title=\"Linking error: not matching `&lt;dfn&gt;`\" id=\"respec-offender-linking-error-not-matching-dfn-1\">Insert (=E2=8F=8E)</a>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\"="
+      },
+      {
+        "target": [
+          "l\\=[i=\"\"]"
+        ],
+        "html": "<l= i=\"\" class=\"3D\"action-item\" menu-entry=\"\" text-only\"=\"\" role=\"3D\"presentation\"\" custom-h=\"over=3D\"true\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          "#respec-offender-linking-error-not-matching-dfn-2"
+        ],
+        "html": "<a class=\"3D\"action-label\" respec-offending-element\" role=\"3D\"button\"\" aria-label=\"3D\"Repla=\" ce=\"\" (shift+enter)\"=\"\" tabindex=\"3D\"-1\"\" title=\"Linking error: not matching `<dfn>`\" id=\"respec-offender-linking-error-not-matching-dfn-2\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"actions-container\\\""
+        ],
+        "html": "<ul class=\"3D\"actions-container\"\" ==\"\" role=\"3D\"toolbar\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"toolbar\""
+      },
+      {
+        "target": [
+          "li[role=\"3D\\\"pre=\"]"
+        ],
+        "html": "<li class=\"3D\"action-item\" menu-entry=\"\" text-only\"=\"\" role=\"3D\"pre=\" sentation\"=\"\" custom-hover=\"3D\"true\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"pre="
+      },
+      {
+        "target": [
+          "#respec-offender-linking-error-not-matching-dfn-3"
+        ],
+        "html": "<a class=\"3D\"action-label\" respec-offending-element\" role=\"3D\"button\"\" ==\"\" aria-label=\"3D\"Show\" more=\"\" (ctrl+space)\"=\"\" tabindex=\"3D\"0\"\" title=\"Linking error: not matching `<dfn>`\" id=\"respec-offender-linking-error-not-matching-dfn-3\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"button\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"monaco-hover"
+        ],
+        "html": "<div class=\"3D\"monaco-hover\" fade-in=\"\" hidden\"=\"\" tabindex=\"3D\"=\" 0\"=\"\" role=\"3D\"tooltip\"\" widgetid=\"3D\"editor.contrib.modesGlyphHoverWidget\"\" style=\"=3D\"position:\" absolute;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"tooltip\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"=\"]"
+        ],
+        "html": "<div class=\"3D\"monaco-scrollable-element\" \"=\"\" role=\"3D\"=\" presentation\"=\"\" style=\"3D\"position:\" relative;=\"\" overflow:=\"\" hidden;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"="
+      },
+      {
+        "target": [
+          "div[styl=\"e=3D\\\"position:\"]"
+        ],
+        "html": "<div role=\"3D\"prese=\" ntation\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" styl=\"e=3D\"position:\" absolute;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"prese="
+      },
+      {
+        "target": [
+          "div[aria-hidden=\"3D\\\"tr=\"]"
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"tr=\" ue\"=\"\" class=\"3D\"invisible\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"presentation\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"al=\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-alert&quot;\" role=\"3D&quot;al=\" ert\"=\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"al="
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"alert\\\"\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-alert&quot;\" role=\"3D&quot;alert&quot;\" ==\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Role must be one of the valid ARIA roles: 3D\"alert\""
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "aria-valid-attr-value",
+    "impact": "critical",
+    "description": "Ensure all ARIA attributes have valid values",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-valid-attr-value?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          ".\\33 D\\\"native-edit-context\\\""
+        ],
+        "html": "<div class=\"3D\"native-edit-conte...\" autocorrect=\"3D\"of=\" f\"=\"\" autocapitalize=\"3D\"off\"\" autocomplete=\"3D\"off\"\" spellcheck=\"3D\"false\"\" tabinde=\"x=3D\"0\"\" role=\"3D\"textbox\"\" aria-required=\"3D\"false\"\" aria-multiline=\"3D\"true\"\" ar=\"ia-autocomplete=3D\"b...\" aria-roledescription=\"3D\"editor\"\" or=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute values: aria-required=\"3D\"false\"\", aria-multiline=\"3D\"true\"\", aria-haspopup=\"3D\"false\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin-view-zones\\\""
+        ],
+        "html": "<div class=\"3D&quot;margin-view-zones&quot;\" role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;tru=\" e\"=\"\" style=\"3D&quot;position:\" absolute;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"tru=\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin-view-overlays"
+        ],
+        "html": "<div class=\"3D\"margin-view-overl...\" f=\"ocused\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absol=\"ute;\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"\" font-weight=\":\" normal;=\"\" font-size:=\"\" 14px;=\"\" font-feature-setting...=\"\" 0,=\"\" 0;=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-overlays"
+        ],
+        "html": "<div class=\"3D\"view-overlays\" fo=\"cused\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absolu=\"te;\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"\" font-weight:=\"normal;\" font-size:=\"\" 14px;=\"\" font-feature-setting...=\"\" &quot;liga&quot;=\"\" 0,=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-rulers\\\""
+        ],
+        "html": "<div= role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" class=\"3D&quot;view-rulers&quot;\"></div=>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-zones\\\""
+        ],
+        "html": "<di= v=\"\" class=\"3D&quot;view-zones&quot;\" role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" style=\"3D&quot;=\" position:=\"\" absolute;\"=\"\"></di=>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"view-lines"
+        ],
+        "html": "<div class=\"3D\"view-lines\" monaco-mouse-cursor-...=\"t\"\" role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" data-mprt=\"3D\"8\"\" style=\"3D\"posi=\" tion:=\"\" absolute;=\"\" font-family:=\"\" consolas,=\"\" &quot;courier=\"\" new&quot;,=\"\" monospace;=\"font-weight:\" normal;=\"\" font-size:=\"\" 14px;=\"\" 0,=\"\" 0;=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"cursors-layer"
+        ],
+        "html": "<div r=\"ole=3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"cursors-layer\" cursor-lin=\"e-style\" cursor-solid\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[rol=\"e=3D\\\"presentation\\\"\"]"
+        ],
+        "html": "<div rol=\"e=3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizo=\"ntal\"\" style=\"3D\"position:\" absolute;=\"\" width:=\"\" 679px;=\"\" height:=\"\" 12px;=\"\" left:=\"\" 0px;=\"\" b=\"ottom:\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"decorationsOverviewRuler\\\""
+        ],
+        "html": "<canvas class=\"3D\"decorationsOvervi...\" ==\"\" aria-hidden=\"3D\"true\"\" width=\"3D\"17\"\" height=\"3D\"910\"\" style=\"3D\"position:\" absolut=\"e;\" transform:=\"\" translate3d(0px,=\"\" 0px,=\"\" 0px);=\"\" contain:=\"\" strict;=\"\" top:=\"\" 0px;=\"\" right:=\"0px;\" width:=\"\" 14px;=\"\" height:=\"\" 728px;=\"\" display:=\"\" ...>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"visible"
+        ],
+        "html": "<div role=\"3D\"pr=\" esentation\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"visible\" scrollbar=\"\" vertical\"=\"\" style=\"=3D\"position:\" absolute;=\"\" width:=\"\" 14px;=\"\" height:=\"\" 728px;=\"\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"scroll-decoration\\\""
+        ],
+        "html": "<div role=\"3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" s=\"tyle=3D&quot;width:\" 757px;\"=\"\" class=\"3D&quot;scroll-decoration&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"minimap"
+        ],
+        "html": "<div data-mprt=\"3D\"9\"\" class=\"3D\"minimap\" slider-mouseover\"=\"\" role=\"3D\"prese=\" ntation\"=\"\" aria-hidden=\"3D\"true\"\" style=\"3D\"position:\" absolute;=\"\" left:=\"\" 0px;=\"\" width=\":\" height:=\"\" 728px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"blockDecorations-containe\\="
+        ],
+        "html": "<div ro=\"le=3D&quot;presentation&quot;\" aria-hidden=\"3D&quot;true&quot;\" class=\"3D&quot;blockDecorations-containe=\" r\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"presentati=\"]"
+        ],
+        "html": "<div role=\"3D\"presentati=\" on\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" style=\"3D\"=\" position:=\"\" absolute;=\"\" width:=\"\" 319px;=\"\" height:=\"\" 10px;=\"\" left:=\"\" 0px;=\"\" bottom:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"i\\="
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"i=\" nvisible=\"\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;=\"\" width:=\"\" 10px;=\"\" heig=\"ht:\" 50px;=\"\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"tree\\\""
+        ],
+        "html": "<div class=\"3D\"tree\"\" style=\"3D\"he=\" ight:=\"\" 21px;=\"\" display:=\"\" none;\"=\"\" aria-hidden=\"3D\"true\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"presentation\\\"=\"]"
+        ],
+        "html": "<div role=\"3D\"presentation\"=\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" style=\"3D\"pos=\" ition:=\"\" absolute;=\"\" width:=\"\" 0px;=\"\" height:=\"\" 10px;=\"\" left:=\"\" bottom:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"invisibl\\="
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisibl=\" e=\"\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;=\"\" width:=\"\" 10px;=\"\" height:=\"\" 21p=\"x;\" right:=\"\" 0px;=\"\" top:=\"\" 0px;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[\\\"suggest-status-bar\\\"=\"\"]"
+        ],
+        "html": "<div class=\"3D=\" \"suggest-status-bar\"=\"\" style=\"3D\"height:\" 19px;=\"\" display:=\"\" none;\"=\"\" aria-hidden=\"3D\"=\" true\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"=\""
+      },
+      {
+        "target": [
+          "div[styl=\"e=3D\\\"position:\"]"
+        ],
+        "html": "<div role=\"3D\"prese=\" ntation\"=\"\" aria-hidden=\"3D\"true\"\" class=\"3D\"invisible\" scrollbar=\"\" horizontal\"=\"\" styl=\"e=3D\"position:\" absolute;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[aria-hidden=\"3D\\\"tr=\"]"
+        ],
+        "html": "<div role=\"3D\"presentation\"\" aria-hidden=\"3D\"tr=\" ue\"=\"\" class=\"3D\"invisible\" scrollbar=\"\" vertical\"=\"\" style=\"3D\"position:\" absolute;\"=\"\">",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"tr=\""
+      },
+      {
+        "target": [
+          "div[aria-hidden=\"=3D\\\"true\\\"\"]"
+        ],
+        "html": "<div class=\"3D&quot;context-view&quot;\" aria-hidden=\"=3D&quot;true&quot;\" style=\"3D&quot;display:\" none;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"=3D\"true\"\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"context-view\\\"[none\\;\\\"=\"\"][\\==\"\"]"
+        ],
+        "html": "<div ==\"\" class=\"3D&quot;context-view&quot;\" aria-hidden=\"3D&quot;true&quot;\" style=\"3D&quot;display:\" none;\"=\"\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-hidden=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"al=\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-alert&quot;\" role=\"3D&quot;al=\" ert\"=\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-atomic=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[role=\"3D\\\"alert\\\"\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-alert&quot;\" role=\"3D&quot;alert&quot;\" ==\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-atomic=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[aria-live=\"3D\\\"polite=\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-status&quot;\" aria-live=\"3D&quot;polite=\" \"=\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute values: aria-live=\"3D\"polite=\", aria-atomic=\"3D\"true\"\""
+      },
+      {
+        "target": [
+          "div[aria-live=\"3D\\\"poli=\"]"
+        ],
+        "html": "<div class=\"3D&quot;monaco-status&quot;\" aria-live=\"3D&quot;poli=\" te\"=\"\" aria-atomic=\"3D&quot;true&quot;\"></div>",
+        "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute values: aria-live=\"3D\"poli=\", aria-atomic=\"3D\"true\"\""
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "aria-valid-attr",
+    "impact": "critical",
+    "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-valid-attr?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "textarea"
+        ],
+        "html": "<textarea class=\"3D&quot;ime-text-area&quot;\" readonly=\"3D&quot;true&quot;\" tabindex=\"3D&quot;-1&quot;\" aria-hi=\"dden=3D&quot;true&quot;\"></textarea>",
+        "failureSummary": "Fix any of the following:\n  Invalid ARIA attribute name: aria-hi"
+      },
+      {
+        "target": [
+          ".\\33 D\\\"margin\\\""
+        ],
+        "html": "<div class=\"3D\"margin\"\" role=\"3D\"presentation\"\" aria-h=\"idden=3D\"true\"\" style=\"3D\"position:\" absolute;=\"\" transform:=\"\" translate3d(0px,=\"\" 0px=\",\" 0px);=\"\" contain:=\"\" strict;=\"\" top:=\"\" -3749px;=\"\" height:=\"\" 5592px;=\"\" width:=\"\" 64px;\"=\"\">",
+        "failureSummary": "Fix any of the following:\n  Invalid ARIA attribute name: aria-h"
+      },
+      {
+        "target": [
+          ".\\33 D\\\"message\\\""
+        ],
+        "html": "<div class=\"3D&quot;message&quot;\" aria-hid=\"den=3D&quot;true&quot;\" style=\"3D&quot;display:\" none;\"=\"\"></div>",
+        "failureSummary": "Fix any of the following:\n  Invalid ARIA attribute name: aria-hid"
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
     "id": "color-contrast",
     "impact": "serious",
     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
@@ -8,17 +585,81 @@
     "nodes": [
       {
         "target": [
-          "del"
-        ],
-        "html": "<del>- Aggregation backend is single point of failure.</del>",
-        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ff0000, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
-      },
-      {
-        "target": [
           ".sidelabel"
         ],
         "html": "<div class=\"sidelabel\">Geonovum Handreiking - Werkversie</div>",
         "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ffffff, background color: #ff0000, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "image-alt",
+    "impact": "critical",
+    "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "#\\33 D\\\"windowControlOverlayIcon\\\""
+        ],
+        "html": "<img src=\"3D&quot;https://markdown.ezoffice.org/images/icon-192.png&quot;\" draggable=\"=3D&quot;false&quot;\" id=\"3D&quot;windowControlOverlayIcon&quot;\">",
+        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "target": [
+          ".\\33 D\\\"fileItemCardIcon\\\""
+        ],
+        "html": "<img src=\"3D&quot;https://markdown.ezoffice.org/images/icon-1=\" 92.png\"=\"\" class=\"3D&quot;fileItemCardIcon&quot;\">",
+        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "label",
+    "impact": "critical",
+    "description": "Ensure every form element has a label",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/label?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "textarea"
+        ],
+        "html": "<textarea class=\"3D&quot;ime-text-area&quot;\" readonly=\"3D&quot;true&quot;\" tabindex=\"3D&quot;-1&quot;\" aria-hi=\"dden=3D&quot;true&quot;\"></textarea>",
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "list",
+    "impact": "serious",
+    "description": "Ensure that lists are structured correctly",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/list?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "ol[data-source-line=\"3D\\\"60\\\"\"]"
+        ],
+        "html": "<ol data-source-line=\"3D\"60\"\">",
+        "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: code"
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "listitem",
+    "impact": "serious",
+    "description": "Ensure <li> elements are used semantically",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/listitem?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "code > li"
+        ],
+        "html": "<li>\n<p data-source-line=\"3D&quot;64&quot;\">Logverwerkingen gevonden, en de trace spans hebb=\nen betrekking op een trace welke gestart is door de aangeroepen Logboek.\n</p></li>",
+        "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
       }
     ]
   }
