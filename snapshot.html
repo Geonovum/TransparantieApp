@@ -1466,7 +1466,7 @@ ul.index code{color:inherit}
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">09 april 2026</time>
+      <time class="dt-published" datetime="2025-11-17">13 april 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -2256,12 +2256,16 @@ Voor de demo is de WOZ-service uitgebreid zodat het BSN wordt gelogd als <code>d
 </ul>
 <p>Op basis van een willekeurig traceId trace-informatie verstrekken, zonder toegangscontrole, bij een bevraging op basis van traceID is vanuit security en privacy oogpunt onacceptabel.</p>
 <p><strong>Oplossing binnen dit model</strong>:</p>
-<p>TODO</p>
+<p>Nu niet langer de webclient van de gebruiker, maar de federated aggregator de uitvragen op basis van traceID uitvoert, dient dus te worden gegarandeerd dat de partij die de data op basis van een traceID verstrekt, er zeker van kan zijn dat de federated aggregator die de vraag stelt, een mede-speler in dit stelsel is.
+Dergelijk vertrouwen wordt normaalgesproken gegarandeerd door het over en weer tussen partijen uitwisselen van PKI-certificaten. Dat kan ook in dit geval.
+Echter, dat betekent bij 1600 deelnemende partijen/logboeken, dat elke partij van elke andere partij een publieke sleutelmoet kennen. Dat leidt tot een ingewikkeld onderhouds-probleem, omdat deze keys met regelmaat gewijzigd (geroteerd) moeten worden. 
+Een potentiele oplossing daarvoor kan zijn om de data van de vraag die een aggregator naar een collega-aggregator verzendt, wordt versleuteld (ondertekend) met de private-sleutel van de vraagstellende aggregator. De bevraagde aggregator haalt uit een centraal register (levend naast het trace-register?) de publieke sleutel op van de vragende organisatie op en checkt daarmee of de vraagsteller ook tot het stelsel behoort. Dit betekent dat het traceregister - bij de vraag om een publieke sleutel - de controle moet doen of degene die om de publieke sleutel vraagt tot het stelsel behoort. Dat kan op zijn beurt door ondertek=
+ening van die vraag met het cerificaat van de betreffende partij gebeuren.</p>
 <p><strong>Note</strong>: Goede vraag?</p>
 </section><section id="bedenking-3-schaalbaarheidsuitdagingen-bij-overheidsbrede-uitrol-0"><div class="header-wrapper"><h4 id="x9-3-3-bedenking-3-schaalbaarheidsuitdagingen-bij-overheidsbrede-uitrol"><bdi class="secno">9.3.3 </bdi>Bedenking 3 - Schaalbaarheidsuitdagingen bij overheidsbrede uitrol</h4><a class="self-link" href="#bedenking-3-schaalbaarheidsuitdagingen-bij-overheidsbrede-uitrol-0" aria-label="Permalink for Section 9.3.3"></a></div>
 <p>De Federated Aggregator kent een performance bottlneck in de vorm van een parallele aanroep naar alle deelnemende logboeken in fase 1 van het algoritme. Verder onderzoek is nodig om te vast te stellen binnen welke response tijd dit haalbaar is.</p>
 </section></section><section id="pseudonimiseren-0"><div class="header-wrapper"><h3 id="x9-4-pseudonimiseren"><bdi class="secno">9.4 </bdi>Pseudonimiseren</h3><a class="self-link" href="#pseudonimiseren-0" aria-label="Permalink for Section 9.4"></a></div>
-<p>TODO</p>
+<p>Om deze bottlneck weg te nemen, kan deze oplossing worden gecombineerd met het transparantie-register.</p>
 </section><section id="voor-en-nadelen-3"><div class="header-wrapper"><h3 id="x9-5-voor-en-nadelen"><bdi class="secno">9.5 </bdi>Voor- en nadelen</h3><a class="self-link" href="#voor-en-nadelen-3" aria-label="Permalink for Section 9.5"></a></div>
 <p><strong>Voordelen</strong></p>
 <ul>

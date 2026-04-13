@@ -156,7 +156,11 @@ Op basis van een willekeurig traceId trace-informatie verstrekken, zonder toegan
 
 __Oplossing binnen dit model__:
 
-TODO
+Nu niet langer de webclient van de gebruiker, maar de federated aggregator de uitvragen op basis van traceID uitvoert, dient dus te worden gegarandeerd dat de partij die de data op basis van een traceID verstrekt, er zeker van kan zijn dat de federated aggregator die de vraag stelt, een mede-speler in dit stelsel is.
+Dergelijk vertrouwen wordt normaalgesproken gegarandeerd door het over en weer tussen partijen uitwisselen van PKI-certificaten. Dat kan ook in dit geval.
+Echter, dat betekent bij 1600 deelnemende partijen/logboeken, dat elke partij van elke andere partij een publieke sleutelmoet kennen. Dat leidt tot een ingewikkeld onderhouds-probleem, omdat deze keys met regelmaat gewijzigd (geroteerd) moeten worden. 
+Een potentiele oplossing daarvoor kan zijn om de data van de vraag die een aggregator naar een collega-aggregator verzendt, wordt versleuteld (ondertekend) met de private-sleutel van de vraagstellende aggregator. De bevraagde aggregator haalt uit een centraal register (levend naast het trace-register?) de publieke sleutel op van de vragende organisatie op en checkt daarmee of de vraagsteller ook tot het stelsel behoort. Dit betekent dat het traceregister - bij de vraag om een publieke sleutel - de controle moet doen of degene die om de publieke sleutel vraagt tot het stelsel behoort. Dat kan op zijn beurt door ondertek=
+ening van die vraag met het cerificaat van de betreffende partij gebeuren.
 
 __Note__: Goede vraag?
 
@@ -166,7 +170,7 @@ De Federated Aggregator kent een performance bottlneck in de vorm van een parall
 
 ## Pseudonimiseren
 
-TODO
+Om deze bottlneck weg te nemen, kan deze oplossing worden gecombineerd met het transparantie-register.
 
 ## Voor- en nadelen
 
