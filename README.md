@@ -9,6 +9,13 @@ Deze repository bevat de werkversie van ons eindrapport.
 
 Het wordt bijgewerkt tot het einde van het project op 31-8-2026. Daarna wordt een definitieve versie gepubliceerd op docs.geostandaarden.nl 
 
+Het Rapport bevat ook twee bijlagen
+
+|naam|publicatie|werkversie|github|
+|Gebruikersonderzoek en UX design| |https://geonovum.github.io/TransparantieApp-Gebruikers-Onderzoek-UX/|https://github.com/Geonovum/TransparantieApp-Gebruikers-Onderzoek-UX|
+|Applicatie Architectuur| |https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur/|https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur|
+
+
 ## Code transparantieApp
 Deze repository zal ook de code van de transparantieApp zoals deze in ons project ontwikkeld wordt gaan bevatten.
 
