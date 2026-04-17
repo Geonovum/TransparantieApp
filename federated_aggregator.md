@@ -170,7 +170,7 @@ De Federated Aggregator kent een performance bottlneck in de vorm van een parall
 
 ## Pseudonimiseren
 
-Om deze bottlneck weg te nemen, kan deze oplossing worden gecombineerd met het transparantie-register.
+Om deze bottlneck weg te nemen, kan deze oplossing worden gecombineerd met de transparantie-index.
 
 ## Voor- en nadelen
 
