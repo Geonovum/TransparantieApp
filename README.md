@@ -7,7 +7,7 @@ Deze repository bevat de werkversie van ons eindrapport. Aanvullend zijn er ook 
 
 | **Naam**                         | **publicatie** | **werkversie**                                                       | **github**                                                           |
 |----------------------------------|----------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
-|                                  |                | https://geonovum.github.io/TransparantieApp/                         | https://github.com/Geonovum/TransparantieApp                         |
+| TransparantieApp rapport         |                | https://geonovum.github.io/TransparantieApp/                         | https://github.com/Geonovum/TransparantieApp                         |
 | Gebruikersonderzoek en UX design |                | https://geonovum.github.io/TransparantieApp-Gebruikers-Onderzoek-UX/ | https://github.com/Geonovum/TransparantieApp-Gebruikers-Onderzoek-UX |
 | Applicatie Architectuur          |                | https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur/ | https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur |
 
