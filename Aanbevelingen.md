@@ -19,5 +19,5 @@
 
 ## UX design
 
-* maak niet nog een app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
+1. maak niet nog een app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
 

@@ -5,8 +5,11 @@ a) Hoe is dit besluit tot stand gekomen?
 b) Wie heeft er - los van welk besluit ook - eigenlijk inzicht in of gebruik gemaakt van mijn persoonsgegevens?
 Onderstaand worden beide Usecases toegelicht.
 
+Vanuit de juridische kaders wordt duidelijk dat waar een keten van overheidsorganisaties betrokken is bij de totstandkoming van een besluit, elk van deze organisaties beschouwd wordt als verwerkingsverantwoordelijke in de zin van de AVG. Het is dus niet zo dat de organisaties die niet het proces hebben geinitieerd (maar informatie geleverd hebben aan de initiator) verwerker zijn in de keten die geinitieerd is door een verwerkingsverantwoordelijke.
+Gevolg hiervan is dat een betrokkene (bedrijf/inwoner) bij elk van de organisaties afzonderlijk terecht moet kunnen om te vragen wat er met diens persoonsgegevens is gebeurd.
+
 ## Usecase "Waarom is dit gebeurd?"
-Wanneer een bedrijf of inwoner (burger) geconfronteerd wordt met een besluit van een overheidsorganisatie (uitvoeringsorganisaties expliciet inbegrepen), ontstaat geregeld de vraag hoe men tot dat besluit gekomen is. Er is een expliciete 'trigger' die deze vraag doet rijzen (het document waarin het besluit wordt meegedeeld). Vaak zal de vraag om inzicht in de totstandkoming van het besluit ingegeven worden door onbegrip over de uitkomst of omdat de uitkomst de betrokkene niet welgevallig is. Gebruikersonderzoek laat zien dat dit patroon het beste aansluit op de verwachtingen van gebruikers van een te realiseren TransparantieApp.  
+Wanneer een bedrijf of inwoner (betrokkene) geconfronteerd wordt met een besluit van een overheidsorganisatie (uitvoeringsorganisaties expliciet inbegrepen), ontstaat geregeld de vraag hoe men tot dat besluit gekomen is. Er is een expliciete 'trigger' die deze vraag doet rijzen (het document waarin het besluit wordt meegedeeld). Vaak zal de vraag om inzicht in de totstandkoming van het besluit ingegeven worden door onbegrip over de uitkomst of omdat de uitkomst de betrokkene niet welgevallig is. Gebruikersonderzoek laat zien dat dit patroon het beste aansluit op de verwachtingen van gebruikers van een te realiseren TransparantieApp.  
 De totstandkoming van het besluit is over het algemeen gebaseerd op meerdere elementen:  
 1. de geregistreerde gegevens over de persoon of diens eigendom/gebruik van zaken (bijvoorbeeld: de eigendom van een woning op 1 januari van enig jaar)
 2. wet- en regelgeving (bijvoorbeeld de Gemeentewet en lokale verordeningen)  
@@ -18,7 +21,7 @@ Door de duidelijke trigger (bijvoorbeeld de gemeentelijke belastingaanslag) is h
 De logging-standaard voorziet alleen in het vastleggen van de gebruikte gegevens, niet zozeer in de (uitleg van de) achterliggende wetgeving en rekenregels. Ook de totstandkoming van de grondslag (in het voorbeeld de WOZ-waarde) zal geregeld geen onderdeel uitmaken van de(zelfde) *trace* als de totstandkoming van het besluit. Daarom is het advies om in de standaard voor de logging de optie op te nemen van verwijzingen naar *of* andere traces *of* een URL waarachter een webpagina of een document verdere uitleg geeft over de totstandkoming van de grondslag (bijvoorbeeld het taxatieverslag). Wel is er voorzien in unieke identificatiecodes voor verwerkingen, maar dat gaat om statische data die eventueel wel bruikbaar is voor uitleg van de wet- en regelgeving, maar niet geschikt is voor de verstrekking van gepersonaliseerde data die onder de grondslagen ligt.  
 
 ## Usecase "Wie heeft er aan mijn gegevens gezeten?"
-Een andere gebruikspatroon is de meer generieke vraag van een bedrijf of inwoner: wie heeft er aan mijn gegevens gezeten. Bestaande apps en websites maken dit tot op zekere hoogte al transparant, maar net niet op het detailniveau waarop dat zou kunnen met de TransparantieApp.  
+Een andere gebruikspatroon is de meer generieke vraag van een betrokkene: wie heeft er aan mijn gegevens gezeten. Bestaande apps en websites maken dit tot op zekere hoogte al transparant, maar net niet op het detailniveau waarop dat zou kunnen met de TransparantieApp.  
 Zo is in de App "MijnGegevens" wel te zien met welke organisaties BRP-gegevens gedeeld worden, maar wordt niet duidelijk om welke gegevens-elementen het dan exact gaat en welke gegevens-wijzigingen er worden gedeeld met welke organisaties. Bovendien is alleen voor zogenaamde \'identiteitsgegevens\' zichtbaar dat deze gedeeld zijn, maar niet voor bijvoorbeeld WOZ-gegevens of diploma\'s.  
 Op de website "Gegevens bij besluiten" wordt per besluit in zijn algemeenheid wel aangegeven welke gegevens-elementen van welke registraties worden gebruikt, maar kan een persoon niet \'doorklikken\' om te zien wanneer welke gegevens-waarden dan daadwerkelijk zijn gecommuniceerd. Bovendien is niet te zien welke besluiten er daadwerkelijk over iemand genomen zijn, het is een verzameling van alle (?) potentiele besluiten die overheden kunnen nemen. Het is, kortom, niet gepersonaliseerd.  
   
@@ -26,7 +29,12 @@ De TransparantieApp combineert in deze usecase in feite die beide invalshoeken e
 Omdat er meer dan alleen (semi-)overheidsorganisaties gebruik maken van het BSN en daaraan gerelateerde gegevens, is het advies de reikwijdte van de logging-standaard te vergroten tot de autorisatielijst BSN gerechtigden (ALB).  
 
 ## Federatieve architectuur
+Allerlei overheden (en gerelateerde partijen) verwerken gegevens die zij delen met anderen of betrekken van anderen. Elke organisatie is daarbij zelf verantwoordelijk voor de logging van wat er gebeurt met de data en met wie zij die data gedeeld hebben. Zie [de standaard logboek dataverwerkingen](https://www.logius.nl/onze-dienstverlening/gegevensuitwisseling/logboek-dataverwerkingen).
+De logging over van verwerkingen rondom een besluit van een overheid, ligt dus potentieel verspreid over meerdere overheden vast. 
 
 ## Gevolgen voor Applicatie architectuur
+Door de federatieve werkwijze van de logging, moet ook een opvraging van de logs bij alle overheden afzonderlijk gebeuren. Een TransparantieApp moet dit \'onder water\' automatisch doen en niet aan de gebruiker overlaten om daarin \'de weg te vinden\'. Er moet daardoor in de applicatie-architectuur een oplossing gevonden worden om 1) alle (overheids)organisaties die potentieel gegevens gelogd hebben te identificeren en b) al deze logboeken (potentieel meerdere per organisatie) te bevragen, met een grote kans dat de meerderheid van de logboeken geen data heeft aangaande de betreffende persoon (of object).
+Omdat bij tests gebleken is, dat een dergelijke wijze van logs lezen niet efficient en performant uitvoerbaar is, is een applicatie-architectuur ontworpen met een centraal traceregister waarin - gepseudonimiseerd! - vastligt welke organisaties log-informatie over welke persoon hebben. Op basis van dat register kan de TransparantieApp snel en efficient de betreffende organisaties bevragen.
+Voor de gedetailleerde uitwerking van de applicatie-architectuur zie ...
 
 ## Gevolgen voor standaard
