@@ -1506,7 +1506,7 @@ ul.index code{color:inherit}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>De TransparantieApp heeft als doel om inzichtelijk te maken hoe de data van de burger/bedrijf verwerkt wordt door de overheid, bijvoorbeeld bij totstandkoming van besluiten. Als de overheid een besluit maakt, dan gebruikt het daarbij de gegevens van de burger/bedrijf in combinatie met andere bronnen en past er een bewerking op toe (algoritme) om tot een resultaat te komen. Al deze stappen zijn verwerkingen van gegevens. Deze verwerkingen worden bijgehouden (gelogd) als de overheidsorganisatie de standaard Logboek Dataverwerkingen adopteert. De TransparantieApp is bedoeld om de logs die met de standaard zijn gemaakt, weer te geven. En om standaard uit te breiden met “regels” voor het lezen van logging.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanbevelingen"><bdi class="secno">2. </bdi>Aanbevelingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#standaard"><bdi class="secno">2.1 </bdi>Standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensie-lezen"><bdi class="secno">2.1.1 </bdi>extensie lezen</a></li><li class="tocline"><a class="tocxref" href="#core-standaard"><bdi class="secno">2.1.2 </bdi>Core standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2.2 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#gebruikersonderzoek"><bdi class="secno">2.3 </bdi>Gebruikersonderzoek</a></li><li class="tocline"><a class="tocxref" href="#ux-design"><bdi class="secno">2.4 </bdi>UX design</a></li></ol></li><li class="tocline"><a class="tocxref" href="#randvoorwaarden-uit-beleidsjuridischkader"><bdi class="secno">3. </bdi>Randvoorwaarden uit beleidsjuridischkader</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#randvoorwaarde-1"><bdi class="secno">3.1 </bdi>randvoorwaarde 1</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-experience"><bdi class="secno">4. </bdi>User eXperience</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#persona-s"><bdi class="secno">4.1 </bdi>Persona's</a></li><li class="tocline"><a class="tocxref" href="#ontwerp"><bdi class="secno">4.2 </bdi>Ontwerp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanbevolen-ontwerp"><bdi class="secno">4.2.1 </bdi>Aanbevolen ontwerp</a></li><li class="tocline"><a class="tocxref" href="#ontwerp-beslissingen"><bdi class="secno">4.2.2 </bdi>Ontwerp beslissingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#klantreis"><bdi class="secno">4.3 </bdi>Klantreis</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-de-standaard"><bdi class="secno">4.4 </bdi>gevolgen voor de standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#business-architectuur"><bdi class="secno">5. </bdi>Business Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#usecase-waarom-is-dit-gebeurd"><bdi class="secno">5.1 </bdi>Usecase "Waarom is dit gebeurd?"</a></li><li class="tocline"><a class="tocxref" href="#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten"><bdi class="secno">5.2 </bdi>Usecase "Wie heeft er aan mijn gegevens gezeten?"</a></li><li class="tocline"><a class="tocxref" href="#federatieve-architectuur"><bdi class="secno">5.3 </bdi>Federatieve architectuur</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-applicatie-architectuur"><bdi class="secno">5.4 </bdi>Gevolgen voor Applicatie architectuur</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-standaard"><bdi class="secno">5.5 </bdi>Gevolgen voor standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#applicatie-architectuur"><bdi class="secno">6. </bdi>Applicatie Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#implementatie-app"><bdi class="secno">6.1 </bdi>Implementatie App</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authenticatie"><bdi class="secno">6.1.1 </bdi>Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#autorisatie"><bdi class="secno">6.1.2 </bdi>Autorisatie</a></li><li class="tocline"><a class="tocxref" href="#implementatie-ontwerp"><bdi class="secno">6.1.3 </bdi>implementatie ontwerp</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanpassingen-aan-referentie-implementatie"><bdi class="secno">6.2 </bdi>Aanpassingen aan referentie implementatie</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-standaard-0"><bdi class="secno">6.3 </bdi>gevolgen voor standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#praktijkbeproeving"><bdi class="secno">7. </bdi>Praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opzet-praktijkbeproeving"><bdi class="secno">7.1 </bdi>Opzet praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#deelneemers"><bdi class="secno">7.1.1 </bdi>Deelneemers</a></li><li class="tocline"><a class="tocxref" href="#infrastructuur"><bdi class="secno">7.1.2 </bdi>Infrastructuur</a></li><li class="tocline"><a class="tocxref" href="#software"><bdi class="secno">7.1.3 </bdi>Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#lessen-uit-praktijkbeproeving"><bdi class="secno">7.2 </bdi>lessen uit praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#les-1"><bdi class="secno">7.2.1 </bdi>les 1</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanpassingen-voorkomend-uit-beproeving"><bdi class="secno">7.3 </bdi>Aanpassingen voorkomend uit beproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfcs-voor-standaarden"><bdi class="secno">7.3.1 </bdi>RFCs voor standaarden</a></li><li class="tocline"><a class="tocxref" href="#aanpassingen-aan-software"><bdi class="secno">7.3.2 </bdi>Aanpassingen aan software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conclusie-praktijkbeproeving"><bdi class="secno">7.4 </bdi>conclusie praktijkbeproeving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#standaard-voor-lezen-logging"><bdi class="secno">8. </bdi>Standaard voor lezen logging</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#methode-ontwikkeling-standaard"><bdi class="secno">8.1 </bdi>Methode ontwikkeling standaard</a></li><li class="tocline"><a class="tocxref" href="#open-api-specification-oas-voor-lezen-api"><bdi class="secno">8.2 </bdi>Open API Specification(OAS) voor lezen API</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conclusies"><bdi class="secno">9. </bdi>Conclusies</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanbevelingen"><bdi class="secno">2. </bdi>Aanbevelingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#standaard"><bdi class="secno">2.1 </bdi>Standaard</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#extensie-lezen"><bdi class="secno">2.1.1 </bdi>extensie lezen</a></li><li class="tocline"><a class="tocxref" href="#core-standaard"><bdi class="secno">2.1.2 </bdi>Core standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><bdi class="secno">2.2 </bdi>Architectuur</a></li><li class="tocline"><a class="tocxref" href="#gebruikersonderzoek"><bdi class="secno">2.3 </bdi>Gebruikersonderzoek</a></li><li class="tocline"><a class="tocxref" href="#ux-design"><bdi class="secno">2.4 </bdi>UX design</a></li></ol></li><li class="tocline"><a class="tocxref" href="#randvoorwaarden-uit-beleidsjuridischkader"><bdi class="secno">3. </bdi>Randvoorwaarden uit beleidsjuridischkader</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#randvoorwaarde-1"><bdi class="secno">3.1 </bdi>randvoorwaarde 1</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-experience"><bdi class="secno">4. </bdi>User eXperience</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mentale-model-van-data-transparantie-van-herkenning-naar-vertrouwen"><bdi class="secno">4.1 </bdi>Mentale model van data transparantie: Van herkenning naar vertrouwen</a></li><li class="tocline"><a class="tocxref" href="#persona-s"><bdi class="secno">4.2 </bdi>Persona's</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#onderzoeksopzet"><bdi class="secno">4.2.1 </bdi>Onderzoeksopzet</a></li></ol></li><li class="tocline"><a class="tocxref" href="#reflectie-doelgroep-buiten-de-scope-van-het-onderzoek"><bdi class="secno">4.3 </bdi>Reflectie: doelgroep buiten de scope van het onderzoek</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#fatima-28-de-actieve-burger"><bdi class="secno">4.3.1 </bdi>Fatima (28) – De actieve burger</a></li><li class="tocline"><a class="tocxref" href="#marc-54-de-geinteresseerde-maar-praktische-gebruiker"><bdi class="secno">4.3.2 </bdi>Marc (54) – De geïnteresseerde maar praktische gebruiker</a></li><li class="tocline"><a class="tocxref" href="#peter-55-de-inactieve-gebruiker"><bdi class="secno">4.3.3 </bdi>Peter(55) – De inactieve gebruiker</a></li><li class="tocline"><a class="tocxref" href="#els-90-de-kwetsbare-burger"><bdi class="secno">4.3.4 </bdi>Els (90) – De kwetsbare burger</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-van-de-persona-s"><bdi class="secno">4.3.5 </bdi>Vergelijking van de persona's</a></li><li class="tocline"><a class="tocxref" href="#gemeenschappelijke-behoeften"><bdi class="secno">4.3.6 </bdi>Gemeenschappelijke behoeften</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ontwerp"><bdi class="secno">4.4 </bdi>Ontwerp</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanbevolen-ontwerp"><bdi class="secno">4.4.1 </bdi>Aanbevolen ontwerp</a></li><li class="tocline"><a class="tocxref" href="#ontwerp-beslissingen"><bdi class="secno">4.4.2 </bdi>Ontwerp beslissingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#experience-map-van-onzichtbare-verwerking-naar-vertrouwen"><bdi class="secno">4.5 </bdi>Experience map:  Van Onzichtbare Verwerking naar Vertrouwen</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-de-standaard"><bdi class="secno">4.6 </bdi>gevolgen voor de standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#business-architectuur"><bdi class="secno">5. </bdi>Business Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#usecase-waarom-is-dit-gebeurd"><bdi class="secno">5.1 </bdi>Usecase "Waarom is dit gebeurd?"</a></li><li class="tocline"><a class="tocxref" href="#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten"><bdi class="secno">5.2 </bdi>Usecase "Wie heeft er aan mijn gegevens gezeten?"</a></li><li class="tocline"><a class="tocxref" href="#federatieve-architectuur"><bdi class="secno">5.3 </bdi>Federatieve architectuur</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-applicatie-architectuur"><bdi class="secno">5.4 </bdi>Gevolgen voor Applicatie architectuur</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-standaard"><bdi class="secno">5.5 </bdi>Gevolgen voor standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#applicatie-architectuur"><bdi class="secno">6. </bdi>Applicatie Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#implementatie-app"><bdi class="secno">6.1 </bdi>Implementatie App</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authenticatie"><bdi class="secno">6.1.1 </bdi>Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#autorisatie"><bdi class="secno">6.1.2 </bdi>Autorisatie</a></li><li class="tocline"><a class="tocxref" href="#implementatie-ontwerp"><bdi class="secno">6.1.3 </bdi>implementatie ontwerp</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanpassingen-aan-referentie-implementatie"><bdi class="secno">6.2 </bdi>Aanpassingen aan referentie implementatie</a></li><li class="tocline"><a class="tocxref" href="#gevolgen-voor-standaard-0"><bdi class="secno">6.3 </bdi>gevolgen voor standaard</a></li></ol></li><li class="tocline"><a class="tocxref" href="#praktijkbeproeving"><bdi class="secno">7. </bdi>Praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opzet-praktijkbeproeving"><bdi class="secno">7.1 </bdi>Opzet praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#deelneemers"><bdi class="secno">7.1.1 </bdi>Deelneemers</a></li><li class="tocline"><a class="tocxref" href="#infrastructuur"><bdi class="secno">7.1.2 </bdi>Infrastructuur</a></li><li class="tocline"><a class="tocxref" href="#software"><bdi class="secno">7.1.3 </bdi>Software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#lessen-uit-praktijkbeproeving"><bdi class="secno">7.2 </bdi>lessen uit praktijkbeproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#les-1"><bdi class="secno">7.2.1 </bdi>les 1</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanpassingen-voorkomend-uit-beproeving"><bdi class="secno">7.3 </bdi>Aanpassingen voorkomend uit beproeving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfcs-voor-standaarden"><bdi class="secno">7.3.1 </bdi>RFCs voor standaarden</a></li><li class="tocline"><a class="tocxref" href="#aanpassingen-aan-software"><bdi class="secno">7.3.2 </bdi>Aanpassingen aan software</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conclusie-praktijkbeproeving"><bdi class="secno">7.4 </bdi>conclusie praktijkbeproeving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#standaard-voor-lezen-logging"><bdi class="secno">8. </bdi>Standaard voor lezen logging</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#methode-ontwikkeling-standaard"><bdi class="secno">8.1 </bdi>Methode ontwikkeling standaard</a></li><li class="tocline"><a class="tocxref" href="#open-api-specification-oas-voor-lezen-api"><bdi class="secno">8.2 </bdi>Open API Specification(OAS) voor lezen API</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conclusies"><bdi class="secno">9. </bdi>Conclusies</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li></ol></nav>
 
 
 <section class="informative" id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
@@ -1558,21 +1558,372 @@ ul.index code{color:inherit}
 </ol>
 </section></section><section id="architectuur"><div class="header-wrapper"><h3 id="x2-2-architectuur"><bdi class="secno">2.2 </bdi>Architectuur</h3><a class="self-link" href="#architectuur" aria-label="Permalink for Section 2.2"></a></div>
 </section><section id="gebruikersonderzoek"><div class="header-wrapper"><h3 id="x2-3-gebruikersonderzoek"><bdi class="secno">2.3 </bdi>Gebruikersonderzoek</h3><a class="self-link" href="#gebruikersonderzoek" aria-label="Permalink for Section 2.3"></a></div>
+<ol>
+<li>Maak abstracte concepten concreet met prototypes</li>
+</ol>
+<p>Transparantie, logging en gegevensuitwisseling zijn voor veel burgers abstracte begrippen. Het gebruik van interactieve prototypes helpt deelnemers om zich een concreet beeld te vormen van de oplossing, waardoor betrouwbaardere feedback ontstaat.</p>
+<ol start="2">
+<li>Onderzoek mentale modellen in plaats van alleen usability</li>
+</ol>
+<p>Bij nieuwe concepten is het niet alleen belangrijk of gebruikers een interface kunnen bedienen, maar vooral of zij begrijpen wat er gebeurt. Onderzoek zou daarom expliciet moeten kijken naar hoe burgers denken dat gegevensverwerking en besluitvorming werken.</p>
+<ol start="3">
+<li>Gebruik realistische casussen met een daadwerkelijke stakeholder.</li>
+</ol>
+<p>Onderwerpen zoals het zorgdomein bleek geschikt om abstracte vraagstukken rondom transparantie begrijpelijk te maken. Het gebruik van herkenbare situaties vergroot de kwaliteit van de feedback en het realitische laten aansluiten van de standaard.</p>
+<ol start="4">
+<li>Betrek verschillende doelgroepen</li>
+</ol>
+<p>Het onderzoek laat zien dat actieve inzagezoekers, pragmatische burgers en kwetsbare gebruikers verschillende behoeften hebben. Het is daarom belangrijk om niet uitsluitend digitaal vaardige gebruikers te onderzoeken.</p>
+<ol start="5">
+<li>Combineer meerdere onderzoeksmethoden</li>
+</ol>
+<p>De combinatie van interviews, literatuuronderzoek, usabilitytesten, co-creatie en design research leverde meer inzicht op dan één enkele methode. Verschillende methoden vullen elkaar aan en helpen om zowel behoeften als gedrag beter te begrijpen.</p>
+<ol start="6">
+<li>Onderzoek de behoefte aan de "waarom-vraag"</li>
+</ol>
+<p>Gebruikers blijken niet alleen geïnteresseerd in welke gegevens zijn gebruikt, maar vooral in hoe deze hebben bijgedragen aan een besluit. Dit vormt een interessante onderzoekslijn voor toekomstige ontwikkeling van zowel de standaard als de applicatie. Leer hiervoor ook sectie 5.1.</p>
+<ol start="7">
+<li>Hanteer een iteratieve aanpak</li>
+</ol>
+<p>Inzichten ontstaan door meerdere cycli van ontwerpen, testen en verbeteren. Gebruikersonderzoek moet daarom geen eindcontrole zijn, maar een doorlopend onderdeel van het ontwerpproces.</p>
 </section><section id="ux-design"><div class="header-wrapper"><h3 id="x2-4-ux-design"><bdi class="secno">2.4 </bdi>UX design</h3><a class="self-link" href="#ux-design" aria-label="Permalink for Section 2.4"></a></div>
 <ol>
-<li>maak niet nog een app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld</li>
+<li>maak geen nieuwe app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld</li>
 </ol>
+<li>Hanteer een mobile-first ontwerpstrategie</li>
+</ol>
+<p>Gebruikers zijn gewend om overheidsdiensten steeds vaker via mobiele apparaten te gebruiken. Daarnaast dwingt een mobile-first benadering ontwerpers om kritisch te kijken naar welke informatie daadwerkelijk noodzakelijk is. Door eerst voor kleine schermen te ontwerpen ontstaat een compactere en beter geprioriteerde informatiearchitectuur, waardoor de kans op informatie-overload afneemt.</p>
+<ol start="2">
+<li>Gebruik een persona-matrix voor informatieprioritering</li>
+</ol>
+<p>Uit het onderzoek blijkt dat verschillende gebruikersgroepen uiteenlopende informatiebehoeften hebben. Het wordt aanbevolen om een persona-matrix te gebruiken waarin per doelgroep wordt vastgelegd welke informatie belangrijk is en wanneer deze relevant wordt. Deze matrix kan vervolgens worden gebruikt om informatie te prioriteren en te bepalen welke informatie prominent zichtbaar moet zijn en welke informatie optioneel beschikbaar wordt gemaakt.</p>
+<ol start="3">
+<li>Ontwerp eerst de gebruikersflow en daarna de interfacecomponenten</li>
+</ol>
+<p>Bij complexe transparantievraagstukken is het belangrijk om eerst inzicht te krijgen in de gebruikersreis voordat individuele schermen of componenten worden ontworpen. Het wordt aanbevolen om eerst de flow van taken, beslissingen en informatiebehoeften uit te werken en pas daarna componenten op detailniveau te ontwerpen. Hierdoor blijft de focus liggen op het oplossen van gebruikersproblemen in plaats van op afzonderlijke interface-elementen.</p>
+<ol start="4">
+<li>Gebruik begrijpelijke en mensgerichte taal</li>
+</ol>
+<p>Technische, juridische en organisatorische terminologie vormt een belangrijke drempel voor burgers. Het ontwerp dient daarom gebruik te maken van begrijpelijke taal die aansluit bij het dagelijkse taalgebruik van gebruikers. Complexe begrippen kunnen waar nodig worden voorzien van aanvullende uitleg, zodat informatie toegankelijk blijft voor een brede doelgroep.</p>
+<ol start="5">
+<li>Ondersteun snelle informatievinding met zoeken en filteren</li>
+</ol>
+<p>Gebruikers bezoeken een transparantievoorziening vaak met een specifieke vraag of informatiebehoefte. Het wordt daarom aanbevolen om zoek- en filtermogelijkheden aan te bieden waarmee gebruikers snel relevante gebeurtenissen, gegevensverwerkingen of besluiten kunnen vinden. Dit helpt gebruikers om sneller antwoord te krijgen op hun vragen en vermindert de complexiteit van grote dossiers.</p>
+<ol start="6">
+<li>Ontwerp voor stressvolle gebruikssituaties</li>
+</ol>
+<p>De behoefte aan transparantie ontstaat vaak wanneer burgers worden geconfronteerd met een onverwacht of negatief besluit. In dergelijke situaties is de cognitieve belasting hoog en is er behoefte aan snelle duidelijkheid. Het ontwerp dient daarom prioriteit te geven aan overzicht, eenvoud en directe beantwoording van vragen zoals: wat is er gebeurd, waarom is dit gebeurd en wat kan ik nu doen?</p>
+<ol start="7">
+<li>Beperk informatie-overload in navigatie-elementen</li>
+</ol>
+<p>Bij complexe dossiers kunnen navigatiepaden snel omvangrijk worden. Het wordt aanbevolen om breadcrumbs compact te houden en standaard alleen de meest bovenligenste van de navigatiestructuur te tonen. Hierdoor behouden gebruikers context zonder dat de interface onnodig veel ruimte inneemt of extra cognitieve belasting veroorzaakt.</p>
+<ol start="8">
+<li>Bied transparantie gelaagd aan</li>
+</ol>
+<p>Niet iedere gebruiker heeft behoefte aan dezelfde hoeveelheid detail. Daarom wordt aanbevolen om informatie gelaagd aan te bieden, waarbij gebruikers eerst een overzicht op hoofdlijnen krijgen en vervolgens kunnen doorklikken naar meer detail. Deze aanpak ondersteunt zowel gebruikers die snel antwoord willen als gebruikers die behoefte hebben aan diepgaand inzicht in gegevensverwerkingen en besluitvorming.</p>
+<p>Gelaagdheid dient niet alleen terug te komen in de inhoud van de informatie, maar ook in de interactie en componenten van de gebruikersinterface. Het wordt aanbevolen om gebruikers stapsgewijs door informatie te laten navigeren via afzonderlijke schermen of detailweergaven. Hierdoor ontstaat een duidelijke gebruikersreis waarin gebruikers beter begrijpen waar zij zich bevinden en welke informatie beschikbaar is.</p>
+<p>Idealiter is de interactie "klikken" of "tappen". Deze aanpak draagt daarnaast bij aan de toegankelijkheid van de applicatie. Een duidelijke schermstructuur en navigatie zijn voor gebruikers van screenreaders vaak eenvoudiger te volgen dan grote hoeveelheden dynamisch open- en dichtklappende content. Door informatie op meerdere niveaus aan te bieden blijft de interface overzichtelijk, toegankelijk en beter beheersbaar voor een brede groep gebruikers.</p>
+<ol start="9">
+<li>Structureer informatie rondom de informatiebehoefte van gebruikers</li>
+</ol>
+<p>Er bestaan verschillende manieren om complexe gegevensverwerkingen, relaties en besluitvorming visueel weer te geven. Hoewel dergelijke visualisaties waardevol kunnen zijn voor uitgebreide visualisaties voor veel burgers, en met name oudere gebruikers, moeilijk te interpreteren zijn of the navigeren.</p>
+<p>Daarom wordt aanbevolen om niet de beschikbare data of techniek als uitgangspunt te nemen, maar de informatiebehoefte van de gebruiker (de job to be done). Per gebruikssituatie dient te worden onderzocht welke informatie gebruikers daadwerkelijk zoeken en welke informatie hen helpt om hun vraag te beantwoorden.</p>
+<p>Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen om een eerste overzicht te krijgen van hun data:</p>
+<ul>
+<li>Welke organisaties waren betrokken?
+Gebruikers willen kunnen zien welke organisaties gegevens met elkaar hebben uitgewisseld of verwerkt.</li>
+<li>Wanneer gebeurde dit?
+De datum en volgorde van gebeurtenissen vormen een belangrijk herkenningspunt voor gebruikers en helpen bij het reconstrueren van een proces.</li>
+<li>Welke gegevens zijn gebruikt?
+Gebruikers willen inzicht krijgen in welke persoonsgegevens of gegevenscategorieën een rol hebben gespeeld binnen een proces of besluit.</li>
+</ul>
+<p>Deze informatie vormt voor veel gebruikers het primaire startpunt voor begrip en herkenning. Meer geavanceerde visualisaties en aanvullende details kunnen vervolgens als verdiepende laag worden aangeboden voor gebruikers die behoefte hebben aan meer context.</p>
+<ol start="10">
+<li>Bied transparantie aan in de context van bestaande dienstverlening</li>
+</ol>
+<p>Uit het onderzoek blijkt dat burgers hun interactie met de overheid ervaren als één doorlopende klantreis, terwijl informatie in de praktijk vaak verspreid is over verschillende systemen en applicaties. Het introduceren van een afzonderlijke transparantie-app kan ertoe leiden dat gebruikers opnieuw moeten zoeken naar informatie en moeten schakelen tussen verschillende omgevingen.</p>
+<p>Daarom wordt aanbevolen om transparantie zoveel mogelijk aan te bieden binnen de context waarin burgers deze informatie nodig hebben. Bijvoorbeeld bij een besluitbrief, binnen een dossier op MijnOverheid of als onderdeel van bestaande overheidsdiensten. Op deze manier ontstaat transparantie op het moment dat gebruikers vragen hebben over een besluit of gebeurtenis.</p>
+<p>Deze benadering sluit aan bij het principe dat niet de burger hoeft te reizen tussen systemen, maar dat de informatie naar de burger wordt gebracht. Hierdoor wordt de drempel om transparantie-informatie te raadplegen lager en neemt de kans toe dat de informatie daadwerkelijk wordt gebruikt.</p>
+<ol start="11">
+<li>Gebruik samenvattingen om informatie scanbaar en begrijpelijk te maken</li>
+</ol>
+<p>Transparantie-informatie kan snel omvangrijk en complex worden. Gebruikers hebben echter vaak eerst behoefte aan een korte samenvatting voordat zij zich verdiepen in de onderliggende details. Het wordt daarom aanbevolen om gegevensverwerkingen, gebeurtenissen en besluiten te voorzien van begrijpelijke samenvattingen die in één oogopslag duidelijk maken wat er is gebeurd.</p>
+<p>Deze samenvattingen kunnen bijvoorbeeld bestaan uit een korte beschrijving van de gebeurtenis, de betrokken organisatie, de gebruikte gegevens en de datum waarop de gebeurtenis heeft plaatsgevonden. Hierdoor kunnen gebruikers snel door een dossier navigeren en bepalen welke onderdelen voor hen relevant zijn.</p>
+<p>Hoewel complexe visualisaties waardevol kunnen zijn voor sommige gebruikers, blijkt uit het onderzoek dat deze niet altijd bijdragen aan begrip. In veel situaties kunnen goed ontworpen samenvattingen dezelfde informatie effectiever overbrengen dan uitgebreide diagrammen of procesvisualisaties. Samenvattingen kunnen daardoor niet alleen dienen als introductie op meer detail, maar in sommige gevallen ook als volwaardig alternatief voor complexere visualisaties.</p>
+<p>Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna beschikbaar te maken, wordt de scanbaarheid verbeterd en neemt de cognitieve belasting af. Dit is met name belangrijk voor mobiele gebruikers, ouderen en gebruikers die een specifiek antwoord zoeken binnen een groter dossier.</p>
+<ol start="12">
+<li>Sluit aan bij bestaande mentale modellen en interactiepatronen</li>
+</ol>
+<p>Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan andere websites en applicaties. Hierdoor verwachten zij dat nieuwe systemen vergelijkbare patronen, navigatiestructuren en interacties gebruiken als systemen die zij al kennen.</p>
+<p>Voor transparantievoorzieningen betekent dit dat gebruikers niet geholpen zijn met volledig nieuwe interactiemodellen of een aparte manier van navigeren door gegevens. Het wordt aanbevolen om aan te sluiten bij bestaande patronen die men veel gebruikt.  Door aan te sluiten bij bestaande mentale modellen wordt de leercurve beperkt en kunnen gebruikers zich richten op het beantwoorden van hun vraag in plaats van op het leren gebruiken van een nieuw systeem.</p>
 </section></section>
 <section id="randvoorwaarden-uit-beleidsjuridischkader"><div class="header-wrapper"><h2 id="x3-randvoorwaarden-uit-beleidsjuridischkader"><bdi class="secno">3. </bdi>Randvoorwaarden uit beleidsjuridischkader</h2><a class="self-link" href="#randvoorwaarden-uit-beleidsjuridischkader" aria-label="Permalink for Section 3."></a></div>
 <section id="randvoorwaarde-1"><div class="header-wrapper"><h3 id="x3-1-randvoorwaarde-1"><bdi class="secno">3.1 </bdi>randvoorwaarde 1</h3><a class="self-link" href="#randvoorwaarde-1" aria-label="Permalink for Section 3.1"></a></div>
 </section></section>
 <section id="user-experience"><div class="header-wrapper"><h2 id="x4-user-experience"><bdi class="secno">4. </bdi>User eXperience</h2><a class="self-link" href="#user-experience" aria-label="Permalink for Section 4."></a></div>
-<section id="persona-s"><div class="header-wrapper"><h3 id="x4-1-persona-s"><bdi class="secno">4.1 </bdi>Persona's</h3><a class="self-link" href="#persona-s" aria-label="Permalink for Section 4.1"></a></div>
-</section><section id="ontwerp"><div class="header-wrapper"><h3 id="x4-2-ontwerp"><bdi class="secno">4.2 </bdi>Ontwerp</h3><a class="self-link" href="#ontwerp" aria-label="Permalink for Section 4.2"></a></div>
-<section id="aanbevolen-ontwerp"><div class="header-wrapper"><h4 id="x4-2-1-aanbevolen-ontwerp"><bdi class="secno">4.2.1 </bdi>Aanbevolen ontwerp</h4><a class="self-link" href="#aanbevolen-ontwerp" aria-label="Permalink for Section 4.2.1"></a></div>
-</section><section id="ontwerp-beslissingen"><div class="header-wrapper"><h4 id="x4-2-2-ontwerp-beslissingen"><bdi class="secno">4.2.2 </bdi>Ontwerp beslissingen</h4><a class="self-link" href="#ontwerp-beslissingen" aria-label="Permalink for Section 4.2.2"></a></div>
-</section></section><section id="klantreis"><div class="header-wrapper"><h3 id="x4-3-klantreis"><bdi class="secno">4.3 </bdi>Klantreis</h3><a class="self-link" href="#klantreis" aria-label="Permalink for Section 4.3"></a></div>
-</section><section id="gevolgen-voor-de-standaard"><div class="header-wrapper"><h3 id="x4-4-gevolgen-voor-de-standaard"><bdi class="secno">4.4 </bdi>gevolgen voor de standaard</h3><a class="self-link" href="#gevolgen-voor-de-standaard" aria-label="Permalink for Section 4.4"></a></div>
+<section id="mentale-model-van-data-transparantie-van-herkenning-naar-vertrouwen"><div class="header-wrapper"><h3 id="x4-1-mentale-model-van-data-transparantie-van-herkenning-naar-vertrouwen"><bdi class="secno">4.1 </bdi>Mentale model van data transparantie: Van herkenning naar vertrouwen</h3><a class="self-link" href="#mentale-model-van-data-transparantie-van-herkenning-naar-vertrouwen" aria-label="Permalink for Section 4.1"></a></div>
+<p>Uit het gebruikersonderzoek blijkt dat burgers niet direct op zoek zijn naar gedetailleerde informatie over gegevensverwerkingen, besluitvorming of logging. Voordat gebruikers een proces proberen te begrijpen, zoeken zij eerst naar herkenningspunten die bevestigen dat de informatie betrekking heeft op hun situatie.</p>
+<p>Deze herkenningspunten bestaan voornamelijk uit betrokken organisaties, datums, gebeurtenissen en gebruikte gegevens. Wanneer gebruikers deze elementen herkennen, ontstaat voldoende context om zich verder te verdiepen in het proces en de achterliggende besluitvorming.</p>
+<p>Op basis van de onderzoeksresultaten wordt het volgende conceptuele model voorgesteld:</p>
+<p><strong>Herkenning → Context → Verklaring → Begrip → Vertrouwen</strong></p>
+<p>Binnen dit model vormt herkenning de eerste stap. Gebruikers zoeken eerst bevestiging dat informatie relevant is voor hun situatie. Vervolgens proberen zij de context van gebeurtenissen te begrijpen, waarna behoefte ontstaat aan een verklaring van waarom bepaalde handelingen of besluiten hebben plaatsgevonden. Wanneer deze informatie begrijpelijk wordt gepresenteerd, ontstaat meer inzicht in het proces en uiteindelijk meer vertrouwen in de uitkomst.</p>
+<p>Dit model suggereert dat transparantievoorzieningen niet zouden moeten beginnen met technische details of complexe visualisaties, maar met informatie die gebruikers direct kunnen relateren aan hun eigen situatie. Herkenning vormt daarmee de basis voor verdere verdieping.</p>
+<p>Het model kan tevens worden vertaald naar verschillende informatieniveaus binnen de gebruikersinterface:</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Doel gebruiker</th>
+<th>Voorbeelden van componenten</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Herkenning</td>
+<td>"Gaat dit over mij?"</td>
+<td>Organisatienaam, datum, gebeurtenis, gebruikte gegevens</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>"Wat is er gebeurd?"</td>
+<td>Tijdlijn, dossier, relatie tussen gebeurtenissen</td>
+</tr>
+<tr>
+<td>Verklaring</td>
+<td>"Waarom gebeurde dit?"</td>
+<td>Samenvatting, besluituitleg, oorzaak-gevolgrelaties</td>
+</tr>
+<tr>
+<td>Begrip &amp; vertrouwen</td>
+<td>"Kan ik dit begrijpen en controleren?"</td>
+<td>Broninformatie, logging, auditinformatie</td>
+</tr>
+</tbody></table>
+<p><img src="media/Mentalmodel.png" alt="Mental model van gebruiker"></p>
+<p><strong>Beschrijving infographic</strong></p>
+<p>Infographic met de titel "Het mentale model van de gebruiker – Van herkenning naar vertrouwen". In het midden staat een persoon achter een laptop. Boven de persoon staat een tekstballon met de vragen: "Dit ken ik. Wat gebeurde er? Waarom gebeurde dit?". Rondom de persoon staan vijf stappen die met pijlen in een cirkel met elkaar verbonden zijn.</p>
+<ol>
+<li><p>Herkenning – "Gaat dit over mij?"
+Gebruikers zoeken eerst naar herkenningspunten om vast te stellen dat de informatie betrekking heeft op hun situatie. Voorbeelden zijn een bekende organisatie, een datum, een gebeurtenis of gebruikte gegevens.</p>
+</li>
+<li><p>Context – "Wat is er gebeurd?"
+Gebruikers willen begrijpen welke gebeurtenissen hebben plaatsgevonden en hoe deze met elkaar samenhangen.</p>
+</li>
+<li><p>Verklaring – "Waarom gebeurde dit?"
+Gebruikers willen weten waarom bepaalde gegevens zijn gebruikt en hoe deze hebben bijgedragen aan een besluit of gebeurtenis.</p>
+</li>
+<li><p>Begrip – "Ik begrijp het"
+Gebruikers krijgen inzicht in het proces, de gebruikte gegevens en de rol van betrokken organisaties.</p>
+</li>
+<li><p>Vertrouwen – "Ik kan het controleren"
+Gebruikers willen kunnen controleren of de informatie correct is en herleidbaar is naar de bron.</p>
+</li>
+</ol>
+<p>De pijlen tussen de stappen tonen een oplopend proces van informatieverwerking. Het model laat zien dat gebruikers eerst behoefte hebben aan herkenning voordat zij context, verklaringen en begrip zoeken. Vertrouwen ontstaat pas nadat gebruikers voldoende inzicht hebben gekregen in wat er is gebeurd en waarom.</p>
+</section><section id="persona-s"><div class="header-wrapper"><h3 id="x4-2-persona-s"><bdi class="secno">4.2 </bdi>Persona's</h3><a class="self-link" href="#persona-s" aria-label="Permalink for Section 4.2"></a></div>
+<p>De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van <strong>1 tot 7</strong>, waarbij:</p>
+<ul>
+<li><strong>1 = Helemaal niet belangrijk</strong></li>
+<li><strong>7 = Zeer belangrijk</strong></li>
+</ul>
+<p>De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeuren te identificeren. Op basis van deze patronen zijn drie persona's opgesteld die verschillende houdingen ten opzichte van datatransparantie vertegenwoordigen. De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens.</p>
+<p>De persona's helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken. Zij vormen een hulpmiddel bij het ontwerpen en prioriteren van functionaliteiten binnen de TransparantieApp.</p>
+<section id="onderzoeksopzet"><div class="header-wrapper"><h4 id="x4-2-1-onderzoeksopzet"><bdi class="secno">4.2.1 </bdi>Onderzoeksopzet</h4><a class="self-link" href="#onderzoeksopzet" aria-label="Permalink for Section 4.2.1"></a></div>
+<p>De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van <strong>1 tot 7</strong>, waarbij:</p>
+<ul>
+<li><strong>1 = Helemaal niet belangrijk</strong></li>
+<li><strong>7 = Zeer belangrijk</strong></li>
+</ul>
+<p>De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeuren te identificeren. Op basis van deze patronen zijn drie persona's opgesteld die verschillende houdingen ten opzichte van datatransparantie vertegenwoordigen.</p>
+<p>De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens. Zij helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken.</p>
+</section></section><section id="reflectie-doelgroep-buiten-de-scope-van-het-onderzoek"><div class="header-wrapper"><h3 id="x4-3-reflectie-doelgroep-buiten-de-scope-van-het-onderzoek"><bdi class="secno">4.3 </bdi>Reflectie: doelgroep buiten de scope van het onderzoek</h3><a class="self-link" href="#reflectie-doelgroep-buiten-de-scope-van-het-onderzoek" aria-label="Permalink for Section 4.3"></a></div>
+<p>Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.</p>
+<p>Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.</p>
+<p>Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.</p>
+<p>Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.Voor volledigeheid hebben we deze wel meegenomen als persona in dit onderzoek om over na te denken bij design beslissingen.</p>
+<p>Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.</p>
+<p>Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.</p>
+<p>Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.</p>
+<p>Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.</p>
+<section id="fatima-28-de-actieve-burger"><div class="header-wrapper"><h4 id="x4-3-1-fatima-28-de-actieve-burger"><bdi class="secno">4.3.1 </bdi>Fatima (28) – De actieve burger</h4><a class="self-link" href="#fatima-28-de-actieve-burger" aria-label="Permalink for Section 4.3.1"></a></div>
+<p>Fatima is sterk geïnteresseerd in wat er met haar persoonsgegevens gebeurt. Ze maakt zich zorgen over hoe organisaties haar gegevens gebruiken en wil daarom vooral inzicht en controle.</p>
+<p>Uit de analyse blijkt dat voor Fatima vooral functies belangrijk zijn die haar direct laten zien wie toegang heeft tot haar gegevens (<em>gemiddelde score 6,89</em>) en met welke organisaties haar gegevens zijn gedeeld (<em>gemiddelde score 6,89</em>). Deze hoge scores laten zien dat transparantie over datatoegang en datadeling voor haar essentieel is.</p>
+<p>Daarnaast vindt Fatima het zeer belangrijk dat zij haar gegevens kan controleren en corrigeren wanneer deze niet kloppen. De mogelijkheid om actie te ondernemen wanneer gegevens onjuist zijn, bijvoorbeeld door correctie of bezwaar, krijgt een gemiddelde score van <em>6,89</em>. Dit geeft aan dat controle over persoonlijke data voor haar een kernfunctie is.</p>
+<p>Fatima is ook geïnteresseerd in meer inhoudelijke uitleg over datagebruik. Zo vindt zij het belangrijk om te begrijpen waarom haar gegevens worden gebruikt (<em>gemiddelde score 6,67</em>) en of haar gegevens invloed hebben gehad op een besluit (<em>gemiddelde score 6,56</em>). Transparantie gaat voor haar dus niet alleen over toegang tot data, maar ook over het begrijpen hoe beslissingen tot stand komen.</p>
+<p>Meer technische functies, zoals het zien welke verwerkingen op haar gegevens zijn uitgevoerd (<em>gemiddelde score 6,33</em>) of een volledig overzicht van de route die haar gegevens door organisaties hebben afgelegd (<em>gemiddelde score 5,78</em>), zijn voor Fatima iets minder belangrijk.</p>
+<p>Voor Fatima staat een transparantievoorziening vooral in het teken van <strong>begrijpen, controleren en kunnen handelen wanneer dat nodig is</strong>.</p>
+</section><section id="marc-54-de-geinteresseerde-maar-praktische-gebruiker"><div class="header-wrapper"><h4 id="x4-3-2-marc-54-de-geinteresseerde-maar-praktische-gebruiker"><bdi class="secno">4.3.2 </bdi>Marc (54) – De geïnteresseerde maar praktische gebruiker</h4><a class="self-link" href="#marc-54-de-geinteresseerde-maar-praktische-gebruiker" aria-label="Permalink for Section 4.3.2"></a></div>
+<p>Marc is geïnteresseerd in hoe zijn gegevens worden gebruikt, maar wil het vooral overzichtelijk en praktisch houden.</p>
+<p>Hij vindt het belangrijk om te kunnen zien welke organisaties toegang hebben tot zijn gegevens (<em>gemiddelde score 6,7</em>) en met wie deze gegevens zijn gedeeld (<em>gemiddelde score 6,6</em>). Dit geeft hem een gevoel van controle zonder dat hij zich hoeft te verdiepen in complexe details.</p>
+<p>Ook vindt Marc het belangrijk dat hij zijn gegevens kan controleren op juistheid (<em>gemiddelde score 6,5</em>) en dat hij actie kan ondernemen wanneer gegevens niet kloppen (<em>gemiddelde score 6,9</em>). Deze hoge score laat zien dat ook voor hem het kunnen corrigeren van gegevens een belangrijke functie is.</p>
+<p>Hoewel Marc transparantie waardeert, wil hij niet te diep in technische details duiken. Functies zoals inzicht in welke verwerkingen op zijn gegevens zijn uitgevoerd (<em>gemiddelde score 5,8</em>) of een volledig overzicht van de route die gegevens tussen organisaties afleggen (<em>gemiddelde score 6,0</em>) zijn voor hem minder belangrijk dan een duidelijk en eenvoudig overzicht.</p>
+<p>Voor Marc betekent transparantie vooral dat hij snel kan controleren of alles klopt en eenvoudig kan ingrijpen als dat nodig is, zonder zich te hoeven verdiepen in technische details.</p>
+</section><section id="peter-55-de-inactieve-gebruiker"><div class="header-wrapper"><h4 id="x4-3-3-peter-55-de-inactieve-gebruiker"><bdi class="secno">4.3.3 </bdi>Peter(55) – De inactieve gebruiker</h4><a class="self-link" href="#peter-55-de-inactieve-gebruiker" aria-label="Permalink for Section 4.3.3"></a></div>
+<p>Peter denkt in het dagelijks leven nauwelijks na over zijn persoonsgegevens. Digitale diensten gebruikt hij vooral omdat ze handig zijn en hij staat zelden stil bij hoe zijn gegevens worden verwerkt. Toch vindt hij het belangrijk dat hij kan ingrijpen wanneer er iets misgaat.</p>
+<p>Ook bij deze persona blijkt uit de data dat de mogelijkheid om actie te ondernemen bij onjuiste gegevens belangrijk is (<em>gemiddelde score 6,36</em>). Daarnaast vindt hij het belangrijk om te kunnen zien welke organisaties toegang hebben tot zijn gegevens (<em>gemiddelde score 6,36</em>) en met welke organisaties gegevens zijn gedeeld (<em>gemiddelde score 6,18</em>).</p>
+<p>Meer complexe functies, zoals inzicht in welke verwerkingen op gegevens zijn uitgevoerd (<em>gemiddelde score 4,9</em>) of een volledig overzicht van de route die gegevens tussen organisaties afleggen (<em>gemiddelde score 4,7</em>), zijn voor hem duidelijk minder belangrijk. Deze informatie voelt voor hem vaak te technisch of te uitgebreid.</p>
+<p>Voor Peter is een transparantievoorziening vooral waardevol wanneer deze eenvoudig, duidelijk en probleemgericht is. Hij wil vooral weten dat hij geholpen wordt wanneer er iets misgaat, zonder actief op zoek te hoeven naar uitgebreide informatie.</p>
+</section><section id="els-90-de-kwetsbare-burger"><div class="header-wrapper"><h4 id="x4-3-4-els-90-de-kwetsbare-burger"><bdi class="secno">4.3.4 </bdi>Els (90) – De kwetsbare burger</h4><a class="self-link" href="#els-90-de-kwetsbare-burger" aria-label="Permalink for Section 4.3.4"></a></div>
+<blockquote>
+<p><strong>Let op:</strong> Deze persona is niet direct gebaseerd op de uitgevoerde vragenlijst of gebruikerstesten. De persona is opgesteld op basis van inzichten uit literatuuronderzoek, toegankelijkheidsrichtlijnen en algemene ontwerpprincipes rondom inclusieve digitale dienstverlening.</p>
+</blockquote>
+<p>Els heeft beperkte digitale vaardigheden en vindt het moeilijk om te begrijpen hoe haar gegevens worden gebruikt. Zij is sterk afhankelijk van overheidsorganisaties en digitale systemen, maar heeft vaak onvoldoende kennis of vertrouwen om complexe informatie zelfstandig te interpreteren.</p>
+<p>Els heeft behoefte aan eenvoudige uitleg, duidelijke taal en stapsgewijze begeleiding. Wanneer informatie te uitgebreid, technisch of abstract wordt gepresenteerd, verliest zij het overzicht. Voor haar is het belangrijk dat informatie bevestigt dat alles correct verloopt en dat duidelijk wordt aangegeven wat zij moet doen wanneer er iets misgaat.</p>
+<p>In tegenstelling tot de andere persona's heeft Els weinig behoefte aan diepgaande analyses van gegevensverwerkingen of besluitvorming. Zij wil vooral weten dat processen correct verlopen en dat zij ondersteuning kan krijgen wanneer dat nodig is.</p>
+<p>Voor Els betekent grip niet het verkrijgen van meer informatie, maar het ervaren van duidelijkheid, zekerheid en begeleiding.</p>
+<p>Belangrijkste behoeften die ze heeft zijn:</p>
+<ul>
+<li>Eenvoudige en begrijpelijke taal.</li>
+<li>Duidelijke navigatie en consistente interactiepatronen.</li>
+<li>Bevestiging dat processen correct verlopen.</li>
+<li>Ondersteuning bij het ondernemen van actie.</li>
+</ul>
+<p>Ontwerpimplicaties</p>
+<p>Hoewel deze doelgroep buiten de primaire scope van het onderzoek viel, benadrukt deze persona het belang van toegankelijkheid en inclusiviteit binnen de TransparantieApp. Ontwerpkeuzes zoals gelaagde informatie, samenvattingen, herkenbare navigatiepatronen en begrijpelijke taal dragen niet alleen bij aan de gebruikservaring van Els, maar verbeteren de toegankelijkheid voor alle gebruikers.</p>
+</section><section id="vergelijking-van-de-persona-s"><div class="header-wrapper"><h4 id="x4-3-5-vergelijking-van-de-persona-s"><bdi class="secno">4.3.5 </bdi>Vergelijking van de persona's</h4><a class="self-link" href="#vergelijking-van-de-persona-s" aria-label="Permalink for Section 4.3.5"></a></div>
+<p>De verschillen tussen de persona's zitten voornamelijk in de mate waarin zij actief betrokken willen zijn bij het gebruik van hun persoonsgegevens en de hoeveelheid detail die zij wensen.</p>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Houding</th>
+<th>Primaire behoefte</th>
+<th>Detailniveau</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fatima</td>
+<td>Actief betrokken</td>
+<td>Begrijpen, controleren en handelen</td>
+<td>Hoog</td>
+</tr>
+<tr>
+<td>Marc</td>
+<td>Geïnteresseerd maar pragmatisch</td>
+<td>Overzicht en zekerheid</td>
+<td>Middel</td>
+</tr>
+<tr>
+<td>Peter</td>
+<td>Inactief totdat er iets misgaat</td>
+<td>Probleem oplossen</td>
+<td>Laag</td>
+</tr>
+<tr>
+<td>Els</td>
+<td>Voelt zich onzeker</td>
+<td>Ontzien worden en dingen geregeld zijn</td>
+<td>Laag</td>
+</tr>
+</tbody></table>
+</section><section id="gemeenschappelijke-behoeften"><div class="header-wrapper"><h4 id="x4-3-6-gemeenschappelijke-behoeften"><bdi class="secno">4.3.6 </bdi>Gemeenschappelijke behoeften</h4><a class="self-link" href="#gemeenschappelijke-behoeften" aria-label="Permalink for Section 4.3.6"></a></div>
+<p>Opvallend is dat alle drie de persona's behoefte hebben aan dezelfde basisinformatie:</p>
+<ul>
+<li>Welke organisaties toegang hebben tot hun gegevens.</li>
+<li>Met welke organisaties gegevens zijn gedeeld.</li>
+<li>De mogelijkheid om gegevens te controleren.</li>
+<li>De mogelijkheid om fouten te corrigeren.</li>
+</ul>
+<p>De verschillen ontstaan voornamelijk in de behoefte aan verdieping en technische details.</p>
+<p>Deze bevinding ondersteunt de hypothese dat transparantie gelaagd moet worden aangeboden: een gemeenschappelijke basislaag kan voorzien in de informatiebehoefte van alle gebruikers, terwijl aanvullende detailniveaus ruimte bieden aan gebruikers die meer inzicht wensen in gegevensverwerkingen en besluitvorming.</p>
+</section></section><section id="ontwerp"><div class="header-wrapper"><h3 id="x4-4-ontwerp"><bdi class="secno">4.4 </bdi>Ontwerp</h3><a class="self-link" href="#ontwerp" aria-label="Permalink for Section 4.4"></a></div>
+<section id="aanbevolen-ontwerp"><div class="header-wrapper"><h4 id="x4-4-1-aanbevolen-ontwerp"><bdi class="secno">4.4.1 </bdi>Aanbevolen ontwerp</h4><a class="self-link" href="#aanbevolen-ontwerp" aria-label="Permalink for Section 4.4.1"></a></div>
+</section><section id="ontwerp-beslissingen"><div class="header-wrapper"><h4 id="x4-4-2-ontwerp-beslissingen"><bdi class="secno">4.4.2 </bdi>Ontwerp beslissingen</h4><a class="self-link" href="#ontwerp-beslissingen" aria-label="Permalink for Section 4.4.2"></a></div>
+</section></section><section id="experience-map-van-onzichtbare-verwerking-naar-vertrouwen"><div class="header-wrapper"><h3 id="x4-5-experience-map-van-onzichtbare-verwerking-naar-vertrouwen"><bdi class="secno">4.5 </bdi>Experience map:  Van Onzichtbare Verwerking naar Vertrouwen</h3><a class="self-link" href="#experience-map-van-onzichtbare-verwerking-naar-vertrouwen" aria-label="Permalink for Section 4.5"></a></div>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>1. Verwachting</th>
+<th>2. Verwerking</th>
+<th>3. Normaal verloop</th>
+<th>4. Verstoring</th>
+<th>5. Begrijpen</th>
+<th>6. Handelen</th>
+<th>7. Vertrouwen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Wat gebeurt er?</strong></td>
+<td>Persoon wil iets bereiken</td>
+<td>Organisaties verwerken gegevens</td>
+<td>Alles verloopt zoals verwacht</td>
+<td>Er gebeurt iets onverwachts</td>
+<td>Persoon zoekt uitleg</td>
+<td>Persoon wil invloed uitoefenen</td>
+<td>Nieuwe balans ontstaat</td>
+</tr>
+<tr>
+<td><strong>Gebruikersdoel</strong></td>
+<td>Taak afronden</td>
+<td>Geen actief doel</td>
+<td>Resultaat ontvangen</td>
+<td>Begrijpen wat er gebeurt</td>
+<td>Oorzaak achterhalen</td>
+<td>Probleem oplossen</td>
+<td>Zekerheid krijgen</td>
+</tr>
+<tr>
+<td><strong>Gedachten</strong></td>
+<td>"Dit zal wel geregeld worden."</td>
+<td>"Dat gebeurt automatisch."</td>
+<td>"Prima."</td>
+<td>"Huh? Waarom gebeurt dit?, Welke gegevens zijn hier gedeeld?"</td>
+<td>"Hoe zit dit precies?"</td>
+<td>"Wat kan ik nu doen?"</td>
+<td>"Oké, ik snap het."</td>
+</tr>
+<tr>
+<td><strong>Emoties</strong></td>
+<td>Vertrouwend</td>
+<td>Onbezorgd</td>
+<td>Tevreden</td>
+<td>Onzeker</td>
+<td>Onderzoekend</td>
+<td>Doelgericht</td>
+<td>Gerustgesteld</td>
+</tr>
+<tr>
+<td><strong>Vragen</strong></td>
+<td>Wat moet ik doen?</td>
+<td>Geen</td>
+<td>Geen</td>
+<td>Waarom gebeurt dit? Welke gegevens zijn gedeeld?</td>
+<td>Wie? Waarom? Hoe?</td>
+<td>Welke opties heb ik?</td>
+<td>Kan ik erop vertrouwen?</td>
+</tr>
+<tr>
+<td><strong>Behoefte</strong></td>
+<td>Gemak</td>
+<td>Vertrouwen</td>
+<td>Voorspelbaarheid</td>
+<td>Verklaring</td>
+<td>Context</td>
+<td>Handelingsperspectief</td>
+<td>Zekerheid</td>
+</tr>
+<tr>
+<td><strong>Risico</strong></td>
+<td>Complexiteit</td>
+<td>Onzichtbaarheid</td>
+<td>Onverschilligheid</td>
+<td>Verwarring</td>
+<td>Informatie-overload</td>
+<td>Machteloosheid</td>
+<td>Wantrouwen</td>
+</tr>
+<tr>
+<td><strong>Kans</strong></td>
+<td>Duidelijke start</td>
+<td>Transparante processen</td>
+<td>Frictieloze ervaring</td>
+<td>Tijdige signalering</td>
+<td>Begrijpelijke uitleg</td>
+<td>Actie mogelijk maken</td>
+<td>Vertrouwen versterken</td>
+</tr>
+</tbody></table>
+</section><section id="gevolgen-voor-de-standaard"><div class="header-wrapper"><h3 id="x4-6-gevolgen-voor-de-standaard"><bdi class="secno">4.6 </bdi>gevolgen voor de standaard</h3><a class="self-link" href="#gevolgen-voor-de-standaard" aria-label="Permalink for Section 4.6"></a></div>
 </section></section>
 <section id="business-architectuur"><div class="header-wrapper"><h2 id="x5-business-architectuur"><bdi class="secno">5. </bdi>Business Architectuur</h2><a class="self-link" href="#business-architectuur" aria-label="Permalink for Section 5."></a></div>
 <p>De TransparantieApp is bedoeld om inzichttelijk te maken welke (persoons)gegevens verwerkt (gelezen, toegevoegd of gewijzigd) zijn door welke (overheids)organisatie(s) en waarom.
