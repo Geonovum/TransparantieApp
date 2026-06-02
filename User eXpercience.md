@@ -183,6 +183,22 @@ Deze bevinding ondersteunt de hypothese dat transparantie gelaagd moet worden aa
 
 ### Ontwerp beslissingen
 
-## Klantreis
+## Experience map
+# Experience Map – Van Onzichtbare Verwerking naar Vertrouwen
+
+| Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
+|-------|-------|-------|-------|-------|-------|-------|-------|
+| **Wat gebeurt er?** | Persoon wil iets bereiken | Organisaties verwerken gegevens | Alles verloopt zoals verwacht | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
+| **Gebruikersdoel** | Taak afronden | Geen actief doel | Resultaat ontvangen | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
+| **Gedachten** | "Dit zal wel geregeld worden." | "Dat gebeurt automatisch." | "Prima." | "Huh? Waarom gebeurt dit?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
+| **Emoties** |  Vertrouwend |  Onbezorgd | Tevreden | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
+| **Vragen** | Wat moet ik doen? | Geen | Geen | Waarom gebeurt dit? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
+| **Behoefte** | Gemak | Vertrouwen | Voorspelbaarheid | Verklaring | Context | Handelingsperspectief | Zekerheid |
+| **Risico** | Complexiteit | Onzichtbaarheid | Onverschilligheid | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
+| **Kans** | Duidelijke start | Transparante processen | Frictieloze ervaring | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
+
+
+
+
 
 ## gevolgen voor de standaard
