@@ -17,6 +17,33 @@
 
 ## Gebruikersonderzoek
 
+1. Maak abstracte concepten concreet met prototypes
+
+Transparantie, logging en gegevensuitwisseling zijn voor veel burgers abstracte begrippen. Het gebruik van interactieve prototypes helpt deelnemers om zich een concreet beeld te vormen van de oplossing, waardoor betrouwbaardere feedback ontstaat.
+
+2. Onderzoek mentale modellen in plaats van alleen usability
+
+Bij nieuwe concepten is het niet alleen belangrijk of gebruikers een interface kunnen bedienen, maar vooral of zij begrijpen wat er gebeurt. Onderzoek zou daarom expliciet moeten kijken naar hoe burgers denken dat gegevensverwerking en besluitvorming werken.
+
+3. Gebruik realistische casussen met een daadwerkelijke stakeholder.
+
+Onderwerpen zoals het zorgdomein bleek geschikt om abstracte vraagstukken rondom transparantie begrijpelijk te maken. Het gebruik van herkenbare situaties vergroot de kwaliteit van de feedback en het realitische laten aansluiten van de standaard.
+
+4. Betrek verschillende doelgroepen
+
+Het onderzoek laat zien dat actieve inzagezoekers, pragmatische burgers en kwetsbare gebruikers verschillende behoeften hebben. Het is daarom belangrijk om niet uitsluitend digitaal vaardige gebruikers te onderzoeken.
+
+5. Combineer meerdere onderzoeksmethoden
+
+De combinatie van interviews, literatuuronderzoek, usabilitytesten, co-creatie en design research leverde meer inzicht op dan één enkele methode. Verschillende methoden vullen elkaar aan en helpen om zowel behoeften als gedrag beter te begrijpen.
+
+6. Onderzoek de behoefte aan de "waarom-vraag"
+
+Gebruikers blijken niet alleen geïnteresseerd in welke gegevens zijn gebruikt, maar vooral in hoe deze hebben bijgedragen aan een besluit. Dit vormt een interessante onderzoekslijn voor toekomstige ontwikkeling van zowel de standaard als de applicatie. Leer hiervoor ook sectie 5.1.
+
+7. Hanteer een iteratieve aanpak
+
+Inzichten ontstaan door meerdere cycli van ontwerpen, testen en verbeteren. Gebruikersonderzoek moet daarom geen eindcontrole zijn, maar een doorlopend onderdeel van het ontwerpproces.
 
 
 
