@@ -49,7 +49,6 @@ Gebruikers willen kunnen controleren of de informatie correct is en herleidbaar 
 De pijlen tussen de stappen tonen een oplopend proces van informatieverwerking. Het model laat zien dat gebruikers eerst behoefte hebben aan herkenning voordat zij context, verklaringen en begrip zoeken. Vertrouwen ontstaat pas nadat gebruikers voldoende inzicht hebben gekregen in wat er is gebeurd en waarom.
 
 ## Persona's
-## Persona's
 
 De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van **1 tot 7**, waarbij:
 
@@ -59,9 +58,9 @@ De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek o
 De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeuren te identificeren. Op basis van deze patronen zijn drie persona's opgesteld die verschillende houdingen ten opzichte van datatransparantie vertegenwoordigen. De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens.
 
 De persona's helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken. Zij vormen een hulpmiddel bij het ontwerpen en prioriteren van functionaliteiten binnen de TransparantieApp.
-# Persona's
 
-## Onderzoeksopzet
+
+### Onderzoeksopzet
 
 De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van **1 tot 7**, waarbij:
 
@@ -72,9 +71,8 @@ De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeu
 
 De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens. Zij helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken.
 
----
 
-## Fatima (28) – De actieve burger
+### Fatima (28) – De actieve burger
 
 Fatima is sterk geïnteresseerd in wat er met haar persoonsgegevens gebeurt. Ze maakt zich zorgen over hoe organisaties haar gegevens gebruiken en wil daarom vooral inzicht en controle.
 
@@ -88,9 +86,7 @@ Meer technische functies, zoals het zien welke verwerkingen op haar gegevens zij
 
 Voor Fatima staat een transparantievoorziening vooral in het teken van **begrijpen, controleren en kunnen handelen wanneer dat nodig is**.
 
----
-
-## Marc (54) – De geïnteresseerde maar praktische gebruiker
+### Marc (54) – De geïnteresseerde maar praktische gebruiker
 
 Marc is geïnteresseerd in hoe zijn gegevens worden gebruikt, maar wil het vooral overzichtelijk en praktisch houden.
 
@@ -102,9 +98,8 @@ Hoewel Marc transparantie waardeert, wil hij niet te diep in technische details 
 
 Voor Marc betekent transparantie vooral dat hij snel kan controleren of alles klopt en eenvoudig kan ingrijpen als dat nodig is, zonder zich te hoeven verdiepen in technische details.
 
----
 
-## Peter – De inactieve gebruiker
+### Peter(55) – De inactieve gebruiker
 
 Peter denkt in het dagelijks leven nauwelijks na over zijn persoonsgegevens. Digitale diensten gebruikt hij vooral omdat ze handig zijn en hij staat zelden stil bij hoe zijn gegevens worden verwerkt. Toch vindt hij het belangrijk dat hij kan ingrijpen wanneer er iets misgaat.
 
@@ -114,9 +109,9 @@ Meer complexe functies, zoals inzicht in welke verwerkingen op gegevens zijn uit
 
 Voor Peter is een transparantievoorziening vooral waardevol wanneer deze eenvoudig, duidelijk en probleemgericht is. Hij wil vooral weten dat hij geholpen wordt wanneer er iets misgaat, zonder actief op zoek te hoeven naar uitgebreide informatie.
 
----
 
-## Vergelijking van de persona's
+
+### Vergelijking van de persona's
 
 De verschillen tussen de persona's zitten voornamelijk in de mate waarin zij actief betrokken willen zijn bij het gebruik van hun persoonsgegevens en de hoeveelheid detail die zij wensen.
 
