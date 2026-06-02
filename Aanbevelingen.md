@@ -5,7 +5,7 @@
 ### extensie lezen
 
 1. Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  
-2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)  
+2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
 
 ### Core standaard
 
