@@ -120,3 +120,9 @@ Deze samenvattingen kunnen bijvoorbeeld bestaan uit een korte beschrijving van d
 Hoewel complexe visualisaties waardevol kunnen zijn voor sommige gebruikers, blijkt uit het onderzoek dat deze niet altijd bijdragen aan begrip. In veel situaties kunnen goed ontworpen samenvattingen dezelfde informatie effectiever overbrengen dan uitgebreide diagrammen of procesvisualisaties. Samenvattingen kunnen daardoor niet alleen dienen als introductie op meer detail, maar in sommige gevallen ook als volwaardig alternatief voor complexere visualisaties.
 
 Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna beschikbaar te maken, wordt de scanbaarheid verbeterd en neemt de cognitieve belasting af. Dit is met name belangrijk voor mobiele gebruikers, ouderen en gebruikers die een specifiek antwoord zoeken binnen een groter dossier.
+
+11. Sluit aan bij bestaande mentale modellen en interactiepatronen
+
+Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan andere websites en applicaties. Hierdoor verwachten zij dat nieuwe systemen vergelijkbare patronen, navigatiestructuren en interacties gebruiken als systemen die zij al kennen.
+
+Voor transparantievoorzieningen betekent dit dat gebruikers niet geholpen zijn met volledig nieuwe interactiemodellen of een aparte manier van navigeren door gegevens. Het wordt aanbevolen om aan te sluiten bij bestaande patronen die men veel gebruikt.  Door aan te sluiten bij bestaande mentale modellen wordt de leercurve beperkt en kunnen gebruikers zich richten op het beantwoorden van hun vraag in plaats van op het leren gebruiken van een nieuw systeem.
