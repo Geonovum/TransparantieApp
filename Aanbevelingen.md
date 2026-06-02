@@ -5,7 +5,7 @@
 ### extensie lezen
 
 1. Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  
-2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)  
+2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
 
 ### Core standaard
 
@@ -49,6 +49,7 @@ Inzichten ontstaan door meerdere cycli van ontwerpen, testen en verbeteren. Gebr
 
 ## UX design
 
+0. maak geen nieuwe app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
 
 1. Hanteer een mobile-first ontwerpstrategie
 
