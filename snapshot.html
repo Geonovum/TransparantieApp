@@ -1547,11 +1547,11 @@ ul.index code{color:inherit}
 <section id="standaard"><div class="header-wrapper"><h3 id="x2-1-standaard"><bdi class="secno">2.1 </bdi>Standaard</h3><a class="self-link" href="#standaard" aria-label="Permalink for Section 2.1"></a></div>
 <section id="extensie-lezen"><div class="header-wrapper"><h4 id="x2-1-1-extensie-lezen"><bdi class="secno">2.1.1 </bdi>extensie lezen</h4><a class="self-link" href="#extensie-lezen" aria-label="Permalink for Section 2.1.1"></a></div>
 <ol>
-<li>Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  </li>
 <li>Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)</li>
 </ol>
 </section><section id="core-standaard"><div class="header-wrapper"><h4 id="x2-1-2-core-standaard"><bdi class="secno">2.1.2 </bdi>Core standaard</h4><a class="self-link" href="#core-standaard" aria-label="Permalink for Section 2.1.2"></a></div>
 <ol>
+<li>In de core-standaard wijst een log-regel terug naar de aanroepende organisatie. Echter, vanuit de raadpleging ligt de start bij de initiator-organisatie en wordt vandaaruit iedere opvolgende organisatie in de keten bevraagd. Dat betekent dat er behoefte is aan het logboek-id van de volgende organisatie in de keten. Het advies is dan ook om de Standaard uit te breiden met dit gegeven.</li>
 <li>maak mogelijk dat wanneer er wel een objectID maar geen subject ID is de subjectID niet veplicht is (bijvoorbeeld als een trace start met verwerkingen voordat er persoonsgegevens opgevraagd worden)</li>
 <li>maak mogelijk om te verwijzen naar een andere <em>trace</em> (voor bijvoorbeeld de totstandkoming van een grondslag) of om te verwijzen naar een document of web-pagina (beide via een URL) waarin meer informatie te vinden is. Een voorbeeld hiervan is het taxatieverslag in het geval van een OZB-aanslag.  </li>
 <li>verruim het organisatorische werkingsgebied van de logging-Standaard en van de extensie lezen naar alle gebruikers van gegevens, die gebaseerd zijn op het BSN (zie de ALB: <a href="https://www.rvig.nl/autorisatielijst-bsn-gerechtigden">https://www.rvig.nl/autorisatielijst-bsn-gerechtigden</a>). Dat betekent in elk geval uitbreiding naar pensioenfondsen, zorgverzekeraars en zorgverleners.</li>
