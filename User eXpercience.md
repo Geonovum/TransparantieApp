@@ -183,8 +183,7 @@ Deze bevinding ondersteunt de hypothese dat transparantie gelaagd moet worden aa
 
 ### Ontwerp beslissingen
 
-## Experience map
-# Experience Map – Van Onzichtbare Verwerking naar Vertrouwen
+## Experience map:  Van Onzichtbare Verwerking naar Vertrouwen
 
 | Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
 |-------|-------|-------|-------|-------|-------|-------|-------|
