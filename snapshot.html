@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.8.0">
+<meta name="generator" content="ReSpec 37.0.0">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -16,6 +16,7 @@ dfn{cursor:pointer}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
 .dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
 .dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel .marker.cddl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
 .dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
 .dfn-panel a[href]:hover{border-bottom-width:1px}
 .dfn-panel ul{padding:0}
@@ -62,13 +63,17 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+@media (prefers-color-scheme:dark){
+#references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+}
+body:has(input[name=color-scheme][value=dark]:checked) #references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
 cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
 #issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
+#issue-summary li{list-style:none}
 details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
 details.respec-tests-details>*{padding-right:2em}
 details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
@@ -77,7 +82,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
 :is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
@@ -88,6 +94,8 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+body:has(input[name=color-scheme][value=light]:checked),head:not(:has(meta[name=color-scheme][content~=dark]))+body{color-scheme:light}
+body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
 </style>
 <script type="text/javascript">
    /* Any custom mermaid.js scripts will go here. */
@@ -1441,14 +1449,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry informative toc-inline"><div class="head">
+<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">TransparantieApp rapport</h1>
     
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">18 mei 2026</time>
+      <time class="dt-published" datetime="2025-11-17">02 juni 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1478,7 +1486,9 @@ ul.index code{color:inherit}
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Geonovum/TransparantieApp/">GitHub Geonovum/TransparantieApp</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/TransparantieApp/issues/">Dien een melding in</a>
+    <a href="https://github.com/Geonovum/TransparantieApp/issues/">All issues</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/TransparantieApp/issues/new/choose">Dien een melding in</a>
   </dd><dd>
     <a href="https://github.com/Geonovum/TransparantieApp/commits/">Revisiehistorie</a>
   </dd><dd>
@@ -1549,9 +1559,66 @@ ul.index code{color:inherit}
 </section></section><section id="architectuur"><div class="header-wrapper"><h3 id="x2-2-architectuur"><bdi class="secno">2.2 </bdi>Architectuur</h3><a class="self-link" href="#architectuur" aria-label="Permalink for Section 2.2"></a></div>
 </section><section id="gebruikersonderzoek"><div class="header-wrapper"><h3 id="x2-3-gebruikersonderzoek"><bdi class="secno">2.3 </bdi>Gebruikersonderzoek</h3><a class="self-link" href="#gebruikersonderzoek" aria-label="Permalink for Section 2.3"></a></div>
 </section><section id="ux-design"><div class="header-wrapper"><h3 id="x2-4-ux-design"><bdi class="secno">2.4 </bdi>UX design</h3><a class="self-link" href="#ux-design" aria-label="Permalink for Section 2.4"></a></div>
-<ul>
-<li>maak niet nog een app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld</li>
-</ul>
+<ol>
+<li>Hanteer een mobile-first ontwerpstrategie</li>
+</ol>
+<p>Gebruikers zijn gewend om overheidsdiensten steeds vaker via mobiele apparaten te gebruiken. Daarnaast dwingt een mobile-first benadering ontwerpers om kritisch te kijken naar welke informatie daadwerkelijk noodzakelijk is. Door eerst voor kleine schermen te ontwerpen ontstaat een compactere en beter geprioriteerde informatiearchitectuur, waardoor de kans op informatie-overload afneemt.</p>
+<ol start="2">
+<li>Gebruik een persona-matrix voor informatieprioritering</li>
+</ol>
+<p>Uit het onderzoek blijkt dat verschillende gebruikersgroepen uiteenlopende informatiebehoeften hebben. Het wordt aanbevolen om een persona-matrix te gebruiken waarin per doelgroep wordt vastgelegd welke informatie belangrijk is en wanneer deze relevant wordt. Deze matrix kan vervolgens worden gebruikt om informatie te prioriteren en te bepalen welke informatie prominent zichtbaar moet zijn en welke informatie optioneel beschikbaar wordt gemaakt.</p>
+<ol start="3">
+<li>Ontwerp eerst de gebruikersflow en daarna de interfacecomponenten</li>
+</ol>
+<p>Bij complexe transparantievraagstukken is het belangrijk om eerst inzicht te krijgen in de gebruikersreis voordat individuele schermen of componenten worden ontworpen. Het wordt aanbevolen om eerst de flow van taken, beslissingen en informatiebehoeften uit te werken en pas daarna componenten op detailniveau te ontwerpen. Hierdoor blijft de focus liggen op het oplossen van gebruikersproblemen in plaats van op afzonderlijke interface-elementen.</p>
+<ol start="4">
+<li>Gebruik begrijpelijke en mensgerichte taal</li>
+</ol>
+<p>Technische, juridische en organisatorische terminologie vormt een belangrijke drempel voor burgers. Het ontwerp dient daarom gebruik te maken van begrijpelijke taal die aansluit bij het dagelijkse taalgebruik van gebruikers. Complexe begrippen kunnen waar nodig worden voorzien van aanvullende uitleg, zodat informatie toegankelijk blijft voor een brede doelgroep.</p>
+<ol start="5">
+<li>Ondersteun snelle informatievinding met zoeken en filteren</li>
+</ol>
+<p>Gebruikers bezoeken een transparantievoorziening vaak met een specifieke vraag of informatiebehoefte. Het wordt daarom aanbevolen om zoek- en filtermogelijkheden aan te bieden waarmee gebruikers snel relevante gebeurtenissen, gegevensverwerkingen of besluiten kunnen vinden. Dit helpt gebruikers om sneller antwoord te krijgen op hun vragen en vermindert de complexiteit van grote dossiers.</p>
+<ol start="6">
+<li>Ontwerp voor stressvolle gebruikssituaties</li>
+</ol>
+<p>De behoefte aan transparantie ontstaat vaak wanneer burgers worden geconfronteerd met een onverwacht of negatief besluit. In dergelijke situaties is de cognitieve belasting hoog en is er behoefte aan snelle duidelijkheid. Het ontwerp dient daarom prioriteit te geven aan overzicht, eenvoud en directe beantwoording van vragen zoals: wat is er gebeurd, waarom is dit gebeurd en wat kan ik nu doen?</p>
+<ol start="7">
+<li>Beperk informatie-overload in navigatie-elementen</li>
+</ol>
+<p>Bij complexe dossiers kunnen navigatiepaden snel omvangrijk worden. Het wordt aanbevolen om breadcrumbs compact te houden en standaard alleen de hoogste niveaus van de navigatiestructuur te tonen. Hierdoor behouden gebruikers context zonder dat de interface onnodig veel ruimte inneemt of extra cognitieve belasting veroorzaakt.</p>
+<ol start="8">
+<li>Bied transparantie gelaagd aan</li>
+</ol>
+<p>Niet iedere gebruiker heeft behoefte aan dezelfde hoeveelheid detail. Daarom wordt aanbevolen om informatie gelaagd aan te bieden, waarbij gebruikers eerst een overzicht op hoofdlijnen krijgen en vervolgens kunnen doorklikken naar meer detail. Deze aanpak ondersteunt zowel gebruikers die snel antwoord willen als gebruikers die behoefte hebben aan diepgaand inzicht in gegevensverwerkingen en besluitvorming.</p>
+<p>Gelaagdheid dient niet alleen terug te komen in de inhoud van de informatie, maar ook in de interactie en componenten van de gebruikersinterface. Het wordt aanbevolen om gebruikers stapsgewijs door informatie te laten navigeren via afzonderlijke schermen of detailweergaven. Hierdoor ontstaat een duidelijke gebruikersreis waarin gebruikers beter begrijpen waar zij zich bevinden en welke informatie beschikbaar is.</p>
+<p>Deze aanpak draagt daarnaast bij aan de toegankelijkheid van de applicatie. Een duidelijke schermstructuur en navigatie zijn voor gebruikers van screenreaders vaak eenvoudiger te volgen dan grote hoeveelheden dynamisch open- en dichtklappende content. Door informatie op meerdere niveaus aan te bieden blijft de interface overzichtelijk, toegankelijk en beter beheersbaar voor een brede groep gebruikers.</p>
+<ol start="9">
+<li>Structureer informatie rondom de informatiebehoefte van gebruikers</li>
+</ol>
+<p>Er bestaan verschillende manieren om complexe gegevensverwerkingen, relaties en besluitvorming visueel weer te geven. Hoewel dergelijke visualisaties waardevol kunnen zijn voor uitgebreide visualisaties voor veel burgers, en met name oudere gebruikers, moeilijk te interpreteren zijn of the navigeren.</p>
+<p>Daarom wordt aanbevolen om niet de beschikbare data of techniek als uitgangspunt te nemen, maar de informatiebehoefte van de gebruiker (de job to be done). Per gebruikssituatie dient te worden onderzocht welke informatie gebruikers daadwerkelijk zoeken en welke informatie hen helpt om hun vraag te beantwoorden.</p>
+<p>Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen:</p>
+<p>Welke organisaties waren betrokken?
+Gebruikers willen kunnen zien welke organisaties gegevens met elkaar hebben uitgewisseld of verwerkt.
+Wanneer gebeurde dit?
+De datum en volgorde van gebeurtenissen vormen een belangrijk herkenningspunt voor gebruikers en helpen bij het reconstrueren van een proces.
+Welke gegevens zijn gebruikt?
+Gebruikers willen inzicht krijgen in welke persoonsgegevens of gegevenscategorieën een rol hebben gespeeld binnen een proces of besluit.</p>
+<p>Deze informatie vormt voor veel gebruikers het primaire startpunt voor begrip en herkenning. Meer geavanceerde visualisaties en aanvullende details kunnen vervolgens als verdiepende laag worden aangeboden voor gebruikers die behoefte hebben aan meer context.</p>
+<ol start="10">
+<li>Bied transparantie aan in de context van bestaande dienstverlening</li>
+</ol>
+<p>Uit het onderzoek blijkt dat burgers hun interactie met de overheid ervaren als één doorlopende klantreis, terwijl informatie in de praktijk vaak verspreid is over verschillende systemen en applicaties. Het introduceren van een afzonderlijke transparantie-app kan ertoe leiden dat gebruikers opnieuw moeten zoeken naar informatie en moeten schakelen tussen verschillende omgevingen.</p>
+<p>Daarom wordt aanbevolen om transparantie zoveel mogelijk aan te bieden binnen de context waarin burgers deze informatie nodig hebben. Bijvoorbeeld bij een besluitbrief, binnen een dossier op MijnOverheid of als onderdeel van bestaande overheidsdiensten. Op deze manier ontstaat transparantie op het moment dat gebruikers vragen hebben over een besluit of gebeurtenis.</p>
+<p>Deze benadering sluit aan bij het principe dat niet de burger hoeft te reizen tussen systemen, maar dat de informatie naar de burger wordt gebracht. Hierdoor wordt de drempel om transparantie-informatie te raadplegen lager en neemt de kans toe dat de informatie daadwerkelijk wordt gebruikt.</p>
+<ol start="11">
+<li>Gebruik samenvattingen om informatie scanbaar en begrijpelijk te maken</li>
+</ol>
+<p>Transparantie-informatie kan snel omvangrijk en complex worden. Gebruikers hebben echter vaak eerst behoefte aan een korte samenvatting voordat zij zich verdiepen in de onderliggende details. Het wordt daarom aanbevolen om gegevensverwerkingen, gebeurtenissen en besluiten te voorzien van begrijpelijke samenvattingen die in één oogopslag duidelijk maken wat er is gebeurd.</p>
+<p>Deze samenvattingen kunnen bijvoorbeeld bestaan uit een korte beschrijving van de gebeurtenis, de betrokken organisatie, de gebruikte gegevens en de datum waarop de gebeurtenis heeft plaatsgevonden. Hierdoor kunnen gebruikers snel door een dossier navigeren en bepalen welke onderdelen voor hen relevant zijn.</p>
+<p>Hoewel complexe visualisaties waardevol kunnen zijn voor sommige gebruikers, blijkt uit het onderzoek dat deze niet altijd bijdragen aan begrip. In veel situaties kunnen goed ontworpen samenvattingen dezelfde informatie effectiever overbrengen dan uitgebreide diagrammen of procesvisualisaties. Samenvattingen kunnen daardoor niet alleen dienen als introductie op meer detail, maar in sommige gevallen ook als volwaardig alternatief voor complexere visualisaties.</p>
+<p>Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna beschikbaar te maken, wordt de scanbaarheid verbeterd en neemt de cognitieve belasting af. Dit is met name belangrijk voor mobiele gebruikers, ouderen en gebruikers die een specifiek antwoord zoeken binnen een groter dossier.</p>
 </section></section>
 <section id="randvoorwaarden-uit-beleidsjuridischkader"><div class="header-wrapper"><h2 id="x3-randvoorwaarden-uit-beleidsjuridischkader"><bdi class="secno">3. </bdi>Randvoorwaarden uit beleidsjuridischkader</h2><a class="self-link" href="#randvoorwaarden-uit-beleidsjuridischkader" aria-label="Permalink for Section 3."></a></div>
 <section id="randvoorwaarde-1"><div class="header-wrapper"><h3 id="x3-1-randvoorwaarde-1"><bdi class="secno">3.1 </bdi>randvoorwaarde 1</h3><a class="self-link" href="#randvoorwaarde-1" aria-label="Permalink for Section 3.1"></a></div>
@@ -1659,8 +1726,11 @@ function setupPanel() {
 }
 
 function panelListener() {
-  /** @type {HTMLElement} */
+  /** @type {HTMLElement | null} */
   let panel = null;
+  /**
+   * @param {KeyboardEvent|MouseEvent} event
+   */
   return event => {
     const { target, type } = event;
 
@@ -1668,24 +1738,34 @@ function panelListener() {
 
     // For keys, we only care about Enter key to activate the panel
     // otherwise it's activated via a click.
-    if (type === "keydown" && event.key !== "Enter") return;
+    if (
+      type === "keydown" &&
+      /** @type {KeyboardEvent} */ (event).key !== "Enter"
+    )
+      return;
 
     const action = deriveAction(event);
 
     switch (action) {
       case "show": {
         hidePanel(panel);
-        /** @type {HTMLElement} */
+        /** @type {HTMLElement | null} */
         const dfn = target.closest("dfn, .index-term");
+        if (!dfn?.id) break;
         panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        const coords = deriveCoordinates(event);
+        if (!panel) break;
+        const coords = deriveCoordinates(
+          /** @type {MouseEvent|KeyboardEvent} */ (event)
+        );
         displayPanel(dfn, panel, coords);
         break;
       }
       case "dock": {
-        panel.style.left = null;
-        panel.style.top = null;
-        panel.classList.add("docked");
+        if (panel) {
+          panel.style.left = "";
+          panel.style.top = "";
+          panel.classList.add("docked");
+        }
         break;
       }
       case "hide": {
@@ -1736,7 +1816,8 @@ function deriveAction(event) {
     if (hitALink) {
       return target.classList.contains("self-link") ? "hide" : "dock";
     }
-    const panel = target.closest(".dfn-panel");
+
+    const panel = /** @type {HTMLElement} */ (target.closest(".dfn-panel"));
     return panel.classList.contains("docked") ? "hide" : "none";
   }
   if (document.querySelector(".dfn-panel:not([hidden])")) {
@@ -1780,9 +1861,9 @@ function displayPanel(dfn, panel, { x, y }) {
     const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
     const newCaretOffset = left - newLeft;
     panel.style.left = `${newLeft}px`;
-    /** @type {HTMLElement} */
+    /** @type {HTMLElement | null} */
     const caret = panel.querySelector(".caret");
-    caret.style.left = `${newCaretOffset}px`;
+    if (caret) caret.style.left = `${newCaretOffset}px`;
   }
 
   // As it's a dialog, we trap focus.
@@ -1831,6 +1912,9 @@ function trapFocus(panel, dfn) {
 function createTrapListener(anchors, panel, dfn) {
   const lastIndex = anchors.length - 1;
   let currentIndex = 0;
+  /**
+   * @param {KeyboardEvent} event
+   */
   return event => {
     switch (event.key) {
       // Hitting "Tab" traps us in a nice loop around elements.
@@ -1860,7 +1944,7 @@ function createTrapListener(anchors, panel, dfn) {
   };
 }
 
-/** @param {HTMLElement} panel */
+/** @param {HTMLElement | null} panel */
 function hidePanel(panel) {
   if (!panel) return;
   panel.hidden = true;
