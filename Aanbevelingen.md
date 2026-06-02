@@ -17,7 +17,79 @@
 
 ## Gebruikersonderzoek
 
+
+
+
 ## UX design
 
-* maak niet nog een app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
 
+1. Hanteer een mobile-first ontwerpstrategie
+
+Gebruikers zijn gewend om overheidsdiensten steeds vaker via mobiele apparaten te gebruiken. Daarnaast dwingt een mobile-first benadering ontwerpers om kritisch te kijken naar welke informatie daadwerkelijk noodzakelijk is. Door eerst voor kleine schermen te ontwerpen ontstaat een compactere en beter geprioriteerde informatiearchitectuur, waardoor de kans op informatie-overload afneemt.
+
+2. Gebruik een persona-matrix voor informatieprioritering
+
+Uit het onderzoek blijkt dat verschillende gebruikersgroepen uiteenlopende informatiebehoeften hebben. Het wordt aanbevolen om een persona-matrix te gebruiken waarin per doelgroep wordt vastgelegd welke informatie belangrijk is en wanneer deze relevant wordt. Deze matrix kan vervolgens worden gebruikt om informatie te prioriteren en te bepalen welke informatie prominent zichtbaar moet zijn en welke informatie optioneel beschikbaar wordt gemaakt.
+
+3. Ontwerp eerst de gebruikersflow en daarna de interfacecomponenten
+
+Bij complexe transparantievraagstukken is het belangrijk om eerst inzicht te krijgen in de gebruikersreis voordat individuele schermen of componenten worden ontworpen. Het wordt aanbevolen om eerst de flow van taken, beslissingen en informatiebehoeften uit te werken en pas daarna componenten op detailniveau te ontwerpen. Hierdoor blijft de focus liggen op het oplossen van gebruikersproblemen in plaats van op afzonderlijke interface-elementen.
+
+4. Gebruik begrijpelijke en mensgerichte taal
+
+Technische, juridische en organisatorische terminologie vormt een belangrijke drempel voor burgers. Het ontwerp dient daarom gebruik te maken van begrijpelijke taal die aansluit bij het dagelijkse taalgebruik van gebruikers. Complexe begrippen kunnen waar nodig worden voorzien van aanvullende uitleg, zodat informatie toegankelijk blijft voor een brede doelgroep.
+
+5. Ondersteun snelle informatievinding met zoeken en filteren
+
+Gebruikers bezoeken een transparantievoorziening vaak met een specifieke vraag of informatiebehoefte. Het wordt daarom aanbevolen om zoek- en filtermogelijkheden aan te bieden waarmee gebruikers snel relevante gebeurtenissen, gegevensverwerkingen of besluiten kunnen vinden. Dit helpt gebruikers om sneller antwoord te krijgen op hun vragen en vermindert de complexiteit van grote dossiers.
+
+6. Ontwerp voor stressvolle gebruikssituaties
+
+De behoefte aan transparantie ontstaat vaak wanneer burgers worden geconfronteerd met een onverwacht of negatief besluit. In dergelijke situaties is de cognitieve belasting hoog en is er behoefte aan snelle duidelijkheid. Het ontwerp dient daarom prioriteit te geven aan overzicht, eenvoud en directe beantwoording van vragen zoals: wat is er gebeurd, waarom is dit gebeurd en wat kan ik nu doen?
+
+7. Beperk informatie-overload in navigatie-elementen
+
+Bij complexe dossiers kunnen navigatiepaden snel omvangrijk worden. Het wordt aanbevolen om breadcrumbs compact te houden en standaard alleen de hoogste niveaus van de navigatiestructuur te tonen. Hierdoor behouden gebruikers context zonder dat de interface onnodig veel ruimte inneemt of extra cognitieve belasting veroorzaakt.
+
+8. Bied transparantie gelaagd aan
+
+Niet iedere gebruiker heeft behoefte aan dezelfde hoeveelheid detail. Daarom wordt aanbevolen om informatie gelaagd aan te bieden, waarbij gebruikers eerst een overzicht op hoofdlijnen krijgen en vervolgens kunnen doorklikken naar meer detail. Deze aanpak ondersteunt zowel gebruikers die snel antwoord willen als gebruikers die behoefte hebben aan diepgaand inzicht in gegevensverwerkingen en besluitvorming.
+
+Gelaagdheid dient niet alleen terug te komen in de inhoud van de informatie, maar ook in de interactie en componenten van de gebruikersinterface. Het wordt aanbevolen om gebruikers stapsgewijs door informatie te laten navigeren via afzonderlijke schermen of detailweergaven. Hierdoor ontstaat een duidelijke gebruikersreis waarin gebruikers beter begrijpen waar zij zich bevinden en welke informatie beschikbaar is.
+
+Deze aanpak draagt daarnaast bij aan de toegankelijkheid van de applicatie. Een duidelijke schermstructuur en navigatie zijn voor gebruikers van screenreaders vaak eenvoudiger te volgen dan grote hoeveelheden dynamisch open- en dichtklappende content. Door informatie op meerdere niveaus aan te bieden blijft de interface overzichtelijk, toegankelijk en beter beheersbaar voor een brede groep gebruikers.
+
+9. Structureer informatie rondom de informatiebehoefte van gebruikers
+
+Er bestaan verschillende manieren om complexe gegevensverwerkingen, relaties en besluitvorming visueel weer te geven. Hoewel dergelijke visualisaties waardevol kunnen zijn voor uitgebreide visualisaties voor veel burgers, en met name oudere gebruikers, moeilijk te interpreteren zijn of the navigeren.
+
+Daarom wordt aanbevolen om niet de beschikbare data of techniek als uitgangspunt te nemen, maar de informatiebehoefte van de gebruiker (de job to be done). Per gebruikssituatie dient te worden onderzocht welke informatie gebruikers daadwerkelijk zoeken en welke informatie hen helpt om hun vraag te beantwoorden.
+
+Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen:
+
+Welke organisaties waren betrokken?
+Gebruikers willen kunnen zien welke organisaties gegevens met elkaar hebben uitgewisseld of verwerkt.
+Wanneer gebeurde dit?
+De datum en volgorde van gebeurtenissen vormen een belangrijk herkenningspunt voor gebruikers en helpen bij het reconstrueren van een proces.
+Welke gegevens zijn gebruikt?
+Gebruikers willen inzicht krijgen in welke persoonsgegevens of gegevenscategorieën een rol hebben gespeeld binnen een proces of besluit.
+
+Deze informatie vormt voor veel gebruikers het primaire startpunt voor begrip en herkenning. Meer geavanceerde visualisaties en aanvullende details kunnen vervolgens als verdiepende laag worden aangeboden voor gebruikers die behoefte hebben aan meer context.
+
+10. Bied transparantie aan in de context van bestaande dienstverlening
+
+Uit het onderzoek blijkt dat burgers hun interactie met de overheid ervaren als één doorlopende klantreis, terwijl informatie in de praktijk vaak verspreid is over verschillende systemen en applicaties. Het introduceren van een afzonderlijke transparantie-app kan ertoe leiden dat gebruikers opnieuw moeten zoeken naar informatie en moeten schakelen tussen verschillende omgevingen.
+
+Daarom wordt aanbevolen om transparantie zoveel mogelijk aan te bieden binnen de context waarin burgers deze informatie nodig hebben. Bijvoorbeeld bij een besluitbrief, binnen een dossier op MijnOverheid of als onderdeel van bestaande overheidsdiensten. Op deze manier ontstaat transparantie op het moment dat gebruikers vragen hebben over een besluit of gebeurtenis.
+
+Deze benadering sluit aan bij het principe dat niet de burger hoeft te reizen tussen systemen, maar dat de informatie naar de burger wordt gebracht. Hierdoor wordt de drempel om transparantie-informatie te raadplegen lager en neemt de kans toe dat de informatie daadwerkelijk wordt gebruikt.
+
+11. Gebruik samenvattingen om informatie scanbaar en begrijpelijk te maken
+
+Transparantie-informatie kan snel omvangrijk en complex worden. Gebruikers hebben echter vaak eerst behoefte aan een korte samenvatting voordat zij zich verdiepen in de onderliggende details. Het wordt daarom aanbevolen om gegevensverwerkingen, gebeurtenissen en besluiten te voorzien van begrijpelijke samenvattingen die in één oogopslag duidelijk maken wat er is gebeurd.
+
+Deze samenvattingen kunnen bijvoorbeeld bestaan uit een korte beschrijving van de gebeurtenis, de betrokken organisatie, de gebruikte gegevens en de datum waarop de gebeurtenis heeft plaatsgevonden. Hierdoor kunnen gebruikers snel door een dossier navigeren en bepalen welke onderdelen voor hen relevant zijn.
+
+Hoewel complexe visualisaties waardevol kunnen zijn voor sommige gebruikers, blijkt uit het onderzoek dat deze niet altijd bijdragen aan begrip. In veel situaties kunnen goed ontworpen samenvattingen dezelfde informatie effectiever overbrengen dan uitgebreide diagrammen of procesvisualisaties. Samenvattingen kunnen daardoor niet alleen dienen als introductie op meer detail, maar in sommige gevallen ook als volwaardig alternatief voor complexere visualisaties.
+
+Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna beschikbaar te maken, wordt de scanbaarheid verbeterd en neemt de cognitieve belasting af. Dit is met name belangrijk voor mobiele gebruikers, ouderen en gebruikers die een specifiek antwoord zoeken binnen een groter dossier.
