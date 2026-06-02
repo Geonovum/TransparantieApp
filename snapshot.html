@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 35.8.0">
+<meta name="generator" content="ReSpec 37.0.0">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
@@ -16,6 +16,7 @@ dfn{cursor:pointer}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
 .dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
 .dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel .marker.cddl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
 .dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
 .dfn-panel a[href]:hover{border-bottom-width:1px}
 .dfn-panel ul{padding:0}
@@ -62,13 +63,17 @@ a.bibref{text-decoration:none}
 .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+@media (prefers-color-scheme:dark){
+#references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+}
+body:has(input[name=color-scheme][value=dark]:checked) #references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
 cite .bibref{font-style:italic}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
 #issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
+#issue-summary li{list-style:none}
 details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
 details.respec-tests-details>*{padding-right:2em}
 details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
@@ -77,7 +82,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
 :is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
@@ -88,6 +94,8 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+body:has(input[name=color-scheme][value=light]:checked),head:not(:has(meta[name=color-scheme][content~=dark]))+body{color-scheme:light}
+body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
 </style>
 <script type="text/javascript">
    /* Any custom mermaid.js scripts will go here. */
@@ -1441,14 +1449,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry informative toc-inline"><div class="head">
+<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">TransparantieApp rapport</h1>
     
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">11 mei 2026</time>
+      <time class="dt-published" datetime="2025-11-17">02 juni 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1478,7 +1486,9 @@ ul.index code{color:inherit}
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Geonovum/TransparantieApp/">GitHub Geonovum/TransparantieApp</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/TransparantieApp/issues/">Dien een melding in</a>
+    <a href="https://github.com/Geonovum/TransparantieApp/issues/">All issues</a>
+  </dd><dd>
+    <a href="https://github.com/Geonovum/TransparantieApp/issues/new/choose">Dien een melding in</a>
   </dd><dd>
     <a href="https://github.com/Geonovum/TransparantieApp/commits/">Revisiehistorie</a>
   </dd><dd>
@@ -1581,7 +1591,7 @@ Gevolg hiervan is dat een betrokkene (bedrijf/inwoner) bij elk van de organisati
 <li>de eventuele berekeningen/formules (bijvoorbeeld WOZ-waarde/1000*tarief)</li>
 </ol>
 <p>Door de duidelijke trigger (bijvoorbeeld de gemeentelijke belastingaanslag) is het duidelijk waar de burger moet zijn met diens vraag (de betreffende gemeente). Wel kan het zijn dat er vanuit dat startpunt nog andere organisaties geraadpleegd moeten worden. Vanuit de LDV-logging-standaard wordt deze keten vastgelegd en is deze dus ook te volgen.  </p>
-<p>De logging-standaard voorziet alleen in het vastleggen van de gebruikte gegevens, niet zozeer in de (uitleg van de) achterliggende wetgeving en rekenregels. Ook de totstandkoming van de grondslag (in het voorbeeld de WOZ-waarde) zal geregeld geen onderdeel uitmaken van de(zelfde) <em>trace</em> als de totstandkoming van het besluit. Daarom is het advies om in de standaard voor de logging de optie op te nemen van verwijzingen naar <em>of</em> andere traces <em>of</em> een URL waarachter een webpagina of een document verdere uitleg geeft over de totstandkoming van de grondslag (bijvoorbeeld het taxatieverslag). Wel is er voorzien in unieke identificatiecodes voor verwerkingen, maar dat gaat om statische data die eventueel wel bruikbaar is voor uitleg van de wet- en regelgeving, maar niet geschikt is voor de verstrekking van gepersonaliseerde data die onder de grondslagen ligt.  </p>
+<p>De logging-standaard voorziet alleen in het vastleggen van de gebruikte gegevens, niet zozeer in de (uitleg van de) achterliggende wetgeving en rekenregels. Ook de totstandkoming van de grondslag (in het voorbeeld de WOZ-waarde) zal geregeld geen onderdeel uitmaken van dezelfde <em>trace</em> als de totstandkoming van het besluit. Daarom is het advies om in de standaard voor de logging de optie op te nemen van verwijzingen naar <em>of</em> andere traces <em>of</em> een URL waarachter een webpagina of een document verdere uitleg geeft over de totstandkoming van de grondslag (bijvoorbeeld het taxatieverslag). Wel is er voorzien in unieke identificatiecodes voor verwerkingen, maar dat gaat om statische data die eventueel wel bruikbaar is voor uitleg van de wet- en regelgeving, maar niet geschikt is voor de verstrekking van gepersonaliseerde data die onder de grondslagen ligt. Gezien de ontwikkelingen die gaande zijn rond 'rules as code' bevelen we aan om de mogelijkheid te onderzoeken om de TransparantieApp uit te breiden met inzicht in de toegepaste rekenregels (zie [aanbevelingen vanuit gebruikersonderzoek] (../Aanbevelingen/## Gebruikersonderzoek)).</p>
 </section><section id="usecase-wie-heeft-er-aan-mijn-gegevens-gezeten"><div class="header-wrapper"><h3 id="x5-2-usecase-wie-heeft-er-aan-mijn-gegevens-gezeten"><bdi class="secno">5.2 </bdi>Usecase "Wie heeft er aan mijn gegevens gezeten?"</h3><a class="self-link" href="#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten" aria-label="Permalink for Section 5.2"></a></div>
 <p>Een andere gebruikspatroon is de meer generieke vraag van een betrokkene: wie heeft er aan mijn gegevens gezeten. Bestaande apps en websites maken dit tot op zekere hoogte al transparant, maar net niet op het detailniveau waarop dat zou kunnen met de TransparantieApp.<br>Zo is in de App "MijnGegevens" wel te zien met welke organisaties BRP-gegevens gedeeld worden, maar wordt niet duidelijk om welke gegevens-elementen het dan exact gaat en welke gegevens-wijzigingen er worden gedeeld met welke organisaties. Bovendien is alleen voor zogenaamde 'identiteitsgegevens' zichtbaar dat deze gedeeld zijn, maar niet voor bijvoorbeeld WOZ-gegevens of diploma's.<br>Op de website "Gegevens bij besluiten" wordt per besluit in zijn algemeenheid wel aangegeven welke gegevens-elementen van welke registraties worden gebruikt, maar kan een persoon niet 'doorklikken' om te zien wanneer welke gegevens-waarden dan daadwerkelijk zijn gecommuniceerd. Bovendien is niet te zien welke besluiten er daadwerkelijk over iemand genomen zijn, het is een verzameling van alle (?) potentiele besluiten die overheden kunnen nemen. Het is, kortom, niet gepersonaliseerd.  </p>
 <p>De TransparantieApp combineert in deze usecase in feite die beide invalshoeken en kan dus gepersonaliseerde informatie laten zien over gedeelde gegevens tussen overheden, pensioenfondsen e.d.: "welke gegevens zijn door wie gebruikt om wat te doen"<br>Omdat er meer dan alleen (semi-)overheidsorganisaties gebruik maken van het BSN en daaraan gerelateerde gegevens, is het advies de reikwijdte van de logging-standaard te vergroten tot de autorisatielijst BSN gerechtigden (ALB).  </p>
@@ -1591,8 +1601,9 @@ De logging over van verwerkingen rondom een besluit van een overheid, ligt dus p
 </section><section id="gevolgen-voor-applicatie-architectuur"><div class="header-wrapper"><h3 id="x5-4-gevolgen-voor-applicatie-architectuur"><bdi class="secno">5.4 </bdi>Gevolgen voor Applicatie architectuur</h3><a class="self-link" href="#gevolgen-voor-applicatie-architectuur" aria-label="Permalink for Section 5.4"></a></div>
 <p>Door de federatieve werkwijze van de logging, moet ook een opvraging van de logs bij alle overheden afzonderlijk gebeuren. Een TransparantieApp moet dit 'onder water' automatisch doen en niet aan de gebruiker overlaten om daarin 'de weg te vinden'. Er moet daardoor in de applicatie-architectuur een oplossing gevonden worden om 1) alle (overheids)organisaties die potentieel gegevens gelogd hebben te identificeren en b) al deze logboeken (potentieel meerdere per organisatie) te bevragen, met een grote kans dat de meerderheid van de logboeken geen data heeft aangaande de betreffende persoon (of object).
 Omdat bij tests gebleken is, dat een dergelijke wijze van logs lezen niet efficient en performant uitvoerbaar is, is een applicatie-architectuur ontworpen met een centraal traceregister waarin - gepseudonimiseerd! - vastligt welke organisaties log-informatie over welke persoon hebben. Op basis van dat register kan de TransparantieApp snel en efficient de betreffende organisaties bevragen.
-Voor de gedetailleerde uitwerking van de applicatie-architectuur zie ...</p>
+Voor de gedetailleerde uitwerking van de applicatie-architectuur zie [Applicatie architectuur] (../Applicatie Architectuur).</p>
 </section><section id="gevolgen-voor-standaard"><div class="header-wrapper"><h3 id="x5-5-gevolgen-voor-standaard"><bdi class="secno">5.5 </bdi>Gevolgen voor standaard</h3><a class="self-link" href="#gevolgen-voor-standaard" aria-label="Permalink for Section 5.5"></a></div>
+<p>In eerste instantie zou men kunnen denken dat ook het lezen van de log via de TransparantieApp gelogd moet (kan) worden. Echter, voor de gebruiker van de App voegt het niets toe om te kunnen zien dat diegene zelf het logboek heeft geraadpleegd. Het zou wel informatief zijn voor de gebruiker om te zien dat een ander diens logs heeft geraadpleegd. Dat is op zich ook geen probleem, tenzij op Level 3 gelogd wordt. Immers, dan zou vastgelegd worden dat iemand een bepaalde combinatie van traceids heeft geraadpleegd. Daarmee ligt de relatie tussen traceids van een persoon vast. Aangezien die traceids in de traceindex vastliggen in combinatie met de bijbehorende logboeken (en dus organisaties), leidt dit tot een potentieel inzicht (en eventueel identificatie van een persoon) waar in de traceindex nu juist maatregelen genomen zijn om dat te voorkomen.</p>
 </section></section>
 <section id="applicatie-architectuur"><div class="header-wrapper"><h2 id="x6-applicatie-architectuur"><bdi class="secno">6. </bdi>Applicatie Architectuur</h2><a class="self-link" href="#applicatie-architectuur" aria-label="Permalink for Section 6."></a></div>
 <section id="implementatie-app"><div class="header-wrapper"><h3 id="x6-1-implementatie-app"><bdi class="secno">6.1 </bdi>Implementatie App</h3><a class="self-link" href="#implementatie-app" aria-label="Permalink for Section 6.1"></a></div>
@@ -1666,8 +1677,11 @@ function setupPanel() {
 }
 
 function panelListener() {
-  /** @type {HTMLElement} */
+  /** @type {HTMLElement | null} */
   let panel = null;
+  /**
+   * @param {KeyboardEvent|MouseEvent} event
+   */
   return event => {
     const { target, type } = event;
 
@@ -1675,24 +1689,34 @@ function panelListener() {
 
     // For keys, we only care about Enter key to activate the panel
     // otherwise it's activated via a click.
-    if (type === "keydown" && event.key !== "Enter") return;
+    if (
+      type === "keydown" &&
+      /** @type {KeyboardEvent} */ (event).key !== "Enter"
+    )
+      return;
 
     const action = deriveAction(event);
 
     switch (action) {
       case "show": {
         hidePanel(panel);
-        /** @type {HTMLElement} */
+        /** @type {HTMLElement | null} */
         const dfn = target.closest("dfn, .index-term");
+        if (!dfn?.id) break;
         panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        const coords = deriveCoordinates(event);
+        if (!panel) break;
+        const coords = deriveCoordinates(
+          /** @type {MouseEvent|KeyboardEvent} */ (event)
+        );
         displayPanel(dfn, panel, coords);
         break;
       }
       case "dock": {
-        panel.style.left = null;
-        panel.style.top = null;
-        panel.classList.add("docked");
+        if (panel) {
+          panel.style.left = "";
+          panel.style.top = "";
+          panel.classList.add("docked");
+        }
         break;
       }
       case "hide": {
@@ -1743,7 +1767,8 @@ function deriveAction(event) {
     if (hitALink) {
       return target.classList.contains("self-link") ? "hide" : "dock";
     }
-    const panel = target.closest(".dfn-panel");
+
+    const panel = /** @type {HTMLElement} */ (target.closest(".dfn-panel"));
     return panel.classList.contains("docked") ? "hide" : "none";
   }
   if (document.querySelector(".dfn-panel:not([hidden])")) {
@@ -1787,9 +1812,9 @@ function displayPanel(dfn, panel, { x, y }) {
     const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
     const newCaretOffset = left - newLeft;
     panel.style.left = `${newLeft}px`;
-    /** @type {HTMLElement} */
+    /** @type {HTMLElement | null} */
     const caret = panel.querySelector(".caret");
-    caret.style.left = `${newCaretOffset}px`;
+    if (caret) caret.style.left = `${newCaretOffset}px`;
   }
 
   // As it's a dialog, we trap focus.
@@ -1838,6 +1863,9 @@ function trapFocus(panel, dfn) {
 function createTrapListener(anchors, panel, dfn) {
   const lastIndex = anchors.length - 1;
   let currentIndex = 0;
+  /**
+   * @param {KeyboardEvent} event
+   */
   return event => {
     switch (event.key) {
       // Hitting "Tab" traps us in a nice loop around elements.
@@ -1867,7 +1895,7 @@ function createTrapListener(anchors, panel, dfn) {
   };
 }
 
-/** @param {HTMLElement} panel */
+/** @param {HTMLElement | null} panel */
 function hidePanel(panel) {
   if (!panel) return;
   panel.hidden = true;
