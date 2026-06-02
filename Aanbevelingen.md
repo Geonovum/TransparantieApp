@@ -121,7 +121,7 @@ Hoewel complexe visualisaties waardevol kunnen zijn voor sommige gebruikers, bli
 
 Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna beschikbaar te maken, wordt de scanbaarheid verbeterd en neemt de cognitieve belasting af. Dit is met name belangrijk voor mobiele gebruikers, ouderen en gebruikers die een specifiek antwoord zoeken binnen een groter dossier.
 
-11. Sluit aan bij bestaande mentale modellen en interactiepatronen
+12. Sluit aan bij bestaande mentale modellen en interactiepatronen
 
 Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan andere websites en applicaties. Hierdoor verwachten zij dat nieuwe systemen vergelijkbare patronen, navigatiestructuren en interacties gebruiken als systemen die zij al kennen.
 
