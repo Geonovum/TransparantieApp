@@ -49,7 +49,7 @@ De behoefte aan transparantie ontstaat vaak wanneer burgers worden geconfronteer
 
 7. Beperk informatie-overload in navigatie-elementen
 
-Bij complexe dossiers kunnen navigatiepaden snel omvangrijk worden. Het wordt aanbevolen om breadcrumbs compact te houden en standaard alleen de hoogste niveaus van de navigatiestructuur te tonen. Hierdoor behouden gebruikers context zonder dat de interface onnodig veel ruimte inneemt of extra cognitieve belasting veroorzaakt.
+Bij complexe dossiers kunnen navigatiepaden snel omvangrijk worden. Het wordt aanbevolen om breadcrumbs compact te houden en standaard alleen de meest bovenligenste van de navigatiestructuur te tonen. Hierdoor behouden gebruikers context zonder dat de interface onnodig veel ruimte inneemt of extra cognitieve belasting veroorzaakt.
 
 8. Bied transparantie gelaagd aan
 
@@ -57,7 +57,7 @@ Niet iedere gebruiker heeft behoefte aan dezelfde hoeveelheid detail. Daarom wor
 
 Gelaagdheid dient niet alleen terug te komen in de inhoud van de informatie, maar ook in de interactie en componenten van de gebruikersinterface. Het wordt aanbevolen om gebruikers stapsgewijs door informatie te laten navigeren via afzonderlijke schermen of detailweergaven. Hierdoor ontstaat een duidelijke gebruikersreis waarin gebruikers beter begrijpen waar zij zich bevinden en welke informatie beschikbaar is.
 
-Deze aanpak draagt daarnaast bij aan de toegankelijkheid van de applicatie. Een duidelijke schermstructuur en navigatie zijn voor gebruikers van screenreaders vaak eenvoudiger te volgen dan grote hoeveelheden dynamisch open- en dichtklappende content. Door informatie op meerdere niveaus aan te bieden blijft de interface overzichtelijk, toegankelijk en beter beheersbaar voor een brede groep gebruikers.
+Idealiter is de interactie "klikken" of "tappen". Deze aanpak draagt daarnaast bij aan de toegankelijkheid van de applicatie. Een duidelijke schermstructuur en navigatie zijn voor gebruikers van screenreaders vaak eenvoudiger te volgen dan grote hoeveelheden dynamisch open- en dichtklappende content. Door informatie op meerdere niveaus aan te bieden blijft de interface overzichtelijk, toegankelijk en beter beheersbaar voor een brede groep gebruikers.
 
 9. Structureer informatie rondom de informatiebehoefte van gebruikers
 
@@ -65,13 +65,13 @@ Er bestaan verschillende manieren om complexe gegevensverwerkingen, relaties en 
 
 Daarom wordt aanbevolen om niet de beschikbare data of techniek als uitgangspunt te nemen, maar de informatiebehoefte van de gebruiker (de job to be done). Per gebruikssituatie dient te worden onderzocht welke informatie gebruikers daadwerkelijk zoeken en welke informatie hen helpt om hun vraag te beantwoorden.
 
-Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen:
+Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen om een eerste overzicht te krijgen van hun data:
 
-Welke organisaties waren betrokken?
+-Welke organisaties waren betrokken?
 Gebruikers willen kunnen zien welke organisaties gegevens met elkaar hebben uitgewisseld of verwerkt.
-Wanneer gebeurde dit?
+-Wanneer gebeurde dit?
 De datum en volgorde van gebeurtenissen vormen een belangrijk herkenningspunt voor gebruikers en helpen bij het reconstrueren van een proces.
-Welke gegevens zijn gebruikt?
+-Welke gegevens zijn gebruikt?
 Gebruikers willen inzicht krijgen in welke persoonsgegevens of gegevenscategorieën een rol hebben gespeeld binnen een proces of besluit.
 
 Deze informatie vormt voor veel gebruikers het primaire startpunt voor begrip en herkenning. Meer geavanceerde visualisaties en aanvullende details kunnen vervolgens als verdiepende laag worden aangeboden voor gebruikers die behoefte hebben aan meer context.
