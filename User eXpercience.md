@@ -23,6 +23,22 @@ Het model kan tevens worden vertaald naar verschillende informatieniveaus binnen
 | Verklaring          | "Waarom gebeurde dit?"                 | Samenvatting, besluituitleg, oorzaak-gevolgrelaties     |
 | Begrip & vertrouwen | "Kan ik dit begrijpen en controleren?" | Broninformatie, logging, auditinformatie                |
 
+![Infographic met de titel "Het mentale model van de gebruiker – Van herkenning naar vertrouwen". In het midden staat een persoon achter een laptop. Boven de persoon staat een tekstballon met de vragen: "Dit ken ik. Wat gebeurde er? Waarom gebeurde dit?". Rondom de persoon staan vijf stappen die met pijlen in een cirkel met elkaar verbonden zijn.
+
+1. Herkenning – "Gaat dit over mij?"
+Gebruikers zoeken eerst naar herkenningspunten om vast te stellen dat de informatie betrekking heeft op hun situatie. Voorbeelden zijn een bekende organisatie, een datum, een gebeurtenis of gebruikte gegevens.
+
+2. Context – "Wat is er gebeurd?"
+Gebruikers willen begrijpen welke gebeurtenissen hebben plaatsgevonden en hoe deze met elkaar samenhangen.
+
+3. Verklaring – "Waarom gebeurde dit?"
+Gebruikers willen weten waarom bepaalde gegevens zijn gebruikt en hoe deze hebben bijgedragen aan een besluit of gebeurtenis.
+
+4. Begrip – "Ik begrijp het"
+Gebruikers krijgen inzicht in het proces, de gebruikte gegevens en de rol van betrokken organisaties.
+
+5. Vertrouwen – "Ik kan het controleren"
+Gebruikers willen kunnen controleren of de informatie correct is en herleidbaar is naar de bron.](media/ChatGPT Image Jun 2, 2026, 02_13_58 PM.png)
 
 ## Persona's
 
