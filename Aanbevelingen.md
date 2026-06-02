@@ -67,11 +67,11 @@ Daarom wordt aanbevolen om niet de beschikbare data of techniek als uitgangspunt
 
 Uit het onderzoek blijkt dat gebruikers vooral behoefte hebben aan drie kernvragen om een eerste overzicht te krijgen van hun data:
 
--Welke organisaties waren betrokken?
+* Welke organisaties waren betrokken?
 Gebruikers willen kunnen zien welke organisaties gegevens met elkaar hebben uitgewisseld of verwerkt.
--Wanneer gebeurde dit?
+* Wanneer gebeurde dit?
 De datum en volgorde van gebeurtenissen vormen een belangrijk herkenningspunt voor gebruikers en helpen bij het reconstrueren van een proces.
--Welke gegevens zijn gebruikt?
+* Welke gegevens zijn gebruikt?
 Gebruikers willen inzicht krijgen in welke persoonsgegevens of gegevenscategorieën een rol hebben gespeeld binnen een proces of besluit.
 
 Deze informatie vormt voor veel gebruikers het primaire startpunt voor begrip en herkenning. Meer geavanceerde visualisaties en aanvullende details kunnen vervolgens als verdiepende laag worden aangeboden voor gebruikers die behoefte hebben aan meer context.
