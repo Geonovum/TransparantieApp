@@ -6,6 +6,9 @@
 
 1. Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  
 2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
+3. Maak paginatie mogelijk zodat je in een gebruikersinterfacewelke gebruik maakt van de API makkelijk resultaten kan weergeven
+4. Gebruik alleen een POST operatie voor het bevragen van de lezen API. Dataverwerkingen zijn vaak privacy gevoelig en gevoelige informatie wil je niet in Queries binnen een GET operatie gebruiken zoals aangeraden door de REST API designrules. Daarom is het uit privacy by design overwegingen beter om alleen de POST operatie toe te passen.
+5. Zorg voor een goede beveiliging van het lezen API endpoint, volg daarin de best practices van de module access-control van het kennisplatform APIs. Beveiliging is zeer domein specifiek daarom verplichten we in de standaard niet één specifieke methode.
 
 ### Core standaard
 
@@ -127,3 +130,34 @@ Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna
 Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan andere websites en applicaties. Hierdoor verwachten zij dat nieuwe systemen vergelijkbare patronen, navigatiestructuren en interacties gebruiken als systemen die zij al kennen.
 
 Voor transparantievoorzieningen betekent dit dat gebruikers niet geholpen zijn met volledig nieuwe interactiemodellen of een aparte manier van navigeren door gegevens. Het wordt aanbevolen om aan te sluiten bij bestaande patronen die men veel gebruikt.  Door aan te sluiten bij bestaande mentale modellen wordt de leercurve beperkt en kunnen gebruikers zich richten op het beantwoorden van hun vraag in plaats van op het leren gebruiken van een nieuw systeem.
+
+## Beleidsjuridisch kader
+
+Hieronder zijn een aantal uitgangspunten en principes benoemd. Voordat organisaties de leesextensie gaan implementeren, wordt aanbevolen om hier in de organisatie zelf naar te kijken.
+
+**Gegevens worden vastgelegd en uitleesbaar gemaakt**
+
+1. Overheidsorganisaties die gebruik maken van de standaard Logboek dataverwerkingen inclusief de leesextensie om de verwerking van data gestandaardiseerd zichtbaar te maken, zijn zelf verantwoordelijk voor implementatie en inrichting van de standaard, de logs en de informatie die erin te vinden is.
+
+2. Dataverwerkingen worden waar mogelijk gemakkelijk inzichtelijk gemaakt. Overheidsorganisaties maken een afweging over welke gegevens proactief inzichtelijk gemaakt kunnen worden en welke niet. Een organisatie kan daarmee ook bepalen welke informatieverzoeken in de regel worden toegekend en kijk of deze informatie al proactief open kan worden gezet, al dan niet afgeschermd door authenticatie. Het is uiteindelijk aan de overheidsorganisatiezelf om te beoordelen welke informatie al vooraf inzichtelijk gemaakt wordt en welke naar aanleiding van een informatieverzoek (zoals de AVG of Woo) getoond wordt. Deze vorm van proactieve beschikbaar maken van informatie moet worden onderscheiden van formele verzoekprocedures en vormt geen recht in de zin van artikel 15 AVG of de Woo, maar kan deze mogelijk wel ondersteunen.
+
+3. Bij het tonen van informatie moet de organisatie rekening houden met zwaarder wegende algemene belangen (bijv. nationale/openbare veiligheid, opsporing van strafbare feiten) of zwaarder wegende belangen van betrokkene of rechten van anderen (bijv. bescherming persoon) waardoor bepaalde informatieverplichtingen niet gelden. Dit kan bijvoorbeeld door bij een verwerkingsactiviteit een vertrouwelijke en niet-vertrouwelijke variant op te nemen, waardoor het vanuit de logfile inzichtelijk of er bij de betreffende verwerking rekening moet worden gehouden met zwaarder wegende belangen.
+
+4. De organisatie borgt dat de Leesextensie optimaal ingericht wordt ten behoeve van ondersteuning van het versterken van de informatiepositie van de burger, door proactief en waar mogelijk, de informatie die zij heeft geautomatiseerd te verschaffen.
+
+
+**Naleving en vertrouwen**
+
+5. De Leesextensie dient zodanig ingericht te worden dat deze voldoet aan de vereisten die volgen uit regels ten aanzien van informatieveiligheid. De organisatie bepaalt vooraf de procedurele, procesmatige en technische waarborgen die nodig zijn om ervoor te zorgen dat de uitleesbaar gemaakte gegevens niet oneigenlijk worden gebruikt of misbruikt.
+
+6. Organisaties moeten erop kunnen vertrouwen dat informatie niet onjuist wordt gebruikt of wordt misbruikt:
+
+a. De organisatie zorgt ervoor dat de beoogde toegang tot gegevens en de juiste werking van zijn systemen continu alsook achteraf te controleren is.
+
+b. De organisatie verschaft alleen geautoriseerde afnemers toegang tot vertrouwelijke gegevens.
+
+c. De organisatie zorgt ervoor dat de beoogde toegang tot gegevens en de juiste werking van zijn systemen continu alsook achteraf te controleren is.
+
+7. Bij gerede twijfel aan de juistheid van informatie meldt de organisatie dit aan de verantwoordelijke bronhouder. De informatie zal daar waar het is opgeslagen moeten worden gecorrigeerd.
+
+8. Bij het inzichtelijk maken van een dataverwerking, dient een tijdsstempel opgenomen worden die aangeeft de gegevenswaarde wordt getoond zoals die gold ten tijde van de verwerking; ook als deze bijvoorbeeld na enkele maanden opnieuw wordt ingezien of verstrekt.

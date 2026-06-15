@@ -1,9 +1,31 @@
 # Standaard voor lezen logging
+
 In het transparantieApp project ontwikkelen  we de [extensie lezen ](https://logius-standaarden.github.io/logboek-extensie-lezen/) voor [de standaard logboek dataverwerkingen](https://www.logius.nl/onze-dienstverlening/gegevensuitwisseling/logboek-dataverwerkingen). In de standaard zelf zijn ontwerp afwegingen, architectuur en de specificatie terug te vinden. De extensie lezen wordt ontwikkeld in een [repository bij Logius afdeling standaarden](https://github.com/Logius-standaarden/logboek-extensie-lezen/) (de beheerder van de standaard).
 
 ## Methode ontwikkeling standaard
+
 De standaard wordt iteratief ontwikkeld door de specificatie te implementeren. Ten minste in [de referentie implementatie van de standaard logboek dataverwerkingen](https://gitlab.com/digilab.overheid.nl/ecosystem/logboek-dataverwerkingen/ldv-referentie-implementatie), en indien wenselijk eventueel ook elders. Vervolgens de implementatie te testen en beproeven en op basis van praktijk bevindingen de standaard (en software) te verbeteren.
 
 ## Open API Specification(OAS) voor lezen API
-De werkversie van de [Open API specificatie voor de lezen-extensie wordt bijgehouden in de Logius github](https://raw.githubusercontent.com/Logius-standaarden/logboek-extensie-lezen/refs/heads/develop/media/openapi.yml).
 
+De werkversie van de [Open API specificatie voor de lezen-extensie wordt bijgehouden in de Logius github](https://raw.githubusercontent.com/Logius-standaarden/logboek-extensie-lezen/refs/heads/develop/media/openapi.json).
+
+## Toepassing Standaard voor lezen logging
+
+De standaard logboek dataverwerkingen wordt toegepast met het idee dat de volgens deze standaard vastgelegde logging op een later tijdstip gebruikt kan worden om transaparantie te geven over de verwerking van gegevens. De extensie lezen is bedoeld om dit proces te kunnen automatiseren. Wanneer zou je de lezen extensie moeten toepassen en zijn daar eventueel additionele voorzieningen voor nodig? Om hier inzicht in te geven worden hier vier toepassings categorieën uitgewerkt. Dit zou moeten helpen om voor een specifieke use te bepalen of en hoe de lezen extensie toe te passen.
+
+### De nul optie, niet toepassen
+
+Het kan voldoende zijn alleen de logboek data verwerkingen (core) standaard toe te passen. Dit past in gevallen waarbij er geen behoefte is om de inzage te automatiseren. Het is voldoende om de mogelijkheid te hebben de database met logging via en SQL interface te (laten) bevragen door een beheerder. Deze kan afhankelijke van de transparantievraag, een SQL query op maat maken en daarmee alle relevante logging regels uit de database terughalen. Dit kan een goede oplossing zijn als er maar zeer incidenteel reden is om de logging in te zien. Voor het toepassen van deze oplossing is kennis van SQL en ook een goed bgrip van de logregels die de standaard  logboek dataverwerkingen produceerd nodig. Interpretatie vereist handmatig analyse werk en enige expertise.
+
+### Beperkte automatisering met menselijke tussenkomst
+
+In het geval van gedeeltelijke automatisering wordt op ieder logboek de lezen API geimplementeerd en wordt in de logging het [extra veld met URL van lezen endpoint aangeroepen externe partij](https://logius-standaarden.github.io/logboek-extensie-lezen/#toevoeging-bij-schrijven-logs) volgens de extensie lezen ook weggeschreven. Echter de lezen API(s) worden alleen aangeroepen door een applicatie die vertrouwd wordt door alle logboeken en die gebruikt wordt door een ambetenaar. Deze ambtenaar heeft een in beleid of wet en regelgeving vastgelegde taak waarmee hij het recht heeft de logging informatie in te zien. Bijvoorbeeld een ambtenaar die inzage geeft in een WOO verzoek. Voordat het resultaat aan derden wordt doorgegeven maakt deze ambtenaar zelf de afweging of en zo ja welke informatie uit de logging verder gedeeld kan worden. Voordeel is dat deze ambtenaar een applicatie kan worden aangeboden die inzicht bied zonder dat hij technische kennis vn de standaard logboek dataverwerkingen of achterliggende systemen hoeft te hebben. De beveiliging van de lezen API kan relatief simpel blijven zonder dat er extra voorzieningen nodig zijn. Deze oplossing leunt sterk op goed geformuleerd beleid, wet en regelgeving en aanvullende process afspraken voor de uitvoerende ambtenaar.
+
+### Volledige automatisering bij transparantie voor usecase "Waarom is dit gebeurd?"
+
+Daar waar acties van een overheidsproces met grote frequentie leiden tot vragen over transparantie van geraakte betrokkenen (burgers/bedrijven/(overheids)organisaties) kan volledige automatisering een goede keus zijn. Zie [de usecase "waarom is dit gebeurd?"](https://geonovum.github.io/TransparantieApp/#usecase-waarom-is-dit-gebeurd). In dit geval wordt ook weer op ieder logboek de lezen API geimplementeerd en wordt in de logging het [extra veld met URL van lezen endpoint aangeroepen externe partij](https://logius-standaarden.github.io/logboek-extensie-lezen/#toevoeging-bij-schrijven-logs) volgens de extensie lezen ook weggeschreven. Daarnaast zijn additionele voorzieningen nodig om authenticatie, autorisatie, federatie en privacy te regelen. In het hoofdstuk Aplicatie architectuur worden hiervoor aanbevelingen gedaan. Deze extra voorzieningen brengen kosten met zich mee, een goede kosten baten analyse voor volledige automatisering is dus belangrijk.
+
+### Volledige automatisering bij transparantie voor usecase "Wie heeft er aan mijn gegevens gezeten?"
+
+Voor betrokkenen/burgers die zonder directe aanleiding transparantie willen over wie hun persoonsgegevens hebben geraadpleegd en waarom kan volledig geautomatiseerd inzicht worden geboden. Het gaat hier om [de usecase "Wie heeft er aan mijn gegevens gezeten?"](https://geonovum.github.io/TransparantieApp/#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten) uit de business architectuur. Voor deze toepassing heb je het volledige scala aan extra voorzieningen nodig, zoals beschreven in [de business architectuur](https://geonovum.github.io/TransparantieApp/#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten), Dat wil zeggen een trace register om alle relevante organisaties te vinden en pseudonimisering om de privacy van de burger te beschermen. Dit brengt complexiteit en kosten met zich mee, maar kan zeker te verantwoorden zijn bijvoorbeeld daar waar er een wettelijke verplichting op transparantie is zoals in de EU health dataspace waarin burgers het wettelijke recht krijgen op inzage in wie hun medische gegevens ingezien hebben.
