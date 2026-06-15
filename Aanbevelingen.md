@@ -6,6 +6,9 @@
 
 1. Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  
 2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
+3. Maak paginatie mogelijk zodat je in een gebruikersinterfacewelke gebruik maakt van de API makkelijk resultaten kan weergeven
+4. Gebruik alleen een POST operatie voor het bevragen van de lezen API. Dataverwerkingen zijn vaak privacy gevoelig en gevoelige informatie wil je niet in Queries binnen een GET operatie gebruiken zoals aangeraden door de REST API designrules. Daarom is het uit privacy by design overwegingen beter om alleen de POST operatie toe te passen.
+5. Zorg voor een goede beveiliging van het lezen API endpoint, volg daarin de best practices van de module access-control van het kennisplatform APIs. Beveiliging is zeer domein specifiek daarom verplichten we in de standaard niet één specifieke methode.
 
 ### Core standaard
 
