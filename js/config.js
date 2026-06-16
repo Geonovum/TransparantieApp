@@ -170,6 +170,21 @@ let respecConfig = {
       id: "NLDesign",
       title: "NL Design System",
       href: "https://nldesignsystem.nl/",
+    },
+    OPRF: {
+      id: "OPRF",
+      title: "Oblivious Pseudo-Random Function (OPRF)",
+      href: "https://datatracker.ietf.org/doc/rfc9497/",
+    },
+    JWKS: {
+      id: "JWKS",
+      title: "JSON Web Key Set (JWKS)",
+      href: "https://datatracker.ietf.org/doc/rfc7517",
+    },
+    OpenFSC: {
+      id: "Open FSC",
+      title: "Open FSC",
+      href: "https://fsc-standaard.nl/"
     }
   }
 };

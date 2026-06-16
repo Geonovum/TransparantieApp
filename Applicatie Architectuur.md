@@ -4,9 +4,9 @@
 
 De TransparantieApp ondersteunt de twee usecases uit [Business Architectuur.md](./Business%20Architectuur.md):
 
-1. **"Waarom is dit gebeurd?"** — een betrokkene wil de Dataverwerkingen rondom een specifiek besluit reconstrueren. Het startpunt (de Verantwoordelijke) is bekend uit het besluit zelf.
+1. **"Waarom is dit gebeurd?"** — een betrokkene wil de Trace rondom een specifiek besluit reconstrueren. Het startpunt (de Verantwoordelijke) is bekend uit het besluit zelf.
 
-2. **"Wie heeft er aan mijn gegevens gezeten?"** — een betrokkene wil overheidsbreed inzicht in alle Dataverwerkingen waarbij diens persoonsgegevens betrokken zijn, zonder voorgedefinieerd startpunt.
+2. **"Wie heeft er aan mijn gegevens gezeten?"** — een betrokkene wil overheidsbreed inzicht in alle Traces waarbij diens persoonsgegevens betrokken zijn, zonder voorgedefinieerd startpunt.
 
 Vanuit applicatie-technisch perspectief is de tweede usecase de meest uitdagende: er is geen startpunt, en het antwoord ligt potentieel verspreid over honderden tot duizenden Logboeken. De architectuur in dit document is daarom primair ontworpen rondom deze tweede usecase. De eerste usecase volgt als vereenvoudigde variant: het startpunt is bekend, waardoor de overheidsbrede zoekvraag wegvalt.
 
@@ -14,23 +14,23 @@ Hieruit volgen onderstaande functionele requirements:
 
 - **FR-1: Lijst van Traces tonen.** De app toont de ingelogde gebruiker een chronologisch overzicht van Traces waarin diens persoonsgegevens zijn verwerkt. Het aantal te tonen Traces is configureerbaar en de lijst is gepagineerd, zodat zowel een snel overzicht (bijvoorbeeld de 25 meest recente) als een uitgebreid historisch overzicht opvraagbaar is.
 
-- **FR-2: Detail van een Trace tonen.** Voor elke Trace in de lijst kan de gebruiker doorklikken om de bijbehorende Dataverwerkingen in te zien: welke Verantwoordelijke, welke gegevens, met welk doel en op welk moment. Deze Dataverwerkingen worden opgehaald uit de Logboeken van de betrokken Verantwoordelijken.
+- **FR-2: Detail van een Trace tonen.** Voor elke Trace in de lijst kan de gebruiker doorklikken om de bijbehorende Trace in te zien: welke Verantwoordelijke, welke gegevens, met welk doel en op welk moment. Deze Traces worden opgehaald uit de Logboeken van de betrokken Verantwoordelijken.
 
-- **FR-3: Trace opzoeken via een Trace-identifier.** Wanneer de gebruiker een `trace_id` aanlevert (bijvoorbeeld uit een besluitbrief), kan de app de bijbehorende Dataverwerkingen tonen zonder dat de gebruiker eerst de lijst uit FR-1 hoeft te raadplegen. Dit ondersteunt de usecase *"Waarom is dit gebeurd?"*.
+- **FR-3: Trace opzoeken via een Trace-identifier.** Wanneer de gebruiker een `trace_id` aanlevert (bijvoorbeeld uit een besluitbrief), kan de app de bijbehorende Trace tonen zonder dat de gebruiker eerst de lijst uit FR-1 hoeft te raadplegen. Dit ondersteunt de usecase *"Waarom is dit gebeurd?"*.
 
-- **FR-4: Volledigheidsindicatie bij ontoegankelijke Logboeken.** Wanneer een Logboek tijdelijk niet bereikbaar is, toont de app een placeholder die aangeeft dat er Dataverwerkingen bij die Verantwoordelijke aanwezig zijn en op welk moment, maar dat de inhoud nu niet kan worden opgehaald. De gebruiker kan zo onderscheid maken tussen *"geen Dataverwerkingen door deze Verantwoordelijke"* en *"Dataverwerkingen aanwezig, maar nu niet beschikbaar"*.
+- **FR-4: Volledigheidsindicatie bij ontoegankelijke Logboeken.** Wanneer een Logboek tijdelijk niet bereikbaar is, toont de app een placeholder die aangeeft dat er Traces bij die Verantwoordelijke aanwezig zijn en op welk moment, maar dat de inhoud nu niet kan worden opgehaald. De gebruiker kan zo onderscheid maken tussen *"geen Traces door deze Verantwoordelijke"* en *"Traces aanwezig, maar nu niet beschikbaar"*.
 
 - **FR-5: Vertrouwelijke Traces afschermen.** Traces die door een initierende Verantwoordelijke als vertrouwelijk zijn aangemerkt (bijvoorbeeld in het kader van een lopend justitieel onderzoek) worden niet in de app getoond, ook niet als placeholder. Pas wanneer de betreffende Verantwoordelijke de Trace alsnog vrijgeeft, wordt deze zichtbaar voor de betrokkene.
 
-- **FR-6: Filteren van de Tracelijst.** De lijst uit FR-1 is door de gebruiker te filteren op (a) een tijdsperiode, (b) de *initierende Verantwoordelijke* van de Trace en (c) een *domein* (bijvoorbeeld *Huisvesting*, *Inkomen* of *Gezondheid*). Een domein wordt op het niveau van het Logboek vastgelegd: elk Logboek is aan precies één domein gekoppeld. De LDV-standaard kent het concept *domein* niet; dit is een toevoeging van de Lezen Standaard.
+- **FR-6: Filteren van de Tracelijst.** De lijst uit FR-1 is door de gebruiker te filteren op (a) een tijdsperiode, (b) de *initierende Verantwoordelijke* van de Trace en (c) een *domein* (bijvoorbeeld *Huisvesting*, *Inkomen* of *Gezondheid*). Een domein wordt op het niveau van het Logboek vastgelegd: elk Logboek is aan precies één domein gekoppeld. De LDV-standaard kent het concept *domein* niet; dit is een toevoeging van de Extensie Lezen.
 
 ## Niet-functionele requirements
 
 Naast de functionele requirements stelt de architectuur de volgende kwaliteitseisen:
 
-- **NFR-1: Decentrale opslag van Trace-data.** De inhoud van Dataverwerkingen blijft opgeslagen in het Logboek van de Verantwoordelijke die deze heeft gelogd. Er ontstaat geen centrale kopie van Logboek-inhoud; 
+- **NFR-1: Decentrale opslag van Trace-data.** De inhoud van Traces blijft opgeslagen in het Logboek van de Verantwoordelijke die deze heeft gelogd. Er ontstaat geen centrale kopie van Logboek-inhoud; 
 
-- **NFR-2: Schaalbaarheid naar overheidsbrede uitrol.** De architectuur is geschikt voor duizende Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Dataverwerkingen bevatten worden geraadpleegd.
+- **NFR-2: Schaalbaarheid naar overheidsbrede uitrol.** De architectuur is geschikt voor duizende Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Traces bevatten worden geraadpleegd.
 
 - **NFR-3: Geschikt voor Web en Mobile.** De TransparantieApp moet zowel als webapplicatie als als native mobiele applicatie geimplementeerd kunnen worden. De architectuur stelt geen eisen die slechts in één van beide platformen haalbaar zijn.
 
@@ -38,7 +38,7 @@ Naast de functionele requirements stelt de architectuur de volgende kwaliteitsei
 
 - **NFR-5: Privacy-by-design.** De architectuur is zo ontworpen dat persoonsgegevens (in het bijzonder het BSN) niet centraal verwerkt worden. De TraceIndex werkt uitsluitend met pseudoniemen en kent op geen enkel moment het BSN; de pseudonimisering wordt nader uitgewerkt in dit hoofdstuk.
 
-- **NFR-6: Toegangscontrole bij Logboeken.** Een betrokkene kan uitsluitend Dataverwerkingen inzien waar diens persoonsgegevens onderwerp van zijn. Een Logboek stelt geen Dataverwerkingen ter beschikking zonder bewijs dat de aanvragende gebruiker hier toegerechtigd is.
+- **NFR-6: Toegangscontrole bij Logboeken.** Een Logboek stelt geen Traces ter beschikking zonder bewijs dat de aanvragende gebruiker hier toegerechtigd is.
 
 ## Componenten
 
@@ -52,17 +52,15 @@ De architectuur kent de volgende componenten: de TransparantieApp (zelf bestaand
 
 - **Pseudoniemendienst (PRS)** — implementeert een Oblivious Pseudorandom Function (OPRF) waarmee een BSN onomkeerbaar wordt omgezet naar een pseudoniem. Beheert het OPRF-secret, maar krijgt het BSN zelf nooit te zien — uitsluitend een geblindeerde representatie. Wordt zowel door de TransparantieApp Backend (voor lookup) als door de Verantwoordelijken (voor het publiceren van Traces) aangeroepen.
 
-- **TraceIndex** — dat per pseudoniem vastlegt in welk Logboek en op welk moment Dataverwerkingen voor de Betrokkene zijn opgenomen. Geeft bij een lookup een JWT-accesstoken af waarmee de TransparantieApp Frontend namens de gebruiker een Logboek mag bevragen.
+- **TraceIndex** — dat per pseudoniem vastlegt in welk Logboek en op welk moment Traces voor de Betrokkene zijn opgenomen. Geeft bij een lookup een JWT-accesstoken af waarmee de TransparantieApp Frontend namens de gebruiker een Logboek mag bevragen.
 
-- **Logboek** — opslag van Dataverwerkingen bij een Verantwoordelijke. Per Verantwoordelijke kunnen meerdere Logboeken bestaan, elk gekoppeld aan precies één domein (zie FR-6). Een Logboek geeft alleen Dataverwerkingen vrij na succesvolle validatie van het JWT dat door de TraceIndex is uitgegeven.
-
-
+- **Logboek** — opslag van Traces bij een Verantwoordelijke. Per Verantwoordelijke kunnen meerdere Logboeken bestaan, elk gekoppeld aan precies één domein (zie FR-6). Een Logboek geeft alleen Traces vrij na succesvolle validatie van het JWT dat door de TraceIndex is uitgegeven.
 
 ## Sequence diagrammen
 
 ### Aanmelden van een Trace door een Verantwoordelijke
 
-Wanneer een Verantwoordelijke een Dataverwerking uitvoert, legt deze de Dataverwerking eerst vast in het eigen Logboek en meldt vervolgens — gepseudonimiseerd — bij de TraceIndex dat er een Dataverwerking voor deze Betrokkene beschikbaar is.
+Wanneer een Verantwoordelijke een Dataverwerking uitvoert, legt deze de Dataverwerking eerst vast in het eigen Logboek. Hierdoor onstaat er een Trace in het Logboek. Vervolgens meldt de Verantwoordelijke de Trace — gepseudonimiseerd — aan bij de TraceIndex.
 
 <figure id="Sequence diagram: aanmelden van een Trace">
 <pre class="diagram mermaid">
@@ -95,7 +93,7 @@ C->>C: Store in Database: (Pseudonym, Logbook ID, Trace ID)
 <figcaption>Sequence diagram: aanmelden van een Trace</figcaption>
 </figure>
 
-TODO: Uitleggen dat aanmelden uitgesteld worden bij vertrouwelijke traces.
+Traces die door een initierende Verantwoordelijke als vertrouwelijk zijn aangemerkt (bijvoorbeeld in het kader van een lopend justitieel onderzoek) worden niet in de app getoond, conform FR-5. Hier wordt aan voldaan door stappen 2 en 3 niet direct op één volgend uit te voeren. Een Trace wordt pas toegankelijk binnen de TransparantieApp zodra de TraceIndex hiervoor een gelding JWT access token kan verstrekken. Dit is onmogelijk zolang een Trace niet is aangemeld bij de TraceIndex. 
 
 ### Ophalen van Traces door de Betrokkene
 
@@ -172,17 +170,17 @@ In tabel vorm:
 
 De Betrokkene authenticeert zich via een Identity Provider — voor natuurlijke personen typisch DigiD, voor bedrijven eHerkenning. De TransparantieApp Backend ontvangt na succesvolle inlog het BSN, blindeert dit direct en geeft het geblindeerde resultaat door aan de Pseudoniemendienst (zie [Ophalen van Traces door de Betrokkene](#ophalen-van-traces-door-de-betrokkene)). Het BSN verlaat de backend niet in klare vorm en wordt niet in een sessie bewaard; de backend functioneert hierdoor als kortlopende doorgever. Andere Identity Providers (maar ook bijvoorbeeld OpenID Verifiable Credentials) zijn toepasbaar mits zij het BSN of RSIN kunnen leveren dat als invoer voor de pseudonimisering kan dienen.
 
-### Autorisatie tot een Dataverwerking
+### Autorisatie tot een Trace
 
-Autorisatie wordt op het niveau van het Logboek afgedwongen, op basis van een kortlevend JWT-accesstoken dat de TraceIndex per resultaat in de lookup-response uitgeeft. Dit token bevat als claim het `trace_id` en is gesigneerd met de private sleutel van de TraceIndex. Het Logboek verifieert de handtekening met de publieke sleutel van de TraceIndex en controleert of de geclaimde `trace_id` daadwerkelijk in dit Logboek aanwezig is; alleen dan wordt de bijbehorende Dataverwerking vrijgegeven. Hierdoor kan een Betrokkene uitsluitend Dataverwerkingen inzien die via een eerdere lookup met diens pseudoniem zijn gevonden. Deze werkwijze beidt daarnaast een uitkomst voor Verantwoordelijken welke *geen* persoongegevens verwerken. 
+Autorisatie wordt op het niveau van het Logboek afgedwongen, op basis van een kortlevend JWT-accesstoken dat de TraceIndex per resultaat in de lookup-response uitgeeft. Dit token bevat als claim het `trace_id` en is gesigneerd met de private sleutel van de TraceIndex. Het Logboek verifieert de handtekening met de publieke sleutel van de TraceIndex en controleert of de geclaimde `trace_id` daadwerkelijk in dit Logboek aanwezig is; alleen dan wordt de bijbehorende Trace vrijgegeven. Hierdoor kan een Betrokkene uitsluitend Traces inzien die via een eerdere lookup met diens pseudoniem zijn gevonden. Deze werkwijze beidt daarnaast een uitkomst voor Verantwoordelijken welke *geen* persoongegevens verwerken. 
 
-### Authenticatie tussen achterliggende componenten
+### Authenticatie tussen server componenten
 
-Tussen de overige componenten — Verantwoordelijke → Pseudoniemendienst, Verantwoordelijke → TraceIndex, TransparantieApp Backend → Pseudoniemendienst — is wederzijdse authenticatie nodig zodat alleen erkende partijen kunnen aanroepen en publiceren. De concrete invulling (bijvoorbeeld via Open FSC) is een implementatiekeuze en valt buiten de scope van dit document. Wel is vereist dat de TraceIndex haar publieke sleutel op een verifieerbare wijze publiceert, zodat de Logboeken deze sleutel kunnen ophalen en als authentiek kunnen vertrouwen (voor JWT-verificatie van het accesstoken).
+Voor server-to-server communicatie, bijvoorbeeld tussen de Verantwoordelijke en de Pseudoniemendienst of tussen de Verantwoordelijke en de TraceIndex, is wederzijdse authenticatie nodig zodat alleen erkende partijen elkaar kunnen aanroepen. De concrete invulling (bijvoorbeeld via Open FSC [[?OpenFSC]]) is een implementatiekeuze en valt buiten de scope van dit document. Wel is vereist dat de TraceIndex haar publieke sleutel op een verifieerbare wijze publiceert, zodat de Logboeken deze sleutel kunnen ophalen en als authentiek kunnen vertrouwen (voor JWT-verificatie van het accesstoken). Hiervoor biedt de TraceIndex een JWKS [[?JWKS]] endpoint aan. 
 
 ## Pseudonimisering via OPRF
 
-De pseudonimisering in deze architectuur is gebaseerd op een *Oblivious Pseudorandom Function* (OPRF). Hieronder eerst kort de werking van een gewone Pseudorandom Function (PRF), vervolgens hoe een OPRF dat uitbreidt, en ten slotte hoe OPRF in de architectuur wordt ingezet.
+De pseudonimisering in deze architectuur is gebaseerd op een *Oblivious Pseudorandom Function* (OPRF) [[?OPRF]]. Hieronder eerst kort de werking van een gewone Pseudorandom Function (PRF), vervolgens hoe een OPRF dat uitbreidt, en ten slotte hoe OPRF in de architectuur wordt ingezet.
 
 ### Pseudorandom Function (PRF)
 
@@ -192,7 +190,7 @@ Een Pseudorandom Function (PRF) is een functie F(k, x) die met een geheime sleut
 - *onvoorspelbaar zonder k* — zonder kennis van k is de uitvoer cryptografisch niet voorspelbaar;
 - *onomkeerbaar* — uit de uitvoer kan x niet hersteld worden.
 
-Een eenvoudige PRF-realisatie is bijvoorbeeld `HMAC-SHA256(k, x)`. Voor pseudonimisering ligt het voor de hand: een server kiest een geheim k en berekent voor elke binnenkomende identifier (zoals een BSN) een pseudoniem `F(k, BSN)`. Twee verschillende BSN's leveren twee verschillende pseudoniemen op, en zonder k kan niemand een BSN uit een pseudoniem herleiden. Het bezwaar in deze architectuur is echter principieel: de server moet het BSN ontvangen om F(k, BSN) uit te rekenen. Daarmee komt het BSN bij een centrale partij terecht — precies wat [NFR-5](#niet-functionele-requirements) wil voorkomen.
+Een eenvoudige PRF-realisatie is bijvoorbeeld `HMAC-SHA256(k, x)`. Voor pseudonimisering ligt het voor de hand: een server kiest een geheim k en berekent voor elke binnenkomende identifier (zoals een BSN) een pseudoniem `F(k, BSN)`. Twee verschillende BSN's leveren twee verschillende pseudoniemen op, en zonder `k` kan niemand een BSN uit een pseudoniem herleiden. Het bezwaar in deze architectuur is echter principieel: de server moet het BSN ontvangen om `F(k, BSN)` uit te rekenen. Daarmee komt het BSN bij een centrale partij terecht — precies wat [NFR-5](#niet-functionele-requirements) wil voorkomen.
 
 ### Oblivious PRF (OPRF)
 
@@ -209,21 +207,23 @@ Dit gebeurt door *blinding*: de client maakt `x` onherkenbaar voordat het naar d
 4. De server past zijn geheime sleutel toe: `Z' = k ⋅ P'`, en stuurt `Z'` terug.
 5. De client *unblindt*: `Z = (1/r) ⋅ Z' = (1/r) ⋅ k ⋅ r ⋅ P = k ⋅ P`.
 
-De client heeft nu `Z = k ⋅ P`, het OPRF-resultaat, zonder dat de server `x` ooit gezien heeft en zonder dat de client `k` geleerd heeft.
+De client heeft nu `Z = k ⋅ P`, het OPRF-resultaat, zonder dat de server `x` ooit gezien heeft en zonder dat de client `k` geleerd heeft. 
+
+Standaard worden stappen 1 t/m 3 en de stap 5 uitgevoerd door dezelfde client. Echter stappen 1 t/m 3 en stap 5 kunnen ook op twee verschillende clients uitgevoerd worden. De _blinding client_ voert  stappen 1 t/m 3 uit, en de _unblinding client_ voert stap 5 uit. Het is dan de verantwoordelijkheid van de _blinding client_ om `Z'` (het resultaat van stap 4) door te geven aan de `_unblinding client_`. 
 
 ### Toepassing in deze architectuur
 
 OPRF wordt tweemaal toegepast binnen onze architectuur. Bij het [aanmelden van een Trace](#aanmelden-van-een-trace-door-een-verantwoordelijke) vervuld de Pseudoniemendienst de rol van OPRF-server: zij bewaart het geheim `k` en biedt een endpoint waar een geblindeerd punt `P'` binnenkomt en `Z'` wordt teruggestuurd. De cliënt-rol is opgesplitst over twee entiteiten:
 
-1. de Verantwoordelijke, voert stappen 1 t/m 3 uit.
-2. de TraceIndex, voert stap 5 uit.
+1. de Verantwoordelijke is de _blinding client_,
+2. de TraceIndex, is de _unblinding client_
 
 Bij het [ophalen van Traces](#ophalen-van-traces-door-de-betrokkene) wordt OPRF opnieuw gebruikt. Ook hier vervuld de Pseudoniemendienst de rol van OPRF-server. De cliënt-rol is hier echter opgesplitst tussen:
 
-1. De TransparantieApp backend
-2. De TraceIndex. 
+1. De TransparantieApp backend is de `_blinding client_`
+2. De TraceIndex is de `_unblinding client_`
 
-De TransparantieApp backend voert stappen 1 t/m 3 uit, en de TraceIndex voert stap 5 uit. Hierdoor zijn drie eigenschappen geborgd:
+Hierdoor zijn drie eigenschappen geborgd:
 
 - De Pseudoniemendienst krijgt nooit een BSN te zien (NFR-5).
 
@@ -234,21 +234,21 @@ De TransparantieApp backend voert stappen 1 t/m 3 uit, en de TraceIndex voert st
 
 \#1 TODO: Bovenstaand is hoe de referentie-implementatie nu werkt. Echter, dit stelt de TraceIndex wel instaat om Z te bewaren. Dat doet deze nu niet, omdat we juist verschillende pseudoniemen per logbook willen hebben. Maar als de TraceIndex kwaadwillend is dan kán deze natuurlijk simpelweg ook Z gaan opslaan. Een oplossing hiervoor is om per logbook een ander secret te gaan gebruiken in de OPRF server. Dit is echter nog niet geimplementeerd en vereist ook aanpassingen aan de Pseudoniemendienst. 
 
-### Afwijking van het standaard OPRF-protocol
+### JWE Encyptie van Z'
 
-In de bovenstaande beschrijving voert de cliënt zelf de unblinding-stap (`Z = (1/r) ⋅ Z'`) uit. In deze architectuur wijkt de Pseudoniemendienst daar bewust van af: in plaats van `Z'` direct aan de cliënt te retourneren, verpakt zij `Z'` in een JWE die uitsluitend voor de TraceIndex te ontsleutelen is. De cliënt geeft deze JWE samen met de blinding factor `r` door aan de TraceIndex; pas de TraceIndex voert de unblinding uit en kent daarmee `Z`.
+In plaats van `Z'` direct aan de _blinding cliënt_ te retourneren, verpakt de OPRF-server `Z'` in een JWE die uitsluitend voor de TraceIndex te ontsleutelen is. De cliënt geeft deze JWE samen met de blinding factor `r` door aan de TraceIndex; pas de TraceIndex voert de unblinding uit en kent daarmee `Z`.
 
 Het gevolg is dat de cliënt (Verantwoordelijke of TransparantieApp Backend) zelf nooit `Z` of een pseudoniem construeert. `Z` blijft uitsluitend in handen van de TraceIndex. Hiermee wordt voorkomen dat Verantwoordelijken hun verkregen `Z`-waarden onderling zouden kunnen vergelijken om buiten de TraceIndex om gemeenschappelijke Betrokkenen te identificeren.
 
 ## Related work
 
-De combinatie van decentrale data-opslag ("data bij de bron") en de wens om hierover een geconsolideerd overzicht aan een Betrokkene te tonen, komt in meerdere Nederlandse overheidsinitiatieven voor. Elk initiatief maakt daarin een eigen afweging — voornamelijk tussen privacy, schaalbaarheid en eenvoud van implementatie. Tijdens het onderzoek zijn we drie initiatieven tegengekomen die de combinatie van FR-1 en NFR-1 t/m NFR-5 op een eigen wijze invullen.
+De combinatie van decentrale data-opslag ("data bij de bron") en de wens om hierover een geconsolideerd overzicht aan een Betrokkene te tonen, komt in meerdere Nederlandse overheidsinitiatieven voor. Elk initiatief maakt daarin een eigen afweging — voornamelijk tussen privacy, schaalbaarheid en eenvoud van implementatie. Tijdens het onderzoek zijn de volgende drie initiatieven bekeken die de combinatie van FR-1 en NFR-1 t/m NFR-5 op een eigen wijze invullen.
 
 ### Mijn Zakenlijst
 
-Mijn Zakenlijst hanteert eveneens een centrale index die de aanvragende applicatie verwijst naar de juiste bronnen. In de koppeltabel — vergelijkbaar met onze TraceIndex — wordt echter rechtstreeks het BSN opgenomen. Hiermee wordt niet aan NFR-5 (Privacy-by-design) voldaan: de centrale index krijgt persoonsgegevens in klare vorm te zien, in plaats van uitsluitend pseudoniemen. 
+Mijn Zakenlijst hanteert eveneens een centrale index die de aanvragende applicatie verwijst naar de juiste bronnen. In de koppeltabel — vergelijkbaar met onze TraceIndex — wordt echter rechtstreeks het BSN opgenomen. Hiermee wordt niet aan NFR-5 (Privacy-by-design) voldaan: de centrale index krijgt BSN's in klare vorm te zien, in plaats van uitsluitend pseudoniemen. 
 
-Hierbij moet vermeld worden dat de privacy afwegingen verschillen. De TransparantieApp zal overheidsbreed uitgerold worden en dus per definitie ook privacy gevoeligere informatie verwerken. Enkel het feit dat een burger contact heeft met b.v. de gemeente Amersfoort is minder privacy gevoelig fat het feit dat een burger contact heeft gehad met bijvoorbeeld de Dienst Justitiële Inrichtingen.
+Hierbij moet vermeld worden dat de privacy afwegingen verschillen. De TransparantieApp zal overheidsbreed uitgerold worden en dus per definitie ook privacy gevoeligere informatie verwerken. Mijn Zakenlijst daarin tegen betreft met name relaties met gemeentes. Enkel het feit dat een burger contact heeft met b.v. de gemeente Amersfoort is minder privacy gevoelig fat het feit dat een burger contact heeft gehad met bijvoorbeeld de Dienst Justitiële Inrichtingen. 
 
 ### VWS Verwijsindex
 
@@ -256,6 +256,10 @@ VWS werkt aan een verwijsindex die conceptueel sterk overeenkomt met de TraceInd
 
 ### Vorderingenoverzicht Rijk (VO-Rijk)
 
-VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol. Het aantal deelnemers aan VO-Rijk is op dit moment beperkt tot circa acht organisaties. Daarnaast neemt de kans dat één van de bevraagde Logboeken op enig moment niet bereikbaar is sterk toe met het aantal deelnemers: bij een handvol partijen is een tijdelijk uitvallend Logboek nog een uitzondering, maar bij overheidsbrede uitrol — duizenden Logboeken — is het statistisch eerder regel dan uitzondering. Zonder koppeltabel kan de frontend in zo'n geval bovendien niet vaststellen óf de onbereikbare partij überhaupt een Dataverwerking voor deze Betrokkene zou hebben opgeleverd, waardoor FR-4 terugvalt op een generieke disclaimer dat het overzicht mogelijk niet compleet is — een waarschuwing die bij een dergelijke schaal nagenoeg permanent getoond zou moeten worden.
+VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol. 
 
-Een koppeltabel zoals de TraceIndex ondervangt dit op twee manieren: het aantal te bevragen Logboeken daalt tot uitsluitend de Logboeken die voor de Betrokkene daadwerkelijk relevant zijn — typisch enkele tientallen — waardoor de kans op één onbereikbaar Logboek per opvraging beheersbaar wordt; en doordat de TraceIndex het bestaan en het tijdstip van een Dataverwerking kent, kan de frontend ook bij een tijdelijk niet-bereikbaar Logboek de specifieke placeholder uit FR-4 tonen zonder de inhoud zelf te hoeven raadplegen.
+Het aantal deelnemers aan VO-Rijk is op dit moment beperkt tot circa acht organisaties. De kans dat één van de bevraagde Logboeken op enig moment niet bereikbaar is neemt sterk toe met het aantal deelnemers: bij een handvol partijen is een tijdelijk uitvallend Logboek nog een uitzondering, maar bij overheidsbrede uitrol — duizenden Logboeken — is het statistisch eerder regel dan uitzondering.
+
+Zonder koppeltabel kan de frontend in zo'n geval bovendien niet vaststellen óf de onbereikbare partij überhaupt een Dataverwerking voor deze  Betrokkene zou hebben opgeleverd, waardoor FR-4 terugvalt op een generieke disclaimer dat het overzicht mogelijk niet compleet is — een waarschuwing die bij een dergelijke schaal nagenoeg permanent getoond zou moeten worden.
+
+Een koppeltabel zoals de TraceIndex ondervangt dit op twee manieren: het aantal te bevragen Logboeken daalt tot uitsluitend de Logboeken die voor de Betrokkene daadwerkelijk relevant zijn — typisch enkele tientallen — waardoor de kans op één onbereikbaar Logboek per opvraging beheersbaar wordt; en doordat de TraceIndex het bestaan en het tijdstip van een Dataverwerking kent, kan de frontend ook bij een tijdelijk niet-bereikbaar Logboek de specifieke placeholder uit FR-4 tonen.
