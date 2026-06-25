@@ -1,4 +1,4 @@
-# Standaard voor lezen logging
+# De Standaard
 
 In het transparantieApp project ontwikkelen  we de [extensie lezen ](https://logius-standaarden.github.io/logboek-extensie-lezen/) voor [de standaard logboek dataverwerkingen](https://www.logius.nl/onze-dienstverlening/gegevensuitwisseling/logboek-dataverwerkingen). In de standaard zelf zijn ontwerp afwegingen, architectuur en de specificatie terug te vinden. De extensie lezen wordt ontwikkeld in een [repository bij Logius afdeling standaarden](https://github.com/Logius-standaarden/logboek-extensie-lezen/) (de beheerder van de standaard).
 
@@ -6,13 +6,13 @@ In het transparantieApp project ontwikkelen  we de [extensie lezen ](https://log
 
 De standaard wordt iteratief ontwikkeld door de specificatie te implementeren. Ten minste in [de referentie implementatie van de standaard logboek dataverwerkingen](https://gitlab.com/digilab.overheid.nl/ecosystem/logboek-dataverwerkingen/ldv-referentie-implementatie), en indien wenselijk eventueel ook elders. Vervolgens de implementatie te testen en beproeven en op basis van praktijk bevindingen de standaard (en software) te verbeteren.
 
-## Open API Specification(OAS) voor lezen API
+## Open API Specification(OAS) voor de extensie lezen
 
-De werkversie van de [Open API specificatie voor de lezen-extensie wordt bijgehouden in de Logius github](https://raw.githubusercontent.com/Logius-standaarden/logboek-extensie-lezen/refs/heads/develop/media/openapi.json).
+De werkversie van de [Open API specificatie voor de extensie lezen wordt bijgehouden in de Logius github](https://raw.githubusercontent.com/Logius-standaarden/logboek-extensie-lezen/refs/heads/develop/media/openapi.json).
 
-## Toepassing Standaard voor lezen logging
+## Toepassing extensie lezen
 
-De standaard logboek dataverwerkingen wordt toegepast met het idee dat de volgens deze standaard vastgelegde logging op een later tijdstip gebruikt kan worden om transaparantie te geven over de verwerking van gegevens. De extensie lezen is bedoeld om dit proces te kunnen automatiseren. Wanneer zou je de lezen extensie moeten toepassen en zijn daar eventueel additionele voorzieningen voor nodig? Om hier inzicht in te geven worden hier vier toepassings categorieën uitgewerkt. Dit zou moeten helpen om voor een specifieke use te bepalen of en hoe de lezen extensie toe te passen.
+De standaard logboek dataverwerkingen wordt toegepast met het idee dat de volgens deze standaard vastgelegde logging op een later tijdstip gebruikt kan worden om transaparantie te geven over de verwerking van gegevens. De extensie lezen is bedoeld om dit proces te kunnen automatiseren. Wanneer zou je de extensie lezen moeten toepassen en zijn daar eventueel additionele voorzieningen voor nodig? Om hier inzicht in te geven worden hier vier toepassings categorieën uitgewerkt. Dit zou moeten helpen om voor een specifieke use te bepalen of en hoe de extensie lezen toe te passen.
 
 ### De nul optie, niet toepassen
 
@@ -20,7 +20,7 @@ Het kan voldoende zijn alleen de logboek data verwerkingen (core) standaard toe 
 
 ### Beperkte automatisering met menselijke tussenkomst
 
-In het geval van gedeeltelijke automatisering wordt op ieder logboek de lezen API geimplementeerd en wordt in de logging het [extra veld met URL van lezen endpoint aangeroepen externe partij](https://logius-standaarden.github.io/logboek-extensie-lezen/#toevoeging-bij-schrijven-logs) volgens de extensie lezen ook weggeschreven. Echter de lezen API(s) worden alleen aangeroepen door een applicatie die vertrouwd wordt door alle logboeken en die gebruikt wordt door een ambetenaar. Deze ambtenaar heeft een in beleid of wet en regelgeving vastgelegde taak waarmee hij het recht heeft de logging informatie in te zien. Bijvoorbeeld een ambtenaar die inzage geeft in een WOO verzoek. Voordat het resultaat aan derden wordt doorgegeven maakt deze ambtenaar zelf de afweging of en zo ja welke informatie uit de logging verder gedeeld kan worden. Voordeel is dat deze ambtenaar een applicatie kan worden aangeboden die inzicht bied zonder dat hij technische kennis vn de standaard logboek dataverwerkingen of achterliggende systemen hoeft te hebben. De beveiliging van de lezen API kan relatief simpel blijven zonder dat er extra voorzieningen nodig zijn. Deze oplossing leunt sterk op goed geformuleerd beleid, wet en regelgeving en aanvullende process afspraken voor de uitvoerende ambtenaar.
+In het geval van gedeeltelijke automatisering wordt op ieder logboek de lezen API geimplementeerd en wordt in de logging het [extra veld met URL van lezen endpoint aangeroepen externe partij](https://logius-standaarden.github.io/logboek-extensie-lezen/#toevoeging-bij-schrijven-logs) volgens de extensie lezen ook weggeschreven. Echter de lezen API(s) worden alleen aangeroepen door een applicatie die vertrouwd wordt door alle logboeken en die gebruikt wordt door een ambetenaar. Deze ambtenaar heeft een in beleid of wet en regelgeving vastgelegde taak waarmee hij het recht heeft de logging informatie in te zien. Bijvoorbeeld een ambtenaar die inzage geeft in een WOO verzoek. Voordat het resultaat aan derden wordt doorgegeven maakt deze ambtenaar zelf de afweging of en zo ja welke informatie uit de logging verder gedeeld kan worden. Voordeel is dat deze ambtenaar een applicatie kan worden aangeboden die inzicht bied zonder dat hij technische kennis van de standaard logboek dataverwerkingen of achterliggende systemen hoeft te hebben. De beveiliging van de lezen API kan relatief simpel blijven zonder dat er extra voorzieningen nodig zijn. Deze oplossing leunt sterk op goed geformuleerd beleid, wet en regelgeving en aanvullende process afspraken voor de uitvoerende ambtenaar.
 
 ### Volledige automatisering bij transparantie voor usecase "Waarom is dit gebeurd?"
 
