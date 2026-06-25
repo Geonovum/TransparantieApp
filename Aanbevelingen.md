@@ -1,5 +1,7 @@
 # Aanbevelingen
 
+We hebben in de uitvoering van het TransparantieApp project veel geleerd, over de standaard logboek dataverwerkingen (core) en de extensie lezen daarop, over gebruikersonderzoek, UX design, business architectuur en implementatie architectuur.  In de hoofdstuk noemen we onze belangrijkste bevindingen zodat daar door volgende projecten als ook de beheerder van de standaard op voortgebouwd kan worden.
+
 ## Standaard
 
 ### extensie lezen
