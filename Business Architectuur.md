@@ -1,5 +1,5 @@
 # Business Architectuur
-De TransparantieApp is bedoeld om inzichttelijk te maken welke (persoons)gegevens verwerkt (gelezen, toegevoegd of gewijzigd) zijn door welke (overheids)organisatie(s) en waarom.
+De de [extensie lezen ](https://logius-standaarden.github.io/logboek-extensie-lezen/) voor [de standaard logboek dataverwerkingen](https://www.logius.nl/onze-dienstverlening/gegevensuitwisseling/logboek-dataverwerkingen) is bedoeld om via een TransparantieApp inzichttelijk te kunnen maken welke (persoons)gegevens verwerkt (gelezen, toegevoegd of gewijzigd) zijn door welke (overheids)organisatie(s) en waarom.
 Degene die inzicht wil hebben in deze verwerkingen kan daarvoor in hoofdlijnen op twee manieren de vraag 'insteken': 
 a) Hoe is dit besluit tot stand gekomen?
 b) Wie heeft er - los van welk besluit ook - eigenlijk inzicht in of gebruik gemaakt van mijn persoonsgegevens?
