@@ -189,6 +189,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
   /* Any custom mermaid.js scripts will go here. */
   }
 </style>
+<script charset="utf-8" data-webpack="respec-mermaid:chunk-831" src="https://cdn.jsdelivr.net/gh/w3c/respec-mermaid@1.2.0/dist/831.js"></script>
 <script id="initialUserConfig" type="application/json">{
   "nl_organisationName": "Geonovum",
   "nl_organisationStylesURL": "https://tools.geostandaarden.nl/respec/style/",
@@ -2137,9 +2138,9 @@ Voor de gedetailleerde uitwerking van de applicatie-architectuur zie [Applicatie
 <ul>
 <li><p><strong>NFR-1: Decentrale opslag van Trace-data.</strong> De inhoud van Traces blijft opgeslagen in het Logboek van de Verantwoordelijke die deze heeft gelogd. Er ontstaat geen centrale kopie van Logboek-inhoud; </p>
 </li>
-<li><p><strong>NFR-2: Schaalbaarheid naar overheidsbrede uitrol.</strong> De architectuur is geschikt voor duizende Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Traces bevatten worden geraadpleegd.</p>
+<li><p><strong>NFR-2: Schaalbaarheid naar overheidsbrede uitrol.</strong> De architectuur is geschikt voor duizenden Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Traces bevatten worden geraadpleegd.</p>
 </li>
-<li><p><strong>NFR-3: Geschikt voor Web en Mobile.</strong> De TransparantieApp moet zowel als webapplicatie als als native mobiele applicatie geimplementeerd kunnen worden. De architectuur stelt geen eisen die slechts in één van beide platformen haalbaar zijn.</p>
+<li><p><strong>NFR-3: Geschikt voor Web en Mobile.</strong> De TransparantieApp moet als webapplicatie en als native mobiele applicatie geimplementeerd kunnen worden. De architectuur stelt geen eisen die slechts in één van beide platformen haalbaar zijn.</p>
 </li>
 <li><p><strong>NFR-4: Acceptabele laadtijd.</strong> Het tonen van de Tracelijst (FR-1) gebeurt binnen 1 seconde onder normale omstandigheden. Vertraging veroorzaakt door één traag of onbereikbaar Logboek mag de overige resultaten niet ophouden; in plaats daarvan wordt voor het betreffende Logboek de placeholder uit FR-4 getoond.</p>
 </li>

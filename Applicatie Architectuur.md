@@ -30,9 +30,9 @@ Naast de functionele requirements stelt de architectuur de volgende kwaliteitsei
 
 - **NFR-1: Decentrale opslag van Trace-data.** De inhoud van Traces blijft opgeslagen in het Logboek van de Verantwoordelijke die deze heeft gelogd. Er ontstaat geen centrale kopie van Logboek-inhoud; 
 
-- **NFR-2: Schaalbaarheid naar overheidsbrede uitrol.** De architectuur is geschikt voor duizende Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Traces bevatten worden geraadpleegd.
+- **NFR-2: Schaalbaarheid naar overheidsbrede uitrol.** De architectuur is geschikt voor duizenden Logboeken. Nederland kent circa 1.600 overheidsorganisaties, en iedere organisatie kan meerdere Logboeken beheren. Het beantwoorden van een gebruikersvraag mag niet vereisen dat alle Logboeken bevraagd worden; alleen de Logboeken die volgens de TraceIndex relevante Traces bevatten worden geraadpleegd.
 
-- **NFR-3: Geschikt voor Web en Mobile.** De TransparantieApp moet zowel als webapplicatie als als native mobiele applicatie geimplementeerd kunnen worden. De architectuur stelt geen eisen die slechts in één van beide platformen haalbaar zijn.
+- **NFR-3: Geschikt voor Web en Mobile.** De TransparantieApp moet als webapplicatie en als native mobiele applicatie geimplementeerd kunnen worden. De architectuur stelt geen eisen die slechts in één van beide platformen haalbaar zijn.
 
 - **NFR-4: Acceptabele laadtijd.** Het tonen van de Tracelijst (FR-1) gebeurt binnen 1 seconde onder normale omstandigheden. Vertraging veroorzaakt door één traag of onbereikbaar Logboek mag de overige resultaten niet ophouden; in plaats daarvan wordt voor het betreffende Logboek de placeholder uit FR-4 getoond.
 
