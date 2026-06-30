@@ -21,6 +21,11 @@ We hebben in de uitvoering van het TransparantieApp project veel geleerd, over d
 ## Architectuur
 
 ## Gebruikersonderzoek
+Dit onderzoek laat zien dat de huidige standaard voornamelijk is ontwikkeld vanuit de technische mogelijkheden van logging, terwijl burgers vooral behoefte hebben aan inzicht in de totstandkoming van besluiten. Ook de literatuur van de Kafka Brigade laat zien dat burgers vastlopen doordat zij onvoldoende inzicht hebben in de samenhang tussen gegevens, regels en besluiten. Niet alleen de gebruikte gegevens, maar ook de toegepaste regels en de onderbouwing van een besluit moeten begrijpelijk en controleerbaar zijn.
+
+Bij de ontwikkeling van toekomstige standaarden en applicaties voor burgers is het daarom aan te bevelen om uit te gaan van de problemen die burgers ervaren, en niet uitsluitend van de beschikbare technische mogelijkheden. Door de informatiebehoefte van burgers als uitgangspunt te nemen, kan beter worden bepaald welke informatie nodig is om betekenisvolle transparantie te bieden.
+
+De huidige standaard maakt vooral inzichtelijk welke gegevens zijn gebruikt, maar biedt nog beperkt inzicht in hoe deze gegevens hebben bijgedragen aan een besluit. Een interessante richting voor verder onderzoek is daarom de toepassing van Rules as Code. Door logging te combineren met machineleesbare wet- en regelgeving kan worden onderzocht hoe toekomstige standaarden niet alleen inzicht kunnen bieden in de gebruikte gegevens, maar ook in de toegepaste regels en de onderbouwing van besluiten. Hiermee kunnen standaarden beter aansluiten op de informatiebehoefte van burgers en bijdragen aan uitlegbare en transparante overheidsdienstverlening. De volgende methodieken en handvaten zijn gebruikt tijdens dit onderzoek om de standaard nader te onderzoeken:
 
 1. Maak abstracte concepten concreet met prototypes
 
@@ -53,6 +58,9 @@ Inzichten ontstaan door meerdere cycli van ontwerpen, testen en verbeteren. Gebr
 
 
 ## UX design
+
+Naast gebruikers onderzoek zijn er ook meerdere design gemaakt. Tijdens de design sprints zijn er bepaalde design principes gebruikt. De volgende blijken nuttig en relevant voor het ontwerpen van UI voor data logging visualisatie: 
+
 
 0. maak geen nieuwe app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
 
