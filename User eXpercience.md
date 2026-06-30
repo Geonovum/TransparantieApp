@@ -60,20 +60,7 @@ De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeu
 De persona's helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken. Zij vormen een hulpmiddel bij het ontwerpen en prioriteren van functionaliteiten binnen de TransparantieApp.
 
 
-### Onderzoeksopzet
-
-De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van **1 tot 7**, waarbij:
-
-* **1 = Helemaal niet belangrijk**
-* **7 = Zeer belangrijk**
-
-De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeuren te identificeren. Op basis van deze patronen zijn drie persona's opgesteld die verschillende houdingen ten opzichte van datatransparantie vertegenwoordigen.
-
-De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens. Zij helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken.
-
-
-
-### Fatima (28) – De actieve burger
+### Fatima (28) – De controlerende burger
 
 Fatima is sterk geïnteresseerd in wat er met haar persoonsgegevens gebeurt. Ze maakt zich zorgen over hoe organisaties haar gegevens gebruiken en wil daarom vooral inzicht en controle.
 
@@ -102,7 +89,7 @@ Hoewel Marc transparantie waardeert, wil hij niet te diep in technische details 
 Voor Marc betekent transparantie vooral dat hij snel kan controleren of alles klopt en eenvoudig kan ingrijpen als dat nodig is, zonder zich te hoeven verdiepen in technische details.
 
 
-### Peter(55) – De inactieve gebruiker
+### Peter(55) – De passieve gebruiker
 
 Peter denkt in het dagelijks leven nauwelijks na over zijn persoonsgegevens. Digitale diensten gebruikt hij vooral omdat ze handig zijn en hij staat zelden stil bij hoe zijn gegevens worden verwerkt. Toch vindt hij het belangrijk dat hij kan ingrijpen wanneer er iets misgaat.
 
