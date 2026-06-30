@@ -1456,7 +1456,7 @@ ul.index code{color:inherit}
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">02 juni 2026</time>
+      <time class="dt-published" datetime="2025-11-17">30 juni 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1953,7 +1953,7 @@ De logging over van verwerkingen rondom een besluit van een overheid, ligt dus p
 </section><section id="gevolgen-voor-applicatie-architectuur"><div class="header-wrapper"><h3 id="x5-4-gevolgen-voor-applicatie-architectuur"><bdi class="secno">5.4 </bdi>Gevolgen voor Applicatie architectuur</h3><a class="self-link" href="#gevolgen-voor-applicatie-architectuur" aria-label="Permalink for Section 5.4"></a></div>
 <p>Door de federatieve werkwijze van de logging, moet ook een opvraging van de logs bij alle overheden afzonderlijk gebeuren. Een TransparantieApp moet dit 'onder water' automatisch doen en niet aan de gebruiker overlaten om daarin 'de weg te vinden'. Er moet daardoor in de applicatie-architectuur een oplossing gevonden worden om 1) alle (overheids)organisaties die potentieel gegevens gelogd hebben te identificeren en b) al deze logboeken (potentieel meerdere per organisatie) te bevragen, met een grote kans dat de meerderheid van de logboeken geen data heeft aangaande de betreffende persoon (of object).
 Omdat bij tests gebleken is, dat een dergelijke wijze van logs lezen niet efficient en performant uitvoerbaar is, is een applicatie-architectuur ontworpen met een centraal traceregister waarin - gepseudonimiseerd! - vastligt welke organisaties log-informatie over welke persoon hebben. Op basis van dat register kan de TransparantieApp snel en efficient de betreffende organisaties bevragen.
-Voor de gedetailleerde uitwerking van de applicatie-architectuur zie [Applicatie architectuur] (../Applicatie Architectuur).</p>
+Voor de gedetailleerde uitwerking van de applicatie-architectuur zie [Applicatie architectuur] (../[Applicatie Architectuur.md]).</p>
 </section><section id="gevolgen-voor-standaard"><div class="header-wrapper"><h3 id="x5-5-gevolgen-voor-standaard"><bdi class="secno">5.5 </bdi>Gevolgen voor standaard</h3><a class="self-link" href="#gevolgen-voor-standaard" aria-label="Permalink for Section 5.5"></a></div>
 <p>In eerste instantie zou men kunnen denken dat ook het lezen van de log via de TransparantieApp gelogd moet (kan) worden. Echter, voor de gebruiker van de App voegt het niets toe om te kunnen zien dat diegene zelf het logboek heeft geraadpleegd. Het zou wel informatief zijn voor de gebruiker om te zien dat een ander diens logs heeft geraadpleegd. Dat is op zich ook geen probleem, tenzij op Level 3 gelogd wordt. Immers, dan zou vastgelegd worden dat iemand een bepaalde combinatie van traceids heeft geraadpleegd. Daarmee ligt de relatie tussen traceids van een persoon vast. Aangezien die traceids in de traceindex vastliggen in combinatie met de bijbehorende logboeken (en dus organisaties), leidt dit tot een potentieel inzicht (en eventueel identificatie van een persoon) waar in de traceindex nu juist maatregelen genomen zijn om dat te voorkomen.</p>
 </section></section>
