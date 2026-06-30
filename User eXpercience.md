@@ -1,4 +1,5 @@
 # User eXperience
+Om inzicht te krijgen in de gebruikerservaring rondom de verwerking en uitwisseling van persoonsgegevens zijn persona's, een mental model en een experience map opgesteld. De persona's beschrijven representatieve gebruikers met verschillende doelen, behoeften en contexten en helpen om ontwerpkeuzes vanuit het perspectief van de gebruiker te maken. Het mental model brengt de verwachtingen, aannames en overtuigingen van deze gebruikers over gegevensverwerking in kaart. De experience map laat vervolgens zien hoe deze verwachtingen zich vertalen naar de feitelijke gebruikerservaring: van verwachting en onzichtbare verwerking tot verstoring, begrip, handelen en vertrouwen. In tegenstelling tot een customer journey, die de interactie binnen een specifieke casus of dienstverlening beschrijft, biedt de experience map een overkoepelend beeld van de gebruikerservaring over verschillende organisaties en situaties heen. Samen vormen deze UX-methoden de basis voor het identificeren van behoeften, risico's en ontwerpkansen.
 
 ## Mentale model van data transparantie: Van herkenning naar vertrouwen
 
@@ -48,6 +49,51 @@ Gebruikers willen kunnen controleren of de informatie correct is en herleidbaar 
 
 De pijlen tussen de stappen tonen een oplopend proces van informatieverwerking. Het model laat zien dat gebruikers eerst behoefte hebben aan herkenning voordat zij context, verklaringen en begrip zoeken. Vertrouwen ontstaat pas nadat gebruikers voldoende inzicht hebben gekregen in wat er is gebeurd en waarom.
 
+## Experience map:  Van Onzichtbare Verwerking naar Vertrouwen
+Deze experience map beschrijft hoe mensen de verwerking en uitwisseling van persoonsgegevens ervaren gedurende hun interactie met organisaties. De kaart laat zien dat gegevensverwerking in de meeste situaties onzichtbaar en probleemloos verloopt. Pas wanneer er iets onverwachts gebeurt, ontstaat de behoefte aan inzicht, uitleg en handelingsperspectief.
+
+De experience map bestaat uit twee delen. Het eerste deel beschrijft de normale gebruikerservaring: van een verwachting waarmee iemand een proces start, via de onzichtbare verwerking van gegevens, naar een voorspelbaar resultaat. Het tweede deel richt zich op de situatie waarin deze verwachting wordt doorbroken. De gebruiker ervaart een verstoring, zoekt naar een verklaring, wil begrijpen wat er is gebeurd en zoekt mogelijkheden om invloed uit te oefenen. Uiteindelijk kan opnieuw vertrouwen ontstaan wanneer voldoende transparantie, context en handelingsperspectief worden geboden.
+
+Onder iedere experience map staat een ontwerpanalyse. Deze analyse vertaalt de observaties uit de gebruikerservaring naar ontwerpinzichten. Per fase worden de onderliggende behoeften, risico's en ontwerpkansen benoemd. Deze inzichten vormen het uitgangspunt voor het ontwerpen van interventies, interfaces en dienstverlening die transparantie vergroten, gebruikers meer regie geven en het vertrouwen in gegevensverwerking versterken.
+
+## 1. Gebruikerservaring
+
+| Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
+|-------|----------------|---------------|---------------------|
+| **Wat gebeurt er?** | Persoon wil iets bereiken | Organisaties verwerken gegevens | Alles verloopt zoals verwacht |
+| **Gebruikersdoel** | Taak afronden | Geen actief doel | Resultaat ontvangen |
+| **Gedachten** | "Dit zal wel geregeld worden." | "Dat gebeurt automatisch." | "Prima." |
+| **Emoties** | Vertrouwend | Onbezorgd | Tevreden |
+| **Vragen** | Wat moet ik doen? | Geen | Geen |
+
+### Ontwerpanalyse
+
+| Analyse | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
+|----------|----------------|---------------|---------------------|
+| **Behoefte** | Gemak | Vertrouwen | Voorspelbaarheid |
+| **Risico** | Complexiteit | Onzichtbaarheid | Onverschilligheid |
+| **Kans** | Duidelijke start | Transparante processen | Frictieloze ervaring |
+
+---
+
+## 2. Van verstoring naar vertrouwen
+
+| Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
+|-------|---------------|--------------|-------------|----------------|
+| **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
+| **Gebruikersdoel** | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
+| **Gedachten** | "Huh? Waarom gebeurt dit? Welke gegevens zijn hier gedeeld?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
+| **Emoties** | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
+| **Vragen** | Waarom gebeurt dit? Welke gegevens zijn gedeeld? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
+
+### Ontwerpanalyse
+
+| Analyse | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
+|----------|---------------|--------------|-------------|----------------|
+| **Behoefte** | Verklaring | Context | Handelingsperspectief | Zekerheid |
+| **Risico** | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
+| **Kans** | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
+
 ## Persona's
 
 De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van **1 tot 7**, waarbij:
@@ -60,36 +106,7 @@ De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeu
 De persona's helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken. Zij vormen een hulpmiddel bij het ontwerpen en prioriteren van functionaliteiten binnen de TransparantieApp.
 
 
-### Onderzoeksopzet
-
-De onderstaande persona's zijn opgesteld op basis van een vragenlijstonderzoek onder potentiële gebruikers van de TransparantieApp. In deze vragenlijst is deelnemers gevraagd om het belang van verschillende transparantiefuncties te beoordelen op een Likert-schaal van **1 tot 7**, waarbij:
-
-* **1 = Helemaal niet belangrijk**
-* **7 = Zeer belangrijk**
-
-De gemiddelde scores zijn gebruikt om patronen in informatiebehoeften en voorkeuren te identificeren. Op basis van deze patronen zijn drie persona's opgesteld die verschillende houdingen ten opzichte van datatransparantie vertegenwoordigen.
-
-De persona's zijn daarmee geen beschrijving van individuele respondenten, maar archetypen die zijn afgeleid uit de verzamelde onderzoeksgegevens. Zij helpen om verschillen in informatiebehoefte, gewenste mate van controle en behoefte aan detail inzichtelijk te maken.
-
-## Reflectie: doelgroep buiten de scope van het onderzoek
-
-Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.
-
-Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.
-
-Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.
-
-Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.Voor volledigeheid hebben we deze wel meegenomen als persona in dit onderzoek om over na te denken bij design beslissingen.
-
-Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.
-
-Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.
-
-Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.
-
-Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.
-
-### Fatima (28) – De actieve burger
+### Fatima (28) – De controlerende burger
 
 Fatima is sterk geïnteresseerd in wat er met haar persoonsgegevens gebeurt. Ze maakt zich zorgen over hoe organisaties haar gegevens gebruiken en wil daarom vooral inzicht en controle.
 
@@ -118,7 +135,7 @@ Hoewel Marc transparantie waardeert, wil hij niet te diep in technische details 
 Voor Marc betekent transparantie vooral dat hij snel kan controleren of alles klopt en eenvoudig kan ingrijpen als dat nodig is, zonder zich te hoeven verdiepen in technische details.
 
 
-### Peter(55) – De inactieve gebruiker
+### Peter(55) – De passieve gebruiker
 
 Peter denkt in het dagelijks leven nauwelijks na over zijn persoonsgegevens. Digitale diensten gebruikt hij vooral omdat ze handig zijn en hij staat zelden stil bij hoe zijn gegevens worden verwerkt. Toch vindt hij het belangrijk dat hij kan ingrijpen wanneer er iets misgaat.
 
@@ -176,6 +193,23 @@ De verschillen ontstaan voornamelijk in de behoefte aan verdieping en technische
 
 Deze bevinding ondersteunt de hypothese dat transparantie gelaagd moet worden aangeboden: een gemeenschappelijke basislaag kan voorzien in de informatiebehoefte van alle gebruikers, terwijl aanvullende detailniveaus ruimte bieden aan gebruikers die meer inzicht wensen in gegevensverwerkingen en besluitvorming.
 
+## Reflectie: doelgroep buiten de scope van het onderzoek
+
+Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.
+
+Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.
+
+Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.
+
+Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.Voor volledigeheid hebben we deze wel meegenomen als persona in dit onderzoek om over na te denken bij design beslissingen.
+
+Naast de onderzochte persona's is er een groep burgers waarvoor digitale transparantievoorzieningen mogelijk minder geschikt zijn. Hierbij kan gedacht worden aan mensen met zeer beperkte digitale vaardigheden, laaggeletterden, mensen met bepaalde cognitieve beperkingen of burgers die weinig gebruikmaken van digitale overheidsdiensten.
+
+Voor deze doelgroep is niet specifiek gebruikersonderzoek uitgevoerd. De verwachting is dat oplossingen voor deze gebruikers niet uitsluitend digitaal van aard zijn, maar mogelijk aanvullende ondersteuning vereisen, zoals persoonlijke dienstverlening, telefonische ondersteuning of fysieke loketten. Het onderzoeken van dergelijke oplossingen viel buiten de scope van dit project.
+
+Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij het ontwerp van de TransparantieApp is rekening gehouden met algemene toegankelijkheids- en inclusiviteitsprincipes. Hierbij zijn onder andere de WCAG-richtlijnen, principes van gebruiksvriendelijkheid en ontwerp voor een diverse gebruikersgroep als uitgangspunt genomen.
+
+Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.
 
 ## Ontwerp
 
@@ -183,21 +217,6 @@ Deze bevinding ondersteunt de hypothese dat transparantie gelaagd moet worden aa
 
 ### Ontwerp beslissingen
 
-## Experience map:  Van Onzichtbare Verwerking naar Vertrouwen
-
-| Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
-|-------|-------|-------|-------|-------|-------|-------|-------|
-| **Wat gebeurt er?** | Persoon wil iets bereiken | Organisaties verwerken gegevens | Alles verloopt zoals verwacht | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
-| **Gebruikersdoel** | Taak afronden | Geen actief doel | Resultaat ontvangen | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
-| **Gedachten** | "Dit zal wel geregeld worden." | "Dat gebeurt automatisch." | "Prima." | "Huh? Waarom gebeurt dit?, Welke gegevens zijn hier gedeeld?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
-| **Emoties** |  Vertrouwend |  Onbezorgd | Tevreden | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
-| **Vragen** | Wat moet ik doen? | Geen | Geen | Waarom gebeurt dit? Welke gegevens zijn gedeeld? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
-| **Behoefte** | Gemak | Vertrouwen | Voorspelbaarheid | Verklaring | Context | Handelingsperspectief | Zekerheid |
-| **Risico** | Complexiteit | Onzichtbaarheid | Onverschilligheid | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
-| **Kans** | Duidelijke start | Transparante processen | Frictieloze ervaring | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
 
 
 
-
-
-## gevolgen voor de standaard

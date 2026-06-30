@@ -1,10 +1,16 @@
 # Aanbevelingen
 
+We hebben in de uitvoering van het TransparantieApp project veel geleerd, over de standaard logboek dataverwerkingen (core) en de extensie lezen daarop, over gebruikersonderzoek, UX design, business architectuur en implementatie architectuur.  In de hoofdstuk noemen we onze belangrijkste bevindingen zodat daar door volgende projecten als ook de beheerder van de standaard op voortgebouwd kan worden.
+
 ## Standaard
 
 ### extensie lezen
 
-1. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
+1. Zorg dat je bij overgang naar volgende organisatie in je eigen logging doorverwijst (core wijst alleen terug naar aanroepende organisatie)  
+2. Maak batch bevragingen mogelijk (je wil op meerdere traceIDs, BSNs etc logging kunnen opvragen met 1 call)
+3. Maak paginatie mogelijk zodat je in een gebruikersinterfacewelke gebruik maakt van de API makkelijk resultaten kan weergeven
+4. Gebruik alleen een POST operatie voor het bevragen van de lezen API. Dataverwerkingen zijn vaak privacy gevoelig en gevoelige informatie wil je niet in Queries binnen een GET operatie gebruiken zoals aangeraden door de REST API designrules. Daarom is het uit privacy by design overwegingen beter om alleen de POST operatie toe te passen.
+5. Zorg voor een goede beveiliging van het lezen API endpoint, volg daarin de best practices van de module access-control van het kennisplatform APIs. Beveiliging is zeer domein specifiek daarom verplichten we in de standaard niet één specifieke methode.
 
 ### Core standaard
 
@@ -16,6 +22,11 @@
 ## Architectuur
 
 ## Gebruikersonderzoek
+Dit onderzoek laat zien dat de huidige standaard voornamelijk is ontwikkeld vanuit de technische mogelijkheden van logging, terwijl burgers vooral behoefte hebben aan inzicht in de totstandkoming van besluiten. Ook de literatuur van de Kafka Brigade laat zien dat burgers vastlopen doordat zij onvoldoende inzicht hebben in de samenhang tussen gegevens, regels en besluiten. Niet alleen de gebruikte gegevens, maar ook de toegepaste regels en de onderbouwing van een besluit moeten begrijpelijk en controleerbaar zijn.
+
+Bij de ontwikkeling van toekomstige standaarden en applicaties voor burgers is het daarom aan te bevelen om uit te gaan van de problemen die burgers ervaren, en niet uitsluitend van de beschikbare technische mogelijkheden. Door de informatiebehoefte van burgers als uitgangspunt te nemen, kan beter worden bepaald welke informatie nodig is om betekenisvolle transparantie te bieden.
+
+De huidige standaard maakt vooral inzichtelijk welke gegevens zijn gebruikt, maar biedt nog beperkt inzicht in hoe deze gegevens hebben bijgedragen aan een besluit. Een interessante richting voor verder onderzoek is daarom de toepassing van Rules as Code. Door logging te combineren met machineleesbare wet- en regelgeving kan worden onderzocht hoe toekomstige standaarden niet alleen inzicht kunnen bieden in de gebruikte gegevens, maar ook in de toegepaste regels en de onderbouwing van besluiten. Hiermee kunnen standaarden beter aansluiten op de informatiebehoefte van burgers en bijdragen aan uitlegbare en transparante overheidsdienstverlening. De volgende methodieken en handvaten zijn gebruikt tijdens dit onderzoek om de standaard nader te onderzoeken:
 
 1. Maak abstracte concepten concreet met prototypes
 
@@ -48,6 +59,9 @@ Inzichten ontstaan door meerdere cycli van ontwerpen, testen en verbeteren. Gebr
 
 
 ## UX design
+
+Naast gebruikers onderzoek zijn er ook meerdere design gemaakt. Tijdens de design sprints zijn er bepaalde design principes gebruikt. De volgende blijken nuttig en relevant voor het ontwerpen van UI voor data logging visualisatie: 
+
 
 0. maak geen nieuwe app maar biedt transparantie aan in context, bij een brief van de overheid of op mijnoverheid.nl bijvoorbeeld 
 
@@ -127,3 +141,34 @@ Door informatie eerst op samenvattingsniveau aan te bieden en details pas daarna
 Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan andere websites en applicaties. Hierdoor verwachten zij dat nieuwe systemen vergelijkbare patronen, navigatiestructuren en interacties gebruiken als systemen die zij al kennen.
 
 Voor transparantievoorzieningen betekent dit dat gebruikers niet geholpen zijn met volledig nieuwe interactiemodellen of een aparte manier van navigeren door gegevens. Het wordt aanbevolen om aan te sluiten bij bestaande patronen die men veel gebruikt.  Door aan te sluiten bij bestaande mentale modellen wordt de leercurve beperkt en kunnen gebruikers zich richten op het beantwoorden van hun vraag in plaats van op het leren gebruiken van een nieuw systeem.
+
+## Beleidsjuridisch kader
+
+Hieronder zijn een aantal uitgangspunten en principes benoemd. Voordat organisaties de leesextensie gaan implementeren, wordt aanbevolen om hier in de organisatie zelf naar te kijken.
+
+**Gegevens worden vastgelegd en uitleesbaar gemaakt**
+
+1. Overheidsorganisaties die gebruik maken van de standaard Logboek dataverwerkingen inclusief de leesextensie om de verwerking van data gestandaardiseerd zichtbaar te maken, zijn zelf verantwoordelijk voor implementatie en inrichting van de standaard, de logs en de informatie die erin te vinden is.
+
+2. Dataverwerkingen worden waar mogelijk gemakkelijk inzichtelijk gemaakt. Overheidsorganisaties maken een afweging over welke gegevens proactief inzichtelijk gemaakt kunnen worden en welke niet. Een organisatie kan daarmee ook bepalen welke informatieverzoeken in de regel worden toegekend en kijk of deze informatie al proactief open kan worden gezet, al dan niet afgeschermd door authenticatie. Het is uiteindelijk aan de overheidsorganisatiezelf om te beoordelen welke informatie al vooraf inzichtelijk gemaakt wordt en welke naar aanleiding van een informatieverzoek (zoals de AVG of Woo) getoond wordt. Deze vorm van proactieve beschikbaar maken van informatie moet worden onderscheiden van formele verzoekprocedures en vormt geen recht in de zin van artikel 15 AVG of de Woo, maar kan deze mogelijk wel ondersteunen.
+
+3. Bij het tonen van informatie moet de organisatie rekening houden met zwaarder wegende algemene belangen (bijv. nationale/openbare veiligheid, opsporing van strafbare feiten) of zwaarder wegende belangen van betrokkene of rechten van anderen (bijv. bescherming persoon) waardoor bepaalde informatieverplichtingen niet gelden. Dit kan bijvoorbeeld door bij een verwerkingsactiviteit een vertrouwelijke en niet-vertrouwelijke variant op te nemen, waardoor het vanuit de logfile inzichtelijk of er bij de betreffende verwerking rekening moet worden gehouden met zwaarder wegende belangen.
+
+4. De organisatie borgt dat de Leesextensie optimaal ingericht wordt ten behoeve van ondersteuning van het versterken van de informatiepositie van de burger, door proactief en waar mogelijk, de informatie die zij heeft geautomatiseerd te verschaffen.
+
+
+**Naleving en vertrouwen**
+
+5. De Leesextensie dient zodanig ingericht te worden dat deze voldoet aan de vereisten die volgen uit regels ten aanzien van informatieveiligheid. De organisatie bepaalt vooraf de procedurele, procesmatige en technische waarborgen die nodig zijn om ervoor te zorgen dat de uitleesbaar gemaakte gegevens niet oneigenlijk worden gebruikt of misbruikt.
+
+6. Organisaties moeten erop kunnen vertrouwen dat informatie niet onjuist wordt gebruikt of wordt misbruikt:
+
+a. De organisatie zorgt ervoor dat de beoogde toegang tot gegevens en de juiste werking van zijn systemen continu alsook achteraf te controleren is.
+
+b. De organisatie verschaft alleen geautoriseerde afnemers toegang tot vertrouwelijke gegevens.
+
+c. De organisatie zorgt ervoor dat de beoogde toegang tot gegevens en de juiste werking van zijn systemen continu alsook achteraf te controleren is.
+
+7. Bij gerede twijfel aan de juistheid van informatie meldt de organisatie dit aan de verantwoordelijke bronhouder. De informatie zal daar waar het is opgeslagen moeten worden gecorrigeerd.
+
+8. Bij het inzichtelijk maken van een dataverwerking, dient een tijdsstempel opgenomen worden die aangeeft de gegevenswaarde wordt getoond zoals die gold ten tijde van de verwerking; ook als deze bijvoorbeeld na enkele maanden opnieuw wordt ingezien of verstrekt.
