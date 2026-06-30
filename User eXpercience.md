@@ -1,4 +1,5 @@
 # User eXperience
+Om inzicht te krijgen in de gebruikerservaring rondom de verwerking en uitwisseling van persoonsgegevens zijn persona's, een mental model en een experience map opgesteld. De persona's beschrijven representatieve gebruikers met verschillende doelen, behoeften en contexten en helpen om ontwerpkeuzes vanuit het perspectief van de gebruiker te maken. Het mental model brengt de verwachtingen, aannames en overtuigingen van deze gebruikers over gegevensverwerking in kaart. De experience map laat vervolgens zien hoe deze verwachtingen zich vertalen naar de feitelijke gebruikerservaring: van verwachting en onzichtbare verwerking tot verstoring, begrip, handelen en vertrouwen. In tegenstelling tot een customer journey, die de interactie binnen een specifieke casus of dienstverlening beschrijft, biedt de experience map een overkoepelend beeld van de gebruikerservaring over verschillende organisaties en situaties heen. Samen vormen deze UX-methoden de basis voor het identificeren van behoeften, risico's en ontwerpkansen.
 
 ## Mentale model van data transparantie: Van herkenning naar vertrouwen
 
@@ -47,6 +48,51 @@ Gebruikers krijgen inzicht in het proces, de gebruikte gegevens en de rol van be
 Gebruikers willen kunnen controleren of de informatie correct is en herleidbaar is naar de bron.
 
 De pijlen tussen de stappen tonen een oplopend proces van informatieverwerking. Het model laat zien dat gebruikers eerst behoefte hebben aan herkenning voordat zij context, verklaringen en begrip zoeken. Vertrouwen ontstaat pas nadat gebruikers voldoende inzicht hebben gekregen in wat er is gebeurd en waarom.
+
+## Experience map:  Van Onzichtbare Verwerking naar Vertrouwen
+Deze experience map beschrijft hoe mensen de verwerking en uitwisseling van persoonsgegevens ervaren gedurende hun interactie met organisaties. De kaart laat zien dat gegevensverwerking in de meeste situaties onzichtbaar en probleemloos verloopt. Pas wanneer er iets onverwachts gebeurt, ontstaat de behoefte aan inzicht, uitleg en handelingsperspectief.
+
+De experience map bestaat uit twee delen. Het eerste deel beschrijft de normale gebruikerservaring: van een verwachting waarmee iemand een proces start, via de onzichtbare verwerking van gegevens, naar een voorspelbaar resultaat. Het tweede deel richt zich op de situatie waarin deze verwachting wordt doorbroken. De gebruiker ervaart een verstoring, zoekt naar een verklaring, wil begrijpen wat er is gebeurd en zoekt mogelijkheden om invloed uit te oefenen. Uiteindelijk kan opnieuw vertrouwen ontstaan wanneer voldoende transparantie, context en handelingsperspectief worden geboden.
+
+Onder iedere experience map staat een ontwerpanalyse. Deze analyse vertaalt de observaties uit de gebruikerservaring naar ontwerpinzichten. Per fase worden de onderliggende behoeften, risico's en ontwerpkansen benoemd. Deze inzichten vormen het uitgangspunt voor het ontwerpen van interventies, interfaces en dienstverlening die transparantie vergroten, gebruikers meer regie geven en het vertrouwen in gegevensverwerking versterken.
+
+## 1. Gebruikerservaring
+
+| Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
+|-------|----------------|---------------|---------------------|
+| **Wat gebeurt er?** | Persoon wil iets bereiken | Organisaties verwerken gegevens | Alles verloopt zoals verwacht |
+| **Gebruikersdoel** | Taak afronden | Geen actief doel | Resultaat ontvangen |
+| **Gedachten** | "Dit zal wel geregeld worden." | "Dat gebeurt automatisch." | "Prima." |
+| **Emoties** | Vertrouwend | Onbezorgd | Tevreden |
+| **Vragen** | Wat moet ik doen? | Geen | Geen |
+
+### Ontwerpanalyse
+
+| Analyse | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
+|----------|----------------|---------------|---------------------|
+| **Behoefte** | Gemak | Vertrouwen | Voorspelbaarheid |
+| **Risico** | Complexiteit | Onzichtbaarheid | Onverschilligheid |
+| **Kans** | Duidelijke start | Transparante processen | Frictieloze ervaring |
+
+---
+
+## 2. Van verstoring naar vertrouwen
+
+| Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
+|-------|---------------|--------------|-------------|----------------|
+| **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
+| **Gebruikersdoel** | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
+| **Gedachten** | "Huh? Waarom gebeurt dit? Welke gegevens zijn hier gedeeld?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
+| **Emoties** | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
+| **Vragen** | Waarom gebeurt dit? Welke gegevens zijn gedeeld? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
+
+### Ontwerpanalyse
+
+| Analyse | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
+|----------|---------------|--------------|-------------|----------------|
+| **Behoefte** | Verklaring | Context | Handelingsperspectief | Zekerheid |
+| **Risico** | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
+| **Kans** | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
 
 ## Persona's
 
@@ -171,49 +217,6 @@ Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegeven
 
 ### Ontwerp beslissingen
 
-## Experience map:  Van Onzichtbare Verwerking naar Vertrouwen
-Deze experience map beschrijft hoe mensen de verwerking en uitwisseling van persoonsgegevens ervaren gedurende hun interactie met organisaties. De kaart laat zien dat gegevensverwerking in de meeste situaties onzichtbaar en probleemloos verloopt. Pas wanneer er iets onverwachts gebeurt, ontstaat de behoefte aan inzicht, uitleg en handelingsperspectief.
 
-De experience map bestaat uit twee delen. Het eerste deel beschrijft de normale gebruikerservaring: van een verwachting waarmee iemand een proces start, via de onzichtbare verwerking van gegevens, naar een voorspelbaar resultaat. Het tweede deel richt zich op de situatie waarin deze verwachting wordt doorbroken. De gebruiker ervaart een verstoring, zoekt naar een verklaring, wil begrijpen wat er is gebeurd en zoekt mogelijkheden om invloed uit te oefenen. Uiteindelijk kan opnieuw vertrouwen ontstaan wanneer voldoende transparantie, context en handelingsperspectief worden geboden.
-
-Onder iedere experience map staat een ontwerpanalyse. Deze analyse vertaalt de observaties uit de gebruikerservaring naar ontwerpinzichten. Per fase worden de onderliggende behoeften, risico's en ontwerpkansen benoemd. Deze inzichten vormen het uitgangspunt voor het ontwerpen van interventies, interfaces en dienstverlening die transparantie vergroten, gebruikers meer regie geven en het vertrouwen in gegevensverwerking versterken.
-
-## 1. Gebruikerservaring
-
-| Fase | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
-|-------|----------------|---------------|---------------------|
-| **Wat gebeurt er?** | Persoon wil iets bereiken | Organisaties verwerken gegevens | Alles verloopt zoals verwacht |
-| **Gebruikersdoel** | Taak afronden | Geen actief doel | Resultaat ontvangen |
-| **Gedachten** | "Dit zal wel geregeld worden." | "Dat gebeurt automatisch." | "Prima." |
-| **Emoties** | Vertrouwend | Onbezorgd | Tevreden |
-| **Vragen** | Wat moet ik doen? | Geen | Geen |
-
-### Ontwerpanalyse
-
-| Analyse | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
-|----------|----------------|---------------|---------------------|
-| **Behoefte** | Gemak | Vertrouwen | Voorspelbaarheid |
-| **Risico** | Complexiteit | Onzichtbaarheid | Onverschilligheid |
-| **Kans** | Duidelijke start | Transparante processen | Frictieloze ervaring |
-
----
-
-## 2. Van verstoring naar vertrouwen
-
-| Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
-|-------|---------------|--------------|-------------|----------------|
-| **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
-| **Gebruikersdoel** | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
-| **Gedachten** | "Huh? Waarom gebeurt dit? Welke gegevens zijn hier gedeeld?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
-| **Emoties** | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
-| **Vragen** | Waarom gebeurt dit? Welke gegevens zijn gedeeld? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
-
-### Ontwerpanalyse
-
-| Analyse | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
-|----------|---------------|--------------|-------------|----------------|
-| **Behoefte** | Verklaring | Context | Handelingsperspectief | Zekerheid |
-| **Risico** | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
-| **Kans** | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
 
 
