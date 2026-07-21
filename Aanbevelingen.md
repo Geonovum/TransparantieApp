@@ -143,8 +143,7 @@ Volgens Jakob's Law besteden gebruikers het grootste deel van hun tijd aan ander
 Voor transparantievoorzieningen betekent dit dat gebruikers niet geholpen zijn met volledig nieuwe interactiemodellen of een aparte manier van navigeren door gegevens. Het wordt aanbevolen om aan te sluiten bij bestaande patronen die men veel gebruikt.  Door aan te sluiten bij bestaande mentale modellen wordt de leercurve beperkt en kunnen gebruikers zich richten op het beantwoorden van hun vraag in plaats van op het leren gebruiken van een nieuw systeem.
 
 ## Beleidsjuridisch kader
-
-Hieronder zijn een aantal uitgangspunten en principes benoemd. Voordat organisaties de leesextensie gaan implementeren, wordt aanbevolen om hier in de organisatie zelf naar te kijken.
+Het beleidsjuridischkader heeft alleen betrekking op de extensie lezen, dus niet op het gebruikersonderzoek UX design of de architectuur. Hieronder zijn een aantal uitgangspunten en principes benoemd. Voordat organisaties de leesextensie gaan implementeren, wordt aanbevolen om hier in de organisatie zelf naar te kijken.
 
 **Gegevens worden vastgelegd en uitleesbaar gemaakt**
 
