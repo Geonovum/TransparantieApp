@@ -252,11 +252,11 @@ Hierbij moet vermeld worden dat de privacy afwegingen verschillen. De Transparan
 
 ### VWS Verwijsindex
 
-VWS werkt aan een verwijsindex die conceptueel sterk overeenkomt met de TraceIndex in dit document. De aanpak in deze architectuur sluit hier het dichtst bij aan: de Pseudoniemendienst die in de huidige architectuur wordt ingezet is door VWS ontwikkeld als proof-of-concept ([gfmodules-pseudoniemendienst](https://github.com/minvws/gfmodules-pseudoniemendienst)) en vormt de basis waarop de pseudonimisering in dit document voortbouwt.
+VWS werkt aan een verwijsindex die conceptueel sterk overeenkomt met de TraceIndex in dit document. De aanpak in deze architectuur sluit hier het dichtst bij aan: de Pseudoniemendienst die in de huidige architectuur wordt ingezet is door VWS ontwikkeld als proof-of-concept en vormt de basis waarop de pseudonimisering in dit document voortbouwt [[Pseudoniemendienst]].
 
 ### Vorderingenoverzicht Rijk (VO-Rijk)
 
-VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol. 
+VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol[[BijlageApplicatieArchitectuur]].
 
 Het aantal deelnemers aan VO-Rijk is op dit moment beperkt tot circa acht organisaties. De kans dat één van de bevraagde Logboeken op enig moment niet bereikbaar is neemt sterk toe met het aantal deelnemers: bij een handvol partijen is een tijdelijk uitvallend Logboek nog een uitzondering, maar bij overheidsbrede uitrol — duizenden Logboeken — is het statistisch eerder regel dan uitzondering.
 
