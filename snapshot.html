@@ -1469,6 +1469,16 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
       "id": "Open FSC",
       "title": "Open FSC",
       "href": "https://fsc-standaard.nl/"
+    },
+    "Pseudoniemendienst": {
+      "id": "Pseudoniemendienst",
+      "title": "Pseudoniemendienst",
+      "href": "https://github.com/minvws/gfmodules-pseudoniemendienst"
+    },
+    "BijlageApplicatieArchitectuur": {
+      "id": "BijlageApplicatieArchitectuur",
+      "title": "Bijlage Applicatie Architectuur",
+      "href": "https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur"
     }
   },
   "title": "TransparantieApp rapport",
@@ -1516,7 +1526,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Geonovum Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2025-11-17">21 juli 2026</time>
+      <time class="dt-published" datetime="2025-11-17">17 augustus 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -2270,9 +2280,9 @@ Het verlenen van toegang tot traceids baseert zich dus op vertrouwen in de trace
 <p>Mijn Zakenlijst hanteert eveneens een centrale index die de aanvragende applicatie verwijst naar de juiste bronnen. In de koppeltabel — vergelijkbaar met onze TraceIndex — wordt echter rechtstreeks het BSN opgenomen. Hiermee wordt niet aan NFR-5 (Privacy-by-design) voldaan: de centrale index krijgt BSN's in klare vorm te zien, in plaats van uitsluitend pseudoniemen. </p>
 <p>Hierbij moet vermeld worden dat de privacy afwegingen verschillen. De TransparantieApp zal overheidsbreed uitgerold worden en dus per definitie ook privacy gevoeligere informatie verwerken. Mijn Zakenlijst daarentegen betreft met name relaties met gemeentes. Enkel het feit dat een burger contact heeft met b.v. de gemeente Amersfoort is minder privacy gevoelig dan het feit dat een burger contact heeft gehad met bijvoorbeeld de Dienst Justitiële Inrichtingen. </p>
 </section><section id="vws-verwijsindex"><div class="header-wrapper"><h4 id="x5-7-2-vws-verwijsindex"><bdi class="secno">5.7.2 </bdi>VWS Verwijsindex</h4><a class="self-link" href="#vws-verwijsindex" aria-label="Permalink for Section 5.7.2"></a></div>
-<p>VWS werkt aan een verwijsindex die conceptueel sterk overeenkomt met de TraceIndex in dit document. De aanpak in deze architectuur sluit hier het dichtst bij aan: de Pseudoniemendienst die in de huidige architectuur wordt ingezet is door VWS ontwikkeld als proof-of-concept (<a href="https://github.com/minvws/gfmodules-pseudoniemendienst">gfmodules-pseudoniemendienst</a>) en vormt de basis waarop de pseudonimisering in dit document voortbouwt.</p>
+<p>VWS werkt aan een verwijsindex die conceptueel sterk overeenkomt met de TraceIndex in dit document. De aanpak in deze architectuur sluit hier het dichtst bij aan: de Pseudoniemendienst die in de huidige architectuur wordt ingezet is door VWS ontwikkeld als proof-of-concept en vormt de basis waarop de pseudonimisering in dit document voortbouwt [<cite><a class="bibref" data-link-type="biblio" href="#bib-pseudoniemendienst" title="Pseudoniemendienst">Pseudoniemendienst</a></cite>].</p>
 </section><section id="vorderingenoverzicht-rijk-vo-rijk"><div class="header-wrapper"><h4 id="x5-7-3-vorderingenoverzicht-rijk-vo-rijk"><bdi class="secno">5.7.3 </bdi>Vorderingenoverzicht Rijk (VO-Rijk)</h4><a class="self-link" href="#vorderingenoverzicht-rijk-vo-rijk" aria-label="Permalink for Section 5.7.3"></a></div>
-<p>VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol. </p>
+<p>VO-Rijk hanteert geen koppeltabel: de frontend bevraagt rechtstreeks alle deelnemende partijen. Hierdoor zijn FR-4 (volledigheidsindicatie bij onbereikbare bron) en NFR-2 t/m NFR-4 (schaalbaarheid, web/mobile, laadtijd) niet realiseerbaar bij een overheidsbrede uitrol[<cite><a class="bibref" data-link-type="biblio" href="#bib-bijlageapplicatiearchitectuur" title="Bijlage Applicatie Architectuur">BijlageApplicatieArchitectuur</a></cite>].</p>
 <p>Het aantal deelnemers aan VO-Rijk is op dit moment beperkt tot circa acht organisaties. De kans dat één van de bevraagde Logboeken op enig moment niet bereikbaar is neemt sterk toe met het aantal deelnemers: bij een handvol partijen is een tijdelijk uitvallend Logboek nog een uitzondering, maar bij overheidsbrede uitrol — duizenden Logboeken — is het statistisch eerder regel dan uitzondering.</p>
 <p>Zonder koppeltabel kan de frontend in zo'n geval bovendien niet vaststellen óf de onbereikbare partij überhaupt een Dataverwerking voor deze  Betrokkene zou hebben opgeleverd, waardoor FR-4 terugvalt op een generieke disclaimer dat het overzicht mogelijk niet compleet is — een waarschuwing die bij een dergelijke schaal nagenoeg permanent getoond zou moeten worden.</p>
 <p>Een koppeltabel zoals de TraceIndex ondervangt dit op twee manieren: het aantal te bevragen Logboeken daalt tot uitsluitend de Logboeken die voor de Betrokkene daadwerkelijk relevant zijn — typisch enkele tientallen — waardoor de kans op één onbereikbaar Logboek per opvraging beheersbaar wordt; en doordat de TraceIndex het bestaan en het tijdstip van een Dataverwerking kent, kan de frontend ook bij een tijdelijk niet-bereikbaar Logboek de specifieke placeholder uit FR-4 tonen.</p>
@@ -2344,12 +2354,16 @@ Het verlenen van toegang tot traceids baseert zich dus op vertrouwen in de trace
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="b-1-informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
-    <dl class="bibliography"><dt id="bib-jwks">[JWKS]</dt><dd>
+    <dl class="bibliography"><dt id="bib-bijlageapplicatiearchitectuur">[BijlageApplicatieArchitectuur]</dt><dd>
+      <a href="https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur"><cite>Bijlage Applicatie Architectuur</cite></a>. URL: <a href="https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur">https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur</a>
+    </dd><dt id="bib-jwks">[JWKS]</dt><dd>
       <a href="https://datatracker.ietf.org/doc/rfc7517"><cite>JSON Web Key Set (JWKS)</cite></a>. URL: <a href="https://datatracker.ietf.org/doc/rfc7517">https://datatracker.ietf.org/doc/rfc7517</a>
     </dd><dt id="bib-openfsc">[OpenFSC]</dt><dd>
       <a href="https://fsc-standaard.nl/"><cite>Open FSC</cite></a>. URL: <a href="https://fsc-standaard.nl/">https://fsc-standaard.nl/</a>
     </dd><dt id="bib-oprf">[OPRF]</dt><dd>
       <a href="https://datatracker.ietf.org/doc/rfc9497/"><cite>Oblivious Pseudo-Random Function (OPRF)</cite></a>. URL: <a href="https://datatracker.ietf.org/doc/rfc9497/">https://datatracker.ietf.org/doc/rfc9497/</a>
+    </dd><dt id="bib-pseudoniemendienst">[Pseudoniemendienst]</dt><dd>
+      <a href="https://github.com/minvws/gfmodules-pseudoniemendienst"><cite>Pseudoniemendienst</cite></a>. URL: <a href="https://github.com/minvws/gfmodules-pseudoniemendienst">https://github.com/minvws/gfmodules-pseudoniemendienst</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>

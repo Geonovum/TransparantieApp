@@ -185,6 +185,16 @@ let respecConfig = {
       id: "Open FSC",
       title: "Open FSC",
       href: "https://fsc-standaard.nl/"
+    },
+    Pseudoniemendienst: {
+      id: "Pseudoniemendienst",
+      title: "Pseudoniemendienst",
+      href: "https://github.com/minvws/gfmodules-pseudoniemendienst",
+    },
+    BijlageApplicatieArchitectuur: {
+      id: "BijlageApplicatieArchitectuur",
+      title: "Bijlage Applicatie Architectuur",
+      href: "https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur",
     }
   }
 };
