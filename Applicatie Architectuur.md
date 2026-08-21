@@ -138,7 +138,7 @@ X->>C: HTTP GET https://trace-register/lookup Authorization: Bearer {JWE} Body: 
 
 C->>C: Decrypt JWE using private key and obtain Z'
 C->>C: Z = 1 / r ⋅ Z', unblinding using r
-C->>C: Pseudonyms = { H(Z || L) | L in LS } , where || is concatenation and LS is a collection of all Logbook ID's
+C->>C: Pseudonyms = { H(L || Z) | L in LS } , where || is concatenation and LS is a collection of all Logbook ID's
 
 C->>C: Lookup all (trace_id, logboekId) for calculated pseudonyms in database
 C->>C: Per resultaat: genereer JWT accessToken met claim trace_id
