@@ -23,6 +23,25 @@
     respecConfig.postProcess = [
       ...(respecConfig.postProcess ?? []),
     ];
+
+    // respec-mermaid 1.3.0 rendert diagrammen als <img src="data:image/svg+xml;base64,...">
+    // zonder alt-attribuut. Dat laat de Images-check van HTML-Proofer falen en levert een
+    // image-alt-fout op in de WCAG-check (SC 1.1.1). We nemen de titel uit de bijbehorende
+    // <figcaption> over als alternatieve tekst.
+    respecConfig.postProcess = [
+      ...(respecConfig.postProcess ?? []),
+      function addMermaidImageAlt() {
+        const images = document.querySelectorAll(
+          'figure img[src^="data:image/svg+xml"]:not([alt])'
+        );
+
+        for (const img of images) {
+          const caption = img.closest("figure")?.querySelector("figcaption");
+          const title = caption?.querySelector(".fig-title") ?? caption;
+          img.setAttribute("alt", title?.textContent.trim() ?? "");
+        }
+      },
+    ];
   </script>
 
   <!-- TODO: Vul in config.js de titel in -->
