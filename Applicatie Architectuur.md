@@ -65,7 +65,7 @@ NB: Overwogen is om de bundeling van de logdata van verschillende organisaties o
 
 Wanneer een Verantwoordelijke een Dataverwerking uitvoert, legt deze de Dataverwerking eerst vast in het eigen Logboek. Hierdoor onstaat er een Trace in het Logboek. Vervolgens meldt de Verantwoordelijke de Trace — gepseudonimiseerd — aan bij de TraceIndex.
 
-<figure id="Sequence diagram: aanmelden van een Trace">
+<figure id="sequence-diagram-aanmelden-van-een-trace">
 <pre class="diagram mermaid">
 sequenceDiagram;
 
@@ -103,7 +103,7 @@ Traces die door een initierende Verantwoordelijke als vertrouwelijk zijn aangeme
 Wanneer de Betrokkene de TransparantieApp opent, wordt deze geauthenticeerd via de Identity Provider, wordt de *identifier* (BSN) via de Pseudoniemendienst omgezet naar een pseudoniem, en wordt dat pseudoniem gebruikt om bij de TraceIndex op te zoeken welke Logboeken bevraagd moeten worden. Per Logboek wordt vervolgens de Dataverwerking opgehaald met het JWT-accesstoken dat de TraceIndex per resultaat heeft uitgegeven.
 
 
-<figure id="Sequence diagram voor het opvragen van traceId's">
+<figure id="sequence-diagram-voor-het-opvragen-van-trace-id">
 <pre class="diagram mermaid">
 sequenceDiagram
 

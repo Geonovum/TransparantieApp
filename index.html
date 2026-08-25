@@ -17,6 +17,19 @@
       ...respecConfig,
       localBiblio: mergedLocalBiblio
     };
+
+    // Mermaid.js zet op sommige SVG-elementen (rect, line, g) een `name` attribuut.
+    // Dat attribuut bestaat niet in de SVG/HTML spec en zorgt voor validatiefouten op CI.
+    respecConfig.postProcess = [
+      ...(respecConfig.postProcess ?? []),
+      function removeSvgNameAttributes() {
+        const SVG_NS = "http://www.w3.org/2000/svg";
+
+        [...document.querySelectorAll("svg[name], svg [name]")]
+          .filter(el => el.namespaceURI === SVG_NS)
+          .forEach(el => el.removeAttribute("name"));
+      },
+    ];
   </script>
 
   <!-- TODO: Vul in config.js de titel in -->
