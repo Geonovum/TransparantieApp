@@ -2,7 +2,7 @@
 
 ## Functionele requirements
 
-De TransparantieApp ondersteunt de twee usecases uit [Business Architectuur.md](./Business Architectuur.md):
+De TransparantieApp ondersteunt de twee usecases uit de [Business Architectuur](#business-architectuur):
 
 1. **"Waarom is dit gebeurd?"** — een betrokkene wil de Trace rondom een specifiek besluit reconstrueren. Het startpunt (de Verantwoordelijke) is bekend uit het besluit zelf.
 
