@@ -2,7 +2,7 @@
 
 ## Functionele requirements
 
-De TransparantieApp ondersteunt de twee usecases uit [Business Architectuur.md](./Business%20Architectuur.md):
+De TransparantieApp ondersteunt de twee usecases uit [Business Architectuur.md](./Business Architectuur.md):
 
 1. **"Waarom is dit gebeurd?"** — een betrokkene wil de Trace rondom een specifiek besluit reconstrueren. Het startpunt (de Verantwoordelijke) is bekend uit het besluit zelf.
 
@@ -65,7 +65,7 @@ NB: Overwogen is om de bundeling van de logdata van verschillende organisaties o
 
 Wanneer een Verantwoordelijke een Dataverwerking uitvoert, legt deze de Dataverwerking eerst vast in het eigen Logboek. Hierdoor onstaat er een Trace in het Logboek. Vervolgens meldt de Verantwoordelijke de Trace — gepseudonimiseerd — aan bij de TraceIndex.
 
-<figure id="Sequence diagram: aanmelden van een Trace">
+<figure id="sequence-diagram-aanmelden-van-een-trace">
 <pre class="diagram mermaid">
 sequenceDiagram;
 
@@ -76,20 +76,20 @@ participant C as TraceIndex
 
 autonumber
 
-C->>B: Registeer public key (éénmalig)
+C->>B: Registeer public key (eenmalig)
 
 A->>L: log Dataverwerking (incl. BSN & Trace ID)
 
 A->>A: P = Hash(BSN)
-A->>A: P' = r ⋅ P, where r is a random blinding factor
+A->>A: P' = r * P, where r is a random blinding factor
 A->>B: P', destination = TraceIndex
-B->>B: Z' = k ⋅ P', where k is secret
+B->>B: Z' = k * P', where k is secret
 B->>B: Create JWE with Subject = Z' and public key obtained in step 1
 B-->>A: JWE
 
 A->>C: Register [JWE, r, Logbook ID, Trace ID]
 C->>C: Decrypt JWE using private key and obtain Z'
-C->>C: Z = 1 / r ⋅ Z', unblinding using r
+C->>C: Z = 1 / r * Z', unblinding using r
 C->>C: Pseudonym = H(Logbook ID || Z), where || is concatenation
 C->>C: Store in Database: (Pseudonym, Logbook ID, Trace ID)
 </pre>
@@ -103,7 +103,7 @@ Traces die door een initierende Verantwoordelijke als vertrouwelijk zijn aangeme
 Wanneer de Betrokkene de TransparantieApp opent, wordt deze geauthenticeerd via de Identity Provider, wordt de *identifier* (BSN) via de Pseudoniemendienst omgezet naar een pseudoniem, en wordt dat pseudoniem gebruikt om bij de TraceIndex op te zoeken welke Logboeken bevraagd moeten worden. Per Logboek wordt vervolgens de Dataverwerking opgehaald met het JWT-accesstoken dat de TraceIndex per resultaat heeft uitgegeven.
 
 
-<figure id="Sequence diagram voor het opvragen van traceId's">
+<figure id="sequence-diagram-voor-het-opvragen-van-trace-id">
 <pre class="diagram mermaid">
 sequenceDiagram
 
@@ -125,10 +125,10 @@ D->>I: authenticeer Betrokkene
 I-->>D: BSN
 
 D->>D: P = Hash(BSN)
-D->>D: P' = r ⋅ P, where r is a random blinding factor
+D->>D: P' = r * P, where r is a random blinding factor
 
 D->>B: P', destination = TraceIndex
-B->>B: Z' = k ⋅ P', where k is secret depending on destination
+B->>B: Z' = k * P', where k is secret depending on destination
 B->>B: Create JWE with Subject = Z' and public key obtained in step 1
 B-->>D: JWE Token
 
@@ -137,8 +137,8 @@ D-->>X: JWE Token + Blinding Factor
 X->>C: HTTP GET https://trace-register/lookup Authorization: Bearer {JWE} Body: Blinding Factor
 
 C->>C: Decrypt JWE using private key and obtain Z'
-C->>C: Z = 1 / r ⋅ Z', unblinding using r
-C->>C: Pseudonyms = { H(Z || L) | L in LS } , where || is concatenation and LS is a collection of all Logbook ID's
+C->>C: Z = 1 / r * Z', unblinding using r
+C->>C: Pseudonyms = { H(L || Z) | L in LS } , where || is concatenation and LS is a collection of all Logbook ID's
 
 C->>C: Lookup all (trace_id, logboekId) for calculated pseudonyms in database
 C->>C: Per resultaat: genereer JWT accessToken met claim trace_id
