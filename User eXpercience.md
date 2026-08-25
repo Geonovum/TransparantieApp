@@ -25,7 +25,13 @@ Het model kan tevens worden vertaald naar verschillende informatieniveaus binnen
 | Begrip & vertrouwen | "Kan ik dit begrijpen en controleren?" | Broninformatie, logging, auditinformatie                |
 
 
-![Mental model van gebruiker](media/Mentalmodel.png)
+<a href="media/Mentalmodel.png">
+  <img
+    src="media/Mentalmodel.png"
+    alt="Mental model van gebruiker"
+    style="max-width: 100%; height: auto;"
+  />
+</a>
 
 **Beschrijving infographic**
 

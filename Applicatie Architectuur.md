@@ -66,7 +66,7 @@ NB: Overwogen is om de bundeling van de logdata van verschillende organisaties o
 Wanneer een Verantwoordelijke een Dataverwerking uitvoert, legt deze de Dataverwerking eerst vast in het eigen Logboek. Hierdoor onstaat er een Trace in het Logboek. Vervolgens meldt de Verantwoordelijke de Trace — gepseudonimiseerd — aan bij de TraceIndex.
 
 <figure id="sequence-diagram-aanmelden-van-een-trace">
-<pre class="diagram mermaid">
+<pre class="diagram mermaid" style="max-width: 100%;">
 sequenceDiagram;
 
 participant A as Verantwoordelijke
@@ -104,7 +104,7 @@ Wanneer de Betrokkene de TransparantieApp opent, wordt deze geauthenticeerd via 
 
 
 <figure id="sequence-diagram-voor-het-opvragen-van-trace-id">
-<pre class="diagram mermaid">
+<pre class="diagram mermaid" style="max-width: 100%;">
 sequenceDiagram
 
 actor U as Betrokkene
