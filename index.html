@@ -20,15 +20,16 @@
       postProcess: [
         ...(organisationConfig.postProcess ?? []),
         function addMermaidImageAlt() {
-          const images = document.querySelectorAll(
-            'figure img[src^="data:image/svg+xml"]:not([alt])'
-          );
-
-          for (const img of images) {
+          const getAltText = (img) => {
             const caption = img.closest("figure")?.querySelector("figcaption");
             const title = caption?.querySelector(".fig-title") ?? caption;
-            img.setAttribute("alt", title?.textContent.trim() ?? "");
-          }
+
+            return title?.textContent.trim() ?? "";
+          };
+
+          document
+            .querySelectorAll('figure img[src^="data:image/svg+xml"]:not([alt])')
+            .forEach((img) => img.setAttribute("alt", getAltText(img)));
         },
       ]
     };
