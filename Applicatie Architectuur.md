@@ -76,20 +76,20 @@ participant C as TraceIndex
 
 autonumber
 
-C->>B: Registeer public key (éénmalig)
+C->>B: Registeer public key (eenmalig)
 
 A->>L: log Dataverwerking (incl. BSN & Trace ID)
 
 A->>A: P = Hash(BSN)
-A->>A: P' = r ⋅ P, where r is a random blinding factor
+A->>A: P' = r * P, where r is a random blinding factor
 A->>B: P', destination = TraceIndex
-B->>B: Z' = k ⋅ P', where k is secret
+B->>B: Z' = k * P', where k is secret
 B->>B: Create JWE with Subject = Z' and public key obtained in step 1
 B-->>A: JWE
 
 A->>C: Register [JWE, r, Logbook ID, Trace ID]
 C->>C: Decrypt JWE using private key and obtain Z'
-C->>C: Z = 1 / r ⋅ Z', unblinding using r
+C->>C: Z = 1 / r * Z', unblinding using r
 C->>C: Pseudonym = H(Logbook ID || Z), where || is concatenation
 C->>C: Store in Database: (Pseudonym, Logbook ID, Trace ID)
 </pre>
@@ -125,10 +125,10 @@ D->>I: authenticeer Betrokkene
 I-->>D: BSN
 
 D->>D: P = Hash(BSN)
-D->>D: P' = r ⋅ P, where r is a random blinding factor
+D->>D: P' = r * P, where r is a random blinding factor
 
 D->>B: P', destination = TraceIndex
-B->>B: Z' = k ⋅ P', where k is secret depending on destination
+B->>B: Z' = k * P', where k is secret depending on destination
 B->>B: Create JWE with Subject = Z' and public key obtained in step 1
 B-->>D: JWE Token
 
@@ -137,7 +137,7 @@ D-->>X: JWE Token + Blinding Factor
 X->>C: HTTP GET https://trace-register/lookup Authorization: Bearer {JWE} Body: Blinding Factor
 
 C->>C: Decrypt JWE using private key and obtain Z'
-C->>C: Z = 1 / r ⋅ Z', unblinding using r
+C->>C: Z = 1 / r * Z', unblinding using r
 C->>C: Pseudonyms = { H(L || Z) | L in LS } , where || is concatenation and LS is a collection of all Logbook ID's
 
 C->>C: Lookup all (trace_id, logboekId) for calculated pseudonyms in database
