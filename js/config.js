@@ -195,6 +195,13 @@ let respecConfig = {
       id: "BijlageApplicatieArchitectuur",
       title: "Bijlage Applicatie Architectuur",
       href: "https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur",
+    },
+    LDVObjecten: {
+      id: "LDVObjecten",
+      title: "Onderzoek logboek dataverwerkingen voor (geo) objecten",
+      href: "https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/",
+      status: "Definitief",
+      publisher: "Geonovum",
     }
   }
 };

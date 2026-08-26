@@ -106,3 +106,24 @@ aan de API Design Rules.
 
 ### RFCs voor standaarden
 
+#### RFC: `data_subject_id` niet verplicht stellen in LDV core standaard
+
+[[?LDV]] rekent `dpl.core.data_subject_id` en `dpl.core.data_subject_id_type` tot de
+verplichte velden in de namespace `core`, en schrijft voor dat de Applicatie in *elke* logregel een
+identificerende code van de Betrokkene opneemt. In de praktijk is die code lang niet altijd
+beschikbaar op het moment dat een span wordt afgesloten.
+
+Dat is eerder opgemerkt bij het opstellen van de extensie voor (geo)objecten [[?LDVObjecten]]. Daar is
+vastgesteld dat `dpl.core.data_subject_id` alleen gebruikt hoort te worden om naar een persoonsgegeven
+te verwijzen, terwijl er bij het loggen van objecten regelmatig geen betrokkene aan te wijzen is. De
+oplossing is daar om het veld leeg te laten en de objectgegevens in een eigen `dpl.objects`-namespace te loggen.
+
+Hetzelfde probleem speelt bij verwerkingen die wél over personen gaan, maar waarbij de betrokkene pas
+gaandeweg bekend wordt. In de referentie-implementatie is dat te zien in de OZB-keten. De gemeente
+opent eerst een span voor de aanslag zelf, vraagt vervolgens de WOZ-waarde op, en haalt daarna via de
+BAG en de BRK de percelen en hun eigenaren op. Pas in die laatste stap komt een BSN (of RSIN) in beeld. 
+Alle spans die daaraan voorafgaan hebben geen `data_subject_id` en kunnen dat ook niet hebben.
+
+**Voorstel**: maak `dpl.core.data_subject_id` en `dpl.core.data_subject_id_type` in de LDV core standaard
+niet langer onvoorwaardelijk verplicht, maar verplicht ze op het moment dat een span
+daadwerkelijk persoonsgegevens van een identificeerbare Betrokkene verwerkt. 
