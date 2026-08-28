@@ -21,6 +21,36 @@ We hebben in de uitvoering van het TransparantieApp project veel geleerd, over d
 
 ## Architectuur
 
+1. Ontwerp de architectuur rondom de zwaarste usecase
+
+Bij de usecase ["Waarom is dit gebeurd?"](#usecase-waarom-is-dit-gebeurd) is het startpunt bekend uit het besluit zelf; bij ["Wie heeft er aan mijn gegevens gezeten?"](#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten) is er geen startpunt en ligt het antwoord verspreid over potentieel duizenden Logboeken. Ontwerp voor die tweede usecase. Alle vraagstukken van de eerste doen zich daar immers ook voor, federatief bevragen, autorisatie per Logboek en het omgaan met onbereikbare Logboeken, aangevuld met het vinden van de relevante organisaties. Omgekeerd: een architectuur die uitgaat van een bekend startpunt is niet zonder herontwerp op te schalen naar een overheidsbrede zoekvraag.
+
+2. Gegevens bij de bron
+
+Waar een keten van organisaties betrokken is bij een besluit, is ieder van hen zelfstandig verwerkingsverantwoordelijke. De logging ligt daardoor per definitie verspreid vast. De architectuur houdt dat in stand: de inhoud van de traces blijft in het logboek van de Verantwoordelijke en er ontstaat geen centrale kopie ([NFR-1](#niet-functionele-requirements)). Dit uitgangspunt is goed verdedigbaar, maar het is niet zonder consequenties en moet daarom een bewuste keuze zijn. Decentrale opslag verplaatst complexiteit en vraagt om een aanvullende voorziening om de juiste logboeken te vinden.
+
+3. Voorzie een traceindex zodra overheidsbrede uitrol in beeld komt
+
+Bij circa 1.600 overheidsorganisaties, elk met mogelijk meerdere logboeken, is het bij iedere vraag bevragen van alle Logboeken niet performant en is één onbereikbaar logboek eerder regel dan uitzondering. En, aanvullend, zonder index niet vast te stellen of die onbereikbare partij überhaupt iets over deze betrokkene te melden had. Het overzicht valt dan terug op een generieke disclaimer dat het overzicht mogelijk niet compleet is. 
+
+4. Pseudonimiseer de traceindex, met een eigen pseudoniem per logboek
+
+Een index die vastlegt welke organisatie gegevens over wie heeft verwerkt, is zelf privacygevoelig. Het enkele feit dat iemand in een bepaald logboek voorkomt kan al onthullend zijn; het verschil tussen contact met een gemeente en contact met een justitiële instelling is in dat opzicht groot. Laat de index daarom uitsluitend met pseudoniemen werken, zodat deze de identifier (BSN) op geen enkel moment ziet. De toegepaste algoritmes [OPRF](#pseudonimisering-via-oprf) maken dat mogelijk. Sla bovendien niet één pseudoniem per betrokkene op, maar per logboek een eigen pseudoniem. Uit de index gegevens is dan niet af te leiden dat twee registraties onder verschillende logboeken bij dezelfde persoon horen. 
+
+5. Beleg de pseudoniemendienst als gedeelde voorziening
+
+De Pseudoniemendienst is in dit project niet nieuw ontwikkeld, maar overgenomen van van VWS. pseudonimisering is een generiek stelselvraagstuk dat niet ieder domein opnieuw hoeft op te lossen. Beleg de dienst als gedeelde voorziening, bijvoorbeeld bij Logius als onderdeel van DigiD.  
+
+6. Standaardiseer de registers
+
+De architectuur leunt op twee registers die zelf geen onderdeel van de standaard zijn: een register van Logboeken en een register van verwerkingsactiviteiten.
+Vanuit een LDV wordt bovendien enkel een `processing_activity_id` opgeslagen per logregel. Beleg het register van verwerkingsactiviteiten daarom als onderdeel 
+van LDV of maak hier een separate standaard van. 
+
+7. Kies voor een web-applicatie boven een native applicatie
+
+Geef de voorkeur aan een web-applicatie boven een native applicaite. Daarmee sluit deze keuze aan bij een belangrijkste aanbeveling uit het gebruikersonderzoek: bied transparantie niet aan in een aparte app, maar in de context van bestaande dienstverlening. Richt de architectuur daarnaast zo in dat zij geen eisen stelt die enkel als web-applicatie of enkel als native applicatie haalbaar zijn ([NFR-2](#niet-functionele-requirements)). 
+
 ## Gebruikersonderzoek
 Dit onderzoek laat zien dat de huidige standaard voornamelijk is ontwikkeld vanuit de technische mogelijkheden van logging, terwijl burgers vooral behoefte hebben aan inzicht in de totstandkoming van besluiten. Ook de literatuur van de Kafka Brigade laat zien dat burgers vastlopen doordat zij onvoldoende inzicht hebben in de samenhang tussen gegevens, regels en besluiten. Niet alleen de gebruikte gegevens, maar ook de toegepaste regels en de onderbouwing van een besluit moeten begrijpelijk en controleerbaar zijn.
 
