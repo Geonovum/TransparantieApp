@@ -1645,7 +1645,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 </ol>
 <p>Bij de usecase <a href="#usecase-waarom-is-dit-gebeurd">"Waarom is dit gebeurd?"</a> is het startpunt bekend uit het besluit zelf; bij <a href="#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten">"Wie heeft er aan mijn gegevens gezeten?"</a> is er geen startpunt en ligt het antwoord verspreid over potentieel duizenden Logboeken. Ontwerp voor die tweede usecase. Alle vraagstukken van de eerste doen zich daar immers ook voor, federatief bevragen, autorisatie per Logboek en het omgaan met onbereikbare Logboeken, aangevuld met het vinden van de relevante organisaties. Omgekeerd: een architectuur die uitgaat van een bekend startpunt is niet zonder herontwerp op te schalen naar een overheidsbrede zoekvraag.</p>
 <ol start="2">
-<li>Gegevens bij de bron</li>
+<li>Data bij de bron</li>
 </ol>
 <p>Waar een keten van organisaties betrokken is bij een besluit, is ieder van hen zelfstandig verwerkingsverantwoordelijke. De logging ligt daardoor per definitie verspreid vast. De architectuur houdt dat in stand: de inhoud van de traces blijft in het logboek van de Verantwoordelijke en er ontstaat geen centrale kopie (<a href="#niet-functionele-requirements">NFR-1</a>). Dit uitgangspunt is goed verdedigbaar, maar het is niet zonder consequenties en moet daarom een bewuste keuze zijn. Decentrale opslag verplaatst complexiteit en vraagt om een aanvullende voorziening om de juiste logboeken te vinden.</p>
 <ol start="3">
