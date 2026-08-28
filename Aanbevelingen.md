@@ -25,7 +25,7 @@ We hebben in de uitvoering van het TransparantieApp project veel geleerd, over d
 
 Bij de usecase ["Waarom is dit gebeurd?"](#usecase-waarom-is-dit-gebeurd) is het startpunt bekend uit het besluit zelf; bij ["Wie heeft er aan mijn gegevens gezeten?"](#usecase-wie-heeft-er-aan-mijn-gegevens-gezeten) is er geen startpunt en ligt het antwoord verspreid over potentieel duizenden Logboeken. Ontwerp voor die tweede usecase. Alle vraagstukken van de eerste doen zich daar immers ook voor, federatief bevragen, autorisatie per Logboek en het omgaan met onbereikbare Logboeken, aangevuld met het vinden van de relevante organisaties. Omgekeerd: een architectuur die uitgaat van een bekend startpunt is niet zonder herontwerp op te schalen naar een overheidsbrede zoekvraag.
 
-2. Gegevens bij de bron
+2. Data bij de bron
 
 Waar een keten van organisaties betrokken is bij een besluit, is ieder van hen zelfstandig verwerkingsverantwoordelijke. De logging ligt daardoor per definitie verspreid vast. De architectuur houdt dat in stand: de inhoud van de traces blijft in het logboek van de Verantwoordelijke en er ontstaat geen centrale kopie ([NFR-1](#niet-functionele-requirements)). Dit uitgangspunt is goed verdedigbaar, maar het is niet zonder consequenties en moet daarom een bewuste keuze zijn. Decentrale opslag verplaatst complexiteit en vraagt om een aanvullende voorziening om de juiste logboeken te vinden.
 
