@@ -12,7 +12,7 @@ Deze bevinding leidt tot een conclusie die verder gaat dan een ontwerpaanpassing
 
 Los van deze kritieke randvoorwaarde laat het onderzoek zien dat burgers geen behoefte hebben aan meer data, maar aan begrijpelijke gebeurtenissen. Drie principes komen telkens terug en vormen de kern van het antwoord op de onderzoeksvraag:
 
-1. **Van 'log' naar 'gebeurtenis':** technische logregels worden vertaald naar voor burgers herkenbare gebeurtenissen (bijvoorbeeld "WOZ-waarde vastgesteld" in plaats van "Datenverwerking verzoek 0x234"), aansluitend bij patronen die burgers al kennen van MijnOverheid.
+1. **Van 'log' naar 'gebeurtenis':** technische logregels worden vertaald naar voor burgers herkenbare gebeurtenissen (bijvoorbeeld "WOZ-waarde vastgesteld" in plaats van "Dataverwerking verzoek 0x234"), aansluitend bij patronen die burgers al kennen van MijnOverheid.
 2. **Progressive disclosure:** informatie wordt gelaagd aangeboden, zodat de burger zelf de detaildiepte kiest in plaats van in één keer geconfronteerd te worden met alle technische details.
 3. **Inclusiviteit door eenvoud:** het ontwerp voor de meest kwetsbare gebruiker (heldere taal, B1-niveau, WCAG 2.2 Level C) blijkt in de praktijk ook de meest effectieve standaard voor alle andere gebruikersgroepen.
 
