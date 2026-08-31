@@ -103,6 +103,7 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
     style="max-width: 100%; height: auto;"
   />
 </a>
+
 | **Fase** | **4. Verstoring** | **5. Begrijpen** | **6. Handelen** | **7. Vertrouwen** |
 |---|---|---|---|---|
 | **Wat gebeurt er?** | Iets wijkt af van de verwachting | Persoon zoekt context en verklaring | Persoon wil controleren of invloed uitoefenen | Er ontstaat opnieuw zekerheid |
@@ -115,7 +116,6 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
 
 ### Ontwerpanalyse
 
-### Ontwerpanalyse
 
 | Analyse | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
 |----------|----------------|---------------|---------------------|
