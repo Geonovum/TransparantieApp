@@ -26,7 +26,7 @@ Zo is de aanbeveling "alleen een POST-operatie te gebruiken voor het bevragen va
 
 Wat nog wél open staat, is te volgen via de [openstaande pull requests](https://github.com/Logius-standaarden/logboek-extensie-lezen/pulls). De verwerking gaat bij afsluiting van dit project snel, dus mogelijk zijn op moment van lezen nog meer aanbevelingen en open punten verwerkt.
 
-De gepubliceerde specificatie is op het moment van schrijven nog een werkversie, de stap naar formele vastlegging is echter wel een logisch vervolg. De verwachting is dat op korte termijn een publieke consultatie zou kunnen starten. Adoptie en praktisch gebruik in productie van de resultaten van dit onderzoek liggen in de nabije toekomst. De verwachting is dat dit binnen de beheer opdracht van Logius voor de standaard gerealiseerd kan worden.
+De gepubliceerde specificatie is op het moment van schrijven nog een werkversie, de stap naar formele vastlegging is echter wel een logisch vervolg. De verwachting is dat op korte termijn een publieke consultatie zou kunnen starten. Adoptie en praktisch gebruik in productie van de resultaten van dit onderzoek liggen in de nabije toekomst. De verwachting is dat dit binnen de beheeropdracht van Logius voor de standaard gerealiseerd kan worden.
 
 ## Randvoorwaarden voor verantwoorde doorontwikkeling
 
