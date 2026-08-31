@@ -28,7 +28,7 @@ Het model kan tevens worden vertaald naar verschillende informatieniveaus binnen
 <a href="media/Mentalmodel.png">
   <img
     src="media/Mentalmodel.png"
-    alt="Mental model van gebruiker"
+    alt="Mental model van gebruiker van herkenning naar vertrouwen"
     style="max-width: 100%; height: auto;"
   />
 </a>
@@ -98,8 +98,8 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
 
 <a href="media/Mentalmodel.png">
   <img
-    src="/media/ChatGPT Image Aug 31, 2026, 01_54_55 PM.png"
-    alt="Mental model van gebruiker"
+    src="media/MentaleGebruikersModel.png"
+    alt="Mental model van gebruiker wanneer data incompleet zijn"
     style="max-width: 100%; height: auto;"
   />
 </a>
