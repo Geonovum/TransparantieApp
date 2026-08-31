@@ -94,6 +94,17 @@ Ook moet transparantie leiden tot handelingsperspectief. Wanneer een gebruiker i
 
 Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersreis of nieuwe applicatie te worden aangeboden. Gebruikers willen de transparantiefunctie ook kunnen vinden binnen de context van bestaande systemen en diensten. De behoefte aan transparantie ontstaat immers vaak tijdens een andere taak of naar aanleiding van een specifieke gebeurtenis. Door de functie aan te bieden op het moment en de plek waar deze behoefte ontstaat, hoeft de burger niet eerst een afzonderlijke TransparantieApp te kennen en op te zoeken.
 
+
+
+<a href="media/Mentalmodel.png">
+  <img
+    src="media/Mentalmodel.png"
+    alt="Mental model van gebruiker"
+    style="max-width: 100%; height: auto;"
+  />
+</a>
+
+
 | Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
 |-------|---------------|--------------|-------------|----------------|
 | **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
