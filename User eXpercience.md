@@ -243,24 +243,29 @@ Dit betekent echter niet dat deze doelgroep buiten beschouwing is gelaten. Bij h
 Toekomstig onderzoek kan zich richten op de vraag hoe transparantie over gegevensgebruik en besluitvorming toegankelijk kan worden gemaakt voor burgers die minder digitaal vaardig zijn of andere vormen van ondersteuning nodig hebben.
 
 ## Ontwerp
-
-## Final design
-
 Op basis van de resultaten uit de verschillende gebruikerstesten is het ontwerp in de laatste iteratie verder aangescherpt. In het final design ligt de nadruk op een begrijpelijk overzicht van gegevensuitwisselingen, meerdere manieren om informatie te vinden en meer transparantie over de volledigheid van de getoonde informatie.
 
 De gebruiker kan gegevensuitwisselingen zowel **per organisatie** als **in chronologische volgorde** bekijken. Daarnaast zijn zoeken en filteren beschikbaar om sneller tot relevante informatie te komen.
 
+---
+
 ### Dashboard
 
-![Dashboard](media/01-dashboard.png)
+<p align="center">
+  <img src="media/01-dashboard.png" alt="Dashboard" width="320">
+</p>
 
 De transparantiefunctie is in dit ontwerp geplaatst binnen een bestaande persoonlijke gezondheidsomgeving. Hiermee wordt onderzocht hoe inzicht in gegevensuitwisselingen in de context van een bestaande dienstverlening kan worden aangeboden, in plaats van uitsluitend als afzonderlijke applicatie.
 
 Dit sluit aan bij de behoefte van gebruikers om transparantie te vinden op het moment en de plek waar deze relevant is, zonder daarvoor eerst een afzonderlijke transparantievoorziening te hoeven kennen of opzoeken.
 
+---
+
 ### Gegevensuitwisselingen per organisatie
 
-![Gegevensuitwisselingen per organisatie](media/02-organisaties.png)
+<p align="center">
+  <img src="media/02-organisaties.png" alt="Gegevensuitwisselingen per organisatie" width="320">
+</p>
 
 Het organisatieoverzicht vormt een van de belangrijkste ingangen tot de informatie. Gebruikers kunnen zien met welke organisaties gegevens zijn uitgewisseld en vervolgens doorklikken om de gegevensuitwisselingen van een specifieke organisatie te bekijken.
 
@@ -268,63 +273,117 @@ Bovenaan wordt expliciet aangegeven dat het overzicht mogelijk niet volledig is.
 
 Gebruikers kunnen daarnaast schakelen tussen het organisatieoverzicht en een chronologische tijdlijn. Hiermee worden verschillende manieren van zoeken en oriënteren ondersteund.
 
-### Zoeken en filteren
+#### Detailweergave organisatieoverzicht
 
-![Filteren op soort gegevens](media/03-organisaties-filter-open.png)
+<p align="center">
+  <img src="media/02-organisaties-zoom-01.png" alt="Detail organisatieoverzicht" width="260">
+  &nbsp;&nbsp;
+  <img src="media/02-organisaties-zoom-02.png" alt="Detail organisaties en gegevens" width="260">
+</p>
+
+De detailweergaven laten zien hoe informatie over organisaties en gegevensuitwisselingen wordt opgebouwd. Organisaties fungeren hierbij als herkenningspunt van waaruit de gebruiker verder kan verdiepen.
+
+---
+
+### Zoeken en filteren
 
 Gebruikers kunnen het overzicht filteren op het soort gegevens, zoals labuitslagen, recepten, medicatie of ontslagbrieven.
 
-![Gefilterd organisatieoverzicht](media/04-organisaties-gefilterd.png)
+<p align="center">
+  <img src="media/03-organisaties-filter-open.png" alt="Filteren op soort gegevens" width="300">
+  &nbsp;&nbsp;
+  <img src="media/04-organisaties-gefilterd.png" alt="Gefilterd organisatieoverzicht" width="300">
+</p>
 
 Na het toepassen van een filter worden alleen de organisaties getoond waarvoor relevante gegevensuitwisselingen beschikbaar zijn.
 
-Naast filteren kan de gebruiker rechtstreeks zoeken naar een organisatie:
+Naast filteren kan de gebruiker rechtstreeks zoeken naar een organisatie.
 
-![Zoeken naar een organisatie](media/05-organisaties_zoek.png)
+<p align="center">
+  <img src="media/05-organisaties_zoek.png" alt="Zoeken naar een organisatie" width="300">
+  &nbsp;&nbsp;
+  <img src="media/06-organisaties-geen-resultaten.png" alt="Geen zoekresultaten" width="300">
+</p>
 
-Hiermee ondersteunt het ontwerp verschillende zoekstrategieën. De gebruiker hoeft niet één vaste route door de informatie te volgen, maar kan zoeken vanuit de structuur die op dat moment het beste aansluit bij de informatiebehoefte.
+Wanneer een zoekopdracht of filter geen resultaten oplevert, wordt dit expliciet weergegeven. Hiermee ondersteunt het ontwerp verschillende zoekstrategieën en hoeft de gebruiker niet één vaste route door de informatie te volgen.
 
-Wanneer een zoekopdracht of filter geen resultaten oplevert, wordt dit expliciet weergegeven:
-
-![Geen resultaten](media/06-organisaties-geen-resultaten.png)
+---
 
 ### Tijdlijn
 
-![Tijdlijn van gegevensuitwisselingen](media/07-tijdlijn.png)
+<p align="center">
+  <img src="media/07-tijdlijn.png" alt="Tijdlijn van gegevensuitwisselingen" width="320">
+</p>
 
 Naast het organisatieoverzicht kan de gebruiker kiezen voor een chronologische weergave. De tijdlijn maakt zichtbaar **wanneer gegevens zijn uitgewisseld, tussen welke organisaties dit gebeurde en om welk type gebeurtenis het gaat**.
 
 Hiermee kan de gebruiker gebeurtenissen vanuit een ander perspectief bekijken dan in het organisatieoverzicht. Dit is bijvoorbeeld relevant wanneer iemand vooral wil begrijpen wat er rondom een bepaalde periode is gebeurd.
 
-Ook binnen de tijdlijn kunnen gebruikers zoeken en filteren:
+#### Detailweergaven tijdlijn
 
-![Gefilterde tijdlijn](media/08-tijdlijn-gefilterd.png)
+<p align="center">
+  <img src="media/07-tijdlijn-zoom-01.png" alt="Detail tijdlijn 1" width="250">
+  &nbsp;
+  <img src="media/07-tijdlijn-zoom-02.png" alt="Detail tijdlijn 2" width="250">
+  &nbsp;
+  <img src="media/07-tijdlijn-zoom-03.png" alt="Detail tijdlijn 3" width="250">
+</p>
+
+De detailweergaven laten zien hoe afzonderlijke gebeurtenissen binnen de tijdlijn worden gepresenteerd en hoe de gebruiker vanuit een gebeurtenis verder kan verdiepen.
+
+Ook binnen de tijdlijn kunnen gebruikers zoeken en filteren.
+
+<p align="center">
+  <img src="media/08-tijdlijn-gefilterd.png" alt="Gefilterde tijdlijn" width="320">
+</p>
 
 Zo kunnen gebruikers vanuit verschillende mentale modellen bij dezelfde informatie komen: via een organisatie, via een chronologisch overzicht of via zoeken en filteren.
 
+---
+
 ### Organisatiedetail
 
-![Gegevensuitwisselingen van een organisatie](media/09-organisatiedetails.png)
+<p align="center">
+  <img src="media/09-organisatiedetails.png" alt="Gegevensuitwisselingen van een organisatie" width="320">
+</p>
 
 Vanuit het organisatieoverzicht kan worden ingezoomd op één specifieke organisatie. De gebruiker ziet vervolgens de gegevensuitwisselingen waarbij deze organisatie betrokken is.
 
 De organisatie fungeert hierbij als herkenningspunt. Vanuit deze herkenbare context kan de gebruiker verder onderzoeken welke gegevens zijn uitgewisseld, wanneer dit gebeurde en met welke andere organisaties.
 
+#### Detailweergaven organisatie
+
+<p align="center">
+  <img src="media/09-organisatiedetails-zoom-01.png" alt="Organisatiedetail 1" width="250">
+  &nbsp;
+  <img src="media/09-organisatiedetails-zoom-02.png" alt="Organisatiedetail 2" width="250">
+  &nbsp;
+  <img src="media/09-organisatiedetails-zoom-03.png" alt="Organisatiedetail 3" width="250">
+</p>
+
+De gebruiker krijgt hiermee eerst een overzicht van de organisatie en kan vervolgens per gebeurtenis verder verdiepen.
+
+---
+
 ### Detail van een gegevensuitwisseling
 
-![Detail van een gegevensuitwisseling](media/10-uitwisselingdetails.png)
+<p align="center">
+  <img src="media/10-uitwisselingdetails.png" alt="Detail van een gegevensuitwisseling" width="320">
+</p>
 
-Op detailniveau wordt meer context gegeven over een specifieke gegevensuitwisseling. De gebruiker ziet onder andere:
+Op detailniveau wordt meer context gegeven over een specifieke gegevensuitwisseling. De gebruiker ziet onder andere wanneer de uitwisseling heeft plaatsgevonden, welke organisaties betrokken waren, welke gegevens zijn gedeeld en wat de reden voor de uitwisseling was.
 
-- wanneer de uitwisseling heeft plaatsgevonden;
-- welke organisaties betrokken waren;
-- welke gegevens zijn gedeeld;
-- wat de reden voor het delen was;
-- relevante broninformatie en documenten.
+#### Detailweergaven gegevensuitwisseling
 
-Hiermee wordt de gebruiker stapsgewijs van herkenning naar meer gedetailleerde uitleg geleid.
+<p align="center">
+  <img src="media/10-uitwisselingdetails-zoom-01.png" alt="Detail gegevensuitwisseling 1" width="280">
+  &nbsp;&nbsp;
+  <img src="media/10-uitwisselingdetails-zoom-02.png" alt="Detail gegevensuitwisseling 2" width="280">
+</p>
 
-Wanneer een gebruiker denkt dat iets niet klopt, wordt daarnaast handelingsperspectief aangeboden. Vanuit de context van de gegevensuitwisseling kan de gebruiker bijvoorbeeld worden verwezen naar de verantwoordelijke organisatie of naar een relevante vervolgstap.
+Hiermee wordt de gebruiker stapsgewijs van herkenning naar meer gedetailleerde uitleg geleid. Wanneer een gebruiker denkt dat iets niet klopt, wordt daarnaast handelingsperspectief aangeboden door te verwijzen naar de verantwoordelijke organisatie of een relevante vervolgstap.
+
+---
 
 ### Omgaan met incomplete informatie
 
@@ -332,7 +391,7 @@ Een belangrijk aandachtspunt uit de laatste gebruikerstest is de manier waarop i
 
 Het final design maakt daarom explicieter zichtbaar dat het overzicht mogelijk niet volledig is. Hiermee wordt voorkomen dat een gedeeltelijk overzicht automatisch als volledig wordt geïnterpreteerd.
 
-In een verdere uitwerking moet daarnaast duidelijk onderscheid worden gemaakt tussen verschillende oorzaken van ontbrekende informatie, bijvoorbeeld:
+In een verdere uitwerking moet duidelijk onderscheid worden gemaakt tussen verschillende oorzaken van ontbrekende informatie:
 
 - een organisatie is niet aangesloten;
 - er heeft geen gegevensuitwisseling plaatsgevonden;
@@ -342,11 +401,13 @@ Wanneer incomplete gegevens onvoldoende betrouwbaar of begrijpelijk kunnen worde
 
 > **Openstaand verbeterpunt**
 >
-> In het huidige prototype wordt bij sommige gegevensuitwisselingen nog de melding **‘Actie niet beschikbaar’** getoond. Uit de laatste gebruikerstest blijkt dat deze melding onvoldoende uitlegt waarom informatie ontbreekt. Dit kan leiden tot onzekerheid, speculatie en mogelijk wantrouwen.
+> In het huidige prototype wordt bij sommige gegevensuitwisselingen nog de melding **'Actie niet beschikbaar'** getoond. Uit de laatste gebruikerstest blijkt dat deze melding onvoldoende uitlegt waarom informatie ontbreekt. Dit kan leiden tot onzekerheid, speculatie en mogelijk wantrouwen.
 >
-> In een volgende uitwerking moet deze generieke melding daarom worden vervangen door een concrete verklaring, bijvoorbeeld **‘Deze organisatie is nog niet aangesloten’**, **‘Er heeft geen gegevensuitwisseling plaatsgevonden’** of **‘Deze gegevens zijn tijdelijk niet beschikbaar’**.
+> In een volgende uitwerking moet deze generieke melding daarom worden vervangen door een concrete verklaring, bijvoorbeeld **'Deze organisatie is nog niet aangesloten'**, **'Er heeft geen gegevensuitwisseling plaatsgevonden'** of **'Deze gegevens zijn tijdelijk niet beschikbaar'**.
 >
 > Waar mogelijk wordt hier direct een relevante vervolgstap aan gekoppeld, zoals contact opnemen met of doorgaan naar de betreffende organisatie.
+
+---
 
 ### Belangrijkste ontwerpprincipes
 
@@ -369,6 +430,8 @@ Het final design brengt de belangrijkste inzichten uit het gebruikersonderzoek s
 
 6. **Toon informatie op het juiste detailniveau**  
    Begin met een begrijpelijk overzicht en bied vervolgens verdieping voor gebruikers die meer willen weten. Zo blijft de informatie toegankelijk zonder relevante details weg te laten.
+
+---
 
 ### Conclusie final design
 
