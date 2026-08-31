@@ -103,20 +103,6 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
     style="max-width: 100%; height: auto;"
   />
 </a>
-
-
-| Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
-|-------|---------------|--------------|-------------|----------------|
-| **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
-| **Gebruikersdoel** | Begrijpen wat er gebeurt | Oorzaak achterhalen | Probleem oplossen | Zekerheid krijgen |
-| **Gedachten** | "Huh? Waarom gebeurt dit? Welke gegevens zijn hier gedeeld?" | "Hoe zit dit precies?" | "Wat kan ik nu doen?" | "Oké, ik snap het." |
-| **Emoties** | Onzeker | Onderzoekend | Doelgericht | Gerustgesteld |
-| **Vragen** | Waarom gebeurt dit? Welke gegevens zijn gedeeld? | Wie? Waarom? Hoe? | Welke opties heb ik? | Kan ik erop vertrouwen? |
-
-### Ontwerpanalyse
-
-## Experience model: Van verstoring naar vertrouwen
-
 | **Fase** | **4. Verstoring** | **5. Begrijpen** | **6. Handelen** | **7. Vertrouwen** |
 |---|---|---|---|---|
 | **Wat gebeurt er?** | Iets wijkt af van de verwachting | Persoon zoekt context en verklaring | Persoon wil controleren of invloed uitoefenen | Er ontstaat opnieuw zekerheid |
@@ -125,6 +111,19 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
 | **Behoefte** | Verklaring | Context, volledigheid en begrijpelijkheid | Handelingsperspectief | Zekerheid |
 | **Risico** | Verwarring | Speculatie en informatie-overload | Machteloosheid | Wantrouwen |
 | **Ontwerpkans** | Geef tijdig inzicht | Verklaar ook ontbrekende informatie | Bied acties in context aan | Maak informatie controleerbaar en betrouwbaar |
+
+
+### Ontwerpanalyse
+
+### Ontwerpanalyse
+
+| Analyse | 1. Verwachting | 2. Verwerking | 3. Normaal verloop |
+|----------|----------------|---------------|---------------------|
+| **Behoefte** | Gemak en herkenning | Vertrouwen | Voorspelbaarheid en zekerheid |
+| **Risico** | Complexiteit of onduidelijkheid | Onzichtbaarheid en onvolledigheid | Schijn van volledigheid |
+| **Kans** | Duidelijke en herkenbare start | Transparant maken wat er gebeurt én wat ontbreekt | Betrouwbare, frictieloze ervaring |
+
+
 
 ## Persona's
 
