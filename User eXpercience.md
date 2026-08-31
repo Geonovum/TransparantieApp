@@ -98,7 +98,7 @@ Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersre
 
 <a href="media/Mentalmodel.png">
   <img
-    src="media/Mentalmodel.png"
+    src="/media/ChatGPT Image Aug 31, 2026, 01_54_55 PM.png"
     alt="Mental model van gebruiker"
     style="max-width: 100%; height: auto;"
   />
