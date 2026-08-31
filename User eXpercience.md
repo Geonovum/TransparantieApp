@@ -84,6 +84,16 @@ Onder iedere experience map staat een ontwerpanalyse. Deze analyse vertaalt de o
 
 ## 2. Van verstoring naar vertrouwen
 
+Gegevensverwerking verloopt voor burgers veelal op de achtergrond. Zolang de uitkomst overeenkomt met hun verwachting, bestaat er doorgaans weinig behoefte om het onderliggende proces te onderzoeken. De behoefte aan transparantie wordt vooral relevant wanneer die verwachting wordt doorbroken: er ontbreekt bijvoorbeeld informatie, een uitkomst is onverwacht of iemand wil weten waarom gegevens zijn uitgewisseld.
+
+Op zo'n moment probeert de gebruiker eerst te begrijpen wat er is gebeurd en waarom. De laatste gebruikerstesten laten daarbij zien dat transparantie ook een risico kent: wanneer informatie ontbreekt of onvoldoende wordt verklaard, kan de gebruiker zelf verklaringen gaan vormen. In plaats van onzekerheid weg te nemen, kan transparantie dan juist nieuwe onzekerheid of wantrouwen veroorzaken.
+
+Daarom is het belangrijk om niet alleen te laten zien wat bekend is, maar ook transparant te zijn over wat niet bekend of beschikbaar is en waarom. Maak bijvoorbeeld duidelijk of een organisatie niet is aangesloten, er geen gegevensuitwisseling heeft plaatsgevonden of gegevens tijdelijk niet beschikbaar zijn. Wanneer incomplete gegevens onvoldoende betrouwbaar of begrijpelijk kunnen worden aangeboden, kan worden overwogen deze nog niet te tonen en de gebruiker in plaats daarvan naar de betreffende organisatie te verwijzen.
+
+Ook moet transparantie leiden tot handelingsperspectief. Wanneer een gebruiker iets niet begrijpt of een mogelijke fout ontdekt, moet in dezelfde context duidelijk worden welke vervolgstappen mogelijk zijn en bij welke organisatie de gebruiker terechtkan.
+
+Daarbij hoeft transparantie niet noodzakelijk als een afzonderlijke gebruikersreis of nieuwe applicatie te worden aangeboden. Gebruikers willen de transparantiefunctie ook kunnen vinden binnen de context van bestaande systemen en diensten. De behoefte aan transparantie ontstaat immers vaak tijdens een andere taak of naar aanleiding van een specifieke gebeurtenis. Door de functie aan te bieden op het moment en de plek waar deze behoefte ontstaat, hoeft de burger niet eerst een afzonderlijke TransparantieApp te kennen en op te zoeken.
+
 | Fase | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
 |-------|---------------|--------------|-------------|----------------|
 | **Wat gebeurt er?** | Er gebeurt iets onverwachts | Persoon zoekt uitleg | Persoon wil invloed uitoefenen | Nieuwe balans ontstaat |
@@ -94,11 +104,16 @@ Onder iedere experience map staat een ontwerpanalyse. Deze analyse vertaalt de o
 
 ### Ontwerpanalyse
 
-| Analyse | 4. Verstoring | 5. Begrijpen | 6. Handelen | 7. Vertrouwen |
-|----------|---------------|--------------|-------------|----------------|
-| **Behoefte** | Verklaring | Context | Handelingsperspectief | Zekerheid |
-| **Risico** | Verwarring | Informatie-overload | Machteloosheid | Wantrouwen |
-| **Kans** | Tijdige signalering | Begrijpelijke uitleg | Actie mogelijk maken | Vertrouwen versterken |
+## Experience model: Van verstoring naar vertrouwen
+
+| **Fase** | **4. Verstoring** | **5. Begrijpen** | **6. Handelen** | **7. Vertrouwen** |
+|---|---|---|---|---|
+| **Wat gebeurt er?** | Iets wijkt af van de verwachting | Persoon zoekt context en verklaring | Persoon wil controleren of invloed uitoefenen | Er ontstaat opnieuw zekerheid |
+| **Gebruikersdoel** | Begrijpen wat er gebeurt | Achterhalen wat, waarom en door wie | Weten wat mogelijk is en bij wie men terechtkan | Kunnen vertrouwen op het geboden inzicht |
+| **Gedachten** | "Waarom gebeurt dit?" | "Hoe zit dit precies en is dit overzicht compleet?" | "Wat kan ik nu doen?" | "Ik begrijp het en weet wat mijn opties zijn." |
+| **Behoefte** | Verklaring | Context, volledigheid en begrijpelijkheid | Handelingsperspectief | Zekerheid |
+| **Risico** | Verwarring | Speculatie en informatie-overload | Machteloosheid | Wantrouwen |
+| **Ontwerpkans** | Geef tijdig inzicht | Verklaar ook ontbrekende informatie | Bied acties in context aan | Maak informatie controleerbaar en betrouwbaar |
 
 ## Persona's
 
