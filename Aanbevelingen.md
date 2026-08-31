@@ -51,6 +51,17 @@ van LDV of maak hier een separate standaard van.
 
 Geef de voorkeur aan een web-applicatie boven een native applicaite. Daarmee sluit deze keuze aan bij een belangrijkste aanbeveling uit het gebruikersonderzoek: bied transparantie niet aan in een aparte app, maar in de context van bestaande dienstverlening. Richt de architectuur daarnaast zo in dat zij geen eisen stelt die enkel als web-applicatie of enkel als native applicatie haalbaar zijn ([NFR-2](#niet-functionele-requirements)). 
 
+## Mentale modellen voor burgers
+Uit de gebruikerstesten blijkt dat transparantie niet alleen draait om het beschikbaar stellen van informatie, maar vooral om het wegnemen van onzekerheid en het ondersteunen van gebruikers bij het begrijpen van een situatie. Wanneer informatie ontbreekt of onduidelijk wordt weergegeven, kunnen gebruikers zelf verklaringen gaan zoeken voor deze onvolledigheid. Dit kan leiden tot speculatie en zelfs tot het vermoeden dat informatie bewust wordt achtergehouden. Hierdoor kan een toepassing die juist bedoeld is om transparantie te vergroten, onbedoeld wantrouwen versterken. Het is daarom belangrijk om ontbrekende informatie altijd te voorzien van een duidelijke verklaring, bijvoorbeeld door aan te geven dat een organisatie niet is aangesloten, dat er geen gegevensuitwisseling heeft plaatsgevonden of dat gegevens tijdelijk niet beschikbaar zijn.
+
+Overweeg daarnaast om incomplete gegevens nog niet te tonen wanneer de betrouwbaarheid of betekenis ervan onvoldoende kan worden gewaarborgd. Voorkom daarbij dat de indruk ontstaat dat het overzicht volledig is. Maak zichtbaar welke organisaties wel en niet zijn aangesloten en verwijs waar nodig naar de betreffende organisatie.
+
+Koppel transparantie aan handelingsperspectief. Wanneer gebruikers vragen of onduidelijkheden ervaren, willen zij weten wat zij vervolgens kunnen doen en bij welke organisatie zij terechtkunnen. Zorg daarom voor duidelijke vervolgstappen, zoals contactgegevens, links naar de verantwoordelijke organisatie of andere relevante acties.
+
+Ondersteun verschillende mentale modellen en zoekstrategieën. Gebruikers zoeken op verschillende manieren naar informatie. Ondersteun daarom meerdere routes naar dezelfde informatie, bijvoorbeeld via organisatie, chronologie en directe zoekfunctionaliteit, in plaats van gebruikers één vaste navigatieroute op te leggen.
+
+Bied de transparantiefunctie waar mogelijk in context aan binnen bestaande systemen. Gebruikers willen de functionaliteit bij voorkeur tegenkomen op de plek waar hun informatiebehoefte ontstaat, in plaats van hiervoor een aparte nieuwe applicatie of een nieuw digitaal loket te moeten vinden. Onderzoek daarom hoe de transparantiefunctie kan aansluiten op bestaande digitale omgevingen en gebruikersreizen. Zo hoeft de burger niet eerst een nieuwe toepassing te kennen en op te zoeken, maar wordt relevante transparantie aangeboden op het moment dat deze betekenis heeft.
+
 ## Gebruikersonderzoek
 Dit onderzoek laat zien dat de huidige standaard voornamelijk is ontwikkeld vanuit de technische mogelijkheden van logging, terwijl burgers vooral behoefte hebben aan inzicht in de totstandkoming van besluiten. Ook de literatuur van de Kafka Brigade laat zien dat burgers vastlopen doordat zij onvoldoende inzicht hebben in de samenhang tussen gegevens, regels en besluiten. Niet alleen de gebruikte gegevens, maar ook de toegepaste regels en de onderbouwing van een besluit moeten begrijpelijk en controleerbaar zijn.
 
