@@ -12,7 +12,7 @@ Deze bevinding leidt tot een conclusie die verder gaat dan een ontwerpaanpassing
 
 Los van deze kritieke randvoorwaarde laat het onderzoek zien dat burgers geen behoefte hebben aan meer data, maar aan begrijpelijke gebeurtenissen. Drie principes komen telkens terug en vormen de kern van het antwoord op de onderzoeksvraag:
 
-1. **Van 'log' naar 'gebeurtenis':** technische logregels worden vertaald naar voor burgers herkenbare gebeurtenissen (bijvoorbeeld "WOZ-waarde vastgesteld" in plaats van "Datenverwerking verzoek 0x234"), aansluitend bij patronen die burgers al kennen van MijnOverheid.
+1. **Van 'log' naar 'gebeurtenis':** technische logregels worden vertaald naar voor burgers herkenbare gebeurtenissen (bijvoorbeeld "WOZ-waarde vastgesteld" in plaats van "Dataverwerking verzoek 0x234"), aansluitend bij patronen die burgers al kennen van MijnOverheid.
 2. **Progressive disclosure:** informatie wordt gelaagd aangeboden, zodat de burger zelf de detaildiepte kiest in plaats van in één keer geconfronteerd te worden met alle technische details.
 3. **Inclusiviteit door eenvoud:** het ontwerp voor de meest kwetsbare gebruiker (heldere taal, B1-niveau, WCAG 2.2 Level C) blijkt in de praktijk ook de meest effectieve standaard voor alle andere gebruikersgroepen.
 
@@ -24,9 +24,9 @@ De praktijkbeproeving toont dat de extensie lezen werkt in een gesimuleerde meer
 
 Zo is de aanbeveling "alleen een POST-operatie te gebruiken voor het bevragen van de lezen API" al toegepast.
 
-Wat nog wél open staat, is te volgen via de [openstaande pull requests](https://github.com/Logius-standaarden/logboek-extensie-lezen/pulls) de verwerking gaat bij afsluiting van dit project snel dus mogelijk zijn nog meer aanbevelingen en open punten al verwerkt.
+Wat nog wél open staat, is te volgen via de [openstaande pull requests](https://github.com/Logius-standaarden/logboek-extensie-lezen/pulls). De verwerking gaat bij afsluiting van dit project snel, dus mogelijk zijn op moment van lezen nog meer aanbevelingen en open punten verwerkt.
 
-De gepubliceerde specificatie is op het moment van schrijven nog een werkversie, de stap naar formele vastlegging is echter wel een logische de verwachting is dat op korte termijn een publieke consultatie zou kunnen starten. Adoptie en praktisch gebruik in productie van de resultaten van dit onderzoek liggen in de nabije toekomst. De verwachting is dat dit binnen de beheer opdracht van Logius voor de standaard gerealiseerd kan worden.
+De gepubliceerde specificatie is op het moment van schrijven nog een werkversie, de stap naar formele vastlegging is echter wel een logisch vervolg. De verwachting is dat op korte termijn een publieke consultatie zou kunnen starten. Adoptie en praktisch gebruik in productie van de resultaten van dit onderzoek liggen in de nabije toekomst. De verwachting is dat dit binnen de beheeropdracht van Logius voor de standaard gerealiseerd kan worden.
 
 ## Randvoorwaarden voor verantwoorde doorontwikkeling
 
