@@ -5,11 +5,11 @@ De TransparantieApp heeft als doel om inzichtelijk te maken hoe de data van de b
 ## Rapport
 Deze repository bevat de werkversie van ons eindrapport. Aanvullend zijn er ook twee bijlagen
 
-| **Naam**                         | **publicatie** | **werkversie**                                                       | **github**                                                           |
-|----------------------------------|----------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| TransparantieApp rapport         |                | https://geonovum.github.io/TransparantieApp/                         | https://github.com/Geonovum/TransparantieApp                         |
-| Gebruikersonderzoek en UX design |                | https://geonovum.github.io/TransparantieApp-Gebruikers-Onderzoek-UX/ | https://github.com/Geonovum/TransparantieApp-Gebruikers-Onderzoek-UX |
-| Applicatie Architectuur          |                | https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur/ | https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur |
+| **Naam**                         | **publicatie**                                            | **werkversie**                                                       | **github**                                                           |
+|----------------------------------|-----------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| TransparantieApp rapport         | https://docs.geostandaarden.nl/ldv/transparantieapp       | https://geonovum.github.io/TransparantieApp/                         | https://github.com/Geonovum/TransparantieApp                         |
+| Gebruikersonderzoek en UX design | https://docs.geostandaarden.nl/ldv/transparantieapp-go-ux | https://geonovum.github.io/TransparantieApp-Gebruikers-Onderzoek-UX/ | https://github.com/Geonovum/TransparantieApp-Gebruikers-Onderzoek-UX |
+| Applicatie Architectuur          | https://docs.geostandaarden.nl/ldv/transparantieapp-arch  | https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur/ | https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur |
 
 Het wordt bijgewerkt tot het einde van het project op 31-8-2026. Daarna wordt een definitieve versie gepubliceerd op docs.geostandaarden.nl
 
