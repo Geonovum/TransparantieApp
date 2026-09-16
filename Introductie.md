@@ -13,3 +13,15 @@ Dit document is onderdeel van de rapportage over het project TransparantieApp de
 | Applicatie Architectuur          | https://docs.geostandaarden.nl/ldv/transparantieapp-arch  | https://geonovum.github.io/TransparantieApp-Applicatie-Architectuur/ | https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur |
 
 ## Leeswijzer
+
+Dit rapport bundelt de resultaten van het project TransparantieApp; de hoofdstukken zijn afzonderlijk leesbaar. Wie weinig tijd heeft, leest [Conclusies](#conclusies) en [Aanbevelingen](#aanbevelingen): samen geven die de kern van het rapport, de overige hoofdstukken bevatten de onderbouwing daarvan.
+
+- [Aanbevelingen](#aanbevelingen) — de adviezen uit alle onderdelen van het project, geordend naar standaard, architectuur, mentale modellen, gebruikersonderzoek, UX-design en beleidsjuridisch kader.
+- [User eXperience](#user-experience) — het mentale model van datatransparantie, de persona's en de ontwerpkeuzes die daaruit volgen. Volledig uitgewerkt in de bijlage Gebruikersonderzoek en UX design.
+- [Business Architectuur](#business-architectuur) — de twee usecases, "Waarom is dit gebeurd?" en "Wie heeft er aan mijn gegevens gezeten?", en wat die betekenen voor een federatieve opzet en voor de standaard.
+- [Applicatie Architectuur](#applicatie-architectuur) — requirements, componenten, sequence-diagrammen, authenticatie en autorisatie, en pseudonimisering via OPRF. Volledig uitgewerkt in de bijlage Applicatie Architectuur.
+- [Praktijkbeproeving](#praktijkbeproeving) — de opzet van de simulatieomgeving, de lessen daaruit en de aanpassingen die al in de standaard zijn verwerkt.
+- [De Standaard](#de-standaard) — beleidsjuridisch kader, ontwikkelmethode, de Open API Specification voor de extensie lezen en de vier manieren waarop die toegepast kan worden.
+- [Conclusies](#conclusies) — het antwoord op de onderzoeksvraag en de randvoorwaarden voor verantwoorde doorontwikkeling.
+
+De links naar de twee bijlagen staan in de tabel hierboven.
