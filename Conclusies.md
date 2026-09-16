@@ -14,7 +14,7 @@ Los van dit voorbehoud laat het onderzoek zien dat burgers geen behoefte hebben 
 
 1. **Van 'log' naar 'gebeurtenis':** technische logregels worden vertaald naar voor burgers herkenbare gebeurtenissen (bijvoorbeeld "WOZ-waarde vastgesteld" in plaats van "Dataverwerking verzoek 0x234"), aansluitend bij patronen die burgers al kennen van MijnOverheid.
 2. **Progressive disclosure:** informatie wordt gelaagd aangeboden, zodat de burger zelf de detaildiepte kiest in plaats van in één keer geconfronteerd te worden met alle technische details.
-3. **Inclusiviteit door eenvoud:** het ontwerp voor de meest kwetsbare gebruiker (heldere taal, B1-niveau, WCAG 2.2 Level C) blijkt in de praktijk ook de meest effectieve standaard voor alle andere gebruikersgroepen.
+3. **Inclusiviteit door eenvoud:** het ontwerp voor de meest kwetsbare gebruiker (heldere taal, B1-niveau, WCAG 2.2 Level AA) blijkt in de praktijk ook de meest effectieve standaard voor alle andere gebruikersgroepen.
 
 Deze drie principes verklaren waarom het prototype, ondanks de kritieke bevinding over ontbrekende informatie, wél aantoont dat transparantie op een gebruiksvriendelijke manier vormgegeven kan worden.
 
