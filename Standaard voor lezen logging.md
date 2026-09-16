@@ -11,7 +11,7 @@ De standaard wordt iteratief ontwikkeld door de specificatie te implementeren. T
 
 ## Open API Specification(OAS) voor de extensie lezen
 
-De werkversie van de [Open API specificatie voor de extensie lezen wordt bijgehouden in de Logius github](https://raw.githubusercontent.com/Logius-standaarden/logboek-extensie-lezen/refs/heads/develop/media/openapi.json).
+De werkversie van de [Open API specificatie voor de extensie lezen wordt bijgehouden in de Logius github](https://github.com/Logius-standaarden/logboek-extensie-lezen/blob/develop/media/openapi.json).
 
 ## Toepassing extensie lezen
 
